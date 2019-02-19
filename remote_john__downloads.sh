@@ -1,5 +1,15 @@
 ########## Your client downloads this file remotely and runs it. This will then download the update files (squashfs). You will need another reboot to run this
+#
+# sample code for downloading this (put it on your LOCAL machines -eg z_jon_update--from_200_v03.squashfs ):
 #(https://raw.githubusercontent.com/plirof/john_start_kill_apps_test/master/remote_john__downloads.sh)
+:'
+cd /tmp
+wget  -T 7 "https://raw.githubusercontent.com/plirof/john_start_kill_apps_test/master/remote_john__downloads.sh"
+chmod a+x remote_john__downloads.sh
+. remote_john__downloads.sh
+'
+#
+#
 #
 # To Do:
 # - Download squashfs updates from 1fichier dropbox

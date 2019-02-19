@@ -196,6 +196,16 @@ ironstart ""$SWFlocal"pack_A03.html "$LANDINGpage"15-ΤΕΤΑΡΤΗ-Β2--hour6.h
 # ΤΕΤΑΡΤΗ'
 fi
 
+if [ $DAYOFWEEK == 'Πέμπτη' ] || [ $DAYOFWEEK == 'Thursday' ]
+then
+echo "Πέμπτη"
+fi
+
+if [ $DAYOFWEEK == 'Παρασκευή' ] || [ $DAYOFWEEK == 'Friday' ]
+then
+echo "Παρασκευή"
+fi
+
 
 
 
