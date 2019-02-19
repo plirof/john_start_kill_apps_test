@@ -54,6 +54,12 @@ lightbot_iron_browser() {
 return 5	
 }
 
+firefox10() {
+#. firefox10-puppy-home.sh "$1"
+#eg firefox10 $SWFgiortes"other/ramkid_invitation_party/index.html" $SWFpath"ramkid_giortes_apokries_pt1.html"
+su -l puppy -c '/opt/firefox10/firefox -new-window -no-remote -profile "/mnt/home/downloads_linux/.data/firefox10" -new-tab -url "'$1'" -new-tab -url "'$2'"  -new-tab -url "'$3'"  -new-tab -url "'$4'"'
+return 5
+}
 
 ################  TEST COMMANDS #############
 #ironstartincognito ""$SWFgiortes"index_halloween.html?timer3"
@@ -74,7 +80,8 @@ return 5
 
 #: '# ΑΠΟΚΡΙΕΣ 1
 #"http://192.168.1.200/swf/swf_giortes/other/ramkid_invitation_party/ "
-ironchangesdat ""$SWFgiortes"other/ramkid_invitation_party/index.html "$SWFpath"ramkid_giortes_apokries_pt1.html"
+firefox10 $SWFgiortes"other/ramkid_invitation_party/index.html" $SWFpath"ramkid_giortes_apokries_pt1.html"
+#ironchangesdat ""$SWFgiortes"other/ramkid_invitation_party/index.html "$SWFpath"ramkid_giortes_apokries_pt1.html"
 ironstartincognito ""$SWFgiortes"other/ramkid_invitation_party/index.html "$SWFpath"ramkid_giortes_apokries_pt1.html"
 ironstartincognito ""$SWFgiortes"other/ramkid_invitation_party/index.html "$SWFpath"ramkid_giortes_apokries_pt1.html"
 ironstartincognito ""$SWFgiortes"other/ramkid_invitation_party/index.html "$SWFpath"ramkid_giortes_apokries_pt1.html"
