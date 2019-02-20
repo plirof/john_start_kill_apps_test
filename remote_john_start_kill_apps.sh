@@ -55,6 +55,8 @@ return 5
 }
 
 firefox10() {
+# NOTE 1 : ramkid -kidspedia apokries  : firefox crashes less BUT somtimes arrows doesn't work 
+# NOTE 2 : sometimes firefox10 it doesn't start remotely , but it starts when executing this script locally
 #. firefox10-puppy-home.sh "$1"
 #eg firefox10 $SWFgiortes"other/ramkid_invitation_party/index.html" $SWFpath"ramkid_giortes_apokries_pt1.html"
 su -l puppy -c '/opt/firefox10/firefox -new-window -no-remote -profile "/mnt/home/downloads_linux/.data/firefox10" -new-tab -url "'$1'" -new-tab -url "'$2'"  -new-tab -url "'$3'"  -new-tab -url "'$4'"'
