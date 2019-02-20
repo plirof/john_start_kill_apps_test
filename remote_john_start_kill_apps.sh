@@ -54,12 +54,31 @@ lightbot_iron_browser() {
 return 5	
 }
 
+create_download_linux_home_folders(){
+xhost +local:puppy
+mkdir -p /mnt/home/downloads_linux/.data/$1
+mkdir -p /mnt/home/downloads_linux/.cache/$1
+cp -n /usr/bin/firefox24_default_home_prefs.js /mnt/home/downloads_linux/.data/$1/prefs.js
+}
+
 firefox10() {
 # NOTE 1 : ramkid -kidspedia apokries  : firefox crashes less BUT somtimes arrows doesn't work 
 # NOTE 2 : sometimes firefox10 it doesn't start remotely , but it starts when executing this script locally
 #. firefox10-puppy-home.sh "$1"
 #eg firefox10 $SWFgiortes"other/ramkid_invitation_party/index.html" $SWFpath"ramkid_giortes_apokries_pt1.html"
 su -l puppy -c '/opt/firefox10/firefox -new-window -no-remote -profile "/mnt/home/downloads_linux/.data/firefox10" -new-tab -url "'$1'" -new-tab -url "'$2'"  -new-tab -url "'$3'"  -new-tab -url "'$4'"'
+return 5
+}
+
+firefox24() {
+#NOTE says firefox already running (kill doesn't change that)
+pkill -f firefox
+pkill -f firefox24
+#NOTE ti displays the 	
+#. firefox24-puppy-home.sh "$1"
+#eg firefox24 $SWFgiortes"other/ramkid_invitation_party/index.html" $SWFpath"ramkid_giortes_apokries_pt1.html"
+#su -l puppy -c '/opt/firefox24/firefox -private -new-window -no-remote -profile "/mnt/home/downloads_linux/.data/firefox24" -new-tab -url "'$1'" -new-tab -url "'$2'"  -new-tab -url "'$3'"  -new-tab -url "'$4'"'
+firefox24-puppy-home-many-tabs.sh $1 $2 $3 $4
 return 5
 }
 
@@ -82,7 +101,7 @@ return 5
 
 #: '# ΑΠΟΚΡΙΕΣ 1
 #"http://192.168.1.200/swf/swf_giortes/other/ramkid_invitation_party/ "
-firefox10 $SWFgiortes"other/ramkid_invitation_party/index.html" $SWFpath"ramkid_giortes_apokries_pt1.html"
+#firefox10 $SWFgiortes"other/ramkid_invitation_party/index.html" $SWFpath"ramkid_giortes_apokries_pt1.html"
 #ironchangesdat ""$SWFgiortes"other/ramkid_invitation_party/index.html "$SWFpath"ramkid_giortes_apokries_pt1.html"
 ironstartincognito ""$SWFgiortes"other/ramkid_invitation_party/index.html "$SWFpath"ramkid_giortes_apokries_pt1.html"
 ironstartincognito ""$SWFgiortes"other/ramkid_invitation_party/index.html "$SWFpath"ramkid_giortes_apokries_pt1.html"

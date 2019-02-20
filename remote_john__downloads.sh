@@ -90,7 +90,8 @@ file_fetch "firefox-10.0.12esr_i386.tar.bz2_v01c_190110FlashStandalone.squashfs"
 file_rename_old "firefox-10.0.12esr.tar.bz2_auto_v01b_181030.squashfs"
 file_rename_old "firefox-10.0.12esr.tar.bz2_auto_v01_180919.squashfs"
 
-
+#update firefox24
+file_fetch "firefox-24.8.1esr__140924.tar.bz2_v03_190220Flash4tabs.squashfs"
 
 
 file_fetch "zz05_doublecmdZ_cfg01e_1line.squashfs"
