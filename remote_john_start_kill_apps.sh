@@ -9,7 +9,7 @@ LANDINGpages="http://192.168.1.200/uploads/landing_pages/"
 SWFlocal="http://192.168.1.200/swf/"
 SWFpath="http://192.168.1.200/swf/"
 SWFgiortes="http://192.168.1.200/swf/swf_giortes/"
-
+GAMESEDU="http://192.168.1.200/gamesedu/"
 
 OOOKIDS="ooo4kids1.3 -n "
 OOOKIDSpathprefix="/opt/lampp/htdocs/askiseis_office/"
@@ -83,6 +83,7 @@ return 5
 }
 
 ################  TEST COMMANDS #############
+#ironstartincognito ""$GAMESEDU"Code-Commander-gr/index_dot_links.html"
 #ironstartincognito ""$SWFgiortes"index_halloween.html?timer3"
 #ironstartincognito ""$SWFgiortes"other/ramkid_invitation_party/index.html "$RAMKIDpathprefix"KidsPedia/kids_ePedia32cd/Volume13/index_kd_vol.html ΑΠΟΚΡΙΕΣ-ramkidpedia http://192.168.1.200/swf/swf_ramkid_cds2k5/Ramkid_12feb_apokries/index.html "$SWFlocal"pack_A02.html"
 #ironstartincognito ""$SWFgiortes"index_halloween.html"
