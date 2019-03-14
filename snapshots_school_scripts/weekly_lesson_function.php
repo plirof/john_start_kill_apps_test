@@ -14,9 +14,10 @@ function weekOfMonth($date) {
     return intval(date("W", strtotime($date))) - intval(date("W", $firstOfMonth)) + 1;
 }
 
-function getMonthFromWeek($week_number) {
+function getMonthNumFromWeekYearNum($week_number) {
 	#give week of year and get month number
 	global $school_start_year;
+	if ($week_number>30) $school_start_year++;
 	$month_num=date("m",strtotime($school_start_year."-W".$week_number."-1"));
     return $month_num;
 }
@@ -24,8 +25,18 @@ function getMonthFromWeek($week_number) {
 function getMonthQuarterFromWeekNum($week_number) {
 	#give week of year and get month number
 	global $school_start_year;
-	$month_num=date("m",strtotime($school_start_year."-W".$week_number."-1"));
-    return $month_num;
+	if ($week_number>30) $school_start_year++;
+	$month_abbr_array=array("zero","Jan","Feb","Mar","Apr","May","Jun","Jul","Aug","Sep","Oct","Nov","Dec");
+	//$quarter_letter=array("zero","A","B","C","D","E","F");
+	$month_num=getMonthNumFromWeekYearNum($week_number);
+	//$week_number-weeknumber_of_first_day_of_this_month
+	$date_first_of_this_month=$school_start_year."-".$month_num."-01";
+	$firstOfMonth = strtotime(date('Y-m-01', strtotime($date_first_of_this_month)));
+	$weekOfMonth=intval($week_number - intval(date("W", $firstOfMonth)) + 1);
+	$month_quarter=chr(64 + $weekOfMonth);
+
+	$result_month_quarter=$month_abbr_array[intval($month_num)].$month_quarter;
+    return $result_month_quarter;
 }
 
 
@@ -37,12 +48,15 @@ echo"<br> week_of_year_sept10=$week_of_year_sept10   , week_of_month_sept10=$wee
 
 
 echo "<hr>";
-print date("m",strtotime($school_start_year."-W11-1"));
+//print date("m",strtotime($school_start_year."-W11-1"));
 echo "<hr>";
-echo getMonthFromWeek($week_of_year_sept10);
+//echo getMonthNumFromWeekYearNum($week_of_year_sept10);
+echo "<hr>";
+//$month_abbr_array=array("zero","Jan","Feb","Mar","Apr","May","Jun","Jul","Aug","Sep","Oct","Nov","Dec");
+//echo $month_abbr_array[03];
 echo "<hr>";
 echo "<hr>";
-echo "<hr>";
+echo getMonthQuarterFromWeekNum(45);
 echo "<hr>";
 
 
