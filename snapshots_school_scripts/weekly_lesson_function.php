@@ -31,11 +31,10 @@ function getMonthQuarterFromWeekNum($week_number) {
 	$month_num=getMonthNumFromWeekYearNum($week_number);
 	//$week_number-weeknumber_of_first_day_of_this_month
 	$date_first_of_this_month=$school_start_year."-".$month_num."-01";
-	$firstOfMonth = strtotime(date('Y-m-01', strtotime($date_first_of_this_month)));
-	$weekOfMonth=intval($week_number - intval(date("W", $firstOfMonth)) + 1);
-	$month_quarter=chr(64 + $weekOfMonth);
-
-	$result_month_quarter=$month_abbr_array[intval($month_num)].$month_quarter;
+	$firstOfMonth = strtotime(date('Y-m-01', strtotime($date_first_of_this_month)));//formats as date the 1st day of given month
+	$weekOfMonth=intval($week_number - intval(date("W", $firstOfMonth)) + 1);// 
+	$month_quarter=chr(64 + $weekOfMonth); //convert 1,2,3,4,5 to A,B,C,D,E
+	$result_month_quarter=$month_abbr_array[intval($month_num)].$month_quarter; // generates JanB, NovC etc...
     return $result_month_quarter;
 }
 
