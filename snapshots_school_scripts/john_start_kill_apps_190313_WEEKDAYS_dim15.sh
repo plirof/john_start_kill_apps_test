@@ -1,5 +1,7 @@
 # kill firefox (if you want )
 pkill -f firefox
+#clear cache
+rm -rf /mnt/home/downloads_linux/.cache/iron_flash/
 #ironstart https://studio.code.org/s/course1
 #ironstart https://studio.code.org/s/course1/stage/4/puzzle/10
 #ironstart https://studio.code.org/s/course1/stage/7/puzzle/10
