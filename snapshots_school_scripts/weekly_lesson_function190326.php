@@ -39,8 +39,6 @@ function getMonthQuarterFromWeekNum($week_number) {
 }
 
 
-
-
 $week_of_year_sept10= intval(date("W", strtotime($school_start_date)));
 $week_of_month_sept10=weekOfMonth($school_start_date);
 echo"<br> week_of_year_sept10=$week_of_year_sept10   , week_of_month_sept10=$week_of_month_sept10  ,  week_of_year_today=$week_of_year_today <hr>";
@@ -59,24 +57,10 @@ echo "<hr>";
 echo "<hr>";
 echo getMonthQuarterFromWeekNum(45);
 echo "<hr>";
-$first_week_sept10=37;
-$last_week_of_year=53;
-$counter=$first_week_sept10;
-for($i=0;$i<38;$i++)
-{
-echo '["'.sprintf("%02d", $counter).'"]="'.sprintf("%02d", $i).'" ';
-$counter++;
-if($counter>$last_week_of_year) $counter=01;
-
-}
-
-echo "<hr>";
 
 
 ?>
-<hr size=5>
-
-<hr size=5>
+<hr>
 #
 # We get a weeknumber poarameter AND class and we export script line
 #

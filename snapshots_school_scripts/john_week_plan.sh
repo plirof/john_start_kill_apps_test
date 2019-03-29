@@ -8,14 +8,29 @@
 #
 
 # https://www.tutorialkart.com/bash-shell-scripting/bash-array/
-declare -a WkOfYeartoWkOrderArray;
+#++++++++++++  
+declare -a WkOrderToWeekOfYearArray;
 #WkOfYeartoWkOrderArray=( ELEMENT_1 ELEMENT_2 ELEMENT_N ) 
 # years 2019-2020  10sept2019=Triti
-WkOfYeartoWkOrderArray=( 37 38 39 40 41 42 43 44 45 46 47 48 49 50 51 52 01 02 03 04 05 06 07 08 09 10 11 12 13 14 15 16 17 18 19 20 21 22 23 24 25) 
+WkOrderToWeekOfYearArray=( 37 38 39 40 41 42 43 44 45 46 47 48 49 50 51 52 01 02 03 04 05 06 07 08 09 10 11 12 13 14 15 16 17 18 19 20 21 22 23 24 25) 
 # years 2020-2021 (sept 10 is thuesday so we start from -actual - 2nd week)
 #WkOfYeartoWkOrderArray=( 37 38 39 40 41 42 43 44 45 46 47 48 49 50 51 52 01 02 03 04 05 06 07 08 09 10 11 12 13 14 15 16 17 18 19 20 21 22 23 24) 
+echo ${WkOrderToWeekOfYearArray[2]} 
 
-echo ${WkOfYeartoWkOrderArray[2]} 
+
+#declare -A WkOrderToWeekOfYearArray
+#declare -A WkOfYeartoWkOrderArray=( ["moo"]="cow" ["woof"]="dog")
+#echo "${WkOfYeartoWkOrderArray[moo]}"
+
+echo "WkOfYeartoWkOrderArray"
+#declare -A WkOrderToWeekOfYearArray
+declare -A WkOfYeartoWkOrderArray=( ["37"]="0" ["38"]="1" ["39"]="2" ["40"]="3" ["41"]="4" ["42"]="5" ["43"]="6" ["44"]="7" ["45"]="8" ["46"]="9" ["47"]="10" ["48"]="11" ["49"]="12" ["50"]="13" ["51"]="14" ["52"]="15" ["53"]="16" ["1"]="17" ["2"]="18" ["3"]="19" ["4"]="20" ["5"]="21" ["6"]="22" ["7"]="23" ["8"]="24" ["9"]="25" ["10"]="26" ["11"]="27" ["12"]="28" ["13"]="29" ["14"]="30" ["15"]="31" ["16"]="32" ["17"]="33" ["18"]="34" ["19"]="35" ["20"]="36" ["21"]="37" )
+echo "${WkOfYeartoWkOrderArray[42]}"
+
+#if [ "$WEEKNUMBER" == ${WkOrderToWeekOfYearArray[28]} ] || [ "$WEEKNUMBER" == '38' ]
+#then
+#leafpad "typing pt1 wl02 activated --- Week number: $WEEKNUMBER" &
+#fi
 
 
 #SeptC
