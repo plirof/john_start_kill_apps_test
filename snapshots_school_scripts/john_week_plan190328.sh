@@ -1,21 +1,5 @@
-# ver 190328
 # date +%V
 # WEEKNUMBER=17 #TEST
-#
-# To DO:
-# - weekorder->week Of year -> FebC etc
-#
-#
-
-# https://www.tutorialkart.com/bash-shell-scripting/bash-array/
-declare -a WkOfYeartoWkOrderArray;
-#WkOfYeartoWkOrderArray=( ELEMENT_1 ELEMENT_2 ELEMENT_N ) 
-# years 2019-2020  10sept2019=Triti
-WkOfYeartoWkOrderArray=( 37 38 39 40 41 42 43 44 45 46 47 48 49 50 51 52 01 02 03 04 05 06 07 08 09 10 11 12 13 14 15 16 17 18 19 20 21 22 23 24 25) 
-# years 2020-2021 (sept 10 is thuesday so we start from -actual - 2nd week)
-#WkOfYeartoWkOrderArray=( 37 38 39 40 41 42 43 44 45 46 47 48 49 50 51 52 01 02 03 04 05 06 07 08 09 10 11 12 13 14 15 16 17 18 19 20 21 22 23 24) 
-
-echo ${WkOfYeartoWkOrderArray[2]} 
 
 
 #SeptC
