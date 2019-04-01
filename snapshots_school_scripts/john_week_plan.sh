@@ -230,14 +230,14 @@ Week number: $WEEKNUMBER
 EOF
 leafpad /tmp/ΟΔΗΓΙΕΣ.txt &
 
-ironstartincognito ""$SWFlocal"pack_gfx2.html?timer3\&probeserver"
-ironstartincognito ""$SWFlocal"pack_gfx2.html?timer3\&probeserver"
-ironstartincognito ""$SWFlocal"pack_gfx2.html?timer3\&probeserver"
-ironstartincognito ""$SWFlocal"pack_gfx2.html?timer3\&probeserver"
-ironstartincognito ""$SWFlocal"pack_gfx2.html?timer3\&probeserver"
+ironstartincognito ""$SWFlocal"pack_gfx2.html?timer4\&probeserver"
+ironstartincognito ""$SWFlocal"pack_gfx2.html?timer4\&probeserver"
+ironstartincognito ""$SWFlocal"pack_gfx2.html?timer4\&probeserver"
+ironstartincognito ""$SWFlocal"pack_gfx2.html?timer4\&probeserver"
+ironstartincognito ""$SWFlocal"pack_gfx2.html?timer4\&probeserver"
 fi
 
-if [ "$WEEKNUMBER" == '15' ] || [ "$WEEKNUMBER" == '15' ]
+if [ "$WEEKNUMBER" == '20' ] || [ "$WEEKNUMBER" == '20' ]
 then
 #--------------------- this is for Full week-all classes events 
 leafpad "WEEK TANK ,pixbot    activated --- Week number: $WEEKNUMBER" &
@@ -248,18 +248,18 @@ ironstartincognito ""$GAMESEDU"Code-Commander-gr/index_dot_links.html "$GAMESEDU
 ironstartincognito ""$GAMESEDU"Code-Commander-gr/index_dot_links.html "$SWFlocal"pack_A02.html http://pixbot.patatakia.tk"
 fi
 
-if [ "$WEEKNUMBER" == '16' ] || [ "$WEEKNUMBER" == '16' ]
+if [ "$WEEKNUMBER" == '15' ] || [ "$WEEKNUMBER" == '15' ]
 then
 #--------------------- this is for Full week-all classes events 
 leafpad "WEEK easter ptA    activated --- Week number: $WEEKNUMBER" &
-ironstartincognito ""$SWFlocal"ramkidpedia_vol20_pasxa1.html "$SWFlocal"ramkid_giortes_pasxa_pt1.html"
-ironstartincognito ""$SWFlocal"ramkidpedia_vol20_pasxa1.html "$SWFlocal"ramkid_giortes_pasxa_pt1.html"
-ironstartincognito ""$SWFlocal"ramkidpedia_vol20_pasxa1.html "$SWFlocal"ramkid_giortes_pasxa_pt1.html"
-ironstartincognito ""$SWFlocal"ramkidpedia_vol20_pasxa1.html "$SWFlocal"ramkid_giortes_pasxa_pt1.html"
+ironstartincognito "http://192.168.1.200/ramkid/KidsPedia/kids_ePedia32cd/Volume20/index_kd_vol.html "$SWFlocal"ramkid_giortes_pasxa_pt1.html"
+ironstartincognito "http://192.168.1.200/ramkid/KidsPedia/kids_ePedia32cd/Volume20/index_kd_vol.html "$SWFlocal"ramkid_giortes_pasxa_pt1.html"
+ironstartincognito "http://192.168.1.200/ramkid/KidsPedia/kids_ePedia32cd/Volume20/index_kd_vol.html "$SWFlocal"ramkid_giortes_pasxa_pt1.html"
+ironstartincognito "http://192.168.1.200/ramkid/KidsPedia/kids_ePedia32cd/Volume20/index_kd_vol.html "$SWFlocal"ramkid_giortes_pasxa_pt1.html"
 ironstartincognito ""$SWFlocal"ramkidpedia_vol20_pasxa1.html "$SWFlocal"ramkid_giortes_pasxa_pt1.html"
 fi
 
-if [ "$WEEKNUMBER" == '17' ] || [ "$WEEKNUMBER" == '17' ]
+if [ "$WEEKNUMBER" == '16' ] || [ "$WEEKNUMBER" == '19' ]
 then
 #--------------------- this is for Full week-all classes events 
 leafpad "WEEK easter ptB    activated --- Week number: $WEEKNUMBER" &
