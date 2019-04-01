@@ -148,11 +148,11 @@ Week number: $WEEKNUMBER
 EOF
 leafpad /tmp/ΟΔΗΓΙΕΣ.txt &
 
-ironstartincognito ""$SWFlocal"pack_gfx2.html?timer3&probeserver"
-ironstartincognito ""$SWFlocal"pack_gfx2.html?timer3&probeserver"
-ironstartincognito ""$SWFlocal"pack_gfx2.html?timer3&probeserver"
-ironstartincognito ""$SWFlocal"pack_gfx2.html?timer3&probeserver"
-ironstartincognito ""$SWFlocal"pack_gfx2.html?timer3&probeserver"
+ironstartincognito ""$SWFlocal"pack_gfx2.html?timer3\&probeserver"
+ironstartincognito ""$SWFlocal"pack_gfx2.html?timer3\&probeserver"
+ironstartincognito ""$SWFlocal"pack_gfx2.html?timer3\&probeserver"
+ironstartincognito ""$SWFlocal"pack_gfx2.html?timer3\&probeserver"
+ironstartincognito ""$SWFlocal"pack_gfx2.html?timer3\&probeserver"
 fi
 
 if [ "$WEEKNUMBER" == '20' ] || [ "$WEEKNUMBER" == '20' ]
