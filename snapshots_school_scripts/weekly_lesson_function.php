@@ -1,5 +1,14 @@
 <?php
+/* 
+v190409a - GET first_wk=37&last_wk=53
+// example : weekly_lesson_fucktion.php?first_wk=37&last_wk=53    // first_wk=sept10 week number, last_wk last week of year (dec31)
 
+
+Changes: 
+
+- v190409a - GET first_wk=37&last_wk=53
+
+*/
 //$date= date('Y-m-d');
 $week_of_year_today= intval(date("W", strtotime(date('Y-m-d'))));
 //echo date('Y-m-01', strtotime($date));
@@ -58,20 +67,33 @@ echo "<hr>";
 echo "<hr>";
 echo "<hr>";
 echo getMonthQuarterFromWeekNum(45);
-echo "<hr>";
-$first_week_sept10=37;
-$last_week_of_year=53;
+echo "<hr> WeekType CONVERTArray:<BR>";
+
+$first_week_sept10=$_GET["first_wk"];
+$last_week_of_year=$_GET["last_wk" ];
+if(empty($first_week_sept10)) $first_week_sept10=37;
+if(empty($last_week_of_year)) $last_week_of_year=53;
+
+//if(empty($_GET["first_wk"])) $first_week_sept10=37;
+//if(empty($_GET["last_wk" ])) $last_week_of_year=53;
+$week_year2week_sch=array();
+$week_sch2week_year=array();
+
 $counter=$first_week_sept10;
 for($i=0;$i<38;$i++)
 {
-echo '["'.sprintf("%02d", $counter).'"]="'.sprintf("%02d", $i).'" ';
-$counter++;
-if($counter>$last_week_of_year) $counter=01;
-
+	echo '["'.sprintf("%02d", $counter).'"]="'.sprintf("%02d", $i).'" ';
+	$week_year2week_sch[sprintf("%02d", $counter)]=sprintf("%02d", $i);
+	$week_sch2week_year[sprintf("%02d", $i)]=sprintf("%02d", $counter);
+	$counter++;
+	if($counter>$last_week_of_year) $counter=01;
 }
-
 echo "<hr>";
 
+echo "<hr>week_year2week_sch :<br>";
+print_r($week_year2week_sch);
+echo "<hr>week_sch2week_year :<br>";
+print_r($week_sch2week_year);
 
 ?>
 <hr size=5>
