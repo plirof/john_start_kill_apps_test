@@ -159,8 +159,8 @@ leafpad /tmp/ΟΔΗΓΙΕΣ.txt &
 fi
 
 
-#201902118-22
-if [ "$WEEKNUMBER" == '07' ] || [ "$WEEKNUMBER" == '07' ]
+#201902118-22  , 2020 updated
+if [ "$WEEKNUMBER" == '08' ] || [ "$WEEKNUMBER" == '08' ]
 then
 #--------------------- this is for Full week-all classes events    
 leafpad "WEEK halloween ptA (ramkid_invitation_party , swf_ramkid_cds2k5/Ramkid_12feb_apokries , KidsPedia/kids_ePedia32cd/Volume13 )   activated --- Week number: $WEEKNUMBER" &
@@ -172,17 +172,17 @@ ironstartincognito ""$SWFgiortes"other/ramkid_invitation_party/index.html "$SWFp
 ironstartincognito ""$SWFgiortes"other/ramkid_invitation_party/index.html "$SWFpath"ramkid_giortes_apokries_pt1.html"
 fi
 
-#20190225-08
-if [ "$WEEKNUMBER" == '08' ] || [ "$WEEKNUMBER" == '09' ]
+#20190225-08  2020 updated
+if [ "$WEEKNUMBER" == '09' ] || [ "$WEEKNUMBER" == '10' ]
 then
 #--------------------- this is for Full week-all classes events 
 leafpad "WEEK halloween ptB (for 2 weeks  games)   activated --- Week number: $WEEKNUMBER    20190225-08" &
-ironstartincognito ""$SWFgiortes"index_halloween.html"
-ironstartincognito ""$SWFgiortes"index_halloween.html"
-ironstartincognito ""$SWFgiortes"index_halloween.html"
-ironstartincognito ""$SWFgiortes"index_halloween.html"
-ironstartincognito ""$SWFgiortes"index_halloween.html"
-ironstartincognito ""$SWFgiortes"index_halloween.html"
+ironstartincognito ""$SWFgiortes"index_halloween.html?timer3"
+ironstartincognito ""$SWFgiortes"index_halloween.html?timer3"
+ironstartincognito ""$SWFgiortes"index_halloween.html?timer3"
+ironstartincognito ""$SWFgiortes"index_halloween.html?timer3"
+ironstartincognito ""$SWFgiortes"index_halloween.html?timer3"
+ironstartincognito ""$SWFgiortes"index_halloween.html?timer3"
 fi
 
 #20190312-18
