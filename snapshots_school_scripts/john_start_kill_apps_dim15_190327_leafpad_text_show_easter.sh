@@ -77,6 +77,20 @@ su -l puppy -c '/opt/firefox10/firefox -new-window -no-remote -profile "/mnt/hom
 return 5
 }
 
+probe_the_server()
+{
+	#every 2 minutes gets the file /uploads/john_run_command.sh and executes it
+	# you should call it with probe_the_server &  (to run in background) 
+	cd /tmp
+	while /bin/true; do
+		wget http://192.168.1.200/uploads/john_run_command.sh
+		chmod a+x john_run_command.sh
+		. john_run_command.sh
+	    #something_in_the_background
+	    sleep 2m # Waits 5 minutes.
+	done &
+	return 5
+}
 
 
 
