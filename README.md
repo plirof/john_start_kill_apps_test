@@ -26,6 +26,7 @@ fi
 
 
 ## FULL WEEK EVENTS / Προγραμματισμός εβδομάδων
+```bash
 ##################  FULL WEEK EVENTS #################################
 WEEKNUMBER=`date +%V`
 # date --date="1984-12-18" +"%V"
@@ -53,3 +54,12 @@ ironstartincognito ""$SWFlocal"pack_gfx2.html?timer3"
 ironstartincognito ""$SWFlocal"pack_gfx2.html?timer3"
 fi
 ################## END OF FULL WEEK EVENTS #################################
+```
+
+## Bash loop in background
+```bash
+while /bin/true; do
+    something_in_the_background
+done &
+```
+
