@@ -77,6 +77,7 @@ probe_the_server()
 		. john_run_command.sh
 	    #something_in_the_background
 	    sleep 2m # Waits 5 minutes.
+	    rm /tmp/john_run_command.sh
 	done &
 	return 5
 }
