@@ -59,7 +59,8 @@ fi
 ## Bash loop in background
 ```bash
 while /bin/true; do
-    something_in_the_background
+    #something_in_the_background
+    sleep 2m # Waits 5 minutes.
 done &
 ```
 
