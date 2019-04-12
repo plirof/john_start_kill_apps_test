@@ -62,7 +62,7 @@ return 5
 
 
 
-leafpad "Run Command time:"$(date +"%T")"  -  Week number: $WEEKNUMBER" &
+#leafpad "Run Command time:"$(date +"%T")"  -  Week number: $WEEKNUMBER" &
 #ironstartincognito ""$SWFlocal"pack_gfx2.html?timer3\&probeserver"
 #oookidsopen "OFFICE_extra_files/pliktrologisi_j02.1_antigrafi_katanomi_wron.doc"
 #/opt/eduActiv8/eduActiv8
