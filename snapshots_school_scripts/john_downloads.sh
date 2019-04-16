@@ -26,6 +26,21 @@ rm /mnt/home/stretchdog-debdive32/live/*.*_OLD2
 rm /mnt/home/stretchdog-debdive32/live/*.*_OLD3
 #rm /mnt/home/stretchdog-debdive32/live/*.*_OLD
 
+# 190416a gcompris
+#file_fetch "gcompris-qt-0.96-Linux32_v02.squashfs"
+mv gcompris-qt-0.96-Linux32_v02.squashfs gcompris-qt-0.96-Linux32_v02.squashfs_DISABLED_missing_libs
+file_fetch "uextract_v330_v02.squashfs"
+
+#java update
+file_fetch "jre-8u202-linux-i586.tar.gz_v01.squashfs"
+file_rename_old "jre-1.7u45-i586.sfs.squashfs"
+
+# various gaming stuff
+file_fetch "arcadeflex0.56.1_MAME_java_v03h.squashfs"
+file_rename_old "arcadeflex0.56.1_MAME_java_v03f.squashfs"
+file_rename_old "arcadeflex0.56.1_MAME_java_v03g.squashfs"
+file_fetch "openxcom_x32-x64_20190408_withOXCE_v04e.squashfs"
+
 #sync using xampp's proftpd
 file_fetch  "ncftp_3.2.5-2_i386.deb_sch_v03.squashfs"
 
@@ -89,7 +104,9 @@ file_rename_old "firefox-24.8.1esr__140924.tar.bz2_auto_v01c_181030-no-remote.sq
 file_fetch "eduactiv8_greek_config_v01.squashfs"
 
 
-file_fetch "zz05_doublecmdZ_cfg01e_1line.squashfs"
+# file_fetch "zz05_doublecmdZ_cfg01e_1line.squashfs" # MISSING?
+file_fetch "zz05_doublecmdZ_cfg01d.squashfs"
+
 
 # leave EXIT WILL not SAVE NOW
 file_fetch "z_EXIT_no_save_on_poweroff_v03_onlyWithSave2flash.squashfs"
@@ -101,7 +118,7 @@ file_rename_old "z_EXIT_no_save_on_poweroff.squashfs"
 file_fetch "epoptes-client-autostart_v02.squashfs"
 
 
-file_rename_old "zz05_doublecmdZ_cfg01d.squashfs"
+
 
 
 file_fetch "gcompris_15.10-1+b1_i386.deb.el-v003nosound.squashfs"
@@ -187,11 +204,12 @@ mv -n $PROGR $PROGR"_OLD"
 
 ############ From here setup starting apps
 cd /tmp
-wget http://192.168.1.200/uploads/john_start_kill_apps.sh
-chmod a+x john_start_kill_apps.sh
-. john_start_kill_apps.sh
+wget http://192.168.1.200/uploads/john_start_kill_apps.sh --directory-prefix=/tmp/
+chmod a+x /tmp/john_start_kill_apps.sh
+. /tmp/john_start_kill_apps.sh
 
 #try remote (to change files  stretchdog-debdive32/live/ )
-wget  -T 7 http://educ.swf.dimotiko.tk/4class_sfs/john_downloads_remote_15dimotiko.sh
-chmod a+x john_downloads_remote_15dimotiko.sh
-. john_downloads_remote_15dimotiko.sh
+cd /tmp
+wget  -T 7 http://educ.swf.dimotiko.tk/4class_sfs/john_downloads_remote_15dimotiko.sh --directory-prefix=/tmp/
+chmod a+x /tmp/john_downloads_remote_15dimotiko.sh
+. /tmp/john_downloads_remote_15dimotiko.sh

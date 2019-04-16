@@ -12,7 +12,7 @@ SWFlocal="http://192.168.1.200/swf/"
 SWFpath="http://192.168.1.200/swf/"
 SWFgiortes="http://192.168.1.200/swf/swf_giortes/"
 GAMESEDU="http://192.168.1.200/gamesedu/"
-
+UPLOADS="http://192.168.1.200/uploads/"
 
 OOOKIDS="ooo4kids1.3 -n "
 OOOKIDSpathprefix="/opt/lampp/htdocs/askiseis_office/"
@@ -28,9 +28,9 @@ WEEKNUMBER=`date +%V`
 load_extra_apps(){
 # used to activate events (eg pasxa, halloween, etc)	
 cd /tmp
-wget http://192.168.1.200/uploads/john_extra_apps.sh
-chmod a+x john_extra_apps.sh
-. john_extra_apps.sh
+wget http://192.168.1.200/uploads/john_extra_apps.sh --directory-prefix=/tmp/
+chmod a+x /tmp/john_extra_apps.sh
+. /tmp/john_extra_apps.sh
 
 }
 

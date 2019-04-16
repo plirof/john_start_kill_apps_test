@@ -4,6 +4,8 @@ pkill -f firefox
 #ironstart https://studio.code.org/s/course1/stage/4/puzzle/10
 #ironstart https://studio.code.org/s/course1/stage/7/puzzle/10
 
+
+UPLOADS="http://192.168.1.200/uploads/"
 CODEorg=https://studio.code.org/s/course1/stage/
 LANDINGpages="http://192.168.1.200/uploads/landing_pages/"
 SWFlocal="http://192.168.1.200/swf/"

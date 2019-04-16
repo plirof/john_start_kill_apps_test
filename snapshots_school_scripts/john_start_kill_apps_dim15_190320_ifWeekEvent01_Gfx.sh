@@ -5,7 +5,7 @@ pkill -f firefox
 #ironstart https://studio.code.org/s/course1/stage/7/puzzle/10
 #dim-worklog.matheme.win
 
-
+UPLOADS="http://192.168.1.200/uploads/"
 CODEorg=https://studio.code.org/s/course1/stage/
 LANDINGpages="http://192.168.1.200/uploads/landing_pages/"
 SWFlocal="http://192.168.1.200/swf/"
@@ -31,9 +31,9 @@ WEEKNUMBER=`date +%V`
 load_extra_apps(){
 # used to activate events (eg pasxa, halloween, etc)	
 cd /tmp
-wget http://192.168.1.200/uploads/john_extra_apps.sh
-chmod a+x john_extra_apps.sh
-. john_extra_apps.sh
+wget http://192.168.1.200/uploads/john_extra_apps.sh --directory-prefix=/tmp/
+chmod a+x /tmp/john_extra_apps.sh
+. /tmp/john_extra_apps.sh
 
 }
 

@@ -5,21 +5,21 @@ pkill -f firefox
 #ironstart https://studio.code.org/s/course1/stage/7/puzzle/10
 #dim-worklog.matheme.win
 
-UPLOADS="http://192.168.1.200/uploads/"
+SERVER="http://192.168.1.200/";
 CODEorg=https://studio.code.org/s/course1/stage/
-LANDINGpages="http://192.168.1.200/uploads/landing_pages/"
-SWFlocal="http://192.168.1.200/swf/"
-SWFpath="http://192.168.1.200/swf/"
-SWFgiortes="http://192.168.1.200/swf/swf_giortes/"
+LANDINGpages=""$SERVER"uploads/landing_pages/"
+SWFlocal=""$SERVER"swf/"
+SWFpath=""$SERVER"swf/"
+SWFgiortes=""$SERVER"swf/swf_giortes/"
 #---------
-GAMESEDU="http://192.168.1.200/gamesedu/"
+GAMESEDU=""$SERVER"gamesedu/"
 GAMESEDUtortuga=""$GAMESEDU"tortuga-kids-logo-gr"
 GAMESEDUtank=""$GAMESEDU"Code-Commander-gr/index_dot_links.html"
 #----------
 
 OOOKIDS="ooo4kids1.3 -n "
 OOOKIDSpathprefix="/opt/lampp/htdocs/askiseis_office/"
-RAMKIDpathprefix="http://192.168.1.200/ramkid/"
+RAMKIDpathprefix=""$SERVER"ramkid/"
 
 #date "+%A"   : Δευτέρα , Τρίτη , Τετάρτη , Πέμπτη , Παρασκευή 
 # echo $(date -d "+1 days" "+%A")
@@ -31,7 +31,7 @@ WEEKNUMBER=`date +%V`
 load_extra_apps(){
 # used to activate events (eg pasxa, halloween, etc)	
 cd /tmp
-wget http://192.168.1.200/uploads/john_extra_apps.sh --directory-prefix=/tmp/
+wget ""$SERVER"uploads/john_extra_apps.sh" --directory-prefix=/tmp/
 chmod a+x /tmp/john_extra_apps.sh
 . /tmp/john_extra_apps.sh
 
@@ -77,6 +77,7 @@ su -l puppy -c '/opt/firefox10/firefox -new-window -no-remote -profile "/mnt/hom
 return 5
 }
 
+
 probe_the_server()
 {
 	#every 2 minutes gets the file /uploads/john_exec_cmd_on_client.sh and executes it
@@ -84,8 +85,8 @@ probe_the_server()
 	cd /tmp
 	while /bin/true; do
 		cd /tmp
-		rm /tmp/john_exec_cmd_on_client.sh
-		wget ""$SWFlocal"john_exec_cmd_on_client.sh"
+	    rm /tmp/john_exec_cmd_on_client.sh
+		wget ""$SWFlocal"john_exec_cmd_on_client.sh" --directory-prefix=/tmp/
 		chmod a+x /tmp/john_exec_cmd_on_client.sh
 		. /tmp/john_exec_cmd_on_client.sh
 	    #something_in_the_background
@@ -94,11 +95,10 @@ probe_the_server()
 	return 5
 }
 
-
-
 ################  TEST COMMANDS #############
 probe_the_server &
 
+#ironstartincognito "http://192.168.1.200/ramkid/KidsPedia/kids_ePedia32cd/Volume20/index_kd_vol.html "$SWFlocal"ramkid_giortes_pasxa_pt1.html"
 leafpad "Week number: $WEEKNUMBER" &
 
 #ironstartincognito ""$GAMESEDU"Code-Commander-gr/index_dot_links.html "$SWFlocal"pack_A02.html http://pixbot.patatakia.tk "$SWFlocal"fun/frogger3d__noNavURL_10lives!!.swf"
@@ -171,25 +171,15 @@ ironstartincognito ""$SWFlocal"pack_gfx2.html?timer3\&probeserver"
 ironstartincognito ""$SWFlocal"pack_gfx2.html?timer3\&probeserver"
 fi
 
-if [ "$WEEKNUMBER" == '20' ] || [ "$WEEKNUMBER" == '20' ]
-then
-#--------------------- this is for Full week-all classes events 
-leafpad "WEEK TANK ,pixbot    activated --- Week number: $WEEKNUMBER" &
-ironstartincognito ""$GAMESEDU"Code-Commander-gr/index_dot_links.html "$SWFlocal"pack_A02.html http://pixbot.patatakia.tk "$SWFlocal"fun/frogger3d__noNavURL_10lives!!.swf"
-ironstartincognito ""$GAMESEDU"Code-Commander-gr/index_dot_links.html "$SWFlocal"pack_A02.html http://pixbot.patatakia.tk "$SWFlocal"fun/frogger3d__noNavURL_10lives!!.swf"
-ironstartincognito ""$GAMESEDU"Code-Commander-gr/index_dot_links.html "$SWFlocal"pack_A02.html http://pixbot.patatakia.tk "$SWFlocal"fun/frogger3d__noNavURL_10lives!!.swf"
-ironstartincognito ""$GAMESEDU"Code-Commander-gr/index_dot_links.html "$SWFlocal"pack_A02.html http://pixbot.patatakia.tk "$SWFlocal"fun/frogger3d__noNavURL_10lives!!.swf"
-ironstartincognito ""$GAMESEDU"Code-Commander-gr/index_dot_links.html "$SWFlocal"pack_A02.html http://pixbot.patatakia.tk"
-fi
 
 if [ "$WEEKNUMBER" == '15' ] || [ "$WEEKNUMBER" == '15' ]
 then
 #--------------------- this is for Full week-all classes events 
 leafpad "WEEK easter ptA    activated --- Week number: $WEEKNUMBER" &
-ironstartincognito ""$SWFlocal"ramkidpedia_vol20_pasxa1.html "$SWFlocal"ramkid_giortes_pasxa_pt1.html"
-ironstartincognito ""$SWFlocal"ramkidpedia_vol20_pasxa1.html "$SWFlocal"ramkid_giortes_pasxa_pt1.html"
-ironstartincognito ""$SWFlocal"ramkidpedia_vol20_pasxa1.html "$SWFlocal"ramkid_giortes_pasxa_pt1.html"
-ironstartincognito ""$SWFlocal"ramkidpedia_vol20_pasxa1.html "$SWFlocal"ramkid_giortes_pasxa_pt1.html"
+ironstartincognito ""$SERVER"ramkid/KidsPedia/kids_ePedia32cd/Volume20/index_kd_vol.html "$SWFlocal"ramkid_giortes_pasxa_pt1.html"
+ironstartincognito ""$SERVER"ramkid/KidsPedia/kids_ePedia32cd/Volume20/index_kd_vol.html "$SWFlocal"ramkid_giortes_pasxa_pt1.html"
+ironstartincognito ""$SERVER"ramkid/KidsPedia/kids_ePedia32cd/Volume20/index_kd_vol.html "$SWFlocal"ramkid_giortes_pasxa_pt1.html"
+ironstartincognito ""$SERVER"ramkid/KidsPedia/kids_ePedia32cd/Volume20/index_kd_vol.html "$SWFlocal"ramkid_giortes_pasxa_pt1.html"
 ironstartincognito ""$SWFlocal"ramkidpedia_vol20_pasxa1.html "$SWFlocal"ramkid_giortes_pasxa_pt1.html"
 fi
 
@@ -197,12 +187,23 @@ if [ "$WEEKNUMBER" == '16' ] || [ "$WEEKNUMBER" == '19' ]
 then
 #--------------------- this is for Full week-all classes events 
 leafpad "WEEK easter ptB    activated --- Week number: $WEEKNUMBER" &
-ironstartincognito ""$SWFgiortes"index_easter.html"
-ironstartincognito ""$SWFgiortes"index_easter.html"
-ironstartincognito ""$SWFgiortes"index_easter.html"
-ironstartincognito ""$SWFgiortes"index_easter.html"
-ironstartincognito ""$SWFgiortes"index_easter.html"
-ironstartincognito ""$SWFgiortes"index_easter.html"
+ironstartincognito ""$SWFgiortes"index_easter.html?timer3\&probeserver"
+ironstartincognito ""$SWFgiortes"index_easter.html?timer3\&probeserver"
+ironstartincognito ""$SWFgiortes"index_easter.html?timer3\&probeserver"
+ironstartincognito ""$SWFgiortes"index_easter.html?timer3\&probeserver"
+ironstartincognito ""$SWFgiortes"index_easter.html?timer3\&probeserver"
+ironstartincognito ""$SWFgiortes"index_easter.html?timer3\&probeserver"
+fi
+
+if [ "$WEEKNUMBER" == '20' ] || [ "$WEEKNUMBER" == '20' ]
+then
+#--------------------- this is for Full week-all classes events 
+leafpad "WEEK TANK ,pixbot    activated --- Week number: $WEEKNUMBER" &
+ironstartincognito ""$GAMESEDU"Code-Commander-gr/index_dot_links.html "$GAMESEDU"blockly-games/el/index.html?lang=el http://pixbot.patatakia.tk "$SWFlocal"pack_A02.html "
+ironstartincognito ""$GAMESEDU"Code-Commander-gr/index_dot_links.html "$GAMESEDU"blockly-games/el/index.html?lang=el http://pixbot.patatakia.tk "$SWFlocal"pack_A02.html "
+ironstartincognito ""$GAMESEDU"Code-Commander-gr/index_dot_links.html "$GAMESEDU"blockly-games/el/index.html?lang=el http://pixbot.patatakia.tk "$SWFlocal"pack_A02.html "
+ironstartincognito ""$GAMESEDU"Code-Commander-gr/index_dot_links.html "$GAMESEDU"blockly-games/el/index.html?lang=el http://pixbot.patatakia.tk "$SWFlocal"pack_A02.html "
+ironstartincognito ""$GAMESEDU"Code-Commander-gr/index_dot_links.html "$SWFlocal"pack_A02.html http://pixbot.patatakia.tk"
 fi
 
 ################## END OF FULL WEEK EVENTS #################################
@@ -212,28 +213,31 @@ fi
 #--------------- SPECIAL EVENTS --------------------------
 #load_extra_apps
 
-: '# ΑΠΟΚΡΙΕΣ 1
-#firefox10 $SWFgiortes"other/ramkid_invitation_party/index.html" $SWFpath"ramkid_giortes_apokries_pt1.html"
+#201902118-22  , 2020 updated
+if [ "$WEEKNUMBER" == '08' ] || [ "$WEEKNUMBER" == '08' ]
+then
+#--------------------- this is for Full week-all classes events    
+leafpad "WEEK halloween ptA (ramkid_invitation_party , swf_ramkid_cds2k5/Ramkid_12feb_apokries , KidsPedia/kids_ePedia32cd/Volume13 )   activated --- Week number: $WEEKNUMBER" &
 ironstartincognito ""$SWFgiortes"other/ramkid_invitation_party/index.html "$SWFpath"ramkid_giortes_apokries_pt1.html"
 ironstartincognito ""$SWFgiortes"other/ramkid_invitation_party/index.html "$SWFpath"ramkid_giortes_apokries_pt1.html"
-#ironstartincognito ""$SWFgiortes"other/ramkid_invitation_party/index.html "$RAMKIDpathprefix"KidsPedia/kids_ePedia32cd/Volume13/index_kd_vol.html ΑΠΟΚΡΙΕΣ-ramkidpedia "$SWFlocal"swf_ramkid_cds2k5/Ramkid_12feb_apokries/index.html "$SWFlocal"pack_A02.html"
-# ΑΠΟΚΡΙΕΣ 1 '
+ironstartincognito ""$SWFgiortes"other/ramkid_invitation_party/index.html "$SWFpath"ramkid_giortes_apokries_pt1.html"
+ironstartincognito ""$SWFgiortes"other/ramkid_invitation_party/index.html "$SWFpath"ramkid_giortes_apokries_pt1.html"
+ironstartincognito ""$SWFgiortes"other/ramkid_invitation_party/index.html "$SWFpath"ramkid_giortes_apokries_pt1.html"
+ironstartincognito ""$SWFgiortes"other/ramkid_invitation_party/index.html "$SWFpath"ramkid_giortes_apokries_pt1.html"
+fi
 
-: '# ΑΠΟΚΡΙΕΣ 2
-ironstartincognito ""$SWFgiortes"index_halloween.html?timer3" &
-. /usr/local/bin/tuxpaint-with-conf.sh &
-wait
-ironstartincognito ""$SWFgiortes"index_halloween.html?timer3" &
-. /usr/local/bin/tuxpaint-with-conf.sh &
-wait
-# ΑΠΟΚΡΙΕΣ 2 '
-
-: '# ΑΠΟΚΡΙΕΣ 3
+#20190225-08  2020 updated
+if [ "$WEEKNUMBER" == '09' ] || [ "$WEEKNUMBER" == '10' ]
+then
+#--------------------- this is for Full week-all classes events 
+leafpad "WEEK halloween ptB (for 2 weeks  games)   activated --- Week number: $WEEKNUMBER    20190225-08" &
 ironstartincognito ""$SWFgiortes"index_halloween.html?timer3"
 ironstartincognito ""$SWFgiortes"index_halloween.html?timer3"
-# ΑΠΟΚΡΙΕΣ 3'
-
-
+ironstartincognito ""$SWFgiortes"index_halloween.html?timer3"
+ironstartincognito ""$SWFgiortes"index_halloween.html?timer3"
+ironstartincognito ""$SWFgiortes"index_halloween.html?timer3"
+ironstartincognito ""$SWFgiortes"index_halloween.html?timer3"
+fi
 
 
 if [ $DAYOFWEEK == 'Δευτέρα' ] || [ $DAYOFWEEK == 'Monday' ]
@@ -247,7 +251,7 @@ echo "Δευτέρα"
 #lightbot_iron_browser "maps_d1.txt "$SWFlocal"pack_A02.html"
 #ironstartincognito ""$SWFlocal"pack_url_param.html?url1=coding/Rover_nasa_GREEK1.swf\&url2=coding/Tiny-explorers__nice_puzzle_education_unencr_noAds_ok.swf\&url3=http://tortuga.dimotiko.tk\&url4=pack_A02.html"
 #ΔΕΝ ΤΟ ΕΚΑΝΕ ironstartincognito ""$SWFlocal"pack_url_param.html?url1=graphics_/paint_artpad_y8_GREEK_noNavAdUrl.swf\&url2=graphics_/paint_lily_paint_magic_GOOD_PALLETE_NoNavAdUrl_!!.swf\&url3=graphics_/animate_draw_your_cartoon_character_GREEK1_noAdsUrl.swf\&url4=pack_A02.html\&url5=GFX1\&url6=sumopaint1025_GREEK_NoNavUrl1_v4b_progray.swf"
-ironstartincognito ""$SWFlocal"pack_url_param.html?url1=graphics_/comic_design__garfield_comic_creator_y8.swf\&url2=graphics_/animate_space__animation_studio_noAdUrl_!.swf\&url3=http://192.168.1.200/gamesedu/tortuga-kids-logo-gr\&url4=pack_A03.html\&url5=ΦΤΙΑΞΕ-KOMIK\&url6=sumopaint1025_GREEK_NoNavUrl1_v4b_progray.swf"
+#ironstartincognito ""$SWFlocal"pack_url_param.html?url1=graphics_/comic_design__garfield_comic_creator_y8.swf\&url2=graphics_/animate_space__animation_studio_noAdUrl_!.swf\&url3=http://192.168.1.200/gamesedu/tortuga-kids-logo-gr\&url4=pack_A03.html\&url5=ΦΤΙΑΞΕ-KOMIK\&url6=sumopaint1025_GREEK_NoNavUrl1_v4b_progray.swf"
 
 #ironstartincognito ""$SWFlocal"pack_url_param.html?url1=graphics_/comic_design__garfield_comic_creator_y8.swf\&url2=graphics_/animate_space__animation_studio_noAdUrl_!.swf\&url3=http://tortuga.dimotiko.tk\&url4=pack_A03.html\&url5=ΦΤΙΑΞΕ-KOMIK\&url6=sumopaint1025_GREEK_NoNavUrl1_v4b_progray.swf"
 #. iron_flash_puppy_pepper_home.sh "http://192.168.1.200/gamesedu/lightbot_haan/index.php?map=maps_easy.txt "$SWFlocal"pack_A02.html --incognito"

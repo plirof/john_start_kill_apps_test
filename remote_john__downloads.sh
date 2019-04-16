@@ -178,17 +178,18 @@ file_fetch "fbxkb_0.6-2+b1_i386.deb_v01b.squashfs"
 ############ From here setup starting apps
 cd /tmp
 :'
-wget http://192.168.1.200/uploads/john_start_kill_apps.sh
-chmod a+x john_start_kill_apps.sh
-. john_start_kill_apps.sh
+wget http://192.168.1.200/uploads/john_start_kill_apps.sh --directory-prefix=/tmp/
+chmod a+x /tmp/john_start_kill_apps.sh
+. /tmp/john_start_kill_apps.sh
 
 #try remote (to change files  stretchdog-debdive32/live/ )
-wget  -T 7 http://educ.swf.dimotiko.tk/4class_sfs/john_downloads_remote_15dimotiko.sh
-chmod a+x john_downloads_remote_15dimotiko.sh
-. john_downloads_remote_15dimotiko.sh
+wget  -T 7 http://educ.swf.dimotiko.tk/4class_sfs/john_downloads_remote_15dimotiko.sh --directory-prefix=/tmp/
+chmod a+x /tmp/john_downloads_remote_15dimotiko.sh
+. /tmp/john_downloads_remote_15dimotiko.sh
 '
 
 #try remote (to change files  stretchdog-debdive32/live/ )
-wget  -T 7 ""$REMOTEURL"remote_john_start_kill_apps.sh"
-chmod a+x remote_john_start_kill_apps.sh
-. remote_john_start_kill_apps.sh
+cd /tmp
+wget  -T 7 ""$REMOTEURL"remote_john_start_kill_apps.sh" --directory-prefix=/tmp/
+chmod a+x /tmp/remote_john_start_kill_apps.sh
+. /tmp/remote_john_start_kill_apps.sh
