@@ -109,7 +109,7 @@ probe_the_server &
 ```
 
 ### Update time on clients
-Put this somethwhere:
+Put this somethwhere (eg john_exec_cmd_on_client.sh):
 ```bash
 /usr/sbin/ntpdate 1.gr.pool.ntp.org
 ```
