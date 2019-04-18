@@ -6,22 +6,41 @@ Bash Scripts
 
 # Examples
 
-## Weekday if
+### Weekday if
 
-WEEKNUMBER=`date +%V`
+
+```bash
 # date --date="1984-12-18" +"%V"
 
-if [ "$WEEKNUMBER" == '11' ]
+#date "+%A"   : Δευτέρα , Τρίτη , Τετάρτη , Πέμπτη , Παρασκευή 
+# echo $(date -d "+1 days" "+%A")
+DAYOFWEEK=$(date "+%A")
+
+if [ $DAYOFWEEK == 'Δευτέρα' ] || [ $DAYOFWEEK == 'Monday' ]
 then
-#---------------------------- Γ1
-leafpad "WEEK11 activated --- Week number: $WEEKNUMBER"
-#---------------------------- Γ2
-
-#---------------------------- ΣΤ2
-
-#---------------------------- ΣΤ1
+echo "Δευτέρα"
 fi
 
+if [ $DAYOFWEEK == 'Τρίτη' ] || [ $DAYOFWEEK == 'Tuesday' ]
+then
+echo "Τρίτη"
+fi
+
+if [ $DAYOFWEEK == 'Τετάρτη' ] || [ $DAYOFWEEK == 'Wednesday' ]
+then
+echo "Τετάρτη"
+fi
+
+if [ $DAYOFWEEK == 'Πέμπτη' ] || [ $DAYOFWEEK == 'Thursday' ]
+then
+echo "Πέμπτη"
+fi
+
+if [ $DAYOFWEEK == 'Παρασκευή' ] || [ $DAYOFWEEK == 'Friday' ]
+then
+echo "Παρασκευή"
+fi
+```
 
 
 
@@ -66,6 +85,7 @@ done &
 
 ### sample implementation:
 ```bash
+# NOTE: Do NOT use this to download BIG files (it might iterate every 2minutes) !!!
 probe_the_server()
 {
 	#every 2 minutes gets the file /swf/john_exec_cmd_on_client.sh and executes it
@@ -88,9 +108,15 @@ probe_the_server &
 
 ```
 
-##
+### Update time on clients
+Put this somethwhere:
+```bash
+/usr/sbin/ntpdate 1.gr.pool.ntp.org
+```
 
-##
+###
+
+###
 
 ##
 

@@ -60,7 +60,8 @@ return 5
 #pkill -f firefox
 #pkill -f chrome
 
-
+#update time from Greek NTP servers
+#/usr/sbin/ntpdate 1.gr.pool.ntp.org
 
 #leafpad "Run Command time:"$(date +"%T")"  -  Week number: $WEEKNUMBER" &
 #ironstartincognito ""$SWFlocal"pack_gfx2.html?timer3\&probeserver"
