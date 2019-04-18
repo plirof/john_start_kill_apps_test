@@ -1,5 +1,8 @@
 # kill firefox (if you want )
 pkill -f firefox
+#clear cache
+#rm -rf /mnt/home/downloads_linux/.cache/iron_flash/
+
 #ironstart https://studio.code.org/s/course1
 #ironstart https://studio.code.org/s/course1/stage/4/puzzle/10
 #ironstart https://studio.code.org/s/course1/stage/7/puzzle/10
@@ -66,7 +69,7 @@ lightbot_iron_browser() {
 # NOTE : ONLY foir custom MAPS. for normal just run : . iron_flash_puppy_pepper_home.sh "--incognito http://192.168.1.200/gamesedu/lightbot_haan/
 # eg  lightbot_iron_browser "maps_easy.txt "$SWFlocal"pack_A02.html"
 #. iron_flash_puppy_pepper_home.sh "--incognito http://192.168.1.200/gamesedu/lightbot_haan/index.php?map=""$1"
-. iron_flash_puppy_pepper_home.sh "--incognito http://192.168.1.200/gamesedu/lightbot_haan/index.html?map=""$1"" NOTE-uses_PHP-must_enable_XAMPP"
+. iron_flash_puppy_pepper_home.sh "--incognito http://192.168.1.200/gamesedu/lightbot_haan/index.html?map=""$1"" "
 return 5	
 }
 
@@ -77,6 +80,22 @@ su -l puppy -c '/opt/firefox10/firefox -new-window -no-remote -profile "/mnt/hom
 return 5
 }
 
+firefox24() {
+pkill -f firefox
+pkill -f firefox24
+#. firefox24-puppy-home.sh "$1"
+#eg firefox24 $SWFgiortes"other/ramkid_invitation_party/index.html" $SWFpath"ramkid_giortes_apokries_pt1.html"
+#su -l puppy -c '/opt/firefox24/firefox -private -new-window -no-remote -profile "/mnt/home/downloads_linux/.data/firefox24" -new-tab -url "'$1'" -new-tab -url "'$2'"  -new-tab -url "'$3'"  -new-tab -url "'$4'"'
+firefox24-puppy-home-many-tabs.sh $1 $2 $3 $4
+return 5
+}  
+
+create_download_linux_home_folders(){
+xhost +local:puppy
+mkdir -p /mnt/home/downloads_linux/.data/$1
+mkdir -p /mnt/home/downloads_linux/.cache/$1
+cp -n /usr/bin/firefox24_default_home_prefs.js /mnt/home/downloads_linux/.data/$1/prefs.js
+}
 
 probe_the_server()
 {
@@ -441,38 +460,6 @@ fi
 #. iron_flash_puppy_pepper_home.sh ""$SWFlocal"pack_A01.html "
 
 
-# just for christmas :
-#. $IRON" "$SWFlocal"swf_giortes/christmas.html"
-#. /usr/local/bin/tuxpaint-with-conf.sh
-#. /usr/local/bin/tuxpaint-with-conf.sh
-#. iron_flash_puppy_pepper_home.sh $SWFlocal"swf_giortes/christmas.html"
-#. /usr/local/bin/tuxpaint-with-conf.sh
-#. iron_flash_puppy_pepper_home.sh $SWFlocal"swf_giortes/christmas.html"
-
-#. iron_flash_puppy_pepper_home.sh $SWFlocal"swf_giortes/christmas.html "$LANDINGpage"15-ΔΕΥΤΕΡΑ-Γ1--hour3.html "
-#. iron_flash_puppy_pepper_home.sh $SWFlocal"swf_giortes/christmas.html "$LANDINGpage"15-ΔΕΥΤΕΡΑ-Γ2--hour4.html "
-#. iron_flash_puppy_pepper_home.sh $SWFlocal"swf_giortes/christmas.html "$LANDINGpage"15-ΔΕΥΤΕΡΑ-ΣΤ2--hour5.html "
-#. iron_flash_puppy_pepper_home.sh $SWFlocal"swf_giortes/christmas.html "$LANDINGpage"15-ΔΕΥΤΕΡΑ-ΣΤ1--hour6.html "
-#$OOOKIDS$OOOKIDSpathprefix"OFFICE_extra_files/pliktrologisi_j02.1_antigrafi_katanomi_wron.doc"
-#. iron_flash_puppy_pepper_home.sh ""$SWFlocal"pack_A01.html "
-
-
-: '# ΠΑΣΧΑ easter
-# ΠΑΣΧΑ easter 1
-ironstartincognito ""$RAMKIDpathprefix"/KidsPedia/kids_ePedia32cd/Volume20/index_kd_vol.html ΠΑΣΧΑ-ramkidpedia "$SWFlocal"pack_A02.html"
-ironstartincognito ""$RAMKIDpathprefix"/KidsPedia/kids_ePedia32cd/Volume20/index_kd_vol.html ΠΑΣΧΑ-ramkidpedia "$SWFlocal"pack_A02.html"
-ironstartincognito ""$RAMKIDpathprefix"/KidsPedia/kids_ePedia32cd/Volume20/index_kd_vol.html ΠΑΣΧΑ-ramkidpedia "$SWFlocal"pack_A02.html"
-ironstartincognito ""$RAMKIDpathprefix"/KidsPedia/kids_ePedia32cd/Volume20/index_kd_vol.html ΠΑΣΧΑ-ramkidpedia "$SWFlocal"pack_A02.html"
-ironstartincognito ""$RAMKIDpathprefix"/KidsPedia/kids_ePedia32cd/Volume20/index_kd_vol.html ΠΑΣΧΑ-ramkidpedia "$SWFlocal"pack_A02.html"
-# ΠΑΣΧΑ easter 2
-
-# ΠΑΣΧΑ easter 3
-#ironstart ""$SWFlocal"swf_giortes/index_easter.html
-#ironstart ""$SWFlocal"swf_giortes/index_easter.html
-#ironstart ""$SWFlocal"swf_giortes/index_easter.html
-#ironstart ""$SWFlocal"swf_giortes/index_easter.html
-
-#ΑΠΟΚΡΙΕΣ'
 
 #. /usr/local/bin/tuxpaint-with-conf.sh
 #ironstart ""$SWFlocal"swf_giortes/christmas.html http://192.168.1.200/landing_pages/PEMPTH-ST1--hour3__dim10.html"
