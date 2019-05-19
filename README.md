@@ -2,7 +2,12 @@
 test for online raw script john_start_kill_apps_test
 Bash Scripts
 
-
+# JavaSchRuntimeExec.java
+This script presents a GUI with 10 options and let you execute bash commands
+```bash
+javac JavaSchRuntimeExec.java
+java JavaSchRuntimeExec
+```
 
 # Examples
 
