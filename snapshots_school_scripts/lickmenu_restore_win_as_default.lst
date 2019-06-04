@@ -1,0 +1,88 @@
+# lst file version 190604
+# menu.lst produced by grub4dosconfig-v1.8.0
+color white/blue black/cyan white/black cyan/black
+#splashimage=/splash.xpm
+timeout 10
+default 2
+
+title GRUB2 boot ubuntu
+find --set-root /boot/grub/i386-pc/core.img
+kernel /boot/grub/i386-pc/core.img
+
+###############
+
+
+
+title stretchdog-debdive32  changes.dat
+find --set-root --ignore-floppies /stretchdog-debdive32/live/initrd1.xz
+kernel /stretchdog-debdive32/live/vmlinuz1 from=stretchdog-debdive32 changes=/stretchdog-debdive32/changes.dat
+initrd /stretchdog-debdive32/live/initrd1.xz
+
+#################
+title windows 7 bootmgr BCD
+find --set-root --ignore-floppies /bootmgr
+chainloader /bootmgr
+###############
+
+
+title Back to the main menu
+  configfile /menu.lst
+  commandline
+
+
+title stretchdog-debdive32 RAM
+find --set-root --ignore-floppies /stretchdog-debdive32/live/initrd1.xz
+kernel /stretchdog-debdive32/live/vmlinuz1 from=stretchdog-debdive32
+initrd /stretchdog-debdive32/live/initrd1.xz
+
+
+title stretchdog-debdive32 EXIT: changes.dat
+find --set-root --ignore-floppies /stretchdog-debdive32/live/initrd1.xz
+kernel /stretchdog-debdive32/live/vmlinuz1 from=stretchdog-debdive32 changes=EXIT:/stretchdog-debdive32/changes.dat
+initrd /stretchdog-debdive32/live/initrd1.xz
+
+title stretchdog-debdive32 NOMODESET(if other options fail) EXIT: changes.dat
+find --set-root --ignore-floppies /stretchdog-debdive32/live/initrd1.xz
+kernel /stretchdog-debdive32/live/vmlinuz1 from=stretchdog-debdive32 changes=EXIT:/stretchdog-debdive32/changes.dat nomodeset
+initrd /stretchdog-debdive32/live/initrd1.xz
+
+#####################
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+####################################
+#####################################
+
+
+title PorteusStretchDog /stretchdog-debdive64/  EXIT: changes3  v005ok
+find --set-root --ignore-floppies /stretchdog-debdive64/live/initrd1.xz
+kernel /stretchdog-debdive64/live/vmlinuz1 from=/stretchdog-debdive64 changes=EXIT:/stretchdog-debdive64/changes3.dat
+initrd /stretchdog-debdive64/live/initrd1.xz
+
+
+title PorteusStretchDog /stretchdog-debdive64/  changes3  v005ok
+find --set-root --ignore-floppies /stretchdog-debdive64/live/initrd1.xz
+kernel /stretchdog-debdive64/live/vmlinuz1 from=/stretchdog-debdive64 changes=EXIT:/stretchdog-debdive64/changes3.dat
+initrd /stretchdog-debdive64/live/initrd1.xz
+
+title PorteusStretchDog /stretchdog-debdive64/ RAM
+find --set-root --ignore-floppies /stretchdog-debdive64/live/initrd1.xz
+kernel /stretchdog-debdive64/live/vmlinuz1 from=/stretchdog-debdive64
+initrd /stretchdog-debdive64/live/initrd1.xz
+############
+title TEST PorteusStretchDog /stretchdog-debdive64test/  EXIT: changes3  v005ok
+find --set-root --ignore-floppies /stretchdog-debdive64test/live/initrd1.xz
+kernel /stretchdog-debdive64test/live/vmlinuz1 from=/stretchdog-debdive64test changes=EXIT:/stretchdog-debdive64test/changes3.dat
+initrd /stretchdog-debdive64test/live/initrd1.xz
+############

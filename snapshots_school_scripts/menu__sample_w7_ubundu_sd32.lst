@@ -1,0 +1,55 @@
+# lst file version 190604
+# menu.lst produced by grub4dosconfig-v1.8.0
+color white/blue black/cyan white/black cyan/black
+#splashimage=/splash.xpm
+timeout 30
+default 1
+
+title GRUB2 boot ubuntu OR windows 7 option
+find --set-root /boot/grub/i386-pc/core.img
+kernel /boot/grub/i386-pc/core.img
+
+title stretchdog-debdive32 EXIT: changes.dat
+find --set-root --ignore-floppies /stretchdog-debdive32/live/initrd1.xz
+kernel /stretchdog-debdive32/live/vmlinuz1 from=stretchdog-debdive32 changes=EXIT:/stretchdog-debdive32/changes.dat
+initrd /stretchdog-debdive32/live/initrd1.xz
+
+title windows 7 bootmgr BCD
+find --set-root --ignore-floppies /bootmgr
+chainloader /bootmgr
+
+
+title stretchdog-debdive32  changes.dat
+find --set-root --ignore-floppies /stretchdog-debdive32/live/initrd1.xz
+kernel /stretchdog-debdive32/live/vmlinuz1 from=stretchdog-debdive32 changes=/stretchdog-debdive32/changes.dat
+initrd /stretchdog-debdive32/live/initrd1.xz
+
+
+title stretchdog-debdive32 RAM
+find --set-root --ignore-floppies /stretchdog-debdive32/live/initrd1.xz
+kernel /stretchdog-debdive32/live/vmlinuz1 from=stretchdog-debdive32
+initrd /stretchdog-debdive32/live/initrd1.xz
+
+title stretchdog-debdive32 NOMODESET(if other options fail) EXIT: changes.dat
+find --set-root --ignore-floppies /stretchdog-debdive32/live/initrd1.xz
+kernel /stretchdog-debdive32/live/vmlinuz1 from=stretchdog-debdive32 changes=EXIT:/stretchdog-debdive32/changes.dat nomodeset
+initrd /stretchdog-debdive32/live/initrd1.xz
+
+title Back to the main menu
+  configfile /menu.lst
+  commandline
+
+##################################################
+ ##################################################
+
+  
+# Advanced Menu
+title for USB Advanced menu SAME BUT with pmedia=idehd
+  configfile /menu-advanced_usb.lst
+  commandline
+
+title Reboot computer
+  reboot
+
+title Halt computer
+  halt
