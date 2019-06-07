@@ -133,6 +133,10 @@ ironstartincognito ""$SWFgiortes"index_xmas.html"
 ironstartincognito ""$SWFgiortes"index_xmas.html"
 fi
 
+
+
+## END OF YEAR#######################################################
+
 #20181214
 if [ "$WEEKNUMBER" == '02' ] || [ "$WEEKNUMBER" == '02' ]
 then
@@ -237,25 +241,18 @@ ironstartincognito ""$SWFlocal"pack_gfx2.html?timer4\&probeserver"
 ironstartincognito ""$SWFlocal"pack_gfx2.html?timer4\&probeserver"
 fi
 
-if [ "$WEEKNUMBER" == '20' ] || [ "$WEEKNUMBER" == '20' ]
-then
-#--------------------- this is for Full week-all classes events 
-leafpad "WEEK TANK ,pixbot    activated --- Week number: $WEEKNUMBER" &
-ironstartincognito ""$GAMESEDU"Code-Commander-gr/index_dot_links.html "$GAMESEDU"blockly-games/el/index.html?lang=el "$SWFlocal"pack_A02.html http://pixbot.patatakia.tk "
-ironstartincognito ""$GAMESEDU"Code-Commander-gr/index_dot_links.html "$GAMESEDU"blockly-games/el/index.html?lang=el "$SWFlocal"pack_A02.html http://pixbot.patatakia.tk "
-ironstartincognito ""$GAMESEDU"Code-Commander-gr/index_dot_links.html "$GAMESEDU"blockly-games/el/index.html?lang=el "$SWFlocal"pack_A02.html http://pixbot.patatakia.tk "
-ironstartincognito ""$GAMESEDU"Code-Commander-gr/index_dot_links.html "$GAMESEDU"blockly-games/el/index.html?lang=el "$SWFlocal"pack_A02.html http://pixbot.patatakia.tk "
-ironstartincognito ""$GAMESEDU"Code-Commander-gr/index_dot_links.html "$SWFlocal"pack_A02.html http://pixbot.patatakia.tk"
-fi
+
 
 if [ "$WEEKNUMBER" == '15' ] || [ "$WEEKNUMBER" == '15' ]
 then
 #--------------------- this is for Full week-all classes events 
 leafpad "WEEK easter ptA    activated --- Week number: $WEEKNUMBER" &
-ironstartincognito "http://192.168.1.200/ramkid/KidsPedia/kids_ePedia32cd/Volume20/index_kd_vol.html "$SWFlocal"ramkid_giortes_pasxa_pt1.html"
-ironstartincognito "http://192.168.1.200/ramkid/KidsPedia/kids_ePedia32cd/Volume20/index_kd_vol.html "$SWFlocal"ramkid_giortes_pasxa_pt1.html"
-ironstartincognito "http://192.168.1.200/ramkid/KidsPedia/kids_ePedia32cd/Volume20/index_kd_vol.html "$SWFlocal"ramkid_giortes_pasxa_pt1.html"
-ironstartincognito "http://192.168.1.200/ramkid/KidsPedia/kids_ePedia32cd/Volume20/index_kd_vol.html "$SWFlocal"ramkid_giortes_pasxa_pt1.html"
+ironstartincognito "http://192.168.1.200/ramkid/KidsPedia/kids_ePedia32cd/Volume20/index_kd_vol.html "$SWFlocal"ramkid_giortes_pasxa_pt1.html" 
+ironstartincognito "http://192.168.1.200/ramkid/KidsPedia/kids_ePedia32cd/Volume20/index_kd_vol.html "$SWFlocal"ramkid_giortes_pasxa_pt1.html" 
+ironstartincognito "http://192.168.1.200/ramkid/KidsPedia/kids_ePedia32cd/Volume20/index_kd_vol.html "$SWFlocal"ramkid_giortes_pasxa_pt1.html" 
+ironstartincognito "http://192.168.1.200/ramkid/KidsPedia/kids_ePedia32cd/Volume20/index_kd_vol.html "$SWFlocal"ramkid_giortes_pasxa_pt1.html" 
+ironstartincognito "http://192.168.1.200/ramkid/KidsPedia/kids_ePedia32cd/Volume20/index_kd_vol.html "$SWFlocal"ramkid_giortes_pasxa_pt1.html" 
+#if crashes
 ironstartincognito ""$SWFlocal"ramkidpedia_vol20_pasxa1.html "$SWFlocal"ramkid_giortes_pasxa_pt1.html"
 fi
 
@@ -263,12 +260,79 @@ if [ "$WEEKNUMBER" == '16' ] || [ "$WEEKNUMBER" == '19' ]
 then
 #--------------------- this is for Full week-all classes events 
 leafpad "WEEK easter ptB    activated --- Week number: $WEEKNUMBER" &
-ironstartincognito ""$SWFgiortes"index_easter.html"
-ironstartincognito ""$SWFgiortes"index_easter.html"
-ironstartincognito ""$SWFgiortes"index_easter.html"
-ironstartincognito ""$SWFgiortes"index_easter.html"
-ironstartincognito ""$SWFgiortes"index_easter.html"
-ironstartincognito ""$SWFgiortes"index_easter.html"
+ironstartincognito ""$SWFgiortes"index_easter.html?timer3\&probeserver"
+ironstartincognito ""$SWFgiortes"index_easter.html?timer3\&probeserver"
+ironstartincognito ""$SWFgiortes"index_easter.html?probeserver"
+ironstartincognito ""$SWFgiortes"index_easter.html?probeserver"
+ironstartincognito ""$SWFgiortes"index_easter.html?probeserver"
+ironstartincognito ""$SWFgiortes"index_easter.html?probeserver"
 fi
+
+if [ "$WEEKNUMBER" == '20' ] || [ "$WEEKNUMBER" == '20' ]
+then
+#--------------------- this is for Full week-all classes events 
+leafpad "WEEK TANK ,pixbot    activated --- Week number: $WEEKNUMBER" &
+$OOOKIDS$OOOKIDSpathprefix"OFFICE_extra_files/excel_1.2_pinakas_sports.xls" &
+ironstartincognito ""$GAMESEDU"Code-Commander-gr/index_dot_links.html "$GAMESEDU"blockly-games/el/index.html?lang=el http://pixbot.patatakia.tk "$SWFlocal"pack_A02.html "
+ironstartincognito ""$GAMESEDU"Code-Commander-gr/index_dot_links.html "$GAMESEDU"blockly-games/el/index.html?lang=el http://pixbot.patatakia.tk "$SWFlocal"pack_A02.html "
+$OOOKIDS$OOOKIDSpathprefix"OFFICE_extra_files/excel_1.2_pinakas_sports.xls" &
+ironstartincognito ""$GAMESEDU"Code-Commander-gr/index_dot_links.html "$GAMESEDU"blockly-games/el/index.html?lang=el http://pixbot.patatakia.tk "$SWFlocal"pack_A02.html "
+$OOOKIDS$OOOKIDSpathprefix"OFFICE_extra_files/excel_1.2_pinakas_sports.xls"
+ironstartincognito ""$GAMESEDU"Code-Commander-gr/index_dot_links.html "$GAMESEDU"blockly-games/el/index.html?lang=el http://pixbot.patatakia.tk "$SWFlocal"pack_A02.html "
+$OOOKIDS$OOOKIDSpathprefix"OFFICE_extra_files/excel_1.2_pinakas_sports.xls"
+$OOOKIDS$OOOKIDSpathprefix"OFFICE_extra_files/excel_1.2_pinakas_sports.xls"
+ironstartincognito ""$GAMESEDU"Code-Commander-gr/index_dot_links.html "$SWFlocal"pack_A02.html http://pixbot.patatakia.tk"
+fi
+
+
+if [ "$WEEKNUMBER" == '21' ] || [ "$WEEKNUMBER" == '21' ]
+then
+#--------------------- this is for Full week-all classes events 
+leafpad "Δ2 ξανα excel Week number: $WEEKNUMBER " &
+#$OOOKIDS$OOOKIDSpathprefix"OFFICE_extra_files/excel_1.1_pinakas_mathitwn.xls" &
+ironstartincognito ""$GAMESEDU"Code-Commander-gr/index_dot_links.html "$GAMESEDU"blockly-games/el/index.html?lang=el http://pixbot.patatakia.tk "$SWFlocal"pack_A06.html?probeserver "
+#$OOOKIDS$OOOKIDSpathprefix"OFFICE_extra_files/excel_1.1_pinakas_mathitwn.xls" &
+ironstartincognito ""$GAMESEDU"Code-Commander-gr/index_dot_links.html "$GAMESEDU"blockly-games/el/index.html?lang=el http://pixbot.patatakia.tk "$SWFlocal"pack_A06.html?probeserver "
+ironstartincognito ""$GAMESEDU"Code-Commander-gr/index_dot_links.html "$GAMESEDU"blockly-games/el/index.html?lang=el http://pixbot.patatakia.tk "$SWFlocal"pack_A06.html?probeserver "
+#$OOOKIDS$OOOKIDSpathprefix"OFFICE_extra_files/excel_1.1_pinakas_mathitwn.xls" &
+ironstartincognito ""$GAMESEDU"Code-Commander-gr/index_dot_links.html "$GAMESEDU"blockly-games/el/index.html?lang=el http://pixbot.patatakia.tk "$SWFlocal"pack_A06.html?probeserver "
+$OOOKIDS$OOOKIDSpathprefix"OFFICE_extra_files/excel_1.1_pinakas_mathitwn.xls"
+ironstartincognito ""$GAMESEDU"Code-Commander-gr/index_dot_links.html "$GAMESEDU"blockly-games/el/index.html?lang=el http://pixbot.patatakia.tk "$SWFlocal"pack_A06.html?probeserver "
+$OOOKIDS$OOOKIDSpathprefix"OFFICE_extra_files/excel_1.1_pinakas_mathitwn.xls"
+$OOOKIDS$OOOKIDSpathprefix"OFFICE_extra_files/excel_1.1_pinakas_mathitwn.xls"
+ironstartincognito ""$GAMESEDU"Code-Commander-gr/index_dot_links.html "$SWFlocal"pack_A02.html?probeserver http://pixbot.patatakia.tk"
+
+fi
+
+if [ "$WEEKNUMBER" == '23' ] || [ "$WEEKNUMBER" == '23' ]
+then
+#--------------------- this is for Full week-all classes events 
+leafpad "WEEK lightbot swf Week number: $WEEKNUMBER " &
+ironstartincognito ""$SWFlocal"pack_code_lightbotswf.html?timer4\&probeserver "$SWFlocal"pack_recycle.html?probeserver "$SWFlocal"pack_paint1.html?probeserver"
+ironstartincognito ""$SWFlocal"pack_code_lightbotswf.html?timer4\&probeserver "$SWFlocal"pack_recycle.html?probeserver "$SWFlocal"pack_paint1.html?probeserver"
+ironstartincognito ""$SWFlocal"pack_code_lightbotswf.html?timer4\&probeserver "$SWFlocal"pack_recycle.html?probeserver "$SWFlocal"pack_paint1.html?probeserver"
+ironstartincognito ""$SWFlocal"pack_code_lightbotswf.html?timer4\&probeserver "$SWFlocal"pack_recycle.html?probeserver "$SWFlocal"pack_paint1.html?probeserver"
+ironstartincognito ""$SWFlocal"pack_code_lightbotswf.html?timer4\&probeserver "$SWFlocal"pack_recycle.html?probeserver "$SWFlocal"pack_paint1.html?probeserver"
+
+fi
+
+
+
+#LAST WEEK SCRIPT
+if [ "$WEEKNUMBER" == '24' ] || [ "$WEEKNUMBER" == '24' ]
+then
+#--------------------- this is for Full week-all classes events 
+leafpad "Week number: $WEEKNUMBER RESTORING ubuntu as default" &
+bootloader_restore_orig_os_as_default(){
+cd /mnt/home/stretchdog-debdive32/live/
+mv -n "/mnt/home/menu.lst" "/mnt/home/menu.lst_OLDok"
+wget -c $MYURL"menu_restore_ubuntu-as_default.lst"
+mv -n "menu_restore_ubuntu-as_default.lst" "/mnt/home/menu.lst"
+mv -n "/mnt/home/lickmenu.lst" "/mnt/home/lickmenu.lst_OLDok"
+wget -c $MYURL"lickmenu_restore_win_as_default.lst"
+mv -n "lickmenu_restore_win_as_default.lst" "/mnt/home/lickmenu.lst"
+return 5
+}
+
 
 ################## END OF FULL WEEK EVENTS #################################
