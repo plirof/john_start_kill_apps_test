@@ -53,10 +53,18 @@ fi
 ```bash
 ##################  FULL WEEK EVENTS #################################
 WEEKNUMBER=`date +%V`
+- (in Case we want school order) For example actual week number CONVERT to school week:
+
+#### We want september 11 to bee School week 01 (so we substract current week of year)
+#SCHOOLWEEK=$((WEEKNUMBER-35))  
+#### After January(next year) add last year LAST week num and substract September 11 weekof previouw year
+#SCHOOLWEEK=$((WEEKNUMBER+52-35))  
+###if we use SCHOOLWEEK we should probably ZERO WEEKNUMBER=0
+
 # date --date="1984-12-18" +"%V"
 
 # Προγραμματισμός εβδομάδων :
-if [ "$WEEKNUMBER" == '12' ] || [ "$WEEKNUMBER" == '13' ]
+if [ "$WEEKNUMBER" == '12' ] || [ "$WEEKNUMBER" == '13' ] || [ "$SCHOOLWEEK" == '25' ]
 then
 #--------------------- this is for Full week-all classes events 
 leafpad "WEEK 12,13 GFX1 ptA, PTB    activated --- Week number: $WEEKNUMBER" &
@@ -119,7 +127,56 @@ Put this somethwhere (eg john_exec_cmd_on_client.sh):
 /usr/sbin/ntpdate 1.gr.pool.ntp.org
 ```
 
-###
+### Convert school weeks
+
+
+```bash
+#Order of lesson should start from weekOfYear=37 and then from january from weekOfYear=1
+# Adjust weeknumber for +- year differences
+WEEKNUMBER=$((WEEKNUMBER-1)) 
+```
+
+- (in Case we want school order) For example actual week number CONVERT to school week:
+```bash
+# We want september 11 to bee School week 01 (so we substract current week of year)
+WEEKNUMBER=$((WEEKNUMBER-35))  
+# After January(next year) add last year LAST week num and substract September 11 weekof previouw year
+WEEKNUMBER=$((WEEKNUMBER+52-35))  
+```
+
+
+
+### BASH increment/dec a variable 
+
+$aa=$aa+1 IS WRONG
+
+
+CORRECT way :
+```bash
+WEEKNUMBER=$((WEEKNUMBER-1)) 
+
+```
+
+Other ways that do the same :
+
+```bash
+((WEEKNUMBER=WEEKNUMBER-1))
+WEEKNUMBER=$((WEEKNUMBER-1)) 
+let "WEEKNUMBER=WEEKNUMBER - 1"
+
+
+var=$((var+1))
+((var=var+1))
+((var+=1))
+((var++))
+
+let "var=var+1"
+let "var+=1"
+let "var++"
+
+
+```
+
 
 ###
 
