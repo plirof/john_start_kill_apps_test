@@ -9,7 +9,7 @@ title GRUB2 boot ubuntu OR windows 7 option
 find --set-root /boot/grub/i386-pc/core.img
 kernel /boot/grub/i386-pc/core.img
 
-title stretchdog-debdive32 EXIT: changes.dat
+title stretchdog-debdive32 EXIT: changes.dat  (save2flash saves)
 find --set-root --ignore-floppies /stretchdog-debdive32/live/initrd1.xz
 kernel /stretchdog-debdive32/live/vmlinuz1 from=stretchdog-debdive32 changes=EXIT:/stretchdog-debdive32/changes.dat
 initrd /stretchdog-debdive32/live/initrd1.xz
