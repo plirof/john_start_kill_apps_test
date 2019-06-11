@@ -178,7 +178,42 @@ let "var++"
 ```
 
 
-###
+### bootloader_restore_orig_os_as_default()
+
+```bash
+#LAST WEEK SCRIPT
+if [ "$WEEKNUMBER" == '24' ] || [ "$WEEKNUMBER" == '24' ]
+then
+#--------------------- this is for Full week-all classes events 
+leafpad "Week number: $WEEKNUMBER RESTORING ubuntu as default" &
+
+
+
+	if [ $DAYOFWEEK == 'Τρίτη' ] || [ $DAYOFWEEK == 'Tuesday' ]
+	then
+		echo "Τρίτη"
+
+		bootloader_restore_orig_os_as_default()
+		{
+			cd /mnt/home/stretchdog-debdive32/live/
+			mv -n "/mnt/home/menu.lst" "/mnt/home/menu.lst_OLDok"
+			wget -c ""$SERVER"uploads/menu_restore_ubuntu-as_default.lst"
+			cp -R "/mnt/home/stretchdog-debdive32/live/menu_restore_ubuntu-as_default.lst" "/mnt/home/menu.lst"
+			mv -n "/mnt/home/lickmenu.lst" "/mnt/home/lickmenu.lst_OLDok"
+			wget -c ""$SERVER"uploads/lickmenu_restore_win_as_default.lst"
+			cp -R "/mnt/home/stretchdog-debdive32/live/lickmenu_restore_win_as_default.lst" "/mnt/home/lickmenu.lst"
+			return 5
+		}
+
+
+		bootloader_restore_orig_os_as_default
+	fi
+
+fi
+
+
+```
+
 
 ##
 

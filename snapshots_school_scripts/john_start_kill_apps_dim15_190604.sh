@@ -244,6 +244,36 @@ ironstartincognito ""$SWFlocal"pack_code_lightbotswf.html?timer4\&probeserver "$
 
 fi
 
+
+#LAST WEEK SCRIPT
+if [ "$WEEKNUMBER" == '24' ] || [ "$WEEKNUMBER" == '24' ]
+then
+#--------------------- this is for Full week-all classes events 
+leafpad "Week number: $WEEKNUMBER RESTORING ubuntu as default" &
+
+	if [ $DAYOFWEEK == 'Τρίτη' ] || [ $DAYOFWEEK == 'Tuesday' ]
+	then
+		echo "Τρίτη"
+
+		bootloader_restore_orig_os_as_default()
+		{
+			cd /mnt/home/stretchdog-debdive32/live/
+			mv -n "/mnt/home/menu.lst" "/mnt/home/menu.lst_OLDok"
+			wget -c ""$SERVER"uploads/menu_restore_ubuntu-as_default.lst"
+			cp -R "/mnt/home/stretchdog-debdive32/live/menu_restore_ubuntu-as_default.lst" "/mnt/home/menu.lst"
+			mv -n "/mnt/home/lickmenu.lst" "/mnt/home/lickmenu.lst_OLDok"
+			wget -c ""$SERVER"uploads/lickmenu_restore_win_as_default.lst"
+			cp -R "/mnt/home/stretchdog-debdive32/live/lickmenu_restore_win_as_default.lst" "/mnt/home/lickmenu.lst"
+			return 5
+		}
+
+
+		bootloader_restore_orig_os_as_default
+	fi
+
+fi
+
+
 if [ "$WEEKNUMBER" == '24' ] || [ "$WEEKNUMBER" == '24' ]
 then
 #--------------------- this is for Full week-all classes events 
@@ -259,30 +289,7 @@ ironstartincognito ""$SWFlocal"pack_A05.html?timer3\&probeserver"
 fi
 
 
-#########
-#LAST WEEK SCRIPT
-if [ "$WEEKNUMBER" == '24' ] || [ "$WEEKNUMBER" == '24' ]
-then
-#--------------------- this is for Full week-all classes events 
-leafpad "Week number: $WEEKNUMBER RESTORING ubuntu as default" &
-bootloader_restore_orig_os_as_default(){
-cd /mnt/home/stretchdog-debdive32/live/
-mv -n "/mnt/home/menu.lst" "/mnt/home/menu.lst_OLDok"
-wget -c $MYURL"menu_restore_ubuntu-as_default.lst"
-mv -n "menu_restore_ubuntu-as_default.lst" "/mnt/home/menu.lst"
-mv -n "/mnt/home/lickmenu.lst" "/mnt/home/lickmenu.lst_OLDok"
-wget -c $MYURL"lickmenu_restore_win_as_default.lst"
-mv -n "lickmenu_restore_win_as_default.lst" "/mnt/home/lickmenu.lst"
-return 5
-}
 
-if [ $DAYOFWEEK == 'Τρίτη' ] || [ $DAYOFWEEK == 'Tuesday' ]
-then
-echo "Τρίτη"
-bootloader_restore_orig_os_as_default
-fi
-
-fi
 
 ################## END OF FULL WEEK EVENTS #################################
 
