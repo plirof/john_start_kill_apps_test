@@ -185,14 +185,14 @@ let "var++"
 if [ "$WEEKNUMBER" == '24' ] || [ "$WEEKNUMBER" == '24' ]
 then
 #--------------------- this is for Full week-all classes events 
-leafpad "Week number: $WEEKNUMBER RESTORING ubuntu as default" &
 
 
 
+#	if [ $DAYOFWEEK == 'Πέμπτη' ] || [ $DAYOFWEEK == 'Thursday' ]
 	if [ $DAYOFWEEK == 'Τρίτη' ] || [ $DAYOFWEEK == 'Tuesday' ]
 	then
 		echo "Τρίτη"
-
+		leafpad "Week number: $WEEKNUMBER RESTORING ubuntu as default" &
 		bootloader_restore_orig_os_as_default()
 		{
 			cd /mnt/home/stretchdog-debdive32/live/
