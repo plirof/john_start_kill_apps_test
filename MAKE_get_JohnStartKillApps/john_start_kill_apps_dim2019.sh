@@ -1,3 +1,4 @@
+# Script ver 190912a
 # kill firefox (if you want )
 pkill -f firefox
 #clear cache
@@ -30,6 +31,8 @@ DAYOFWEEK=$(date "+%A")
 WEEKNUMBER=`date +%V`
 # date --date="1984-12-18" +"%V"
 
+# To avoid Week Choosing :
+#WEEKNUMBER=99
 
 load_extra_apps(){
 # used to activate events (eg pasxa, halloween, etc)	
@@ -403,6 +406,8 @@ if [ "$WEEKNUMBER" == '44' ] || [ "$WEEKNUMBER" == 'wk08-OctE-NovA' ]
 then
 
 	leafpad "WEEK activated --- Week number: $WEEKNUMBER"
+# HALLOWEEN 2019 octomber 31   - DRAW SCARY STUFF
+. /usr/local/bin/tuxpaint-with-conf.sh &	
 
 fi
 ########### NOVEMBER ###################

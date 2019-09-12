@@ -1,3 +1,4 @@
+# Script ver 190912a
 # Script called by client
 # WILL NOT Stop the parent script from executing (so don't try pkill -chrome)
 # put this file in /opt/lampp/htdocs/swf
