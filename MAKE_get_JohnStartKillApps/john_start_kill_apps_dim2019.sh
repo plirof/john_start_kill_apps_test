@@ -1,6 +1,6 @@
-# Script ver 190912a
+# Script ver 190914a
 # kill firefox (if you want )
-pkill -f firefox
+#pkill -f firefox
 #clear cache
 #rm -rf /mnt/home/downloads_linux/.cache/iron_flash/
 
@@ -221,18 +221,14 @@ ironstartincognito ""$SWFgiortes"index_halloween.html?timer3"
 fi
 
 
+######################################################################################
+#############  ALL WEEKS START #######################################################
+######################################################################################
 
-#############  ALL WEEKS START ############
-
-if [ "$WEEKNUMBER" == '38' ] || [ "$WEEKNUMBER" == '37' ] || [ "$WEEKNUMBER" == 'wk01-02' ]  
+if [ "$WEEKNUMBER" == '38' ] || [ "$WEEKNUMBER" == '37' ] || [ "$WEEKNUMBER" == 'wk01-02-SepB-C' ]  
 then
 
-	leafpad "WEEK11 activated --- Week number: $WEEKNUMBER"
 
-
-	if [ $DAYOFWEEK == 'Δευτέρα' ] || [ $DAYOFWEEK == 'Monday' ]
-	then
-	echo "Δευτέρα"
 ironstart ""$SWFlocal"ab/funbrain_com/funbrain.html"
 ironstartincognito ""$SWFlocal"pack_url_param.html?url1=type/typing_bricks\(puzzle\)!!!.swf\&url2=type/assault-typing__shootemup__rapidtyping.com_NoAdUrl.swf\&url3=type/typing_adventure__indiana_jones_NoNavUrl.swf\&url4=type/typing_alphattack2__bombDrop_NoNavUrl.swf\&url5=type/airtyper_1_noADsURL.swf\&url6=typing-1\&timer3"
 ironstart ""$SWFlocal"ab/funbrain_com/funbrain.html?timer3"
@@ -245,10 +241,9 @@ ironstartincognito ""$SWFlocal"pack_url_param.html?url1=type/typing_bricks\(puzz
 
 fi
 
-if [ "$WEEKNUMBER" == '39' ] || [ "$WEEKNUMBER" == 'wk03' ]  
+if [ "$WEEKNUMBER" == '39' ] || [ "$WEEKNUMBER" == 'wk03-SepD' ]  
 then
 
-	leafpad "WEEK11 activated --- Week number: $WEEKNUMBER"
 
 #a-b
 ironstartincognito ""$SWFlocal"pack_type_ramkid_greek.html"
@@ -265,12 +260,11 @@ ironstartincognito ""$SWFlocal"pack_url_param.html?url1=type/airtyper_1_noADsURL
 fi
 
 
-############ OCTOMBER ###################
+############ OCTOBER ###################
 
 if [ "$WEEKNUMBER" == '40' ] || [ "$WEEKNUMBER" == 'wk04--OCtA' ]  
 then
 
-	leafpad "WEEK11 activated --- Week number: $WEEKNUMBER"
 # A-B Γλωσσικές Τέχνες->Ανακαλύψτε τα γραμματα
 . /opt/eduActiv8/eduActiv8 &
 ironstartincognito ""$SWFlocal"pack_url_param.html?url1=type/typing_bricks\(puzzle\)!!!.swf\&url2=type/assault-typing__shootemup__rapidtyping.com_NoAdUrl.swf\&url3=type/typing_adventure__indiana_jones_NoNavUrl.swf\&url4=type/typing_alphattack2__bombDrop_NoNavUrl.swf\&url5=type/airtyper_1_noADsURL.swf\&url6=typing-1\&timer3"
@@ -278,7 +272,7 @@ ironstartincognito ""$SWFlocal"pack_url_param.html?url1=type/airtyper_1_noADsURL
 ironstartincognito ""$SWFlocal"pack_url_param.html?url1=type/typing_bricks\(puzzle\)!!!.swf\&url2=type/assault-typing__shootemup__rapidtyping.com_NoAdUrl.swf\&url3=type/typing_adventure__indiana_jones_NoNavUrl.swf\&url4=type/typing_alphattack2__bombDrop_NoNavUrl.swf\&url5=type/airtyper_1_noADsURL.swf\&url6=typing-1\&timer3"
 ironstartincognito ""$SWFlocal"pack_url_param.html?url1=type/airtyper_1_noADsURL.swf\&url2=type/typing_adventure__indiana_jones_NoNavUrl.swf\&url3=type/typing_bricks\(puzzle\)!!!.swf\&url4=type/typing_tidepool\(sea_race\)_!!.swf\&url5=type/excuses-excuses__type_noADsURL.swf\&url6=typing-2\&timer3"
 
-. /opt/eduActiv8/eduActiv8
+. /opt/eduActiv8/eduActiv8 &
 
 fi
 
@@ -303,11 +297,16 @@ fi
 
 if [ "$WEEKNUMBER" == '43' ] || [ "$WEEKNUMBER" == 'wk07-OctD' ]  
 then
-# tuxpaint πινέλα  (ζωγραφίστε σπίτι + αμάξι ,πινέλα ,σφραγίδες) ,typing_bricks(puzzle)!!!.swf
-ironstartincognito ""$SWFlocal"pack_paint1.html?timer3\&probeserver"
-ironstartincognito ""$SWFlocal"pack_paint1.html?timer3\&probeserver"
-ironstartincognito ""$SWFlocal"pack_paint1.html?timer3\&probeserver"
+
 . /usr/local/bin/tuxpaint-with-conf.sh &
+
+$OOOKIDS$OOOKIDSpathprefix"AskiseisWord/Για Πληκτρολόγηση.doc"
+$OOOKIDS$OOOKIDSpathprefix"AskiseisWord/Για Πληκτρολόγηση.doc"
+$OOOKIDS$OOOKIDSpathprefix"AskiseisWord/Για Πληκτρολόγηση.doc"
+$OOOKIDS$OOOKIDSpathprefix"AskiseisWord/Για Πληκτρολόγηση.doc"
+$OOOKIDS$OOOKIDSpathprefix"AskiseisWord/Για Πληκτρολόγηση.doc"
+$OOOKIDS$OOOKIDSpathprefix"AskiseisWord/Για Πληκτρολόγηση.doc"
+
 
 fi
 
@@ -316,7 +315,12 @@ if [ "$WEEKNUMBER" == '44' ] || [ "$WEEKNUMBER" == 'wk08-OctE-NovA' ]
 then
 
 # HALLOWEEN 2019 octomber 31   - DRAW SCARY STUFF
-. /usr/local/bin/tuxpaint-with-conf.sh &	
+# tuxpaint πινέλα  (ζωγραφίστε σπίτι + αμάξι ,πινέλα ,σφραγίδες) ,typing_bricks(puzzle)!!!.swf
+. /usr/local/bin/tuxpaint-with-conf.sh &
+ironstartincognito ""$SWFlocal"pack_paint1.html?timer3\&probeserver"
+ironstartincognito ""$SWFlocal"pack_paint1.html?timer3\&probeserver"
+ironstartincognito ""$SWFlocal"pack_paint1.html?timer3\&probeserver"
+
 
 fi
 ########### NOVEMBER ###################
@@ -348,14 +352,15 @@ fi
 
 if [ "$WEEKNUMBER" == '47' ] || [ "$WEEKNUMBER" == 'wk11-NovC' ]  
 then
-#A-B
-ironstart ""$SWFlocal"pack_A01.html?timer4"
+#A-B  pack_A01
+
 # E-ST   5. Λαβύρινθο angry-birds: εντοπισμός σφαλμ
-ironstart "https://studio.code.org/s/course1/stage/5/puzzle/1 "$SWFlocal"pack_A01.html"
-ironstart "https://studio.code.org/s/course1/stage/5/puzzle/1 "$SWFlocal"pack_A01.html"
-ironstart "https://studio.code.org/s/course1/stage/5/puzzle/1 "$SWFlocal"pack_A01.html"
-ironstart "https://studio.code.org/s/course1/stage/5/puzzle/1 "$SWFlocal"pack_A01.html"
-ironstart "https://studio.code.org/s/course1/stage/5/puzzle/1 "$SWFlocal"pack_A01.html"
+ironstart "https://studio.code.org/s/course1/stage/5/puzzle/1 "$SWFlocal"pack_A01.html?timer4"
+ironstart "https://studio.code.org/s/course1/stage/5/puzzle/1 "$SWFlocal"pack_A01.html?timer4"
+ironstart "https://studio.code.org/s/course1/stage/5/puzzle/1 "$SWFlocal"pack_A01.html?timer4"
+ironstart "https://studio.code.org/s/course1/stage/5/puzzle/1 "$SWFlocal"pack_A01.html?timer4"
+ironstart "https://studio.code.org/s/course1/stage/5/puzzle/1 "$SWFlocal"pack_A01.html?timer4"
+ironstart "https://studio.code.org/s/course1/stage/5/puzzle/1 "$SWFlocal"pack_A01.html?timer4"
 
 fi
 
@@ -378,7 +383,10 @@ then
 
 # Xristougenniatikes drasthriothtes (oles oi takseis) , christmas hidden objects , ζωγραφιστε χριστουγ κάρτες ramkid  
 # ???  giortes xmas Α !!!!! NA ΦΤΙΑΞΩ το ramkid_giortes_xmas_pt1.html	
-ironstartincognito ""$SWFlocal"ramkidpedia_vol04_xmas1.html "$SWFlocal"ramkid_giortes_xmas_pt1.html"	
+ironstartincognito ""$SWFlocal"ramkidpedia_vol04_xmas1.html "$SWFlocal"ramkid_giortes_xmas_pt1.html"
+ironstartincognito ""$SWFlocal"ramkidpedia_vol04_xmas1.html "$SWFlocal"ramkid_giortes_xmas_pt1.html"
+ironstartincognito ""$SWFlocal"ramkidpedia_vol04_xmas1.html "$SWFlocal"ramkid_giortes_xmas_pt1.html"
+ironstartincognito ""$SWFlocal"ramkidpedia_vol04_xmas1.html "$SWFlocal"ramkid_giortes_xmas_pt1.html"
 
 fi
 
@@ -386,14 +394,24 @@ if [ "$WEEKNUMBER" == '50' ] || [ "$WEEKNUMBER" == 'wk14-DecB' ]
 then
 
 # giortes xmas Β : 2-3 μαθήματα (μετά τέλος ασκήσεων)	
-ironstartincognito ""$SWFgiortes"index_xmas.html"
+ironstartincognito ""$SWFgiortes"index_xmas.html?timer3"
+ironstartincognito ""$SWFgiortes"index_xmas.html?timer3"
+ironstartincognito ""$SWFgiortes"index_xmas.html?timer3"
+ironstartincognito ""$SWFgiortes"index_xmas.html?timer3"
+ironstartincognito ""$SWFgiortes"index_xmas.html?timer3"
+ironstartincognito ""$SWFgiortes"index_xmas.html?timer3"
 fi
 
 if [ "$WEEKNUMBER" == '51' ] || [ "$WEEKNUMBER" == 'wk15-DecC' ]  
 then
 
 # giortes xmas Β : 2-3 μαθήματα (μετά τέλος ασκήσεων)		
-ironstartincognito ""$SWFgiortes"index_xmas.html"
+ironstartincognito ""$SWFgiortes"index_xmas.html?timer3"
+ironstartincognito ""$SWFgiortes"index_xmas.html?timer3"
+ironstartincognito ""$SWFgiortes"index_xmas.html?timer3"
+ironstartincognito ""$SWFgiortes"index_xmas.html?timer3"
+ironstartincognito ""$SWFgiortes"index_xmas.html?timer3"
+ironstartincognito ""$SWFgiortes"index_xmas.html?timer3"
 fi
 
 if [ "$WEEKNUMBER" == '52' ] || [ "$WEEKNUMBER" == 'wk---DecD' ]  
@@ -417,18 +435,29 @@ then
 
 #tuxpaint   ,  15o tuxpaint : βασιλόπιτα, χριστουγ εικόνα 
 ironstartincognito ""$SWFlocal"pack_paint1.html?timer3\&probeserver"
+ironstartincognito ""$SWFlocal"pack_paint1.html?timer3\&probeserver"
+ironstartincognito ""$SWFlocal"pack_paint1.html?timer3\&probeserver"
+ironstartincognito ""$SWFlocal"pack_paint1.html?timer3\&probeserver"
+ironstartincognito ""$SWFlocal"pack_paint1.html?timer3\&probeserver"
+ironstartincognito ""$SWFlocal"pack_paint1.html?timer3\&probeserver"
 
 fi
 
 if [ "$WEEKNUMBER" == '03' ] || [ "$WEEKNUMBER" == 'wk17-JanC' ]  
 then
 # A-B 
-ironstart ""$SWFlocal"pack_A02.html "$SWFlocal"pack_A01.html"
-
+ironstart ""$SWFlocal"pack_A02.html "$SWFlocal"pack_A01.html" &
+#E-ST
+$OOOKIDS$OOOKIDSpathprefix"OFFICE_extra_files/pliktrologisi_j02.2_antigrafi_didaktiko_yliko.doc"
+$OOOKIDS$OOOKIDSpathprefix"OFFICE_extra_files/pliktrologisi_j02.2_antigrafi_didaktiko_yliko.doc"
+$OOOKIDS$OOOKIDSpathprefix"OFFICE_extra_files/pliktrologisi_j02.2_antigrafi_didaktiko_yliko.doc"
+$OOOKIDS$OOOKIDSpathprefix"OFFICE_extra_files/pliktrologisi_j02.2_antigrafi_didaktiko_yliko.doc"
+$OOOKIDS$OOOKIDSpathprefix"OFFICE_extra_files/pliktrologisi_j02.2_antigrafi_didaktiko_yliko.doc"
 
 
 if [ "$WEEKNUMBER" == '04' ] || [ "$WEEKNUMBER" == 'wk18-JanD' ]  
 then
+
 
 
 fi
