@@ -228,21 +228,33 @@ fi
 if [ "$WEEKNUMBER" == '38' ] || [ "$WEEKNUMBER" == '37' ] || [ "$WEEKNUMBER" == 'wk01-02-SepB-C' ]  
 then
 
+$OOOKIDS$OOOKIDSpathprefix"OFFICE_extra_files/ALL_biografiko_mathiti.doc" &
 
-ironstart ""$SWFlocal"ab/funbrain_com/funbrain.html"
 ironstartincognito ""$SWFlocal"pack_url_param.html?url1=type/typing_bricks\(puzzle\)!!!.swf\&url2=type/assault-typing__shootemup__rapidtyping.com_NoAdUrl.swf\&url3=type/typing_adventure__indiana_jones_NoNavUrl.swf\&url4=type/typing_alphattack2__bombDrop_NoNavUrl.swf\&url5=type/airtyper_1_noADsURL.swf\&url6=typing-1\&timer3"
 ironstart ""$SWFlocal"ab/funbrain_com/funbrain.html?timer3"
+$OOOKIDS$OOOKIDSpathprefix"OFFICE_extra_files/ALL_biografiko_mathiti.doc" &
 ironstartincognito ""$SWFlocal"pack_url_param.html?url1=type/typing_bricks\(puzzle\)!!!.swf\&url2=type/assault-typing__shootemup__rapidtyping.com_NoAdUrl.swf\&url3=type/typing_adventure__indiana_jones_NoNavUrl.swf\&url4=type/typing_alphattack2__bombDrop_NoNavUrl.swf\&url5=type/airtyper_1_noADsURL.swf\&url6=typing-1\&timer3"
 ironstart ""$SWFlocal"ab/funbrain_com/funbrain.html?timer3"
+$OOOKIDS$OOOKIDSpathprefix"OFFICE_extra_files/ALL_biografiko_mathiti.doc" &
 ironstartincognito ""$SWFlocal"pack_url_param.html?url1=type/typing_bricks\(puzzle\)!!!.swf\&url2=type/assault-typing__shootemup__rapidtyping.com_NoAdUrl.swf\&url3=type/typing_adventure__indiana_jones_NoNavUrl.swf\&url4=type/typing_alphattack2__bombDrop_NoNavUrl.swf\&url5=type/airtyper_1_noADsURL.swf\&url6=typing-1\&timer3"
 ironstart ""$SWFlocal"ab/funbrain_com/funbrain.html"
 ironstartincognito ""$SWFlocal"pack_url_param.html?url1=type/typing_bricks\(puzzle\)!!!.swf\&url2=type/assault-typing__shootemup__rapidtyping.com_NoAdUrl.swf\&url3=type/typing_adventure__indiana_jones_NoNavUrl.swf\&url4=type/typing_alphattack2__bombDrop_NoNavUrl.swf\&url5=type/airtyper_1_noADsURL.swf\&url6=typing-1\&timer3"
-
+$OOOKIDS$OOOKIDSpathprefix"OFFICE_extra_files/ALL_biografiko_mathiti.doc" &
 
 fi
 
 if [ "$WEEKNUMBER" == '39' ] || [ "$WEEKNUMBER" == 'wk03-SepD' ]  
 then
+
+
+ironstartincognito ""$SWFlocal"pack_url_param.html?url1=type/typing_bricks\(puzzle\)!!!.swf\&url2=type/assault-typing__shootemup__rapidtyping.com_NoAdUrl.swf\&url3=type/typing_adventure__indiana_jones_NoNavUrl.swf\&url4=type/typing_alphattack2__bombDrop_NoNavUrl.swf\&url5=type/airtyper_1_noADsURL.swf\&url6=typing-1\&timer3"
+ironstart ""$SWFlocal"ab/funbrain_com/funbrain.html?timer3"
+ironstartincognito ""$SWFlocal"pack_url_param.html?url1=type/typing_bricks\(puzzle\)!!!.swf\&url2=type/assault-typing__shootemup__rapidtyping.com_NoAdUrl.swf\&url3=type/typing_adventure__indiana_jones_NoNavUrl.swf\&url4=type/typing_alphattack2__bombDrop_NoNavUrl.swf\&url5=type/airtyper_1_noADsURL.swf\&url6=typing-1\&timer3"
+ironstart ""$SWFlocal"ab/funbrain_com/funbrain.html?timer3"
+ironstartincognito ""$SWFlocal"pack_url_param.html?url1=type/typing_bricks\(puzzle\)!!!.swf\&url2=type/assault-typing__shootemup__rapidtyping.com_NoAdUrl.swf\&url3=type/typing_adventure__indiana_jones_NoNavUrl.swf\&url4=type/typing_alphattack2__bombDrop_NoNavUrl.swf\&url5=type/airtyper_1_noADsURL.swf\&url6=typing-1\&timer3"
+ironstart ""$SWFlocal"ab/funbrain_com/funbrain.html"
+ironstartincognito ""$SWFlocal"pack_url_param.html?url1=type/typing_bricks\(puzzle\)!!!.swf\&url2=type/assault-typing__shootemup__rapidtyping.com_NoAdUrl.swf\&url3=type/typing_adventure__indiana_jones_NoNavUrl.swf\&url4=type/typing_alphattack2__bombDrop_NoNavUrl.swf\&url5=type/airtyper_1_noADsURL.swf\&url6=typing-1\&timer3"
+
 
 
 #a-b
