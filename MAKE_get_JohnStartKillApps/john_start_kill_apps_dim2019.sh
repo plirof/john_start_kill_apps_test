@@ -1,6 +1,10 @@
-# Script ver 190914a
+# Script ver 191018 startweekcount
+# this modifies the weekofyear (eg +1,-1)
+STARTWEEKCOUNT=0
+
 # kill firefox (if you want )
 #pkill -f firefox
+#pkill -f chrome
 #clear cache
 #rm -rf /mnt/home/downloads_linux/.cache/iron_flash/
 
@@ -29,6 +33,7 @@ RAMKIDpathprefix=""$SERVER"ramkid/"
 # echo $(date -d "+1 days" "+%A")
 DAYOFWEEK=$(date "+%A")  
 WEEKNUMBER=`date +%V`
+
 # date --date="1984-12-18" +"%V"
 
 # To avoid Week Choosing :
@@ -134,7 +139,7 @@ leafpad "Week number: $WEEKNUMBER" &
 #ironstartincognito ""$SWFlocal"pack_url_param.html?url1=coding/lightbot-codehour-gr_NoNavUrl.swf\&url2=coding/Tiny-explorers__nice_puzzle_education_unencr_noAds_ok.swf\&url3=http://tortuga.dimotiko.tk\&url4=pack_A02.html\&url5=ΚΩΔΙΚΑΣ"
 #ironstartincognito ""$SWFlocal"pack_url_param.html?url1=coding/Rover_nasa_GREEK1.swf\&url2=coding/Tiny-explorers__nice_puzzle_education_unencr_noAds_ok.swf\&url3=http://tortuga.dimotiko.tk\&url4=pack_A02.html\&url5=ΚΩΔΙΚΑΣ"
 #ironstartincognito ""$SWFlocal"pack_url_param.html?url1=type/typing_bricks\(puzzle\)!!!.swf\&url2=type/assault-typing__shootemup__rapidtyping.com_NoAdUrl.swf\&url3=type/typing_adventure__indiana_jones_NoNavUrl.swf\&url4=type/typing_alphattack2__bombDrop_NoNavUrl.swf\&url5=type/airtyper_1_noADsURL.swf\&url6=typing-1"
-#ironstartincognito ""$SWFlocal"pack_url_param.html?url1=type/airtyper_1_noADsURL.swf\&url2=type/typing_adventure__indiana_jones_NoNavUrl.swf\&url3=type/typing_bricks\(puzzle\)!!!.swf\&url4=type/typing_tidepool\(sea_race\)_!!.swf\&url5=typing-2"
+#ironstartincognito ""$SWFlocal"pack_url_param.html?url1=type/airtyper_1_noADsURL.swf\&url2=type/typing_adventure__indiana_jones_NoNavUrl.swf\&url3=type/typing_bricks\(puzzle\)!!!.swf\&url4=type/typing_tidepool__sea_race_!!.swf\&url5=typing-2"
 
 #ironstartincognito ""$SWFgiortes"index_halloween.html?timer3"
 #ironstartincognito ""$SWFgiortes"index_halloween.html?timer3"
@@ -163,7 +168,7 @@ leafpad "Week number: $WEEKNUMBER" &
 
 
 
-if [ "$WEEKNUMBER" == '14' ] || [ "$WEEKNUMBER" == '14' ]
+if [ $WEEKNUMBER == $(($STARTWEEKCOUNT+14)) ] || [ "$WEEKNUMBER" == '14' ]
 then
 #--------------------- this is for Full week-all classes events 
 leafpad "WEEK easter ptA    activated --- Week number: $WEEKNUMBER" &
@@ -174,7 +179,7 @@ ironstartincognito ""$SERVER"ramkid/KidsPedia/kids_ePedia32cd/Volume20/index_kd_
 ironstartincognito ""$SWFlocal"ramkidpedia_vol20_pasxa1.html "$SWFlocal"ramkid_giortes_pasxa_pt1.html"
 fi
 
-if [ "$WEEKNUMBER" == '15' ] || [ "$WEEKNUMBER" == '18' ]
+if [ $WEEKNUMBER == $(($STARTWEEKCOUNT+15)) ] || [ "$WEEKNUMBER" == '18' ]
 then
 #--------------------- this is for Full week-all classes events 
 leafpad "WEEK easter ptB    activated --- Week number: $WEEKNUMBER" &
@@ -195,7 +200,7 @@ fi
 #load_extra_apps
 
 #201902118-22  , 2020 updated
-if [ "$WEEKNUMBER" == '07' ] || [ "$WEEKNUMBER" == '07' ]
+if [ $WEEKNUMBER == $(($STARTWEEKCOUNT+07)) ] || [ "$WEEKNUMBER" == '07' ]
 then
 #--------------------- this is for Full week-all classes events    
 leafpad "WEEK halloween ptA (ramkid_invitation_party , swf_ramkid_cds2k5/Ramkid_12feb_apokries , KidsPedia/kids_ePedia32cd/Volume13 )   activated --- Week number: $WEEKNUMBER" &
@@ -208,7 +213,7 @@ ironstartincognito ""$SWFgiortes"other/ramkid_invitation_party/index.html "$SWFp
 fi
 
 #20190225-08  2020 updated
-if [ "$WEEKNUMBER" == '08' ] || [ "$WEEKNUMBER" == '09' ]
+if [ $WEEKNUMBER == $(($STARTWEEKCOUNT+08)) ] || [ "$WEEKNUMBER" == '09' ]
 then
 #--------------------- this is for Full week-all classes events 
 leafpad "WEEK halloween ptB (for 2 weeks  games)   activated --- Week number: $WEEKNUMBER    20190225-08" &
@@ -225,7 +230,7 @@ fi
 #############  ALL WEEKS START #######################################################
 ######################################################################################
 
-if [ "$WEEKNUMBER" == '38' ] || [ "$WEEKNUMBER" == '37' ] || [ "$WEEKNUMBER" == 'wk01-02-SepB-C' ]  
+if [ $WEEKNUMBER == $(($STARTWEEKCOUNT+38)) ] || [ "$WEEKNUMBER" == '37' ] || [ "$WEEKNUMBER" == 'wk01-02-SepB-C' ]  
 then
 
 $OOOKIDS$OOOKIDSpathprefix"OFFICE_extra_files/ALL_biografiko_mathiti.doc" &
@@ -243,71 +248,80 @@ $OOOKIDS$OOOKIDSpathprefix"OFFICE_extra_files/ALL_biografiko_mathiti.doc" &
 
 fi
 
-if [ "$WEEKNUMBER" == '39' ] || [ "$WEEKNUMBER" == 'wk03-SepD' ]  
+if [ $WEEKNUMBER == $(($STARTWEEKCOUNT+39)) ] || [ "$WEEKNUMBER" == 'wk03-SepD' ]  
 then
 
-
-ironstartincognito ""$SWFlocal"pack_url_param.html?url1=type/typing_bricks\(puzzle\)!!!.swf\&url2=type/assault-typing__shootemup__rapidtyping.com_NoAdUrl.swf\&url3=type/typing_adventure__indiana_jones_NoNavUrl.swf\&url4=type/typing_alphattack2__bombDrop_NoNavUrl.swf\&url5=type/airtyper_1_noADsURL.swf\&url6=typing-1\&timer3"
 ironstart ""$SWFlocal"ab/funbrain_com/funbrain.html?timer3"
-ironstartincognito ""$SWFlocal"pack_url_param.html?url1=type/typing_bricks\(puzzle\)!!!.swf\&url2=type/assault-typing__shootemup__rapidtyping.com_NoAdUrl.swf\&url3=type/typing_adventure__indiana_jones_NoNavUrl.swf\&url4=type/typing_alphattack2__bombDrop_NoNavUrl.swf\&url5=type/airtyper_1_noADsURL.swf\&url6=typing-1\&timer3"
 ironstart ""$SWFlocal"ab/funbrain_com/funbrain.html?timer3"
-ironstartincognito ""$SWFlocal"pack_url_param.html?url1=type/typing_bricks\(puzzle\)!!!.swf\&url2=type/assault-typing__shootemup__rapidtyping.com_NoAdUrl.swf\&url3=type/typing_adventure__indiana_jones_NoNavUrl.swf\&url4=type/typing_alphattack2__bombDrop_NoNavUrl.swf\&url5=type/airtyper_1_noADsURL.swf\&url6=typing-1\&timer3"
+ironstartincognito ""$SWFlocal"pack_url_param.html?url1=type/typing_bricks\(puzzle\)!!!.swf\&url2=type/typing_adventure__indiana_jones_NoNavUrl.swf\&url3=type/assault-typing__shootemup__rapidtyping.com_NoAdUrl.swf\&url4=type/typing_alphattack2__bombDrop_NoNavUrl.swf\&url5=type/airtyper_1_noADsURL.swf\&url6=typing-1\&timer3"
+ironstart ""$SWFlocal"ab/funbrain_com/funbrain.html?timer3"
+ironstartincognito ""$SWFlocal"pack_url_param.html?url1=type/typing_bricks\(puzzle\)!!!.swf\&url2=type/typing_adventure__indiana_jones_NoNavUrl.swf\&url3=type/assault-typing__shootemup__rapidtyping.com_NoAdUrl.swf\&url4=type/typing_alphattack2__bombDrop_NoNavUrl.swf\&url5=type/airtyper_1_noADsURL.swf\&url6=typing-1\&timer3"
+ironstart ""$SWFlocal"ab/funbrain_com/funbrain.html?timer3"
+ironstartincognito ""$SWFlocal"pack_url_param.html?url1=type/typing_bricks\(puzzle\)!!!.swf\&url2=type/typing_adventure__indiana_jones_NoNavUrl.swf\&url3=type/assault-typing__shootemup__rapidtyping.com_NoAdUrl.swf\&url4=type/typing_alphattack2__bombDrop_NoNavUrl.swf\&url5=type/airtyper_1_noADsURL.swf\&url6=typing-1\&timer3"
 ironstart ""$SWFlocal"ab/funbrain_com/funbrain.html"
-ironstartincognito ""$SWFlocal"pack_url_param.html?url1=type/typing_bricks\(puzzle\)!!!.swf\&url2=type/assault-typing__shootemup__rapidtyping.com_NoAdUrl.swf\&url3=type/typing_adventure__indiana_jones_NoNavUrl.swf\&url4=type/typing_alphattack2__bombDrop_NoNavUrl.swf\&url5=type/airtyper_1_noADsURL.swf\&url6=typing-1\&timer3"
+ironstartincognito ""$SWFlocal"pack_url_param.html?url1=type/typing_bricks\(puzzle\)!!!.swf\&url2=type/typing_adventure__indiana_jones_NoNavUrl.swf\&url3=type/assault-typing__shootemup__rapidtyping.com_NoAdUrl.swf\&url4=type/typing_alphattack2__bombDrop_NoNavUrl.swf\&url5=type/airtyper_1_noADsURL.swf\&url6=typing-1\&timer3"
 
 
 
 #a-b
 ironstartincognito ""$SWFlocal"pack_type_ramkid_greek.html"
 #c-st
-ironstartincognito ""$SWFlocal"pack_url_param.html?url1=type/airtyper_1_noADsURL.swf\&url2=type/typing_adventure__indiana_jones_NoNavUrl.swf\&url3=type/typing_bricks\(puzzle\)!!!.swf\&url4=type/typing_tidepool\(sea_race\)_!!.swf\&url5=type/excuses-excuses__type_noADsURL.swf\&url6=typing-2\&timer3"
+ironstartincognito ""$SWFlocal"pack_url_param.html?url1=type/airtyper_1_noADsURL.swf\&url2=type/typing_adventure__indiana_jones_NoNavUrl.swf\&url3=type/typing_bricks\(puzzle\)!!!.swf\&url4=type/typing_tidepool__sea_race_!!.swf\&url5=type/excuses-excuses__type_noADsURL.swf\&url6=typing-2\&timer3"
 
 ironstartincognito ""$SWFlocal"pack_type_ramkid_greek.html"
-ironstartincognito ""$SWFlocal"pack_url_param.html?url1=type/airtyper_1_noADsURL.swf\&url2=type/typing_adventure__indiana_jones_NoNavUrl.swf\&url3=type/typing_bricks\(puzzle\)!!!.swf\&url4=type/typing_tidepool\(sea_race\)_!!.swf\&url5=type/excuses-excuses__type_noADsURL.swf\&url6=typing-2\&timer3"
+ironstartincognito ""$SWFlocal"pack_url_param.html?url1=type/airtyper_1_noADsURL.swf\&url2=type/typing_adventure__indiana_jones_NoNavUrl.swf\&url3=type/typing_bricks\(puzzle\)!!!.swf\&url4=type/typing_tidepool__sea_race_!!.swf\&url5=type/excuses-excuses__type_noADsURL.swf\&url6=typing-2\&timer3"
 ironstartincognito ""$SWFlocal"pack_type_ramkid_greek.html"
-ironstartincognito ""$SWFlocal"pack_url_param.html?url1=type/airtyper_1_noADsURL.swf\&url2=type/typing_adventure__indiana_jones_NoNavUrl.swf\&url3=type/typing_bricks\(puzzle\)!!!.swf\&url4=type/typing_tidepool\(sea_race\)_!!.swf\&url5=type/excuses-excuses__type_noADsURL.swf\&url6=typing-2\&timer3"
+ironstartincognito ""$SWFlocal"pack_url_param.html?url1=type/airtyper_1_noADsURL.swf\&url2=type/typing_adventure__indiana_jones_NoNavUrl.swf\&url3=type/typing_bricks\(puzzle\)!!!.swf\&url4=type/typing_tidepool__sea_race_!!.swf\&url5=type/excuses-excuses__type_noADsURL.swf\&url6=typing-2\&timer3"
 ironstartincognito ""$SWFlocal"pack_type_ramkid_greek.html"
-ironstartincognito ""$SWFlocal"pack_url_param.html?url1=type/airtyper_1_noADsURL.swf\&url2=type/typing_adventure__indiana_jones_NoNavUrl.swf\&url3=type/typing_bricks\(puzzle\)!!!.swf\&url4=type/typing_tidepool\(sea_race\)_!!.swf\&url5=type/excuses-excuses__type_noADsURL.swf\&url6=typing-2\&timer3"
+ironstartincognito ""$SWFlocal"pack_url_param.html?url1=type/airtyper_1_noADsURL.swf\&url2=type/typing_adventure__indiana_jones_NoNavUrl.swf\&url3=type/typing_bricks\(puzzle\)!!!.swf\&url4=type/typing_tidepool__sea_race_!!.swf\&url5=type/excuses-excuses__type_noADsURL.swf\&url6=typing-2\&timer3"
 
 fi
 
 
 ############ OCTOBER ###################
 
-if [ "$WEEKNUMBER" == '40' ] || [ "$WEEKNUMBER" == 'wk04--OCtA' ]  
+if [ $WEEKNUMBER == $(($STARTWEEKCOUNT+40)) ] || [ "$WEEKNUMBER" == 'wk04--OCtA' ]  
 then
 
 # A-B Γλωσσικές Τέχνες->Ανακαλύψτε τα γραμματα
-. /opt/eduActiv8/eduActiv8 &
-ironstartincognito ""$SWFlocal"pack_url_param.html?url1=type/typing_bricks\(puzzle\)!!!.swf\&url2=type/assault-typing__shootemup__rapidtyping.com_NoAdUrl.swf\&url3=type/typing_adventure__indiana_jones_NoNavUrl.swf\&url4=type/typing_alphattack2__bombDrop_NoNavUrl.swf\&url5=type/airtyper_1_noADsURL.swf\&url6=typing-1\&timer3"
-ironstartincognito ""$SWFlocal"pack_url_param.html?url1=type/airtyper_1_noADsURL.swf\&url2=type/typing_adventure__indiana_jones_NoNavUrl.swf\&url3=type/typing_bricks\(puzzle\)!!!.swf\&url4=type/typing_tidepool\(sea_race\)_!!.swf\&url5=type/excuses-excuses__type_noADsURL.swf\&url6=typing-2\&timer3"
-ironstartincognito ""$SWFlocal"pack_url_param.html?url1=type/typing_bricks\(puzzle\)!!!.swf\&url2=type/assault-typing__shootemup__rapidtyping.com_NoAdUrl.swf\&url3=type/typing_adventure__indiana_jones_NoNavUrl.swf\&url4=type/typing_alphattack2__bombDrop_NoNavUrl.swf\&url5=type/airtyper_1_noADsURL.swf\&url6=typing-1\&timer3"
-ironstartincognito ""$SWFlocal"pack_url_param.html?url1=type/airtyper_1_noADsURL.swf\&url2=type/typing_adventure__indiana_jones_NoNavUrl.swf\&url3=type/typing_bricks\(puzzle\)!!!.swf\&url4=type/typing_tidepool\(sea_race\)_!!.swf\&url5=type/excuses-excuses__type_noADsURL.swf\&url6=typing-2\&timer3"
+#. /opt/eduActiv8/eduActiv8 &
+/opt/eduActiv8/eduActiv8 &
+ironstartincognito ""$SWFlocal"pack_type_ramkid_greek.html"
+ironstartincognito ""$SWFlocal"pack_url_param.html?url1=type/airtyper_1_noADsURL.swf\&url2=type/typing_adventure__indiana_jones_NoNavUrl.swf\&url3=type/typing_bricks\(puzzle\)!!!.swf\&url4=type/typing_tidepool__sea_race_!!.swf\&url5=type/horse-racing-typing__rapidtyping.com_NoNavUrl.swf\&url6=typing-2\&probeserver\&timer3"
+ironstartincognito ""$SWFlocal"pack_type_ramkid_greek.html"
+ironstartincognito ""$SWFlocal"pack_url_param.html?url1=type/airtyper_1_noADsURL.swf\&url2=type/typing_adventure__indiana_jones_NoNavUrl.swf\&url3=type/typing_bricks\(puzzle\)!!!.swf\&url4=type/typing_tidepool__sea_race_!!.swf\&url5=type/horse-racing-typing__rapidtyping.com_NoNavUrl.swf\&url6=typing-2\&probeserver\&timer3"
+ironstartincognito ""$SWFlocal"pack_type_ramkid_greek.html"
+ironstartincognito ""$SWFlocal"pack_url_param.html?url1=type/airtyper_1_noADsURL.swf\&url2=type/typing_adventure__indiana_jones_NoNavUrl.swf\&url3=type/typing_bricks\(puzzle\)!!!.swf\&url4=type/typing_tidepool__sea_race_!!.swf\&url5=type/horse-racing-typing__rapidtyping.com_NoNavUrl.swf\&url6=typing-2\&probeserver\&timer3"
+#. /opt/eduActiv8/eduActiv8 &
+/opt/eduActiv8/eduActiv8
+ironstartincognito ""$SWFlocal"pack_type_ramkid_greek.html"
+ironstartincognito ""$SWFlocal"pack_url_param.html?url1=type/airtyper_1_noADsURL.swf\&url2=type/typing_adventure__indiana_jones_NoNavUrl.swf\&url3=type/typing_bricks\(puzzle\)!!!.swf\&url4=type/typing_tidepool__sea_race_!!.swf\&url5=type/horse-racing-typing__rapidtyping.com_NoNavUrl.swf\&url6=typing-2\&probeserver\&timer3"
+ironstartincognito ""$SWFlocal"pack_url_param.html?url1=type/airtyper_1_noADsURL.swf\&url2=type/typing_adventure__indiana_jones_NoNavUrl.swf\&url3=type/typing_bricks\(puzzle\)!!!.swf\&url4=type/typing_tidepool__sea_race_!!.swf\&url5=type/horse-racing-typing__rapidtyping.com_NoNavUrl.swf\&url6=typing-2\&probeserver\&timer3"
 
-. /opt/eduActiv8/eduActiv8 &
+
 
 fi
 
-if [ "$WEEKNUMBER" == '41' ] || [ "$WEEKNUMBER" == 'wk05-OctB' ]  
+if [ $WEEKNUMBER == $(($STARTWEEKCOUNT+41)) ] || [ "$WEEKNUMBER" == 'wk05-OctB' ]  
 then
 
-ironstartincognito ""$SWFlocal"pack_url_param.html?url1=fun/maze/Diego_Dinosaur_Rescue_maze_KIDS_simple_NotTImed_!!!.swf\&url2=fun/maze/the-maze-game\(robot\)__no_jp_utl.swf\&url3=ab/ladybugs_TRODLER_noADsURL@.swf\&url4=type/typing_adventure__indiana_jones_NoNavUrl.swf\&url5=fun/td/BloonsTowerDefense2_ok4slow_p4_NoNavUrl.swf\&url6=maze-1\&timer3"
-ironstartincognito ""$SWFlocal"pack_url_param.html?url1=fun/maze/Diego_Dinosaur_Rescue_maze_KIDS_simple_NotTImed_!!!.swf\&url2=fun/maze/the-maze-game\(robot\)__no_jp_utl.swf\&url3=ab/ladybugs_TRODLER_noADsURL@.swf\&url4=type/typing_adventure__indiana_jones_NoNavUrl.swf\&url5=fun/td/BloonsTowerDefense2_ok4slow_p4_NoNavUrl.swf\&url6=maze-1\&timer3"
-ironstartincognito ""$SWFlocal"pack_url_param.html?url1=fun/maze/Diego_Dinosaur_Rescue_maze_KIDS_simple_NotTImed_!!!.swf\&url2=fun/maze/the-maze-game\(robot\)__no_jp_utl.swf\&url3=ab/ladybugs_TRODLER_noADsURL@.swf\&url4=type/typing_adventure__indiana_jones_NoNavUrl.swf\&url5=fun/td/BloonsTowerDefense2_ok4slow_p4_NoNavUrl.swf\&url6=maze-1\&timer3"
-ironstartincognito ""$SWFlocal"pack_url_param.html?url1=fun/maze/Diego_Dinosaur_Rescue_maze_KIDS_simple_NotTImed_!!!.swf\&url2=fun/maze/the-maze-game\(robot\)__no_jp_utl.swf\&url3=ab/ladybugs_TRODLER_noADsURL@.swf\&url4=type/typing_adventure__indiana_jones_NoNavUrl.swf\&url5=fun/td/BloonsTowerDefense2_ok4slow_p4_NoNavUrl.swf\&url6=maze-1\&timer3"
+ironstartincognito ""$SWFlocal"pack_url_param.html?url1=fun/maze/Diego_Dinosaur_Rescue_maze_KIDS_simple_NotTImed_!!!.swf\&url2=fun/maze/the-maze-game\(robot\)__no_jp_utl.swf\&url3=ab/ladybugs_TRODLER_noADsURL@.swf\&url4=type/typing_adventure__indiana_jones_NoNavUrl.swf\&url5=fun/td/BloonsTowerDefense2_ok4slow_p4_NoNavUrl.swf\&url6=maze-1\&probeserver\&timer3"
+ironstartincognito ""$SWFlocal"pack_url_param.html?url1=fun/maze/Diego_Dinosaur_Rescue_maze_KIDS_simple_NotTImed_!!!.swf\&url2=fun/maze/the-maze-game\(robot\)__no_jp_utl.swf\&url3=ab/ladybugs_TRODLER_noADsURL@.swf\&url4=type/typing_adventure__indiana_jones_NoNavUrl.swf\&url5=fun/td/BloonsTowerDefense2_ok4slow_p4_NoNavUrl.swf\&url6=maze-1\&probeserver\&timer3"
+ironstartincognito ""$SWFlocal"pack_url_param.html?url1=fun/maze/Diego_Dinosaur_Rescue_maze_KIDS_simple_NotTImed_!!!.swf\&url2=fun/maze/the-maze-game\(robot\)__no_jp_utl.swf\&url3=ab/ladybugs_TRODLER_noADsURL@.swf\&url4=type/typing_adventure__indiana_jones_NoNavUrl.swf\&url5=fun/td/BloonsTowerDefense2_ok4slow_p4_NoNavUrl.swf\&url6=maze-1\&probeserver\&timer3"
+ironstartincognito ""$SWFlocal"pack_url_param.html?url1=fun/maze/Diego_Dinosaur_Rescue_maze_KIDS_simple_NotTImed_!!!.swf\&url2=fun/maze/the-maze-game\(robot\)__no_jp_utl.swf\&url3=ab/ladybugs_TRODLER_noADsURL@.swf\&url4=type/typing_adventure__indiana_jones_NoNavUrl.swf\&url5=fun/td/BloonsTowerDefense2_ok4slow_p4_NoNavUrl.swf\&url6=maze-1\&probeserver\&timer3"
 
 fi
 
-if [ "$WEEKNUMBER" == '42' ] || [ "$WEEKNUMBER" == 'wk06-OctC' ]  
+if [ $WEEKNUMBER == $(($STARTWEEKCOUNT+42)) ] || [ "$WEEKNUMBER" == 'wk06-OctC' ]  
 then
-ironstartincognito ""$SWFlocal"pack_url_param.html?url1=fun/maze/labrat__maze-kids_needFastPC_unencr2noAdsURL_!!.swf\&url2=fun/maze/minotaur_122_maze__unencr3_noAdsUrl_!.swf\&url3=fun/maze/Diego_Dinosaur_Rescue_maze_KIDS_simple_NotTImed_!!!.swf\&url4=ab/ladybugs_TRODLER_noADsURL@.swf\&url5=fun/physics/soccer-balls__physics__noADurl.swf\&url6=maze-2\&timer3"
-ironstartincognito ""$SWFlocal"pack_url_param.html?url1=fun/maze/labrat__maze-kids_needFastPC_unencr2noAdsURL_!!.swf\&url2=fun/maze/minotaur_122_maze__unencr3_noAdsUrl_!.swf\&url3=fun/maze/Diego_Dinosaur_Rescue_maze_KIDS_simple_NotTImed_!!!.swf\&url4=ab/ladybugs_TRODLER_noADsURL@.swf\&url5=fun/physics/soccer-balls__physics__noADurl.swf\&url6=maze-2\&timer3"
-ironstartincognito ""$SWFlocal"pack_url_param.html?url1=fun/maze/labrat__maze-kids_needFastPC_unencr2noAdsURL_!!.swf\&url2=fun/maze/minotaur_122_maze__unencr3_noAdsUrl_!.swf\&url3=fun/maze/Diego_Dinosaur_Rescue_maze_KIDS_simple_NotTImed_!!!.swf\&url4=ab/ladybugs_TRODLER_noADsURL@.swf\&url5=fun/physics/soccer-balls__physics__noADurl.swf\&url6=maze-2\&timer3"
-ironstartincognito ""$SWFlocal"pack_url_param.html?url1=fun/maze/labrat__maze-kids_needFastPC_unencr2noAdsURL_!!.swf\&url2=fun/maze/minotaur_122_maze__unencr3_noAdsUrl_!.swf\&url3=fun/maze/Diego_Dinosaur_Rescue_maze_KIDS_simple_NotTImed_!!!.swf\&url4=ab/ladybugs_TRODLER_noADsURL@.swf\&url5=fun/physics/soccer-balls__physics__noADurl.swf\&url6=maze-2\&timer3"
+ironstartincognito ""$SWFlocal"pack_url_param.html?url1=fun/maze/labrat__maze-kids_needFastPC_unencr2noAdsURL_!!.swf\&url2=fun/maze/minotaur_122_maze__unencr3_noAdsUrl_!.swf\&url3=fun/maze/Diego_Dinosaur_Rescue_maze_KIDS_simple_NotTImed_!!!.swf\&url4=ab/ladybugs_TRODLER_noADsURL@.swf\&url5=fun/physics/soccer-balls__physics__noADurl.swf\&url6=maze-2\&probeserver\&timer3"
+ironstartincognito ""$SWFlocal"pack_url_param.html?url1=fun/maze/labrat__maze-kids_needFastPC_unencr2noAdsURL_!!.swf\&url2=fun/maze/minotaur_122_maze__unencr3_noAdsUrl_!.swf\&url3=fun/maze/Diego_Dinosaur_Rescue_maze_KIDS_simple_NotTImed_!!!.swf\&url4=ab/ladybugs_TRODLER_noADsURL@.swf\&url5=fun/physics/soccer-balls__physics__noADurl.swf\&url6=maze-2\&probeserver\&timer3"
+ironstartincognito ""$SWFlocal"pack_url_param.html?url1=fun/maze/labrat__maze-kids_needFastPC_unencr2noAdsURL_!!.swf\&url2=fun/maze/minotaur_122_maze__unencr3_noAdsUrl_!.swf\&url3=fun/maze/Diego_Dinosaur_Rescue_maze_KIDS_simple_NotTImed_!!!.swf\&url4=ab/ladybugs_TRODLER_noADsURL@.swf\&url5=fun/physics/soccer-balls__physics__noADurl.swf\&url6=maze-2\&probeserver\&timer3"
+ironstartincognito ""$SWFlocal"pack_url_param.html?url1=fun/maze/labrat__maze-kids_needFastPC_unencr2noAdsURL_!!.swf\&url2=fun/maze/minotaur_122_maze__unencr3_noAdsUrl_!.swf\&url3=fun/maze/Diego_Dinosaur_Rescue_maze_KIDS_simple_NotTImed_!!!.swf\&url4=ab/ladybugs_TRODLER_noADsURL@.swf\&url5=fun/physics/soccer-balls__physics__noADurl.swf\&url6=maze-2\&probeserver\&timer3"
 
 fi
 
-if [ "$WEEKNUMBER" == '43' ] || [ "$WEEKNUMBER" == 'wk07-OctD' ]  
+if [ $WEEKNUMBER == $(($STARTWEEKCOUNT+43)) ] || [ "$WEEKNUMBER" == 'wk07-OctD' ]  
 then
 
 . /usr/local/bin/tuxpaint-with-conf.sh &
@@ -323,7 +337,7 @@ $OOOKIDS$OOOKIDSpathprefix"AskiseisWord/Για Πληκτρολόγηση.doc"
 fi
 
 
-if [ "$WEEKNUMBER" == '44' ] || [ "$WEEKNUMBER" == 'wk08-OctE-NovA' ]  
+if [ $WEEKNUMBER == $(($STARTWEEKCOUNT+44)) ] || [ "$WEEKNUMBER" == 'wk08-OctE-NovA' ]  
 then
 
 # HALLOWEEN 2019 octomber 31   - DRAW SCARY STUFF
@@ -337,17 +351,17 @@ ironstartincognito ""$SWFlocal"pack_paint1.html?timer3\&probeserver"
 fi
 ########### NOVEMBER ###################
 
-if [ "$WEEKNUMBER" == '45' ] || [ "$WEEKNUMBER" == 'wk09-NovA2' ]  
+if [ $WEEKNUMBER == $(($STARTWEEKCOUNT+45)) ] || [ "$WEEKNUMBER" == 'wk09-NovA2' ]  
 then
 # code.org :(1. Χαρούμενοι Χάρτες , 2. Κούνισέ το, Κούνισέ το , 3. Παζλ: Μάθε την μεταφορά και )	
-https://studio.code.org/s/course1 ,ironstart "https://studio.code.org/s/course1/stage/3/puzzle/1 "$SWFlocal"pack_A01.html"
-https://studio.code.org/s/course1 ,ironstart "https://studio.code.org/s/course1/stage/3/puzzle/1 "$SWFlocal"pack_A01.html"
-https://studio.code.org/s/course1 ,ironstart "https://studio.code.org/s/course1/stage/3/puzzle/1 "$SWFlocal"pack_A01.html"
-https://studio.code.org/s/course1 ,ironstart "https://studio.code.org/s/course1/stage/3/puzzle/1 "$SWFlocal"pack_A01.html"
+ironstart "https://studio.code.org/s/course1/stage/3/puzzle/1 "$SWFlocal"pack_A01.html"
+ironstart "https://studio.code.org/s/course1/stage/3/puzzle/1 "$SWFlocal"pack_A01.html"
+ironstart "https://studio.code.org/s/course1/stage/3/puzzle/1 "$SWFlocal"pack_A01.html"
+ironstart "https://studio.code.org/s/course1/stage/3/puzzle/1 "$SWFlocal"pack_A01.html"
 
 fi
 
-if [ "$WEEKNUMBER" == '46' ] || [ "$WEEKNUMBER" == 'wk10-NovB' ]  
+if [ $WEEKNUMBER == $(($STARTWEEKCOUNT+46)) ] || [ "$WEEKNUMBER" == 'wk10-NovB' ]  
 then
 # A-B
 # gcompris 15 :mouse _ψαρια - keyboard ζαρι (τα κουμπιά τους φανηκαν δυσκολα)
@@ -362,7 +376,7 @@ ironstart "https://studio.code.org/s/course1/stage/4/puzzle/1 "$SWFlocal"pack_A0
 
 fi
 
-if [ "$WEEKNUMBER" == '47' ] || [ "$WEEKNUMBER" == 'wk11-NovC' ]  
+if [ $WEEKNUMBER == $(($STARTWEEKCOUNT+47)) ] || [ "$WEEKNUMBER" == 'wk11-NovC' ]  
 then
 #A-B  pack_A01
 
@@ -376,7 +390,7 @@ ironstart "https://studio.code.org/s/course1/stage/5/puzzle/1 "$SWFlocal"pack_A0
 
 fi
 
-if [ "$WEEKNUMBER" == '48' ] || [ "$WEEKNUMBER" == 'wk12-NovD' ]  
+if [ $WEEKNUMBER == $(($STARTWEEKCOUNT+48)) ] || [ "$WEEKNUMBER" == 'wk12-NovD' ]  
 then
 # A-B Σχηματισμός Λέξεων-> ζώα , δουλείες ,ρούχα)
 . /opt/eduActiv8/eduActiv8 &
@@ -390,7 +404,7 @@ ironstart "https://studio.code.org/s/course1/stage/7/puzzle/1 "$SWFlocal"pack_A0
 fi
 
 ########### DECEMBER ###################
-if [ "$WEEKNUMBER" == '49' ] || [ "$WEEKNUMBER" == 'wk13-DecA' ]  
+if [ $WEEKNUMBER == $(($STARTWEEKCOUNT+49)) ] || [ "$WEEKNUMBER" == 'wk13-DecA' ]  
 then
 
 # Xristougenniatikes drasthriothtes (oles oi takseis) , christmas hidden objects , ζωγραφιστε χριστουγ κάρτες ramkid  
@@ -402,19 +416,19 @@ ironstartincognito ""$SWFlocal"ramkidpedia_vol04_xmas1.html "$SWFlocal"ramkid_gi
 
 fi
 
-if [ "$WEEKNUMBER" == '50' ] || [ "$WEEKNUMBER" == 'wk14-DecB' ]  
+if [ $WEEKNUMBER == $(($STARTWEEKCOUNT+50)) ] || [ "$WEEKNUMBER" == 'wk14-DecB' ]  
 then
 
 # giortes xmas Β : 2-3 μαθήματα (μετά τέλος ασκήσεων)	
-ironstartincognito ""$SWFgiortes"index_xmas.html?timer3"
-ironstartincognito ""$SWFgiortes"index_xmas.html?timer3"
-ironstartincognito ""$SWFgiortes"index_xmas.html?timer3"
-ironstartincognito ""$SWFgiortes"index_xmas.html?timer3"
-ironstartincognito ""$SWFgiortes"index_xmas.html?timer3"
-ironstartincognito ""$SWFgiortes"index_xmas.html?timer3"
+ironstartincognito ""$SWFgiortes"index_xmas.html?probeserver\&timer3"
+ironstartincognito ""$SWFgiortes"index_xmas.html?probeserver\&timer3"
+ironstartincognito ""$SWFgiortes"index_xmas.html?probeserver\&timer3"
+ironstartincognito ""$SWFgiortes"index_xmas.html?probeserver\&timer3"
+ironstartincognito ""$SWFgiortes"index_xmas.html?probeserver\&timer3"
+ironstartincognito ""$SWFgiortes"index_xmas.html?probeserver\&timer3"
 fi
 
-if [ "$WEEKNUMBER" == '51' ] || [ "$WEEKNUMBER" == 'wk15-DecC' ]  
+if [ $WEEKNUMBER == $(($STARTWEEKCOUNT+51)) ] || [ "$WEEKNUMBER" == 'wk15-DecC' ]  
 then
 
 # giortes xmas Β : 2-3 μαθήματα (μετά τέλος ασκήσεων)		
@@ -426,7 +440,7 @@ ironstartincognito ""$SWFgiortes"index_xmas.html?timer3"
 ironstartincognito ""$SWFgiortes"index_xmas.html?timer3"
 fi
 
-if [ "$WEEKNUMBER" == '52' ] || [ "$WEEKNUMBER" == 'wk---DecD' ]  
+if [ $WEEKNUMBER == $(($STARTWEEKCOUNT+52)) ] || [ "$WEEKNUMBER" == 'wk---DecD' ]  
 then
 
 	leafpad "CLOSED XMAS WEEK activated --- Week number: $WEEKNUMBER"
@@ -435,14 +449,14 @@ fi
 
 
 ########### JANUARY ###################
-if [ "$WEEKNUMBER" == '01' ] || [ "$WEEKNUMBER" == 'wk---NovA2' ]  
+if [ $WEEKNUMBER == $(($STARTWEEKCOUNT+01)) ] || [ "$WEEKNUMBER" == 'wk---NovA2' ]  
 then
 
 	leafpad "CLOSED XMAS WEEK activated --- Week number: $WEEKNUMBER"
 
 fi
 
-if [ "$WEEKNUMBER" == '02' ] || [ "$WEEKNUMBER" == 'wk16-JanB' ]  
+if [ $WEEKNUMBER == $(($STARTWEEKCOUNT+02)) ] || [ "$WEEKNUMBER" == 'wk16-JanB' ]  
 then
 
 #tuxpaint   ,  15o tuxpaint : βασιλόπιτα, χριστουγ εικόνα 
@@ -455,7 +469,7 @@ ironstartincognito ""$SWFlocal"pack_paint1.html?timer3\&probeserver"
 
 fi
 
-if [ "$WEEKNUMBER" == '03' ] || [ "$WEEKNUMBER" == 'wk17-JanC' ]  
+if [ $WEEKNUMBER == $(($STARTWEEKCOUNT+03)) ] || [ "$WEEKNUMBER" == 'wk17-JanC' ]  
 then
 # A-B 
 ironstart ""$SWFlocal"pack_A02.html "$SWFlocal"pack_A01.html" &
@@ -467,21 +481,21 @@ $OOOKIDS$OOOKIDSpathprefix"OFFICE_extra_files/pliktrologisi_j02.2_antigrafi_dida
 $OOOKIDS$OOOKIDSpathprefix"OFFICE_extra_files/pliktrologisi_j02.2_antigrafi_didaktiko_yliko.doc"
 
 
-if [ "$WEEKNUMBER" == '04' ] || [ "$WEEKNUMBER" == 'wk18-JanD' ]  
+if [ $WEEKNUMBER == $(($STARTWEEKCOUNT+04)) ] || [ "$WEEKNUMBER" == 'wk18-JanD' ]  
 then
 
 
 
 fi
 
-if [ "$WEEKNUMBER" == '05' ] || [ "$WEEKNUMBER" == 'wk19-JanE' ]  
+if [ $WEEKNUMBER == $(($STARTWEEKCOUNT+05)) ] || [ "$WEEKNUMBER" == 'wk19-JanE' ]  
 then
 
 
 fi
 
 ########### FEBRUARY ###################
-if [ "$WEEKNUMBER" == '06' ] || [ "$WEEKNUMBER" == 'wk20-FebA' ]  
+if [ $WEEKNUMBER == $(($STARTWEEKCOUNT+06)) ] || [ "$WEEKNUMBER" == 'wk20-FebA' ]  
 then
 
 #C-ST   code1 intro ευκολο για μεγάλες τάξεις (ας παίξουν pack_A04 όσοι τελειώσουν)
@@ -489,26 +503,26 @@ lightbot_iron_browser "maps_random_2%284x4_3lights%29.txt "$SWFlocal"pack_A04.ht
 
 fi
 
-if [ "$WEEKNUMBER" == '07' ] || [ "$WEEKNUMBER" == 'wk21-FebB' ]  
+if [ $WEEKNUMBER == $(($STARTWEEKCOUNT+07)) ] || [ "$WEEKNUMBER" == 'wk21-FebB' ]  
 then
 
 # APOKRIES 2020
 fi
 
-if [ "$WEEKNUMBER" == '08' ] || [ "$WEEKNUMBER" == 'wk22-FebC' ]  
+if [ $WEEKNUMBER == $(($STARTWEEKCOUNT+08)) ] || [ "$WEEKNUMBER" == 'wk22-FebC' ]  
 then
 
 # APOKRIES 2020
 fi
 
-if [ "$WEEKNUMBER" == '09' ] || [ "$WEEKNUMBER" == 'wk23-FebD' ]  
+if [ $WEEKNUMBER == $(($STARTWEEKCOUNT+09)) ] || [ "$WEEKNUMBER" == 'wk23-FebD' ]  
 then
 
 # APOKRIES 2020
 fi
 
 ########### MARCH ###################
-if [ "$WEEKNUMBER" == '10' ] || [ "$WEEKNUMBER" == 'wk24-MarA' ]  
+if [ $WEEKNUMBER == $(($STARTWEEKCOUNT+10)) ] || [ "$WEEKNUMBER" == 'wk24-MarA' ]  
 then
 
 #C-ST  code2Δ,Ε,ΣΤ ΕΠΑΠΑΝΑΛΑΒΕ
@@ -516,7 +530,7 @@ lightbot_iron_browser "maps_easy.txt "$SWFlocal"pack_A02.html"
 
 fi
 
-if [ "$WEEKNUMBER" == '11' ] || [ "$WEEKNUMBER" == 'wk25-MarB' ]  
+if [ $WEEKNUMBER == $(($STARTWEEKCOUNT+11)) ] || [ "$WEEKNUMBER" == 'wk25-MarB' ]  
 then
 #--------------------- this is for Full week-all classes events 
 leafpad "WEEK 12,13 GFX1 ptA, PTB   activated --- Week number: $WEEKNUMBER" &
@@ -529,7 +543,7 @@ ironstartincognito ""$SWFlocal"pack_url_param.html?url1=graphics_/paint_artpad_y
 
 fi
 
-if [ "$WEEKNUMBER" == '12' ] || [ "$WEEKNUMBER" == 'wk26-MarC' ]  
+if [ $WEEKNUMBER == $(($STARTWEEKCOUNT+12)) ] || [ "$WEEKNUMBER" == 'wk26-MarC' ]  
 then
 
 #--------------------- this is for Full week-all classes events 
@@ -542,7 +556,7 @@ ironstartincognito ""$SWFlocal"pack_url_param.html?url1=graphics_/paint_artpad_y
 
 fi
 
-if [ "$WEEKNUMBER" == '13' ] || [ "$WEEKNUMBER" == 'wk27-MarD' ]  
+if [ $WEEKNUMBER == $(($STARTWEEKCOUNT+13)) ] || [ "$WEEKNUMBER" == 'wk27-MarD' ]  
 then
 #--------------------- this is for Full week-all classes events 
 leafpad "WEEK GFX2 ptA, PTB    activated --- Week number: $WEEKNUMBER" &
@@ -570,25 +584,25 @@ fi
 
 
 ########### APRIL ###################
-if [ "$WEEKNUMBER" == '14' ] || [ "$WEEKNUMBER" == 'wk28-MarE-AprA' ]  
+if [ $WEEKNUMBER == $(($STARTWEEKCOUNT+14)) ] || [ "$WEEKNUMBER" == 'wk28-MarE-AprA' ]  
 then
 
 # EASTER 2020
 fi
 
-if [ "$WEEKNUMBER" == '15' ] || [ "$WEEKNUMBER" == 'wk29-AprB' ]  
+if [ $WEEKNUMBER == $(($STARTWEEKCOUNT+15)) ] || [ "$WEEKNUMBER" == 'wk29-AprB' ]  
 then
 
 # EASTER 2020
 fi
 
-if [ "$WEEKNUMBER" == '16' ] || [ "$WEEKNUMBER" == 'wk30-AprC' ]  
+if [ $WEEKNUMBER == $(($STARTWEEKCOUNT+16)) ] || [ "$WEEKNUMBER" == 'wk30-AprC' ]  
 then
 
 # EASTER 2020 KLEISTA
 fi
 
-if [ "$WEEKNUMBER" == '17' ] || [ "$WEEKNUMBER" == 'wk31-AprD' ]  
+if [ $WEEKNUMBER == $(($STARTWEEKCOUNT+17)) ] || [ "$WEEKNUMBER" == 'wk31-AprD' ]  
 then
 
 # EASTER 2020 KLEISTA
@@ -596,19 +610,19 @@ fi
 
 
 ########### MAY ###################
-if [ "$WEEKNUMBER" == '18' ] || [ "$WEEKNUMBER" == 'wk32-AprE-MayA' ]  
+if [ $WEEKNUMBER == $(($STARTWEEKCOUNT+18)) ] || [ "$WEEKNUMBER" == 'wk32-AprE-MayA' ]  
 then
 
 # EASTER 2020
 fi
 
-if [ "$WEEKNUMBER" == '19' ] || [ "$WEEKNUMBER" == 'wk33-MayB' ]  
+if [ $WEEKNUMBER == $(($STARTWEEKCOUNT+19)) ] || [ "$WEEKNUMBER" == 'wk33-MayB' ]  
 then
 
 
 fi
 
-if [ "$WEEKNUMBER" == '20' ] || [ "$WEEKNUMBER" == 'wk34-MayC' ]  
+if [ $WEEKNUMBER == $(($STARTWEEKCOUNT+20)) ] || [ "$WEEKNUMBER" == 'wk34-MayC' ]  
 then
 
 leafpad "WEEK TANK ,pixbot    activated --- Week number: $WEEKNUMBER" &
@@ -620,13 +634,13 @@ ironstartincognito ""$GAMESEDU"Code-Commander-gr/index_dot_links.html "$SWFlocal
 
 fi
 
-if [ "$WEEKNUMBER" == '21' ] || [ "$WEEKNUMBER" == 'wk35-MayD' ]  
+if [ $WEEKNUMBER == $(($STARTWEEKCOUNT+21)) ] || [ "$WEEKNUMBER" == 'wk35-MayD' ]  
 then
 
 
 fi
 
-if [ "$WEEKNUMBER" == '22' ] || [ "$WEEKNUMBER" == 'wk36-MayE' ]  
+if [ $WEEKNUMBER == $(($STARTWEEKCOUNT+22)) ] || [ "$WEEKNUMBER" == 'wk36-MayE' ]  
 then
 
 
@@ -635,13 +649,13 @@ fi
 
 ########### JUNE ###################
 
-if [ "$WEEKNUMBER" == '23' ] || [ "$WEEKNUMBER" == 'wk37-JuneA' ]  
+if [ $WEEKNUMBER == $(($STARTWEEKCOUNT+23)) ] || [ "$WEEKNUMBER" == 'wk37-JuneA' ]  
 then
 
 
 fi
 
-if [ "$WEEKNUMBER" == '24' ] || [ "$WEEKNUMBER" == 'wk38-JuneB' ]  
+if [ $WEEKNUMBER == $(($STARTWEEKCOUNT+24)) ] || [ "$WEEKNUMBER" == 'wk38-JuneB' ]  
 then
 
 
@@ -664,7 +678,7 @@ fi
 
 
 
-if [ $DAYOFWEEK == 'Δευτέρα' ] || [ $DAYOFWEEK == 'Monday' ]
+if [ $DAYOFWEEK == 'Δευτέρα)) ] || [ $DAYOFWEEK == 'Monday' ]
 then
 echo "Δευτέρα"
 #: '# ΔΕΥΤΕΡΑ
@@ -707,7 +721,7 @@ ironstartincognito ""$SWFlocal"pack_url_param.html?url1=graphics_/comic_design__
 #. iron_flash_puppy_pepper_home.sh "--incognito http://192.168.1.200/gamesedu/lightbot_haan/index.php?map=maps_random_2%284x4_3lights%29.txt "$SWFlocal"pack_A02.html"
 # ΔΕΥΤΕΡΑ '
 
-if [ "$WEEKNUMBER" == '11' ]
+if [ $WEEKNUMBER == $(($STARTWEEKCOUNT+11)) ]
 then
 #---------------------------- Γ1
 leafpad "WEEK11 activated --- Week number: $WEEKNUMBER"
@@ -719,7 +733,7 @@ leafpad "WEEK11 activated --- Week number: $WEEKNUMBER"
 fi
 
 
-if [ "$WEEKNUMBER" == '12' ]
+if [ $WEEKNUMBER == $(($STARTWEEKCOUNT+12)) ]
 then
 #---------------------------- Γ1
 ironstartincognito ""$SWFlocal"pack_url_param.html?url1=graphics_/comic_design__garfield_comic_creator_y8.swf\&url2=graphics_/animate_space__animation_studio_noAdUrl_!.swf\&url3=http://192.168.1.200/gamesedu/tortuga-kids-logo-gr\&url4=pack_A03.html\&url5=ΦΤΙΑΞΕ-KOMIK\&url6=sumopaint1025_GREEK_NoNavUrl1_v4b_progray.swf"
@@ -789,7 +803,7 @@ ironstartincognito ""$SWFlocal"pack_url_param.html?url1=graphics_/comic_design__
 # ΤΡΙΤΗ'
 fi
 
-if [ $DAYOFWEEK == 'Τετάρτη' ] || [ $DAYOFWEEK == 'Wednesday' ]
+if [ $DAYOFWEEK == 'Τετάρτη'] || [ $DAYOFWEEK == 'Wednesday' ]
 then
 echo "Τετάρτη"
 #: '# ΤΕΤΑΡΤΗ
