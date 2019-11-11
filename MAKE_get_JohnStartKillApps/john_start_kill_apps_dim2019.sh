@@ -1,4 +1,5 @@
-# Script ver 191018 startweekcount
+# Script ver 191111 startweekcount
+
 # this modifies the weekofyear (eg +1,-1)
 STARTWEEKCOUNT=0
 
@@ -365,13 +366,13 @@ if [ $WEEKNUMBER == $(($STARTWEEKCOUNT+46)) ] || [ "$WEEKNUMBER" == 'wk10-NovB' 
 then
 # A-B
 # gcompris 15 :mouse _ψαρια - keyboard ζαρι (τα κουμπιά τους φανηκαν δυσκολα)
-. gcompris &
+gcompris &
 # E-ST  4. Λαβύρινθος angry-birds: Ακολουθία
-ironstart "https://studio.code.org/s/course1/stage/4/puzzle/1 "$SWFlocal"pack_A02.html"
-ironstart "https://studio.code.org/s/course1/stage/4/puzzle/1 "$SWFlocal"pack_A02.html"
-ironstart "https://studio.code.org/s/course1/stage/4/puzzle/1 "$SWFlocal"pack_A02.html"
-ironstart "https://studio.code.org/s/course1/stage/4/puzzle/1 "$SWFlocal"pack_A02.html"
-ironstart "https://studio.code.org/s/course1/stage/4/puzzle/1 "$SWFlocal"pack_A02.html"
+ironstart "https://studio.code.org/s/course1/stage/4/puzzle/1 "$SWFlocal"pack_A01.html"
+ironstart "https://studio.code.org/s/course1/stage/4/puzzle/1 "$SWFlocal"pack_A01.html"
+ironstart "https://studio.code.org/s/course1/stage/4/puzzle/1 "$SWFlocal"pack_A01.html"
+ironstart "https://studio.code.org/s/course1/stage/4/puzzle/1 "$SWFlocal"pack_A01.html"
+ironstart "https://studio.code.org/s/course1/stage/4/puzzle/1 "$SWFlocal"pack_A01.html"
 
 
 fi
@@ -393,7 +394,7 @@ fi
 if [ $WEEKNUMBER == $(($STARTWEEKCOUNT+48)) ] || [ "$WEEKNUMBER" == 'wk12-NovD' ]  
 then
 # A-B Σχηματισμός Λέξεων-> ζώα , δουλείες ,ρούχα)
-. /opt/eduActiv8/eduActiv8 &
+/opt/eduActiv8/eduActiv8 &
 # E-ST  (7. melisses)
 ironstart "https://studio.code.org/s/course1/stage/7/puzzle/1 "$SWFlocal"pack_A03.html"
 ironstart "https://studio.code.org/s/course1/stage/7/puzzle/1 "$SWFlocal"pack_A03.html"
