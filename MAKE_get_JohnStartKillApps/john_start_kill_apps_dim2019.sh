@@ -433,12 +433,12 @@ if [ $WEEKNUMBER == $(($STARTWEEKCOUNT+51)) ] || [ "$WEEKNUMBER" == 'wk15-DecC' 
 then
 
 # giortes xmas Β : 2-3 μαθήματα (μετά τέλος ασκήσεων)		
-ironstartincognito ""$SWFgiortes"index_xmas.html?timer3"
-ironstartincognito ""$SWFgiortes"index_xmas.html?timer3"
-ironstartincognito ""$SWFgiortes"index_xmas.html?timer3"
-ironstartincognito ""$SWFgiortes"index_xmas.html?timer3"
-ironstartincognito ""$SWFgiortes"index_xmas.html?timer3"
-ironstartincognito ""$SWFgiortes"index_xmas.html?timer3"
+ironstartincognito ""$SWFgiortes"index_xmas.html?probeserver\&timer3"
+ironstartincognito ""$SWFgiortes"index_xmas.html?probeserver\&timer3"
+ironstartincognito ""$SWFgiortes"index_xmas.html?probeserver\&timer3"
+ironstartincognito ""$SWFgiortes"index_xmas.html?probeserver\&timer3"
+ironstartincognito ""$SWFgiortes"index_xmas.html?probeserver\&timer3"
+ironstartincognito ""$SWFgiortes"index_xmas.html?probeserver\&timer3"
 fi
 
 if [ $WEEKNUMBER == $(($STARTWEEKCOUNT+52)) ] || [ "$WEEKNUMBER" == 'wk---DecD' ]  
@@ -535,9 +535,12 @@ if [ $WEEKNUMBER == $(($STARTWEEKCOUNT+11)) ] || [ "$WEEKNUMBER" == 'wk25-MarB' 
 then
 #--------------------- this is for Full week-all classes events 
 leafpad "WEEK 12,13 GFX1 ptA, PTB   activated --- Week number: $WEEKNUMBER" &
-ironstartincognito ""$SWFlocal"pack_gfx1.html?probeserver"
-ironstartincognito ""$SWFlocal"pack_gfx1.html?probeserver"
-ironstartincognito ""$SWFlocal"pack_gfx1.html?probeserver"
+ironstartincognito ""$SWFlocal"pack_gfx1.html?probeserver\&timer4"
+ironstartincognito ""$SWFlocal"pack_gfx1.html?probeserver\&timer4"
+ironstartincognito ""$SWFlocal"pack_gfx1.html?probeserver\&timer4"
+ironstartincognito ""$SWFlocal"pack_gfx1.html?probeserver\&timer4"
+ironstartincognito ""$SWFlocal"pack_gfx1.html?probeserver\&timer4"
+ironstartincognito ""$SWFlocal"pack_gfx1.html?probeserver\&timer4"
 ironstartincognito ""$SWFlocal"pack_url_param.html?url1=graphics_/paint_artpad_y8_GREEK_noNavAdUrl.swf\&url2=graphics_/paint_lily_paint_magic_GOOD_PALLETE_NoNavAdUrl_!!.swf\&url3=graphics_/animate_draw_your_cartoon_character_GREEK1_noAdsUrl.swf\&url4=pack_A02.html\&url5=GFX1\&url6=sumopaint1025_GREEK_NoNavUrl1_v4b_progray.swf&probeserver"
 ironstartincognito ""$SWFlocal"pack_url_param.html?url1=graphics_/paint_artpad_y8_GREEK_noNavAdUrl.swf\&url2=graphics_/paint_lily_paint_magic_GOOD_PALLETE_NoNavAdUrl_!!.swf\&url3=graphics_/animate_draw_your_cartoon_character_GREEK1_noAdsUrl.swf\&url4=pack_A02.html\&url5=GFX1\&url6=sumopaint1025_GREEK_NoNavUrl1_v4b_progray.swf&probeserver"
 
@@ -549,6 +552,8 @@ then
 
 #--------------------- this is for Full week-all classes events 
 leafpad "WEEK 12,13 GFX1 ptA, PTB   activated --- Week number: $WEEKNUMBER" &
+ironstartincognito ""$SWFlocal"pack_gfx1.html?probeserver"
+ironstartincognito ""$SWFlocal"pack_gfx1.html?probeserver"
 ironstartincognito ""$SWFlocal"pack_gfx1.html?probeserver"
 ironstartincognito ""$SWFlocal"pack_gfx1.html?probeserver"
 ironstartincognito ""$SWFlocal"pack_gfx1.html?probeserver"
