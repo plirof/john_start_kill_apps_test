@@ -1,4 +1,4 @@
-# Script ver 191111 startweekcount
+# Script ver 191121 startweekcount
 
 # this modifies the weekofyear (eg +1,-1)
 STARTWEEKCOUNT=0
@@ -368,26 +368,27 @@ then
 # gcompris 15 :mouse _ψαρια - keyboard ζαρι (τα κουμπιά τους φανηκαν δυσκολα)
 gcompris &
 # E-ST  4. Λαβύρινθος angry-birds: Ακολουθία
-ironstart "https://studio.code.org/s/course1/stage/4/puzzle/1 "$SWFlocal"pack_A01.html"
-ironstart "https://studio.code.org/s/course1/stage/4/puzzle/1 "$SWFlocal"pack_A01.html"
-ironstart "https://studio.code.org/s/course1/stage/4/puzzle/1 "$SWFlocal"pack_A01.html"
-ironstart "https://studio.code.org/s/course1/stage/4/puzzle/1 "$SWFlocal"pack_A01.html"
-ironstart "https://studio.code.org/s/course1/stage/4/puzzle/1 "$SWFlocal"pack_A01.html"
+ironstart "https://studio.code.org/s/course1/stage/4/puzzle/1 "$SWFlocal"pack_A01.html?probeserver"
+ironstart "https://studio.code.org/s/course1/stage/4/puzzle/1 "$SWFlocal"pack_A01.html?probeserver"
+ironstart "https://studio.code.org/s/course1/stage/4/puzzle/1 "$SWFlocal"pack_A01.html?probeserver"
+ironstart "https://studio.code.org/s/course1/stage/4/puzzle/1 "$SWFlocal"pack_A01.html?probeserver"
+ironstart "https://studio.code.org/s/course1/stage/4/puzzle/1 "$SWFlocal"pack_A01.html?probeserver"
 
 
 fi
 
 if [ $WEEKNUMBER == $(($STARTWEEKCOUNT+47)) ] || [ "$WEEKNUMBER" == 'wk11-NovC' ]  
 then
-#A-B  pack_A01
+#A-B  pack_A06 spider , eat flies, tomato
 
 # E-ST   5. Λαβύρινθο angry-birds: εντοπισμός σφαλμ
-ironstart "https://studio.code.org/s/course1/stage/5/puzzle/1 "$SWFlocal"pack_A01.html?timer4"
-ironstart "https://studio.code.org/s/course1/stage/5/puzzle/1 "$SWFlocal"pack_A01.html?timer4"
-ironstart "https://studio.code.org/s/course1/stage/5/puzzle/1 "$SWFlocal"pack_A01.html?timer4"
-ironstart "https://studio.code.org/s/course1/stage/5/puzzle/1 "$SWFlocal"pack_A01.html?timer4"
-ironstart "https://studio.code.org/s/course1/stage/5/puzzle/1 "$SWFlocal"pack_A01.html?timer4"
-ironstart "https://studio.code.org/s/course1/stage/5/puzzle/1 "$SWFlocal"pack_A01.html?timer4"
+ironstart "https://studio.code.org/s/course1/stage/5/puzzle/1 "$SWFlocal"pack_A06.html?probeserver\&timer4"
+ironstart "https://studio.code.org/s/course1/stage/5/puzzle/1 "$SWFlocal"pack_A06.html?probeserver\&timer4"
+ironstart "https://studio.code.org/s/course1/stage/5/puzzle/1 "$SWFlocal"pack_A06.html?probeserver\&timer4"
+ironstart "https://studio.code.org/s/course1/stage/5/puzzle/1 "$SWFlocal"pack_A06.html?probeserver\&timer4"
+ironstart "https://studio.code.org/s/course1/stage/5/puzzle/1 "$SWFlocal"pack_A06.html?probeserver\&timer4"
+ironstart "https://studio.code.org/s/course1/stage/5/puzzle/1 "$SWFlocal"pack_A06.html?probeserver\&timer4"
+ironstart "https://studio.code.org/s/course1/stage/5/puzzle/1 "$SWFlocal"pack_A06.html?probeserver\&timer4"
 
 fi
 
@@ -396,11 +397,11 @@ then
 # A-B Σχηματισμός Λέξεων-> ζώα , δουλείες ,ρούχα)
 /opt/eduActiv8/eduActiv8 &
 # E-ST  (7. melisses)
-ironstart "https://studio.code.org/s/course1/stage/7/puzzle/1 "$SWFlocal"pack_A03.html"
-ironstart "https://studio.code.org/s/course1/stage/7/puzzle/1 "$SWFlocal"pack_A03.html"
-ironstart "https://studio.code.org/s/course1/stage/7/puzzle/1 "$SWFlocal"pack_A03.html" 
-ironstart "https://studio.code.org/s/course1/stage/7/puzzle/1 "$SWFlocal"pack_A03.html" 
-ironstart "https://studio.code.org/s/course1/stage/7/puzzle/1 "$SWFlocal"pack_A03.html" 
+ironstart "https://studio.code.org/s/course1/stage/7/puzzle/1 "$SWFlocal"pack_A03.html?probeserver"
+ironstart "https://studio.code.org/s/course1/stage/7/puzzle/1 "$SWFlocal"pack_A03.html?probeserver"
+ironstart "https://studio.code.org/s/course1/stage/7/puzzle/1 "$SWFlocal"pack_A03.html?probeserver" 
+ironstart "https://studio.code.org/s/course1/stage/7/puzzle/1 "$SWFlocal"pack_A03.html?probeserver" 
+ironstart "https://studio.code.org/s/course1/stage/7/puzzle/1 "$SWFlocal"pack_A03.html?probeserver" 
 
 fi
 
