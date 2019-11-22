@@ -1,4 +1,4 @@
-# Script ver 191121 startweekcount
+# Script ver 191121b startweekcount
 
 # this modifies the weekofyear (eg +1,-1)
 STARTWEEKCOUNT=0
@@ -411,6 +411,7 @@ then
 
 # Xristougenniatikes drasthriothtes (oles oi takseis) , christmas hidden objects , ζωγραφιστε χριστουγ κάρτες ramkid  
 # ???  giortes xmas Α !!!!! NA ΦΤΙΑΞΩ το ramkid_giortes_xmas_pt1.html	
+$OOOKIDS$OOOKIDSpathprefix"OFFICE_extra_files/xmas-rountolf-typing.doc" &
 ironstartincognito ""$SWFlocal"ramkidpedia_vol04_xmas1.html "$SWFlocal"ramkid_giortes_xmas_pt1.html"
 ironstartincognito ""$SWFlocal"ramkidpedia_vol04_xmas1.html "$SWFlocal"ramkid_giortes_xmas_pt1.html"
 ironstartincognito ""$SWFlocal"ramkidpedia_vol04_xmas1.html "$SWFlocal"ramkid_giortes_xmas_pt1.html"
@@ -421,7 +422,8 @@ fi
 if [ $WEEKNUMBER == $(($STARTWEEKCOUNT+50)) ] || [ "$WEEKNUMBER" == 'wk14-DecB' ]  
 then
 
-# giortes xmas Β : 2-3 μαθήματα (μετά τέλος ασκήσεων)	
+# giortes xmas Β : 2-3 μαθήματα (μετά τέλος ασκήσεων)
+$OOOKIDS$OOOKIDSpathprefix"OFFICE_extra_files/xmas-rountolf-typing.doc" &	
 ironstartincognito ""$SWFgiortes"index_xmas.html?probeserver\&timer3"
 ironstartincognito ""$SWFgiortes"index_xmas.html?probeserver\&timer3"
 ironstartincognito ""$SWFgiortes"index_xmas.html?probeserver\&timer3"
@@ -433,7 +435,8 @@ fi
 if [ $WEEKNUMBER == $(($STARTWEEKCOUNT+51)) ] || [ "$WEEKNUMBER" == 'wk15-DecC' ]  
 then
 
-# giortes xmas Β : 2-3 μαθήματα (μετά τέλος ασκήσεων)		
+# giortes xmas Β : 2-3 μαθήματα (μετά τέλος ασκήσεων)
+$OOOKIDS$OOOKIDSpathprefix"OFFICE_extra_files/xmas-rountolf-typing.doc" &		
 ironstartincognito ""$SWFgiortes"index_xmas.html?probeserver\&timer3"
 ironstartincognito ""$SWFgiortes"index_xmas.html?probeserver\&timer3"
 ironstartincognito ""$SWFgiortes"index_xmas.html?probeserver\&timer3"
