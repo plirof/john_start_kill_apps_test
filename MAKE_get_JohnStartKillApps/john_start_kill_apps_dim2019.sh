@@ -1,4 +1,4 @@
-# Script ver 191201 startweekcount
+# Script ver 191204 startweekcount
 
 # this modifies the weekofyear (eg +1,-1)
 STARTWEEKCOUNT=0
@@ -437,10 +437,15 @@ then
 #$OOOKIDS$OOOKIDSpathprefix"OFFICE_extra_files/xmas-rountolf-typing.doc" &	
 cd "/tmp/";wget --directory-prefix="/tmp/" -O "a" "http://192.168.1.200/askiseis_office/OFFICE_extra_files/xmas-rountolf-typing.doc"; ooo4kids1.3 -n /tmp/a &
 ironstartincognito ""$SWFgiortes"index_xmas.html?probeserver\&timer3"
+cd "/tmp/";wget --directory-prefix="/tmp/" -O "a" "http://192.168.1.200/askiseis_office/OFFICE_extra_files/xmas-rountolf-typing.doc"; ooo4kids1.3 -n /tmp/a
 ironstartincognito ""$SWFgiortes"index_xmas.html?probeserver\&timer3"
+cd "/tmp/";wget --directory-prefix="/tmp/" -O "a" "http://192.168.1.200/askiseis_office/OFFICE_extra_files/xmas-rountolf-typing.doc"; ooo4kids1.3 -n /tmp/a
 ironstartincognito ""$SWFgiortes"index_xmas.html?probeserver\&timer3"
+cd "/tmp/";wget --directory-prefix="/tmp/" -O "a" "http://192.168.1.200/askiseis_office/OFFICE_extra_files/xmas-rountolf-typing.doc"; ooo4kids1.3 -n /tmp/a
 ironstartincognito ""$SWFgiortes"index_xmas.html?probeserver\&timer3"
+cd "/tmp/";wget --directory-prefix="/tmp/" -O "a" "http://192.168.1.200/askiseis_office/OFFICE_extra_files/xmas-rountolf-typing.doc"; ooo4kids1.3 -n /tmp/a
 ironstartincognito ""$SWFgiortes"index_xmas.html?probeserver\&timer3"
+cd "/tmp/";wget --directory-prefix="/tmp/" -O "a" "http://192.168.1.200/askiseis_office/OFFICE_extra_files/xmas-rountolf-typing.doc"; ooo4kids1.3 -n /tmp/a
 ironstartincognito ""$SWFgiortes"index_xmas.html?probeserver\&timer3"
 fi
 
@@ -448,13 +453,15 @@ if [ $WEEKNUMBER == $(($STARTWEEKCOUNT+51)) ] || [ "$WEEKNUMBER" == 'wk15-DecC' 
 then
 
 # giortes xmas Β : 2-3 μαθήματα (μετά τέλος ασκήσεων)
-$OOOKIDS$OOOKIDSpathprefix"OFFICE_extra_files/xmas-rountolf-typing.doc" &		
-ironstartincognito ""$SWFgiortes"index_xmas.html?probeserver\&timer3"
-ironstartincognito ""$SWFgiortes"index_xmas.html?probeserver\&timer3"
-ironstartincognito ""$SWFgiortes"index_xmas.html?probeserver\&timer3"
-ironstartincognito ""$SWFgiortes"index_xmas.html?probeserver\&timer3"
-ironstartincognito ""$SWFgiortes"index_xmas.html?probeserver\&timer3"
-ironstartincognito ""$SWFgiortes"index_xmas.html?probeserver\&timer3"
+#$OOOKIDS$OOOKIDSpathprefix"OFFICE_extra_files/xmas-rountolf-typing.doc" &		
+#cd "/tmp/";wget --directory-prefix="/tmp/" -O "a" "http://192.168.1.200/askiseis_office/OFFICE_extra_files/xmas-rountolf-typing.doc"; ooo4kids1.3 -n /tmp/a
+
+ironstartincognito ""$SWFgiortes"index_xmas.html?probeserver\&timer2"
+ironstartincognito ""$SWFgiortes"index_xmas.html?probeserver\&timer2"
+ironstartincognito ""$SWFgiortes"index_xmas.html?probeserver\&timer2"
+ironstartincognito ""$SWFgiortes"index_xmas.html?probeserver\&timer2"
+ironstartincognito ""$SWFgiortes"index_xmas.html?probeserver\&timer2"
+ironstartincognito ""$SWFgiortes"index_xmas.html?probeserver\&timer2"
 fi
 
 if [ $WEEKNUMBER == $(($STARTWEEKCOUNT+52)) ] || [ "$WEEKNUMBER" == 'wk---DecD' ]  
