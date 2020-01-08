@@ -1,5 +1,5 @@
-# Script ver 191204 startweekcount
-
+# Script ver 200108a weeks01-09tempfix
+#changes 200107 : temp hardcoded fix : first 9 weeks (o..9) have problem Cause of the starting 0  : 02==2  , 03==3
 # this modifies the weekofyear (eg +1,-1)
 STARTWEEKCOUNT=0
 
@@ -131,7 +131,7 @@ leafpad "Week number: $WEEKNUMBER" &
 
 #ironstartincognito ""$GAMESEDU"Code-Commander-gr/index_dot_links.html "$SWFlocal"pack_A02.html http://pixbot.patatakia.tk "$SWFlocal"fun/frogger3d__noNavURL_10lives!!.swf"
 
-
+#http://192.168.1.200/tinymce_class/tinymce.html?probeserver&file=lesson05
 #ironstartincognito ""$SWFlocal"pack_url_param.html?url1=fun/maze/Diego_Dinosaur_Rescue_maze_KIDS_simple_NotTImed_!!!.swf\&url2=fun/maze/the-maze-game\(robot\)__no_jp_utl.swf\&url3=ab/ladybugs_TRODLER_noADsURL@.swf\&url4=type/typing_adventure__indiana_jones_NoNavUrl.swf\&url5=fun/td/BloonsTowerDefense2_ok4slow_p4_NoNavUrl.swf\&url6=maze-1"
 #ironstartincognito ""$SWFlocal"pack_url_param.html?url1=fun/maze/labrat__maze-kids_needFastPC_unencr2noAdsURL_!!.swf\&url2=fun/maze/minotaur_122_maze__unencr3_noAdsUrl_!.swf\&url3=fun/maze/Diego_Dinosaur_Rescue_maze_KIDS_simple_NotTImed_!!!.swf\&url4=ab/ladybugs_TRODLER_noADsURL@.swf\&url5=fun/physics/soccer-balls__physics__noADurl.swf\&url6=maze-2"
 #ironstartincognito ""$SWFlocal"pack_url_param.html?url1=graphics_/paint_artpad_y8_GREEK_noNavAdUrl.swf\&url2=graphics_/paint_lily_paint_magic_GOOD_PALLETE_NoNavAdUrl_!!.swf\&url3=graphics_/animate_draw_your_cartoon_character_GREEK1_noAdsUrl.swf\&url4=pack_A02.html\&url5=GFX1\&url6=sumopaint1025_GREEK_NoNavUrl1_v4b_progray.swf"
@@ -201,7 +201,7 @@ fi
 #load_extra_apps
 
 #201902118-22  , 2020 updated
-if [ $WEEKNUMBER == $(($STARTWEEKCOUNT+07)) ] || [ "$WEEKNUMBER" == '07' ]
+if [ $WEEKNUMBER == "0"$(($STARTWEEKCOUNT+07)) ] || [ "$WEEKNUMBER" == '07' ]
 then
 #--------------------- this is for Full week-all classes events    
 leafpad "WEEK halloween ptA (ramkid_invitation_party , swf_ramkid_cds2k5/Ramkid_12feb_apokries , KidsPedia/kids_ePedia32cd/Volume13 )   activated --- Week number: $WEEKNUMBER" &
@@ -214,7 +214,7 @@ ironstartincognito ""$SWFgiortes"other/ramkid_invitation_party/index.html "$SWFp
 fi
 
 #20190225-08  2020 updated
-if [ $WEEKNUMBER == $(($STARTWEEKCOUNT+08)) ] || [ "$WEEKNUMBER" == '09' ]
+if [ $WEEKNUMBER == "0"$(($STARTWEEKCOUNT+08)) ] || [ "$WEEKNUMBER" == '09' ]
 then
 #--------------------- this is for Full week-all classes events 
 leafpad "WEEK halloween ptB (for 2 weeks  games)   activated --- Week number: $WEEKNUMBER    20190225-08" &
@@ -327,12 +327,22 @@ then
 
 . /usr/local/bin/tuxpaint-with-conf.sh &
 
+
+$OOOKIDS$OOOKIDSpathprefix"AskiseisWord/Για Πληκτρολόγηση.doc"
+ironstartincognito "http://192.168.1.200/tinymce_class/tinymce.html?probeserver\&file=giorti28oct01" &
+ #ironstartincognito "https://plirof.github.io/tinymce_class/tinymce.html?probeserver\&file=giorti28oct01" &
 $OOOKIDS$OOOKIDSpathprefix"AskiseisWord/Για Πληκτρολόγηση.doc"
 $OOOKIDS$OOOKIDSpathprefix"AskiseisWord/Για Πληκτρολόγηση.doc"
+ironstartincognito "http://192.168.1.200/tinymce_class/tinymce.html?probeserver\&file=giorti28oct01" &
+#ironstartincognito "https://plirof.github.io/tinymce_class/tinymce.html?probeserver\&file=giorti28oct01" &
 $OOOKIDS$OOOKIDSpathprefix"AskiseisWord/Για Πληκτρολόγηση.doc"
 $OOOKIDS$OOOKIDSpathprefix"AskiseisWord/Για Πληκτρολόγηση.doc"
+ironstartincognito "http://192.168.1.200/tinymce_class/tinymce.html?probeserver\&file=giorti28oct01" &
 $OOOKIDS$OOOKIDSpathprefix"AskiseisWord/Για Πληκτρολόγηση.doc"
-$OOOKIDS$OOOKIDSpathprefix"AskiseisWord/Για Πληκτρολόγηση.doc"
+ironstartincognito "http://192.168.1.200/tinymce_class/tinymce.html?probeserver\&file=giorti28oct01" &
+
+
+#___ alt online ___https://plirof.github.io/tinymce_class/tinymce.html?probeserver&file=giorti28oct01
 
 
 fi
@@ -480,10 +490,15 @@ then
 
 fi
 
-if [ $WEEKNUMBER == $(($STARTWEEKCOUNT+02)) ] || [ "$WEEKNUMBER" == 'wk16-JanB' ]  
+############  ********************
+# NOTE first 9 weeks (o..9) have problem Cause of the starting 0  : 02==2  , 03==3
+############  ********************
+
+if [ $WEEKNUMBER ==  "0"$(($STARTWEEKCOUNT+02)) ]   || [ "$WEEKNUMBER" == 'wk16-JanB' ]  
 then
 
-#tuxpaint   ,  15o tuxpaint : βασιλόπιτα, χριστουγ εικόνα 
+#tuxpaint   ,  15o tuxpaint : βασιλόπιτα, Κάρτα με ευχές Νέα χρονιά
+/usr/local/bin/tuxpaint-with-conf.sh &
 ironstartincognito ""$SWFlocal"pack_paint1.html?timer3\&probeserver"
 ironstartincognito ""$SWFlocal"pack_paint1.html?timer3\&probeserver"
 ironstartincognito ""$SWFlocal"pack_paint1.html?timer3\&probeserver"
@@ -493,10 +508,10 @@ ironstartincognito ""$SWFlocal"pack_paint1.html?timer3\&probeserver"
 
 fi
 
-if [ $WEEKNUMBER == $(($STARTWEEKCOUNT+03)) ] || [ "$WEEKNUMBER" == 'wk17-JanC' ]  
+if [ $WEEKNUMBER == "0"$(($STARTWEEKCOUNT+03)) ] || [ "$WEEKNUMBER" == 'wk17-JanC' ]  
 then
 # A-B 
-ironstart ""$SWFlocal"pack_A02.html "$SWFlocal"pack_A01.html" &
+gcompris &
 #E-ST
 $OOOKIDS$OOOKIDSpathprefix"OFFICE_extra_files/pliktrologisi_j02.2_antigrafi_didaktiko_yliko.doc"
 $OOOKIDS$OOOKIDSpathprefix"OFFICE_extra_files/pliktrologisi_j02.2_antigrafi_didaktiko_yliko.doc"
@@ -505,41 +520,58 @@ $OOOKIDS$OOOKIDSpathprefix"OFFICE_extra_files/pliktrologisi_j02.2_antigrafi_dida
 $OOOKIDS$OOOKIDSpathprefix"OFFICE_extra_files/pliktrologisi_j02.2_antigrafi_didaktiko_yliko.doc"
 
 
-if [ $WEEKNUMBER == $(($STARTWEEKCOUNT+04)) ] || [ "$WEEKNUMBER" == 'wk18-JanD' ]  
+if [ $WEEKNUMBER == "0"$(($STARTWEEKCOUNT+04)) ] || [ "$WEEKNUMBER" == 'wk18-JanD' ]  
 then
 
-
+# A-B 
+ironstartincognito ""$SWFlocal"pack_A01.html "$SWFlocal"pack_A02.html" &
+$OOOKIDS$OOOKIDSpathprefix"OFFICE_extra_files/pliktrologisi_j02.1_antigrafi_katanomi_wron.doc"
+$OOOKIDS$OOOKIDSpathprefix"OFFICE_extra_files/pliktrologisi_j02.1_antigrafi_katanomi_wron.doc"
+$OOOKIDS$OOOKIDSpathprefix"OFFICE_extra_files/pliktrologisi_j02.1_antigrafi_katanomi_wron.doc"
+ironstartincognito ""$SWFlocal"pack_A01.html "$SWFlocal"pack_A02.html" &
+$OOOKIDS$OOOKIDSpathprefix"OFFICE_extra_files/pliktrologisi_j02.1_antigrafi_katanomi_wron.doc"
+$OOOKIDS$OOOKIDSpathprefix"OFFICE_extra_files/pliktrologisi_j02.1_antigrafi_katanomi_wron.doc"
 
 fi
 
-if [ $WEEKNUMBER == $(($STARTWEEKCOUNT+05)) ] || [ "$WEEKNUMBER" == 'wk19-JanE' ]  
+if [ $WEEKNUMBER == "0"$(($STARTWEEKCOUNT+05)) ] || [ "$WEEKNUMBER" == 'wk19-JanE' ]  
 then
-
-
-fi
-
-########### FEBRUARY ###################
-if [ $WEEKNUMBER == $(($STARTWEEKCOUNT+06)) ] || [ "$WEEKNUMBER" == 'wk20-FebA' ]  
-then
-
 #C-ST   code1 intro ευκολο για μεγάλες τάξεις (ας παίξουν pack_A04 όσοι τελειώσουν)
+lightbot_iron_browser "maps_random_2%284x4_3lights%29.txt "$SWFlocal"pack_A04.html"
+lightbot_iron_browser "maps_random_2%284x4_3lights%29.txt "$SWFlocal"pack_A04.html"
+lightbot_iron_browser "maps_random_2%284x4_3lights%29.txt "$SWFlocal"pack_A04.html"
+lightbot_iron_browser "maps_random_2%284x4_3lights%29.txt "$SWFlocal"pack_A04.html"
 lightbot_iron_browser "maps_random_2%284x4_3lights%29.txt "$SWFlocal"pack_A04.html"
 
 fi
 
-if [ $WEEKNUMBER == $(($STARTWEEKCOUNT+07)) ] || [ "$WEEKNUMBER" == 'wk21-FebB' ]  
+########### FEBRUARY ###################
+if [ $WEEKNUMBER == "0"$(($STARTWEEKCOUNT+06)) ] || [ "$WEEKNUMBER" == 'wk20-FebA' ]  
+then
+
+#C-ST  code2Δ,Ε,ΣΤ ΕΠΑΠΑΝΑΛΑΒΕ
+lightbot_iron_browser "maps_easy.txt "$SWFlocal"pack_A02.html"
+lightbot_iron_browser "maps_easy.txt "$SWFlocal"pack_A02.html"
+lightbot_iron_browser "maps_easy.txt "$SWFlocal"pack_A02.html"
+lightbot_iron_browser "maps_easy.txt "$SWFlocal"pack_A02.html"
+lightbot_iron_browser "maps_easy.txt "$SWFlocal"pack_A02.html"
+
+
+fi
+
+if [ $WEEKNUMBER == "0"$(($STARTWEEKCOUNT+07)) ] || [ "$WEEKNUMBER" == 'wk21-FebB' ]  
 then
 
 # APOKRIES 2020
 fi
 
-if [ $WEEKNUMBER == $(($STARTWEEKCOUNT+08)) ] || [ "$WEEKNUMBER" == 'wk22-FebC' ]  
+if [ $WEEKNUMBER == "0"$(($STARTWEEKCOUNT+08)) ] || [ "$WEEKNUMBER" == 'wk22-FebC' ]  
 then
 
 # APOKRIES 2020
 fi
 
-if [ $WEEKNUMBER == $(($STARTWEEKCOUNT+09)) ] || [ "$WEEKNUMBER" == 'wk23-FebD' ]  
+if [ $WEEKNUMBER == "0"$(($STARTWEEKCOUNT+09)) ] || [ "$WEEKNUMBER" == 'wk23-FebD' ]  
 then
 
 # APOKRIES 2020
@@ -549,10 +581,16 @@ fi
 if [ $WEEKNUMBER == $(($STARTWEEKCOUNT+10)) ] || [ "$WEEKNUMBER" == 'wk24-MarA' ]  
 then
 
-#C-ST  code2Δ,Ε,ΣΤ ΕΠΑΠΑΝΑΛΑΒΕ
-lightbot_iron_browser "maps_easy.txt "$SWFlocal"pack_A02.html"
+# (pack_code_rover.html : ΠΕΡΙΕΧΕΙ : Rover_nasa ,Tiny-explorers,tortuga.patatakia.tk,TurtlePond,pack) 
+ironstartincognito ""$SWFlocal"pack_code_rover.html?probeserver\&timer4"
+ironstartincognito ""$SWFlocal"pack_code_rover.html?probeserver\&timer4"
+ironstartincognito ""$SWFlocal"pack_code_rover.html?probeserver\&timer4"
+ironstartincognito ""$SWFlocal"pack_code_rover.html?probeserver\&timer4"
+ironstartincognito ""$SWFlocal"pack_code_rover.html?probeserver\&timer4"
+ironstartincognito ""$SWFlocal"pack_code_rover.html?probeserver\&timer4"
 
 fi
+
 
 if [ $WEEKNUMBER == $(($STARTWEEKCOUNT+11)) ] || [ "$WEEKNUMBER" == 'wk25-MarB' ]  
 then
@@ -572,6 +610,9 @@ fi
 
 if [ $WEEKNUMBER == $(($STARTWEEKCOUNT+12)) ] || [ "$WEEKNUMBER" == 'wk26-MarC' ]  
 then
+
+ironstartincognito "http://192.168.1.200/tinymce_class/tinymce.html?probeserver\&file=giorti25mart01" &
+#___ alt online ___ironstartincognito "https://plirof.github.io/tinymce_class/tinymce.html?probeserver\&file=giorti25mart01" &
 
 #--------------------- this is for Full week-all classes events 
 leafpad "WEEK 12,13 GFX1 ptA, PTB   activated --- Week number: $WEEKNUMBER" &
@@ -647,7 +688,12 @@ fi
 
 if [ $WEEKNUMBER == $(($STARTWEEKCOUNT+19)) ] || [ "$WEEKNUMBER" == 'wk33-MayB' ]  
 then
-
+#__(pack_code_lightbotswf EXEI: lightbotswf,turtlepond,tortuga.patatak,tiny-explor,packA03	
+ironstartincognito ""$SWFlocal"pack_code_lightbotswf.html?probeserver\&timer2"
+ironstartincognito ""$SWFlocal"pack_code_lightbotswf.html?probeserver\&timer2"
+ironstartincognito ""$SWFlocal"pack_code_lightbotswf.html?probeserver\&timer2"
+ironstartincognito ""$SWFlocal"pack_code_lightbotswf.html?probeserver\&timer2"
+ironstartincognito ""$SWFlocal"pack_code_lightbotswf.html?probeserver\&timer2"
 
 fi
 
@@ -665,6 +711,15 @@ fi
 
 if [ $WEEKNUMBER == $(($STARTWEEKCOUNT+21)) ] || [ "$WEEKNUMBER" == 'wk35-MayD' ]  
 then
+
+ironstartincognito ""$SWFlocal"pack_A05.html "$SWFlocal"pack_A02.html" &
+$OOOKIDS$OOOKIDSpathprefix"OFFICE_extra_files/excel_1.1_pinakas_mathitwn.xls"
+$OOOKIDS$OOOKIDSpathprefix"OFFICE_extra_files/excel_1.1_pinakas_mathitwn.xls"
+ironstartincognito ""$SWFlocal"pack_A05.html "$SWFlocal"pack_A02.html" &
+$OOOKIDS$OOOKIDSpathprefix"OFFICE_extra_files/excel_1.1_pinakas_mathitwn.xls"
+$OOOKIDS$OOOKIDSpathprefix"OFFICE_extra_files/excel_1.1_pinakas_mathitwn.xls"
+ironstartincognito ""$SWFlocal"pack_A05.html "$SWFlocal"pack_A02.html" &
+$OOOKIDS$OOOKIDSpathprefix"OFFICE_extra_files/excel_1.1_pinakas_mathitwn.xls"
 
 
 fi
@@ -764,14 +819,17 @@ fi
 
 if [ $WEEKNUMBER == $(($STARTWEEKCOUNT+12)) ]
 then
+
+
+
 #---------------------------- Γ1
-ironstartincognito ""$SWFlocal"pack_url_param.html?url1=graphics_/comic_design__garfield_comic_creator_y8.swf\&url2=graphics_/animate_space__animation_studio_noAdUrl_!.swf\&url3=http://192.168.1.200/gamesedu/tortuga-kids-logo-gr\&url4=pack_A03.html\&url5=ΦΤΙΑΞΕ-KOMIK\&url6=sumopaint1025_GREEK_NoNavUrl1_v4b_progray.swf"
+#ironstartincognito ""$SWFlocal"pack_url_param.html?url1=graphics_/comic_design__garfield_comic_creator_y8.swf\&url2=graphics_/animate_space__animation_studio_noAdUrl_!.swf\&url3=http://192.168.1.200/gamesedu/tortuga-kids-logo-gr\&url4=pack_A03.html\&url5=ΦΤΙΑΞΕ-KOMIK\&url6=sumopaint1025_GREEK_NoNavUrl1_v4b_progray.swf"
 #---------------------------- Γ2
-ironstartincognito ""$SWFlocal"pack_url_param.html?url1=graphics_/comic_design__garfield_comic_creator_y8.swf\&url2=graphics_/animate_space__animation_studio_noAdUrl_!.swf\&url3=http://192.168.1.200/gamesedu/tortuga-kids-logo-gr\&url4=pack_A03.html\&url5=ΦΤΙΑΞΕ-KOMIK\&url6=sumopaint1025_GREEK_NoNavUrl1_v4b_progray.swf"
+#ironstartincognito ""$SWFlocal"pack_url_param.html?url1=graphics_/comic_design__garfield_comic_creator_y8.swf\&url2=graphics_/animate_space__animation_studio_noAdUrl_!.swf\&url3=http://192.168.1.200/gamesedu/tortuga-kids-logo-gr\&url4=pack_A03.html\&url5=ΦΤΙΑΞΕ-KOMIK\&url6=sumopaint1025_GREEK_NoNavUrl1_v4b_progray.swf"
 #---------------------------- ΣΤ2
-ironstartincognito ""$SWFlocal"pack_url_param.html?url1=graphics_/comic_design__garfield_comic_creator_y8.swf\&url2=graphics_/animate_space__animation_studio_noAdUrl_!.swf\&url3=http://192.168.1.200/gamesedu/tortuga-kids-logo-gr\&url4=pack_A03.html\&url5=ΦΤΙΑΞΕ-KOMIK\&url6=sumopaint1025_GREEK_NoNavUrl1_v4b_progray.swf"
+#ironstartincognito ""$SWFlocal"pack_url_param.html?url1=graphics_/comic_design__garfield_comic_creator_y8.swf\&url2=graphics_/animate_space__animation_studio_noAdUrl_!.swf\&url3=http://192.168.1.200/gamesedu/tortuga-kids-logo-gr\&url4=pack_A03.html\&url5=ΦΤΙΑΞΕ-KOMIK\&url6=sumopaint1025_GREEK_NoNavUrl1_v4b_progray.swf"
 #---------------------------- ΣΤ1
-ironstartincognito ""$SWFlocal"pack_url_param.html?url1=graphics_/comic_design__garfield_comic_creator_y8.swf\&url2=graphics_/animate_space__animation_studio_noAdUrl_!.swf\&url3=http://192.168.1.200/gamesedu/tortuga-kids-logo-gr\&url4=pack_A03.html\&url5=ΦΤΙΑΞΕ-KOMIK\&url6=sumopaint1025_GREEK_NoNavUrl1_v4b_progray.swf"
+#ironstartincognito ""$SWFlocal"pack_url_param.html?url1=graphics_/comic_design__garfield_comic_creator_y8.swf\&url2=graphics_/animate_space__animation_studio_noAdUrl_!.swf\&url3=http://192.168.1.200/gamesedu/tortuga-kids-logo-gr\&url4=pack_A03.html\&url5=ΦΤΙΑΞΕ-KOMIK\&url6=sumopaint1025_GREEK_NoNavUrl1_v4b_progray.swf"
 fi
 
 
