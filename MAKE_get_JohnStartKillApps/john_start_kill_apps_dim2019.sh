@@ -1,4 +1,4 @@
-# Script ver 200108a weeks01-09tempfix
+# Script ver 200108b weeks01-09tempfix
 #changes 200107 : temp hardcoded fix : first 9 weeks (o..9) have problem Cause of the starting 0  : 02==2  , 03==3
 # this modifies the weekofyear (eg +1,-1)
 STARTWEEKCOUNT=0
@@ -205,12 +205,12 @@ if [ $WEEKNUMBER == "0"$(($STARTWEEKCOUNT+07)) ] || [ "$WEEKNUMBER" == '07' ]
 then
 #--------------------- this is for Full week-all classes events    
 leafpad "WEEK halloween ptA (ramkid_invitation_party , swf_ramkid_cds2k5/Ramkid_12feb_apokries , KidsPedia/kids_ePedia32cd/Volume13 )   activated --- Week number: $WEEKNUMBER" &
-ironstartincognito ""$SWFgiortes"other/ramkid_invitation_party/index.html "$SWFpath"ramkid_giortes_apokries_pt1.html"
-ironstartincognito ""$SWFgiortes"other/ramkid_invitation_party/index.html "$SWFpath"ramkid_giortes_apokries_pt1.html"
-ironstartincognito ""$SWFgiortes"other/ramkid_invitation_party/index.html "$SWFpath"ramkid_giortes_apokries_pt1.html"
-ironstartincognito ""$SWFgiortes"other/ramkid_invitation_party/index.html "$SWFpath"ramkid_giortes_apokries_pt1.html"
-ironstartincognito ""$SWFgiortes"other/ramkid_invitation_party/index.html "$SWFpath"ramkid_giortes_apokries_pt1.html"
-ironstartincognito ""$SWFgiortes"other/ramkid_invitation_party/index.html "$SWFpath"ramkid_giortes_apokries_pt1.html"
+ironstartincognito ""$SWFgiortes"other/ramkid_invitation_party/index.html "$SWFpath"ramkid_giortes_apokries_pt1.html http://192.168.1.200/tinymce_class/tinymce.html?probeserver\&file=giorti_apokries01"
+ironstartincognito ""$SWFgiortes"other/ramkid_invitation_party/index.html "$SWFpath"ramkid_giortes_apokries_pt1.html http://192.168.1.200/tinymce_class/tinymce.html?probeserver\&file=giorti_apokries01"
+ironstartincognito ""$SWFgiortes"other/ramkid_invitation_party/index.html "$SWFpath"ramkid_giortes_apokries_pt1.html http://192.168.1.200/tinymce_class/tinymce.html?probeserver\&file=giorti_apokries01"
+ironstartincognito ""$SWFgiortes"other/ramkid_invitation_party/index.html "$SWFpath"ramkid_giortes_apokries_pt1.html http://192.168.1.200/tinymce_class/tinymce.html?probeserver\&file=giorti_apokries01"
+ironstartincognito ""$SWFgiortes"other/ramkid_invitation_party/index.html "$SWFpath"ramkid_giortes_apokries_pt1.html http://192.168.1.200/tinymce_class/tinymce.html?probeserver\&file=giorti_apokries01"
+ironstartincognito ""$SWFgiortes"other/ramkid_invitation_party/index.html "$SWFpath"ramkid_giortes_apokries_pt1.html http://192.168.1.200/tinymce_class/tinymce.html?probeserver\&file=giorti_apokries01"
 fi
 
 #20190225-08  2020 updated
