@@ -518,7 +518,7 @@ $OOOKIDS$OOOKIDSpathprefix"OFFICE_extra_files/pliktrologisi_j02.2_antigrafi_dida
 $OOOKIDS$OOOKIDSpathprefix"OFFICE_extra_files/pliktrologisi_j02.2_antigrafi_didaktiko_yliko.doc"
 $OOOKIDS$OOOKIDSpathprefix"OFFICE_extra_files/pliktrologisi_j02.2_antigrafi_didaktiko_yliko.doc"
 $OOOKIDS$OOOKIDSpathprefix"OFFICE_extra_files/pliktrologisi_j02.2_antigrafi_didaktiko_yliko.doc"
-
+fi
 
 if [ $WEEKNUMBER == "0"$(($STARTWEEKCOUNT+04)) ] || [ "$WEEKNUMBER" == 'wk18-JanD' ]  
 then
