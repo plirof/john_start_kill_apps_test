@@ -513,6 +513,15 @@ then
 # A-B 
 gcompris &
 #E-ST
+ironstartincognito "https://plirof.github.io/tinymce_class/tinymce.html?probeserver\&file=month_jan"" "$SWFlocal"pack_paint1.html?timer3\&probeserver"
+ironstartincognito "https://plirof.github.io/tinymce_class/tinymce.html?probeserver\&file=month_jan"" "$SWFlocal"pack_paint1.html?timer3\&probeserver"
+ironstartincognito "https://plirof.github.io/tinymce_class/tinymce.html?probeserver\&file=month_jan"" "$SWFlocal"pack_paint1.html?timer3\&probeserver"
+ironstartincognito "https://plirof.github.io/tinymce_class/tinymce.html?probeserver\&file=month_jan"" "$SWFlocal"pack_paint1.html?timer3\&probeserver"
+ironstartincognito "https://plirof.github.io/tinymce_class/tinymce.html?probeserver\&file=month_jan"" "$SWFlocal"pack_paint1.html?timer3\&probeserver"
+
+ironstartincognito "http://192.168.1.200/tinymce_class/tinymce.html?probeserver\&file=month_jan"" "$SWFlocal"pack_paint1.html?timer3\&probeserver"
+ironstartincognito "http://192.168.1.200/tinymce_class/tinymce.html?probeserver\&file=month_jan" 
+
 $OOOKIDS$OOOKIDSpathprefix"OFFICE_extra_files/pliktrologisi_j02.2_antigrafi_didaktiko_yliko.doc"
 $OOOKIDS$OOOKIDSpathprefix"OFFICE_extra_files/pliktrologisi_j02.2_antigrafi_didaktiko_yliko.doc"
 $OOOKIDS$OOOKIDSpathprefix"OFFICE_extra_files/pliktrologisi_j02.2_antigrafi_didaktiko_yliko.doc"
