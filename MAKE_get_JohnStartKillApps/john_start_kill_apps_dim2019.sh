@@ -222,11 +222,11 @@ if  [ "$WEEKNUMBER" == '08' ] ||  [ "$WEEKNUMBER" == '09' ] || [ $WEEKNUMBER == 
 then
 #--------------------- this is for Full week-all classes events 
 leafpad "WEEK halloween ptB (for 2 weeks  games)   activated --- Week number: $WEEKNUMBER    20190225-08" &
-ironstartincognito "http://plirof.github.io/tinymce_class/tinymce.html?probeserver\&file=giorti_apokries01 "$SWFgiortes"index_halloween.html?timer3"
-ironstartincognito "http://plirof.github.io/tinymce_class/tinymce.html?probeserver\&file=giorti_apokries01 "$SWFgiortes"index_halloween.html?timer3"
-ironstartincognito "http://plirof.github.io/tinymce_class/tinymce.html?probeserver\&file=giorti_apokries01 "$SWFgiortes"index_halloween.html?timer3"
-ironstartincognito "http://plirof.github.io/tinymce_class/tinymce.html?probeserver\&file=giorti_apokries01 "$SWFgiortes"index_halloween.html?timer3"
-ironstartincognito "http://plirof.github.io/tinymce_class/tinymce.html?probeserver\&file=giorti_apokries01 "$SWFgiortes"index_halloween.html?timer3"
+ironstartincognito "http://plirof.github.io/tinymce_class/tinymce.html?probeserver\&file=giorti_apokries01 "$SWFgiortes"index_halloween.html?probeserver\&timer3"
+ironstartincognito "http://plirof.github.io/tinymce_class/tinymce.html?probeserver\&file=giorti_apokries01 "$SWFgiortes"index_halloween.html?probeserver\&timer3"
+ironstartincognito "http://plirof.github.io/tinymce_class/tinymce.html?probeserver\&file=giorti_apokries01 "$SWFgiortes"index_halloween.html?probeserver\&timer3"
+ironstartincognito "http://plirof.github.io/tinymce_class/tinymce.html?probeserver\&file=giorti_apokries01 "$SWFgiortes"index_halloween.html?probeserver\&timer3"
+ironstartincognito "http://plirof.github.io/tinymce_class/tinymce.html?probeserver\&file=giorti_apokries01 "$SWFgiortes"index_halloween.html?probeserver\&timer3"
 ironstartincognito ""$SWFgiortes"index_halloween.html?timer3 http://plirof.github.io/tinymce_class/tinymce.html?probeserver\&file=giorti_apokries01"
 ironstartincognito ""$SWFgiortes"index_halloween.html http://plirof.github.io/tinymce_class/tinymce.html?probeserver\&file=giorti_apokries01\&hidediv1"
 ironstartincognito ""$SWFgiortes"index_halloween.html http://plirof.github.io/tinymce_class/tinymce.html?probeserver\&file=giorti_apokries01\&hidediv1"
