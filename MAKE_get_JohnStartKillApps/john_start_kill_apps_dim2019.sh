@@ -1,5 +1,6 @@
 # Script 
 #changes 
+#v200301 if..then..fi needs something inside or it produces errors (added echo "empty line") PROGLEM of Weeks 03-09 EXISTS AGAIN
 #v200217 fixed error in week 08
 #v200210a apokries-pasxa -added tinymce (weeks01-09tempfix)
 #v200107 : temp hardcoded fix : first 9 weeks (o..9) have problem Cause of the starting 0  : 02==2  , 03==3
@@ -218,7 +219,8 @@ ironstartincognito ""$SWFgiortes"other/ramkid_invitation_party/index.html "$SWFp
 fi
 
 #200217 updated  (NoteSTARTWEEKCOUNT +08 NOT working error)
-if  [ "$WEEKNUMBER" == '08' ] ||  [ "$WEEKNUMBER" == '09' ] || [ $WEEKNUMBER == "0"$(($STARTWEEKCOUNT+08)) ] || [ $WEEKNUMBER == "0"$(($STARTWEEKCOUNT+09)) ]
+if  [ "$WEEKNUMBER" == '08' ] ||  [ "$WEEKNUMBER" == '09' ] 
+#|| [ $WEEKNUMBER == "0"$(($STARTWEEKCOUNT+'08')) ] || [ $WEEKNUMBER == "0"$(($STARTWEEKCOUNT+'09')) ]
 then
 #--------------------- this is for Full week-all classes events 
 leafpad "WEEK halloween ptB (for 2 weeks  games)   activated --- Week number: $WEEKNUMBER    20190225-08" &
@@ -566,7 +568,6 @@ fi
 ########### FEBRUARY ###################
 if [ $WEEKNUMBER == "0"$(($STARTWEEKCOUNT+06)) ] || [ "$WEEKNUMBER" == 'wk20-FebA' ]  
 then
-
 #C-ST  code2Δ,Ε,ΣΤ ΕΠΑΠΑΝΑΛΑΒΕ
 lightbot_iron_browser "maps_easy.txt "$SWFlocal"pack_A02.html"
 lightbot_iron_browser "maps_easy.txt "$SWFlocal"pack_A02.html"
@@ -574,24 +575,23 @@ lightbot_iron_browser "maps_easy.txt "$SWFlocal"pack_A02.html"
 lightbot_iron_browser "maps_easy.txt "$SWFlocal"pack_A02.html"
 lightbot_iron_browser "maps_easy.txt "$SWFlocal"pack_A02.html"
 
-
 fi
 
 if [ $WEEKNUMBER == "0"$(($STARTWEEKCOUNT+07)) ] || [ "$WEEKNUMBER" == 'wk21-FebB' ]  
 then
-
+echo "empty line"
 # APOKRIES 2020
 fi
 
 if [ $WEEKNUMBER == "0"$(($STARTWEEKCOUNT+08)) ] || [ "$WEEKNUMBER" == 'wk22-FebC' ]  
 then
-
+echo "empty line"
 # APOKRIES 2020
 fi
 
 if [ $WEEKNUMBER == "0"$(($STARTWEEKCOUNT+09)) ] || [ "$WEEKNUMBER" == 'wk23-FebD' ]  
 then
-
+echo "empty line"
 # APOKRIES 2020
 fi
 
@@ -600,10 +600,10 @@ if [ $WEEKNUMBER == $(($STARTWEEKCOUNT+10)) ] || [ "$WEEKNUMBER" == 'wk24-MarA' 
 then
 
 # (pack_code_rover.html : ΠΕΡΙΕΧΕΙ : Rover_nasa ,Tiny-explorers,tortuga.patatakia.tk,TurtlePond,pack) 
-ironstartincognito ""$SWFlocal"pack_code_rover.html?probeserver\&timer4"
-ironstartincognito ""$SWFlocal"pack_code_rover.html?probeserver\&timer4"
-ironstartincognito ""$SWFlocal"pack_code_rover.html?probeserver\&timer4"
-ironstartincognito ""$SWFlocal"pack_code_rover.html?probeserver\&timer4"
+ironstartincognito ""$SWFlocal"pack_code_rover.html?probeserver\&timer4  https://diversen.github.io/drum-machine-javascript/index.html"
+ironstartincognito ""$SWFlocal"pack_code_rover.html?probeserver\&timer4  https://diversen.github.io/drum-machine-javascript/index.html"
+ironstartincognito ""$SWFlocal"pack_code_rover.html?probeserver\&timer4  https://diversen.github.io/drum-machine-javascript/index.html"
+ironstartincognito ""$SWFlocal"pack_code_rover.html?probeserver\&timer4  https://diversen.github.io/drum-machine-javascript/index.html"
 ironstartincognito ""$SWFlocal"pack_code_rover.html?probeserver\&timer4"
 ironstartincognito ""$SWFlocal"pack_code_rover.html?probeserver\&timer4"
 
