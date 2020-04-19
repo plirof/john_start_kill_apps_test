@@ -9,6 +9,15 @@ javac JavaSchRuntimeExec.java
 java JavaSchRuntimeExec
 ```
 
+# Bash examples
+
+## Add parameter and put formatted ## number to WEEKFINALNUM
+```bash
+adjustWeekFinalNum_for_week() {
+WEEKFINALNUM=$(($STARTWEEKCOUNT+$1));printf -v WEEKFINALNUM "%02d" $WEEKFINALNUM
+return 1
+}
+```
 # Examples
 
 ### Weekday if
