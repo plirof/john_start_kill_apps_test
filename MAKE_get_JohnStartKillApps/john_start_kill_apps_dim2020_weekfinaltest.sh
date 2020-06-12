@@ -132,6 +132,8 @@ create_download_linux_home_folders(){
 xhost +local:puppy
 mkdir -p /mnt/home/downloads_linux/.data/$1
 mkdir -p /mnt/home/downloads_linux/.cache/$1
+#chown -R puppy:puppy /mnt/home/downloads_linux/.data
+#chown -R puppy:puppy /mnt/home/downloads_linux/.cache
 cp -n /usr/bin/firefox24_default_home_prefs.js /mnt/home/downloads_linux/.data/$1/prefs.js
 }
 
@@ -544,7 +546,7 @@ fi
 # NOTE first 9 weeks (o..9) have problem Cause of the starting 0  : 02==2  , 03==3
 ############  ********************
 adjustWeekFinalNum_for_week 2
-if [ $WEEKNUMBER ==  $WEEKFINALNUM )) ]   || [ "$WEEKNUMBER" == 'wk16-JanB' ]  
+if [ $WEEKNUMBER ==  $WEEKFINALNUM  ]   || [ "$WEEKNUMBER" == 'wk16-JanB' ]  
 then
 
 #tuxpaint   ,  15o tuxpaint : βασιλόπιτα, Κάρτα με ευχές Νέα χρονιά
@@ -726,7 +728,7 @@ fi
 adjustWeekFinalNum_for_week 14
 if [ $WEEKNUMBER == $WEEKFINALNUM ] || [ "$WEEKNUMBER" == 'wk28-MarE-AprA' ]  
 then
-
+echo "empty"
 # EASTER 2020
 fi
 
@@ -734,20 +736,21 @@ adjustWeekFinalNum_for_week 15
 if [ $WEEKNUMBER == $WEEKFINALNUM ] || [ "$WEEKNUMBER" == 'wk29-AprB' ]  
 then
 
+echo "empty"
 # EASTER 2020
 fi
 
 adjustWeekFinalNum_for_week 16
 if [ $WEEKNUMBER == $WEEKFINALNUM ] || [ "$WEEKNUMBER" == 'wk30-AprC' ]  
 then
-
+echo "empty"
 # EASTER 2020 KLEISTA
 fi
 
 adjustWeekFinalNum_for_week 17
 if [ $WEEKNUMBER == $WEEKFINALNUM ] || [ "$WEEKNUMBER" == 'wk31-AprD' ]  
 then
-
+echo "empty"
 # EASTER 2020 KLEISTA
 fi
 
@@ -756,7 +759,7 @@ fi
 adjustWeekFinalNum_for_week 18
 if [ $WEEKNUMBER == $WEEKFINALNUM ] || [ "$WEEKNUMBER" == 'wk32-AprE-MayA' ]  
 then
-
+echo "empty"
 # EASTER 2020
 fi
 
@@ -816,12 +819,13 @@ if [ $WEEKNUMBER == $WEEKFINALNUM ] || [ "$WEEKNUMBER" == 'wk37-JuneA' ]
 then
 
 
+echo "empty"
 fi
 
 adjustWeekFinalNum_for_week 24
 if [ $WEEKNUMBER == $WEEKFINALNUM ] || [ "$WEEKNUMBER" == 'wk38-JuneB' ]  
 then
-
+echo "empty"
 
 fi
 
@@ -842,7 +846,7 @@ fi
 
 
 
-if [ $DAYOFWEEK == 'Δευτέρα)) ] || [ $DAYOFWEEK == 'Monday' ]
+if [ $DAYOFWEEK == 'Δευτέρα' ] || [ $DAYOFWEEK == 'Monday' ]
 then
 echo "Δευτέρα"
 #: '# ΔΕΥΤΕΡΑ
@@ -903,6 +907,7 @@ then
 
 
 
+echo "empty"
 #---------------------------- Γ1
 #ironstartincognito ""$SWFlocal"pack_url_param.html?url1=graphics_/comic_design__garfield_comic_creator_y8.swf\&url2=graphics_/animate_space__animation_studio_noAdUrl_!.swf\&url3=http://192.168.1.200/gamesedu/tortuga-kids-logo-gr\&url4=pack_A03.html\&url5=ΦΤΙΑΞΕ-KOMIK\&url6=sumopaint1025_GREEK_NoNavUrl1_v4b_progray.swf"
 #---------------------------- Γ2
