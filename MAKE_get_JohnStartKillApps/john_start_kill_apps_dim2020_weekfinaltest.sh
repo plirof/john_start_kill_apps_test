@@ -976,7 +976,7 @@ ironstartincognito ""$SWFlocal"pack_url_param.html?url1=graphics_/comic_design__
 # ΤΡΙΤΗ'
 fi
 
-if [ $DAYOFWEEK == 'Τετάρτη'] || [ $DAYOFWEEK == 'Wednesday' ]
+if [ $DAYOFWEEK == 'Τετάρτη' ] || [ $DAYOFWEEK == 'Wednesday' ]
 then
 echo "Τετάρτη"
 #: '# ΤΕΤΑΡΤΗ
