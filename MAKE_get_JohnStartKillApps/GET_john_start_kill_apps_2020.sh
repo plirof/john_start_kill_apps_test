@@ -44,7 +44,7 @@ return 5
 #cd /mnt/home/downloads_linux/uploads/
 cd /tmp/
 #change dimotiko number to what is needed
-wget  -T 7 http://swf.patatakia.tk/4class_sfs/john_start_kill_apps_dim2019.sh --directory-prefix=/tmp/
+wget  -T 7 http://swf.patatakia.tk/4class_sfs/john_start_kill_apps_dim2020.sh --directory-prefix=/tmp/
 chmod a+x /tmp/john_start_kill_apps_dim2020.sh
 
 cd /mnt/home/downloads_linux/uploads/
