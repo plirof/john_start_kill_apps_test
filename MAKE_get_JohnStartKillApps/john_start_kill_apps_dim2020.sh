@@ -1,5 +1,6 @@
 # Script 
 #changes 
+#v200908a - added funbrain to first lesson
 #v200903  dim101-21 new year start (COVID 14sept start year)
 #v200419 adjustWeekFinalNum_for_week() , also added Constants for Giortes
 #v200301 if..then..fi needs something inside or it produces errors (added echo "empty line") PROGLEM of Weeks 03-09 EXISTS AGAIN
@@ -275,9 +276,17 @@ then
 
 #$OOOKIDS$OOOKIDSpathprefix"OFFICE_extra_files/ALL_biografiko_mathiti.doc" &
 
-ironstartincognito "http://192.168.1.200/tinymce_class/tinymce_submit.html" ""$SWFlocal"pack_url_param.html?url1=type/typing_bricks\(puzzle\)!!!.swf\&url2=type/assault-typing__shootemup__rapidtyping.com_NoAdUrl.swf\&url3=type/typing_adventure__indiana_jones_NoNavUrl.swf\&url4=type/typing_alphattack2__bombDrop_NoNavUrl.swf\&url5=type/airtyper_1_noADsURL.swf\&url6=typing-1\&timer3"
+ironstartincognito "http://192.168.1.200/tinymce_class/tinymce_submit.html" ""$SWFlocal"ab/funbrain_com/funbrain.html?timer3" ""$SWFlocal"pack_url_param.html?url1=type/typing_bricks\(puzzle\)!!!.swf\&url2=type/assault-typing__shootemup__rapidtyping.com_NoAdUrl.swf\&url3=type/typing_adventure__indiana_jones_NoNavUrl.swf\&url4=type/typing_alphattack2__bombDrop_NoNavUrl.swf\&url5=type/airtyper_1_noADsURL.swf\&url6=typing-1\&timer3"
 #ironstart "http://192.168.1.200/tinymce_class/tinymce_submit.html" ""$SWFlocal"ab/funbrain_com/funbrain.html?timer3"
 #$OOOKIDS$OOOKIDSpathprefix"OFFICE_extra_files/ALL_biografiko_mathiti.doc" &
+ironstartincognito "http://192.168.1.200/tinymce_class/tinymce_submit.html" ""$SWFlocal"ab/funbrain_com/funbrain.html?timer3" ""$SWFlocal"pack_url_param.html?url1=type/typing_bricks\(puzzle\)!!!.swf\&url2=type/assault-typing__shootemup__rapidtyping.com_NoAdUrl.swf\&url3=type/typing_adventure__indiana_jones_NoNavUrl.swf\&url4=type/typing_alphattack2__bombDrop_NoNavUrl.swf\&url5=type/airtyper_1_noADsURL.swf\&url6=typing-1\&timer3"
+ironstartincognito "http://192.168.1.200/tinymce_class/tinymce_submit.html" ""$SWFlocal"ab/funbrain_com/funbrain.html?timer3" ""$SWFlocal"pack_url_param.html?url1=type/typing_bricks\(puzzle\)!!!.swf\&url2=type/assault-typing__shootemup__rapidtyping.com_NoAdUrl.swf\&url3=type/typing_adventure__indiana_jones_NoNavUrl.swf\&url4=type/typing_alphattack2__bombDrop_NoNavUrl.swf\&url5=type/airtyper_1_noADsURL.swf\&url6=typing-1\&timer3"
+ironstartincognito "http://192.168.1.200/tinymce_class/tinymce_submit.html" ""$SWFlocal"ab/funbrain_com/funbrain.html?timer3" ""$SWFlocal"pack_url_param.html?url1=type/typing_bricks\(puzzle\)!!!.swf\&url2=type/assault-typing__shootemup__rapidtyping.com_NoAdUrl.swf\&url3=type/typing_adventure__indiana_jones_NoNavUrl.swf\&url4=type/typing_alphattack2__bombDrop_NoNavUrl.swf\&url5=type/airtyper_1_noADsURL.swf\&url6=typing-1\&timer3"
+ironstartincognito "http://192.168.1.200/tinymce_class/tinymce_submit.html" ""$SWFlocal"ab/funbrain_com/funbrain.html?timer3" ""$SWFlocal"pack_url_param.html?url1=type/typing_bricks\(puzzle\)!!!.swf\&url2=type/assault-typing__shootemup__rapidtyping.com_NoAdUrl.swf\&url3=type/typing_adventure__indiana_jones_NoNavUrl.swf\&url4=type/typing_alphattack2__bombDrop_NoNavUrl.swf\&url5=type/airtyper_1_noADsURL.swf\&url6=typing-1\&timer3"
+
+
+
+
 ironstartincognito "http://192.168.1.200/tinymce_class/tinymce_submit.html" ""$SWFlocal"pack_url_param.html?url1=type/typing_bricks\(puzzle\)!!!.swf\&url2=type/assault-typing__shootemup__rapidtyping.com_NoAdUrl.swf\&url3=type/typing_adventure__indiana_jones_NoNavUrl.swf\&url4=type/typing_alphattack2__bombDrop_NoNavUrl.swf\&url5=type/airtyper_1_noADsURL.swf\&url6=typing-1\&timer3"
 ironstart ""$SWFlocal"ab/funbrain_com/funbrain.html?timer3"
 #$OOOKIDS$OOOKIDSpathprefix"OFFICE_extra_files/ALL_biografiko_mathiti.doc" &
