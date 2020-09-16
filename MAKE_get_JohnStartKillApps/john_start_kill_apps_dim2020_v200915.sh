@@ -1,6 +1,5 @@
 # Script 
 #changes 
-#v200916b - added olohmero check (check day + if hour passed 13:15)
 #v200908a - added funbrain to first lesson
 #v200903  dim101-21 new year start (COVID 14sept start year)
 #v200419 adjustWeekFinalNum_for_week() , also added Constants for Giortes
@@ -157,21 +156,6 @@ probe_the_server()
 	return 5
 }
 
-# 200916b - Check Olohmero (used to check if oloimero hour has started - Combine it with a DAYOFWEEK check)
-check_oloimero_time()
-{
-    currTime=`date +%k%M`
-    tempTime=$1
-    #if [ $tempTime -gt 200 -a $tempTime -lt 2200 ]; then 
-    if [ $currTime -gt $tempTime ]; then 
-        echo "Time is between 2 AM and 10 PM. Aborting."
-        exit 1
-    else
-        echo "Time is after 10 PM and before 2 AM. Running normally."
-        exit 2
-    fi
-}
-
 ################  TEST COMMANDS #############
 probe_the_server &
 
@@ -249,19 +233,6 @@ fi
 
 #--------------- SPECIAL EVENTS --------------------------
 #load_extra_apps
-
-# 200916b - Check Olohmero 
-if [ $DAYOFWEEK == 'Τετάρτη' ] || [ $DAYOFWEEK == 'Wednesday' ]
-then
-echo "Τετάρτη OLOHMERO"
-if [ "$(check_oloimero_time 1302)" == 'OKpassedCheck' ]
-then
-leafpad "run ΟΛΟΗΜΕΡΟ Τετάρτη 13:05" &
-ironstartincognito.sh "http://192.168.1.200/swf/ab/ferryhalim.com.html?timer3&probeserver http://OLOHMERO"
-fi
-# ΤΕΤΑΡΤΗ'
-fi
-
 
 #201902118-22  , 2020 updated
 #adjustWeekFinalNum_for_week 7
