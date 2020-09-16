@@ -164,7 +164,7 @@ check_oloimero_time()
     tempTime=$1
     #if [ $tempTime -gt 200 -a $tempTime -lt 2200 ]; then 
     if [ $currTime -gt $tempTime ]; then 
-        echo "Time is between 2 AM and 10 PM. Aborting."
+        echo "OKpassedCheck"
         exit 1
     else
         echo "Time is after 10 PM and before 2 AM. Running normally."
