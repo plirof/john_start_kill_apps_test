@@ -1,6 +1,5 @@
 # Script 
 #changes 
-#v200924 - minor change
 #v200916b - added olohmero check (check day + if hour passed 13:15)
 #v200908a - added funbrain to first lesson
 #v200903  dim101-21 new year start (COVID 14sept start year)
@@ -258,8 +257,7 @@ echo "Τετάρτη OLOHMERO"
 if [ "$(check_oloimero_time 1302)" == 'OKpassedCheck' ]
 then
 leafpad "run ΟΛΟΗΜΕΡΟ Τετάρτη 13:05" &
-ironstartincognito.sh "http://192.168.1.200/swf/ab/ferryhalim.com.html?timer2\&probeserver http://OLOHMERO http://192.168.1.200/swf/fun/treasure_of_cutlass_reef-__pirate-ship-battle__NoNavUrl!!!.swf"
-#ironstartincognito "http://192.168.1.200/swf/ab/ferryhalim.com.html?timer2\&probeserver http://OLOHMERO"
+ironstartincognito.sh "http://192.168.1.200/swf/ab/ferryhalim.com.html?timer3&probeserver http://OLOHMERO"
 fi
 # ΤΕΤΑΡΤΗ'
 fi
@@ -334,13 +332,15 @@ adjustWeekFinalNum_for_week 39
 if [ $WEEKNUMBER == $WEEKFINALNUM ] || [ "$WEEKNUMBER" == 'wk03-SepD' ]  
 then
 
-ironstartincognito "http://192.168.1.200/tinymce_class/tinymce_submit.html "$SWFlocal"ab/funbrain_com/funbrain.html?probeserver\&timer3  "$SWFlocal"pack_url_param.html?url1=type/typing_bricks\(puzzle\)!!!.swf\&url2=type/assault-typing__shootemup__rapidtyping.com_NoAdUrl.swf\&url3=type/typing_adventure__indiana_jones_NoNavUrl.swf\&url4=type/typing_alphattack2__bombDrop_NoNavUrl.swf\&url5=type/airtyper_1_noADsURL.swf\&url6=typing-1\&timer3"
-ironstartincognito "http://192.168.1.200/tinymce_class/tinymce_submit.html "$SWFlocal"ab/funbrain_com/funbrain.html?probeserver\&timer3  "$SWFlocal"pack_url_param.html?url1=type/typing_bricks\(puzzle\)!!!.swf\&url2=type/assault-typing__shootemup__rapidtyping.com_NoAdUrl.swf\&url3=type/typing_adventure__indiana_jones_NoNavUrl.swf\&url4=type/typing_alphattack2__bombDrop_NoNavUrl.swf\&url5=type/airtyper_1_noADsURL.swf\&url6=typing-1\&timer3"
-ironstartincognito "http://192.168.1.200/tinymce_class/tinymce_submit.html "$SWFlocal"ab/funbrain_com/funbrain.html?probeserver\&timer3  "$SWFlocal"pack_url_param.html?url1=type/typing_bricks\(puzzle\)!!!.swf\&url2=type/assault-typing__shootemup__rapidtyping.com_NoAdUrl.swf\&url3=type/typing_adventure__indiana_jones_NoNavUrl.swf\&url4=type/typing_alphattack2__bombDrop_NoNavUrl.swf\&url5=type/airtyper_1_noADsURL.swf\&url6=typing-1\&timer3"
-ironstartincognito "http://192.168.1.200/tinymce_class/tinymce_submit.html "$SWFlocal"ab/funbrain_com/funbrain.html?probeserver\&timer3  "$SWFlocal"pack_url_param.html?url1=type/typing_bricks\(puzzle\)!!!.swf\&url2=type/assault-typing__shootemup__rapidtyping.com_NoAdUrl.swf\&url3=type/typing_adventure__indiana_jones_NoNavUrl.swf\&url4=type/typing_alphattack2__bombDrop_NoNavUrl.swf\&url5=type/airtyper_1_noADsURL.swf\&url6=typing-1\&timer3"
-ironstartincognito "http://192.168.1.200/tinymce_class/tinymce_submit.html "$SWFlocal"ab/funbrain_com/funbrain.html?probeserver\&timer3  "$SWFlocal"pack_url_param.html?url1=type/typing_bricks\(puzzle\)!!!.swf\&url2=type/assault-typing__shootemup__rapidtyping.com_NoAdUrl.swf\&url3=type/typing_adventure__indiana_jones_NoNavUrl.swf\&url4=type/typing_alphattack2__bombDrop_NoNavUrl.swf\&url5=type/airtyper_1_noADsURL.swf\&url6=typing-1\&timer3"
-
-
+ironstart ""$SWFlocal"ab/funbrain_com/funbrain.html?timer3"
+ironstart ""$SWFlocal"ab/funbrain_com/funbrain.html?timer3"
+ironstartincognito ""$SWFlocal"pack_url_param.html?url1=type/typing_bricks\(puzzle\)!!!.swf\&url2=type/typing_adventure__indiana_jones_NoNavUrl.swf\&url3=type/assault-typing__shootemup__rapidtyping.com_NoAdUrl.swf\&url4=type/typing_alphattack2__bombDrop_NoNavUrl.swf\&url5=type/airtyper_1_noADsURL.swf\&url6=typing-1\&timer3"
+ironstart ""$SWFlocal"ab/funbrain_com/funbrain.html?timer3"
+ironstartincognito ""$SWFlocal"pack_url_param.html?url1=type/typing_bricks\(puzzle\)!!!.swf\&url2=type/typing_adventure__indiana_jones_NoNavUrl.swf\&url3=type/assault-typing__shootemup__rapidtyping.com_NoAdUrl.swf\&url4=type/typing_alphattack2__bombDrop_NoNavUrl.swf\&url5=type/airtyper_1_noADsURL.swf\&url6=typing-1\&timer3"
+ironstart ""$SWFlocal"ab/funbrain_com/funbrain.html?timer3"
+ironstartincognito ""$SWFlocal"pack_url_param.html?url1=type/typing_bricks\(puzzle\)!!!.swf\&url2=type/typing_adventure__indiana_jones_NoNavUrl.swf\&url3=type/assault-typing__shootemup__rapidtyping.com_NoAdUrl.swf\&url4=type/typing_alphattack2__bombDrop_NoNavUrl.swf\&url5=type/airtyper_1_noADsURL.swf\&url6=typing-1\&timer3"
+ironstart ""$SWFlocal"ab/funbrain_com/funbrain.html"
+ironstartincognito ""$SWFlocal"pack_url_param.html?url1=type/typing_bricks\(puzzle\)!!!.swf\&url2=type/typing_adventure__indiana_jones_NoNavUrl.swf\&url3=type/assault-typing__shootemup__rapidtyping.com_NoAdUrl.swf\&url4=type/typing_alphattack2__bombDrop_NoNavUrl.swf\&url5=type/airtyper_1_noADsURL.swf\&url6=typing-1\&timer3"
 
 
 
@@ -368,11 +368,11 @@ then
 # A-B Γλωσσικές Τέχνες->Ανακαλύψτε τα γραμματα
 #. /opt/eduActiv8/eduActiv8 &
 /opt/eduActiv8/eduActiv8 &
-#ironstartincognito ""$SWFlocal"pack_type_ramkid_greek.html"
+ironstartincognito ""$SWFlocal"pack_type_ramkid_greek.html"
 ironstartincognito ""$SWFlocal"pack_url_param.html?url1=type/airtyper_1_noADsURL.swf\&url2=type/typing_adventure__indiana_jones_NoNavUrl.swf\&url3=type/typing_bricks\(puzzle\)!!!.swf\&url4=type/typing_tidepool__sea_race_!!.swf\&url5=type/horse-racing-typing__rapidtyping.com_NoNavUrl.swf\&url6=typing-2\&probeserver\&timer3"
-#ironstartincognito ""$SWFlocal"pack_type_ramkid_greek.html"
+ironstartincognito ""$SWFlocal"pack_type_ramkid_greek.html"
 ironstartincognito ""$SWFlocal"pack_url_param.html?url1=type/airtyper_1_noADsURL.swf\&url2=type/typing_adventure__indiana_jones_NoNavUrl.swf\&url3=type/typing_bricks\(puzzle\)!!!.swf\&url4=type/typing_tidepool__sea_race_!!.swf\&url5=type/horse-racing-typing__rapidtyping.com_NoNavUrl.swf\&url6=typing-2\&probeserver\&timer3"
-#ironstartincognito ""$SWFlocal"pack_type_ramkid_greek.html"
+ironstartincognito ""$SWFlocal"pack_type_ramkid_greek.html"
 ironstartincognito ""$SWFlocal"pack_url_param.html?url1=type/airtyper_1_noADsURL.swf\&url2=type/typing_adventure__indiana_jones_NoNavUrl.swf\&url3=type/typing_bricks\(puzzle\)!!!.swf\&url4=type/typing_tidepool__sea_race_!!.swf\&url5=type/horse-racing-typing__rapidtyping.com_NoNavUrl.swf\&url6=typing-2\&probeserver\&timer3"
 #. /opt/eduActiv8/eduActiv8 &
 /opt/eduActiv8/eduActiv8
