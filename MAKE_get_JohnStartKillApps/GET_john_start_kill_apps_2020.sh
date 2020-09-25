@@ -1,7 +1,8 @@
 # Script that downloads latest lesson_ini scripts in /download_linux/uploads folder
 # Changes 
+# v200925 - while true;do wget  -T 7 http://aaa.com/aa.sh --directory-prefix=/tmp/ && break;done
 # 200908a - fixed typo - deleted stuff
-# 200903a - initial 2020-21 versios
+# 200903a - initial 2020-21 version
 # 190912a
 # Script called by client
 # WILL NOT Stop the parent script from executing (so don't try pkill -chrome)
@@ -39,10 +40,14 @@ return 5
 #try remote (to change files  stretchdog-debdive32/live/ )
 #cd /mnt/home/downloads_linux/uploads/
 cd /tmp/
-#change dimotiko number to what is needed
-wget  -T 7 http://swf.patatakia.tk/4class_sfs/john_start_kill_apps_dim2020.sh --directory-prefix=/tmp/
+
+#wget  -T 7 http://swf.patatakia.tk/4class_sfs/john_start_kill_apps_dim2020.sh --directory-prefix=/tmp/
+#loop until connection established (if clients STUCK uncomment previous line and comment this)
+while true;do wget  -T 7 http://swf.patatakia.tk/4class_sfs/john_start_kill_apps_dim2020.sh --directory-prefix=/tmp/ && break;done
+
 chmod a+x /tmp/john_start_kill_apps_dim2020.sh
 
+# ToDo check if file has been downloaded BEFORE renaming local file
 cd /mnt/home/downloads_linux/uploads/
 file_rename_old "/mnt/home/downloads_linux/uploads/john_start_kill_apps.sh"
 cp -n /tmp/john_start_kill_apps_dim2020.sh /mnt/home/downloads_linux/uploads/john_start_kill_apps.sh
