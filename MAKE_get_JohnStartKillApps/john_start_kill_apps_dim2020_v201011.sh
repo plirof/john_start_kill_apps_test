@@ -1,6 +1,5 @@
 # Script 
 #changes 
-#v201012a - added 28oct jspaint(v01),tinymce word
 #v200924 - minor change
 #v200916b - added olohmero check (check day + if hour passed 13:15)
 #v200908a - added funbrain to first lesson
@@ -409,15 +408,6 @@ fi
 adjustWeekFinalNum_for_week 43
 if [ $WEEKNUMBER == $WEEKFINALNUM ] || [ "$WEEKNUMBER" == 'wk07-OctD' ]  
 then
-
-#28oct A-B draw jspaint , C-ST write word
-ironstartincognito ""$SWFlocal"pack_giortes28oct.html http://192.168.1.200/tinymce_class/tinymce.html?probeserver\&file=giorti28oct01 http://192.168.1.200/jspaint/index.html#load:http://192.168.1.200/jspaint/school/28oct-01.png"
-ironstartincognito ""$SWFlocal"pack_giortes28oct.html http://192.168.1.200/tinymce_class/tinymce.html?probeserver\&file=giorti28oct01 http://192.168.1.200/jspaint/index.html#load:http://192.168.1.200/jspaint/school/28oct-01.png"
-ironstartincognito ""$SWFlocal"pack_giortes28oct.html http://192.168.1.200/tinymce_class/tinymce.html?probeserver\&file=giorti28oct01 http://192.168.1.200/jspaint/index.html#load:http://192.168.1.200/jspaint/school/28oct-01.png"
-ironstartincognito ""$SWFlocal"pack_giortes28oct.html http://192.168.1.200/tinymce_class/tinymce.html?probeserver\&file=giorti28oct01 http://192.168.1.200/jspaint/index.html#load:http://192.168.1.200/jspaint/school/28oct-01.png"
-ironstartincognito ""$SWFlocal"pack_giortes28oct.html http://192.168.1.200/tinymce_class/tinymce.html?probeserver\&file=giorti28oct01 http://192.168.1.200/jspaint/index.html#load:http://192.168.1.200/jspaint/school/28oct-01.png"
-
-
 
 . /usr/local/bin/tuxpaint-with-conf.sh &
 
