@@ -273,12 +273,12 @@ if [ $WEEKNUMBER == $APOKRIES_PREWEEK_01 ] || [ "$WEEKNUMBER" == 'Halloween pt1'
 then
 #--------------------- this is for Full week-all classes events    
 leafpad "WEEK halloween ptA (ramkid_invitation_party , swf_ramkid_cds2k5/Ramkid_12feb_apokries , KidsPedia/kids_ePedia32cd/Volume13 )   activated --- Week number: $WEEKNUMBER" &
-ironstartincognito ""$SWFgiortes"other/ramkid_invitation_party/index.html "$SWFpath"ramkid_giortes_apokries_pt1.html http://192.168.1.200/tinymce_class/tinymce.html?probeserver\&file=giorti_apokries01"
-ironstartincognito ""$SWFgiortes"other/ramkid_invitation_party/index.html "$SWFpath"ramkid_giortes_apokries_pt1.html http://192.168.1.200/tinymce_class/tinymce.html?probeserver\&file=giorti_apokries01"
-ironstartincognito ""$SWFgiortes"other/ramkid_invitation_party/index.html "$SWFpath"ramkid_giortes_apokries_pt1.html http://192.168.1.200/tinymce_class/tinymce.html?probeserver\&file=giorti_apokries01"
-ironstartincognito ""$SWFgiortes"other/ramkid_invitation_party/index.html "$SWFpath"ramkid_giortes_apokries_pt1.html http://192.168.1.200/tinymce_class/tinymce.html?probeserver\&file=giorti_apokries01"
-ironstartincognito ""$SWFgiortes"other/ramkid_invitation_party/index.html "$SWFpath"ramkid_giortes_apokries_pt1.html http://192.168.1.200/tinymce_class/tinymce.html?probeserver\&file=giorti_apokries01"
-ironstartincognito ""$SWFgiortes"other/ramkid_invitation_party/index.html "$SWFpath"ramkid_giortes_apokries_pt1.html http://192.168.1.200/tinymce_class/tinymce.html?probeserver\&file=giorti_apokries01"
+ironstartincognito ""$SWFgiortes"other/ramkid_invitation_party/index.html "$SWFpath"ramkid_giortes_apokries_pt1.html http://192.168.1.200/tinymce_class/tinymce.html?probeserver\&nocopy\&file=giorti_apokries01"
+ironstartincognito ""$SWFgiortes"other/ramkid_invitation_party/index.html "$SWFpath"ramkid_giortes_apokries_pt1.html http://192.168.1.200/tinymce_class/tinymce.html?probeserver\&nocopy\&file=giorti_apokries01"
+ironstartincognito ""$SWFgiortes"other/ramkid_invitation_party/index.html "$SWFpath"ramkid_giortes_apokries_pt1.html http://192.168.1.200/tinymce_class/tinymce.html?probeserver\&nocopy\&file=giorti_apokries01"
+ironstartincognito ""$SWFgiortes"other/ramkid_invitation_party/index.html "$SWFpath"ramkid_giortes_apokries_pt1.html http://192.168.1.200/tinymce_class/tinymce.html?probeserver\&nocopy\&file=giorti_apokries01"
+ironstartincognito ""$SWFgiortes"other/ramkid_invitation_party/index.html "$SWFpath"ramkid_giortes_apokries_pt1.html http://192.168.1.200/tinymce_class/tinymce.html?probeserver\&nocopy\&file=giorti_apokries01"
+ironstartincognito ""$SWFgiortes"other/ramkid_invitation_party/index.html "$SWFpath"ramkid_giortes_apokries_pt1.html http://192.168.1.200/tinymce_class/tinymce.html?probeserver\&nocopy\&file=giorti_apokries01"
 fi
 
 #200217 updated  (NoteSTARTWEEKCOUNT +08 NOT working error)
@@ -288,14 +288,14 @@ if  [ "$WEEKNUMBER" == APOKRIES_PREWEEK_02 ] ||  [ "$WEEKNUMBER" == '09' ]
 then
 #--------------------- this is for Full week-all classes events 
 leafpad "WEEK halloween ptB (for 2 weeks  games)   activated --- Week number: $WEEKNUMBER    20190225-08" &
-ironstartincognito "http://plirof.github.io/tinymce_class/tinymce.html?probeserver\&file=giorti_apokries01 "$SWFgiortes"index_halloween.html?probeserver\&timer3"
-ironstartincognito "http://plirof.github.io/tinymce_class/tinymce.html?probeserver\&file=giorti_apokries01 "$SWFgiortes"index_halloween.html?probeserver\&timer3"
-ironstartincognito "http://plirof.github.io/tinymce_class/tinymce.html?probeserver\&file=giorti_apokries01 "$SWFgiortes"index_halloween.html?probeserver\&timer3"
-ironstartincognito "http://plirof.github.io/tinymce_class/tinymce.html?probeserver\&file=giorti_apokries01 "$SWFgiortes"index_halloween.html?probeserver\&timer3"
-ironstartincognito "http://plirof.github.io/tinymce_class/tinymce.html?probeserver\&file=giorti_apokries01 "$SWFgiortes"index_halloween.html?probeserver\&timer3"
-ironstartincognito ""$SWFgiortes"index_halloween.html?timer3 http://plirof.github.io/tinymce_class/tinymce.html?probeserver\&file=giorti_apokries01"
-ironstartincognito ""$SWFgiortes"index_halloween.html http://plirof.github.io/tinymce_class/tinymce.html?probeserver\&file=giorti_apokries01\&hidediv1"
-ironstartincognito ""$SWFgiortes"index_halloween.html http://plirof.github.io/tinymce_class/tinymce.html?probeserver\&file=giorti_apokries01\&hidediv1"
+ironstartincognito "http://plirof.github.io/tinymce_class/tinymce.html?probeserver\&nocopy\&file=giorti_apokries01 "$SWFgiortes"index_halloween.html?probeserver\&norightclick\&timer3"
+ironstartincognito "http://plirof.github.io/tinymce_class/tinymce.html?probeserver\&nocopy\&file=giorti_apokries01 "$SWFgiortes"index_halloween.html?probeserver\&norightclick\&timer3"
+ironstartincognito "http://plirof.github.io/tinymce_class/tinymce.html?probeserver\&nocopy\&file=giorti_apokries01 "$SWFgiortes"index_halloween.html?probeserver\&norightclick\&timer3"
+ironstartincognito "http://plirof.github.io/tinymce_class/tinymce.html?probeserver\&nocopy\&file=giorti_apokries01 "$SWFgiortes"index_halloween.html?probeserver\&norightclick\&timer3"
+ironstartincognito "http://plirof.github.io/tinymce_class/tinymce.html?probeserver\&nocopy\&file=giorti_apokries01 "$SWFgiortes"index_halloween.html?probeserver\&norightclick\&timer3"
+ironstartincognito ""$SWFgiortes"index_halloween.html?timer3 http://plirof.github.io/tinymce_class/tinymce.html?probeserver\&nocopy\&file=giorti_apokries01"
+ironstartincognito ""$SWFgiortes"index_halloween.html http://plirof.github.io/tinymce_class/tinymce.html?probeserver\&nocopy\&file=giorti_apokries01\&hidediv1"
+ironstartincognito ""$SWFgiortes"index_halloween.html http://plirof.github.io/tinymce_class/tinymce.html?probeserver\&nocopy\&file=giorti_apokries01\&hidediv1"
 
 fi
 
