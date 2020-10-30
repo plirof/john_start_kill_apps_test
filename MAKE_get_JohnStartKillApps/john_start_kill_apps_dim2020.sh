@@ -236,12 +236,12 @@ if [ $WEEKNUMBER == $EASTER_PREWEEK_02 ] || [ "$WEEKNUMBER" == 'Easter pt B' ]
 then
 #--------------------- this is for Full week-all classes events 
 leafpad "WEEK easter ptB    activated --- Week number: $WEEKNUMBER" &
-ironstartincognito ""$SWFgiortes"index_easter.html?probeserver\&timer3 https://plirof.github.io/tinymce_class/tinymce.html?probeserver&file=giorti_pasxa01"
-ironstartincognito ""$SWFgiortes"index_easter.html?probeserver\&timer3 https://plirof.github.io/tinymce_class/tinymce.html?probeserver&file=giorti_pasxa01"
-ironstartincognito ""$SWFgiortes"index_easter.html?probeserver\&timer3 https://plirof.github.io/tinymce_class/tinymce.html?probeserver&file=giorti_pasxa01"
-ironstartincognito ""$SWFgiortes"index_easter.html?probeserver\&timer3 https://plirof.github.io/tinymce_class/tinymce.html?probeserver&file=giorti_pasxa01"
-ironstartincognito ""$SWFgiortes"index_easter.html?probeserver\&timer3 https://plirof.github.io/tinymce_class/tinymce.html?probeserver&file=giorti_pasxa01"
-ironstartincognito ""$SWFgiortes"index_easter.html?probeserver\&timer3 https://plirof.github.io/tinymce_class/tinymce.html?probeserver&file=giorti_pasxa01"
+ironstartincognito ""$SWFgiortes"index_easter.html?probeserver\&norightclick\&timer3 https://plirof.github.io/tinymce_class/tinymce.html?probeserver\&nocopy\&file=giorti_pasxa01"
+ironstartincognito ""$SWFgiortes"index_easter.html?probeserver\&norightclick\&timer3 https://plirof.github.io/tinymce_class/tinymce.html?probeserver\&nocopy\&file=giorti_pasxa01"
+ironstartincognito ""$SWFgiortes"index_easter.html?probeserver\&norightclick\&timer3 https://plirof.github.io/tinymce_class/tinymce.html?probeserver\&nocopy\&file=giorti_pasxa01"
+ironstartincognito ""$SWFgiortes"index_easter.html?probeserver\&norightclick\&timer3 https://plirof.github.io/tinymce_class/tinymce.html?probeserver\&nocopy\&file=giorti_pasxa01"
+ironstartincognito ""$SWFgiortes"index_easter.html?probeserver\&norightclick\&timer3 https://plirof.github.io/tinymce_class/tinymce.html?probeserver\&nocopy\&file=giorti_pasxa01"
+ironstartincognito ""$SWFgiortes"index_easter.html?probeserver\&norightclick\&timer3 https://plirof.github.io/tinymce_class/tinymce.html?probeserver\&nocopy\&file=giorti_pasxa01"
 
 fi
 
