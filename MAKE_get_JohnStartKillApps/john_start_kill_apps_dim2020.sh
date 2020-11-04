@@ -1,6 +1,6 @@
 # Script 
 #changes 
-#v201030b - added norightclick to some & nocopy to rudolf xmas
+#v201030c - added norightclick to some & nocopy to rudolf xmas
 #v201012a - added 28oct jspaint(v01),tinymce word
 #v200924 - minor change
 #v200916b - added olohmero check (check day + if hour passed 13:15)
@@ -243,6 +243,7 @@ ironstartincognito ""$SWFgiortes"index_easter.html?probeserver\&norightclick\&ti
 ironstartincognito ""$SWFgiortes"index_easter.html?probeserver\&norightclick\&timer3 https://plirof.github.io/tinymce_class/tinymce.html?probeserver\&nocopy\&file=giorti_pasxa01"
 ironstartincognito ""$SWFgiortes"index_easter.html?probeserver\&norightclick\&timer3 https://plirof.github.io/tinymce_class/tinymce.html?probeserver\&nocopy\&file=giorti_pasxa01"
 
+
 fi
 
 
@@ -298,7 +299,6 @@ ironstartincognito ""$SWFgiortes"index_halloween.html http://plirof.github.io/ti
 ironstartincognito ""$SWFgiortes"index_halloween.html http://plirof.github.io/tinymce_class/tinymce.html?probeserver\&nocopy\&file=giorti_apokries01\&hidediv1"
 
 fi
-
 
 ######################################################################################
 #############  ALL WEEKS START #######################################################
@@ -445,14 +445,13 @@ fi
 adjustWeekFinalNum_for_week 44
 if [ $WEEKNUMBER == $WEEKFINALNUM ] || [ "$WEEKNUMBER" == 'wk08-OctE-NovA' ]  
 then
-#Halloween + 28october part B (συνήθως μισές τάξεις λόγω αργιών)
+#Halloween + 28october part B (συνήθως μισές τάξεις λόγω αργιών) 
 # HALLOWEEN 2019 (+ 28october part2) octomber 31   - DRAW SCARY STUFF# tuxpaint πινέλα  (ζωγραφίστε σπίτι + αμάξι ,πινέλα ,σφραγίδες) ,typing_bricks(puzzle)!!!.swf
 ironstartincognito ""$SWFlocal"pack_giortes28oct.html?probeserver\&norightclick http://192.168.1.200/tinymce_class/tinymce_submit.html?probeserver\&nocopy\&hidediv1\&file=giorti28oct01 "$SWFlocal"pack_paint1.html?timer3\&probeserver"
 ironstartincognito ""$SWFlocal"pack_giortes28oct.html?probeserver\&norightclick http://192.168.1.200/tinymce_class/tinymce_submit.html?probeserver\&nocopy\&hidediv1\&file=giorti28oct01 "$SWFlocal"pack_paint1.html?timer3\&probeserver"
 ironstartincognito ""$SWFlocal"pack_giortes28oct.html?probeserver\&norightclick http://192.168.1.200/tinymce_class/tinymce_submit.html?probeserver\&nocopy\&hidediv1\&file=giorti28oct01 "$SWFlocal"pack_paint1.html?timer3\&probeserver"
 ironstartincognito ""$SWFlocal"pack_giortes28oct.html?probeserver\&norightclick http://192.168.1.200/tinymce_class/tinymce_submit.html?probeserver\&nocopy\&hidediv1\&file=giorti28oct01 "$SWFlocal"pack_paint1.html?timer3\&probeserver"
 ironstartincognito ""$SWFlocal"pack_giortes28oct.html?probeserver\&norightclick http://192.168.1.200/tinymce_class/tinymce_submit.html?probeserver\&nocopy\&hidediv1\&file=giorti28oct01 "$SWFlocal"pack_paint1.html?timer3\&probeserver"
-
 
 
 # HALLOWEEN 2019 octomber 31   - DRAW SCARY STUFF
@@ -469,16 +468,17 @@ fi
 adjustWeekFinalNum_for_week 45
 if [ $WEEKNUMBER == $WEEKFINALNUM ] || [ "$WEEKNUMBER" == 'wk09-NovA2' ]  
 then
-# code.org :(1. Χαρούμενοι Χάρτες , 2. Κούνισέ το, Κούνισέ το , 3. Παζλ: Μάθε την μεταφορά και )
-ironstart "https://studio.code.org/s/course1/stage/3/puzzle/1 "$SWFlocal"pack_A01.html?norightclick "$SWFlocal"pack_paint1.html?timer3\&norightclick\&probeserver"
-ironstart "https://studio.code.org/s/course1/stage/3/puzzle/1 "$SWFlocal"pack_A01.html?norightclick "$SWFlocal"pack_paint1.html?timer3\&norightclick\&probeserver"
-ironstart "https://studio.code.org/s/course1/stage/3/puzzle/1 "$SWFlocal"pack_A01.html?norightclick "$SWFlocal"pack_paint1.html?timer3\&norightclick\&probeserver"
-ironstart "https://studio.code.org/s/course1/stage/3/puzzle/1 "$SWFlocal"pack_A01.html?norightclick "$SWFlocal"pack_paint1.html?timer3\&norightclick\&probeserver"
+# code.org :(1. Χαρούμενοι Χάρτες , 2. Κούνισέ το, Κούνισέ το , 3. Παζλ: Μάθε την μεταφορά και )	
+ironstart "https://studio.code.org/s/course1/stage/3/puzzle/1 "$SWFlocal"pack_A01.html?norightclick\&probeserver "$SWFlocal"pack_paint1.html?timer3\&norightclick\&probeserver"
+ironstart "https://studio.code.org/s/course1/stage/3/puzzle/1 "$SWFlocal"pack_A01.html?norightclick\&probeserver "$SWFlocal"pack_paint1.html?timer3\&norightclick\&probeserver"
+ironstart "https://studio.code.org/s/course1/stage/3/puzzle/1 "$SWFlocal"pack_A01.html?norightclick\&probeserver "$SWFlocal"pack_paint1.html?timer3\&norightclick\&probeserver"
+ironstart "https://studio.code.org/s/course1/stage/3/puzzle/1 "$SWFlocal"pack_A01.html?norightclick\&probeserver "$SWFlocal"pack_paint1.html?timer3\&norightclick\&probeserver"
 
-ironstart "https://studio.code.org/s/course1/stage/3/puzzle/1 "$SWFlocal"pack_A01.html"
-ironstart "https://studio.code.org/s/course1/stage/3/puzzle/1 "$SWFlocal"pack_A01.html"
-ironstart "https://studio.code.org/s/course1/stage/3/puzzle/1 "$SWFlocal"pack_A01.html"
-ironstart "https://studio.code.org/s/course1/stage/3/puzzle/1 "$SWFlocal"pack_A01.html"
+
+ironstart "https://studio.code.org/s/course1/stage/3/puzzle/1 "$SWFlocal"pack_A01.html?norightclick\&probeserver"
+ironstart "https://studio.code.org/s/course1/stage/3/puzzle/1 "$SWFlocal"pack_A01.html?norightclick\&probeserver"
+ironstart "https://studio.code.org/s/course1/stage/3/puzzle/1 "$SWFlocal"pack_A01.html?norightclick\&probeserver"
+ironstart "https://studio.code.org/s/course1/stage/3/puzzle/1 "$SWFlocal"pack_A01.html?norightclick\&probeserver"
 
 fi
 
@@ -524,7 +524,7 @@ ironstart "https://studio.code.org/s/course1/stage/7/puzzle/1 "$SWFlocal"pack_A0
 ironstart "https://studio.code.org/s/course1/stage/7/puzzle/1 "$SWFlocal"pack_A03.html?probeserver\&norightclick"
 ironstart "https://studio.code.org/s/course1/stage/7/puzzle/1 "$SWFlocal"pack_A03.html?probeserver\&norightclick" 
 ironstart "https://studio.code.org/s/course1/stage/7/puzzle/1 "$SWFlocal"pack_A03.html?probeserver\&norightclick" 
-ironstart "https://studio.code.org/s/course1/stage/7/puzzle/1 "$SWFlocal"pack_A03.html?probeserver\&norightclick" 
+ironstart "https://studio.code.org/s/course1/stage/7/puzzle/1 "$SWFlocal"pack_A03.html?probeserver\&norightclick"
 
 fi
 
@@ -533,14 +533,13 @@ adjustWeekFinalNum_for_week 49
 if [ $WEEKNUMBER == $WEEKFINALNUM ] || [ "$WEEKNUMBER" == 'wk13-DecA' ]  
 then
 
-# Xristougenniatikes drasthriothtes (oles oi takseis) , christmas hidden objects , ζωγραφιστε χριστουγ κάρτες ramkid  
-# ???  giortes xmas Α !!!!! NA ΦΤΙΑΞΩ το ramkid_giortes_xmas_pt1.html	
-ironstartincognito "http://192.168.1.200/tinymce_class/tinymce_submit.html?probeserver\&showsubmit\&nocopy\&file=xmas_rudolf"" "$SWFlocal"ramkidpedia_vol04_xmas1.html "$SWFlocal"ramkid_giortes_xmas_pt1.html"
-ironstartincognito "http://192.168.1.200/tinymce_class/tinymce_submit.html?probeserver\&showsubmit\&nocopy\&file=xmas_rudolf"" "$SWFlocal"ramkidpedia_vol04_xmas1.html "$SWFlocal"ramkid_giortes_xmas_pt1.html"
-ironstartincognito "http://192.168.1.200/tinymce_class/tinymce_submit.html?probeserver\&showsubmit\&nocopy\&file=xmas_rudolf"" "$SWFlocal"ramkidpedia_vol04_xmas1.html "$SWFlocal"ramkid_giortes_xmas_pt1.html"
-ironstartincognito "http://192.168.1.200/tinymce_class/tinymce_submit.html?probeserver\&showsubmit\&nocopy\&file=xmas_rudolf"" "$SWFlocal"ramkidpedia_vol04_xmas1.html "$SWFlocal"ramkid_giortes_xmas_pt1.html"
+# Xristougenniatikes drasthriothtes (oles oi takseis) , christmas hidden objects , ζωγραφιστε χριστουγ κάρτες ramkid
+# ???  giortes xmas Α !!!!! NA ΦΤΙΑΞΩ το ramkid_giortes_xmas_pt1.html
 
-
+ironstartincognito "http://192.168.1.200/tinymce_class/tinymce_submit.html?probeserver\&showsubmit\&nocopy\&file=xmas_rudolf"" "$SWFlocal"ramkidpedia_vol04_xmas1.html "$SWFlocal"ramkid_giortes_xmas_pt1.html"
+ironstartincognito "http://192.168.1.200/tinymce_class/tinymce_submit.html?probeserver\&showsubmit\&nocopy\&file=xmas_rudolf"" "$SWFlocal"ramkidpedia_vol04_xmas1.html "$SWFlocal"ramkid_giortes_xmas_pt1.html"
+ironstartincognito "http://192.168.1.200/tinymce_class/tinymce_submit.html?probeserver\&showsubmit\&nocopy\&file=xmas_rudolf"" "$SWFlocal"ramkidpedia_vol04_xmas1.html "$SWFlocal"ramkid_giortes_xmas_pt1.html"
+ironstartincognito "http://192.168.1.200/tinymce_class/tinymce_submit.html?probeserver\&showsubmit\&nocopy\&file=xmas_rudolf"" "$SWFlocal"ramkidpedia_vol04_xmas1.html "$SWFlocal"ramkid_giortes_xmas_pt1.html"
 
 #$OOOKIDS$OOOKIDSpathprefix"OFFICE_extra_files/xmas-rountolf-typing.doc" &
 cd "/tmp/";wget --directory-prefix="/tmp/" -O "a" "http://192.168.1.200/askiseis_office/OFFICE_extra_files/xmas-rountolf-typing.doc"; ooo4kids1.3 -n /tmp/a &
@@ -561,7 +560,6 @@ ironstartincognito "http://192.168.1.200/tinymce_class/tinymce_submit.html?probe
 ironstartincognito "http://192.168.1.200/tinymce_class/tinymce_submit.html?probeserver\&showsubmit\&nocopy\&file=xmas_rudolf"" "$SWFgiortes"index_xmas.html?probeserver\&norightclick\&timer3"
 ironstartincognito "http://192.168.1.200/tinymce_class/tinymce_submit.html?probeserver\&showsubmit\&nocopy\&file=xmas_rudolf"" "$SWFgiortes"index_xmas.html?probeserver\&norightclick\&timer3"
 ironstartincognito "http://192.168.1.200/tinymce_class/tinymce_submit.html?probeserver\&showsubmit\&nocopy\&file=xmas_rudolf"" "$SWFgiortes"index_xmas.html?probeserver\&norightclick\&timer3"
-
 
 
 #$OOOKIDS$OOOKIDSpathprefix"OFFICE_extra_files/xmas-rountolf-typing.doc" &	
