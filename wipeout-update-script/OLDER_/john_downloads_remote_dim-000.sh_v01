@@ -1,6 +1,5 @@
 ## Calling script :
 # put this script on path "$URL""$FILE" (as define lower)
-# v210105 - logging
 # v200925
 #cd /tmp/
 #script to save to client /root/startup 
@@ -10,7 +9,6 @@
 wipeout_script_for_lab_client_root_startup () {
 #This function is NOT used here - it must be put in anothe exec file    
 #WIPEOUT script  make a file of it and put it on (changes.dat) /root/Startup
-# WIPEOUT calls remotelly this bash script and then executes it
 cd /tmp ;
 FILE="john_downloads_remote_dim-000.sh";
 URL="http://swf.patatakia.tk/4class_sfs/";
@@ -22,10 +20,6 @@ echo "$URL""$FILE";
 echo "END"
 }
 
-
-schoolname="onoma-dimotikou"
-URL="http://swf.patatakia.tk/4class_sfs/"
-wget $URL"handle-submit.php?schoolname=$schoolname&HOSTNAME=$HOSTNAME"
 
 ####################################################################
 # SERVER
