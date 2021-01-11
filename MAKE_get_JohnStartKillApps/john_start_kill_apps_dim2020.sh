@@ -1,5 +1,6 @@
 # Script 
 #changes 
+#v210111a - Replaced $1 with $@ to iron browser functions to fix different behaviour in iron32 & iron64 (untested)
 #v201030c - added norightclick to some & nocopy to rudolf xmas
 #v201012a - added 28oct jspaint(v01),tinymce word
 #v200924 - minor change
@@ -86,26 +87,26 @@ chmod a+x /tmp/john_extra_apps.sh
 
 ironstart() {
 # eg  ironstart ""$SWFlocal"pack_A01.html "$LANDINGpage"15-ΤΕΤΑΡΤΗ-Β1--hour5.html "$SWFlocal"pack_A01.html"
-. iron_flash_puppy_pepper_home.sh "$1"
+. iron_flash_puppy_pepper_home.sh "$@"
 return 5
 }
 
 ironstartincognito() {
 # eg  ironstart ""$SWFlocal"pack_A01.html "$LANDINGpage"15-ΤΕΤΑΡΤΗ-Β1--hour5.html "$SWFlocal"pack_A01.html"
-. iron_flash_puppy_pepper_home.sh "--incognito ""$1"
+. iron_flash_puppy_pepper_home.sh "--incognito ""$@"
 return 5
 }
 
 ironchangesdat() {
 # eg  ironstart ""$SWFlocal"pack_A01.html "$LANDINGpage"15-ΤΕΤΑΡΤΗ-Β1--hour5.html "$SWFlocal"pack_A01.html"
-. iron_flash_puppy_pepper.sh "--incognito ""$1"
+. iron_flash_puppy_pepper.sh "--incognito ""$@"
 return 5
 }
 
 oookidsopen()
 {
 # eg oookidsopen "OFFICE_extra_files/pliktrologisi_j02.1_antigrafi_katanomi_wron.doc"
-$OOOKIDS$OOOKIDSpathprefix"$1"
+$OOOKIDS$OOOKIDSpathprefix"$@"
 return 5
 }
 
