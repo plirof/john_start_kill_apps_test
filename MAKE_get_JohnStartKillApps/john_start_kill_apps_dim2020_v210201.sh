@@ -23,8 +23,8 @@ STARTWEEKCOUNT=0
 
 # SPECIAL WEEKS (ADJUCT THESE TO CURRENT SCHOOL YEAR EG 2021-22) NOTE!!!! use double digit eg 05
 HALLOWEEN_ENGLISH_WEEK_01=43
-APOKRIES_PREWEEK_01=08
-APOKRIES_PREWEEK_02=09
+APOKRIES_PREWEEK_01=09
+APOKRIES_PREWEEK_02=10
 EASTER_PREWEEK_01=15
 EASTER_PREWEEK_02=16
 XMAS_PREWEEK_01=50
@@ -659,13 +659,13 @@ if [ $WEEKNUMBER == $WEEKFINALNUM ] || [ "$WEEKNUMBER" == 'wk18-JanD' ]
 then
 
 # A-B 
-ironstartincognito ""$SWFlocal"pack_A01.html?norightclick\&probeserver "$SWFlocal"pack_A02.html Zwgrafise_to_Sxoleio_sto_Artswf"
-ironstartincognito ""$SWFlocal"pack_A01.html?norightclick\&probeserver "$SWFlocal"pack_A02.html?norightclick\&probeserver"
-ironstartincognito ""$SWFlocal"pack_A01.html?norightclick\&probeserver "$SWFlocal"pack_A02.html?norightclick\&probeserver" 
+ironstartincognito ""$SWFlocal"pack_A01.html "$SWFlocal"pack_A02.html Zwgrafise_to_Sxoleio_sto_Artswf"
+ironstartincognito ""$SWFlocal"pack_A01.html "$SWFlocal"pack_A02.html"
+ironstartincognito ""$SWFlocal"pack_A01.html "$SWFlocal"pack_A02.html" 
 #$OOOKIDS$OOOKIDSpathprefix"OFFICE_extra_files/pliktrologisi_j02.1_antigrafi_katanomi_wron.doc" &
 #$OOOKIDS$OOOKIDSpathprefix"OFFICE_extra_files/pliktrologisi_j02.1_antigrafi_katanomi_wron.doc"
 #$OOOKIDS$OOOKIDSpathprefix"OFFICE_extra_files/pliktrologisi_j02.1_antigrafi_katanomi_wron.doc"
-ironstartincognito ""$SWFlocal"pack_A01.html?norightclick\&probeserver "$SWFlocal"pack_A02.html?norightclick\&probeserver" &
+ironstartincognito ""$SWFlocal"pack_A01.html "$SWFlocal"pack_A02.html" &
 #$OOOKIDS$OOOKIDSpathprefix"OFFICE_extra_files/pliktrologisi_j02.1_antigrafi_katanomi_wron.doc"
 #$OOOKIDS$OOOKIDSpathprefix"OFFICE_extra_files/pliktrologisi_j02.1_antigrafi_katanomi_wron.doc"
 
@@ -675,11 +675,11 @@ adjustWeekFinalNum_for_week 5
 if [ $WEEKNUMBER == $WEEKFINALNUM ] || [ "$WEEKNUMBER" == 'wk19-JanE' ]  
 then
 #C-ST   code1 intro ευκολο για μεγάλες τάξεις (ας παίξουν pack_A04 όσοι τελειώσουν)
-lightbot_iron_browser "maps_random_2%284x4_3lights%29.txt "$SWFlocal"pack_A04.html?norightclick\&probeserver"
-lightbot_iron_browser "maps_random_2%284x4_3lights%29.txt "$SWFlocal"pack_A04.html?norightclick\&probeserver"
-lightbot_iron_browser "maps_random_2%284x4_3lights%29.txt "$SWFlocal"pack_A04.html?norightclick\&probeserver"
-lightbot_iron_browser "maps_random_2%284x4_3lights%29.txt "$SWFlocal"pack_A04.html?norightclick\&probeserver"
-lightbot_iron_browser "maps_random_2%284x4_3lights%29.txt "$SWFlocal"pack_A04.html?norightclick\&probeserver"
+lightbot_iron_browser "maps_random_2%284x4_3lights%29.txt "$SWFlocal"pack_A04.html"
+lightbot_iron_browser "maps_random_2%284x4_3lights%29.txt "$SWFlocal"pack_A04.html"
+lightbot_iron_browser "maps_random_2%284x4_3lights%29.txt "$SWFlocal"pack_A04.html"
+lightbot_iron_browser "maps_random_2%284x4_3lights%29.txt "$SWFlocal"pack_A04.html"
+lightbot_iron_browser "maps_random_2%284x4_3lights%29.txt "$SWFlocal"pack_A04.html"
 
 fi
 
@@ -688,11 +688,11 @@ adjustWeekFinalNum_for_week 6
 if [ $WEEKNUMBER == $WEEKFINALNUM ] || [ "$WEEKNUMBER" == 'wk20-FebA' ]  
 then
 #C-ST  code2Δ,Ε,ΣΤ ΕΠΑΠΑΝΑΛΑΒΕ
-lightbot_iron_browser "maps_easy.txt "$SWFlocal"pack_A02.html?norightclick\&probeserver"
-lightbot_iron_browser "maps_easy.txt "$SWFlocal"pack_A02.html?norightclick\&probeserver"
-lightbot_iron_browser "maps_easy.txt "$SWFlocal"pack_A02.html?norightclick\&probeserver"
-lightbot_iron_browser "maps_easy.txt "$SWFlocal"pack_A02.html?norightclick\&probeserver"
-lightbot_iron_browser "maps_easy.txt "$SWFlocal"pack_A02.html?norightclick\&probeserver"
+lightbot_iron_browser "maps_easy.txt "$SWFlocal"pack_A02.html"
+lightbot_iron_browser "maps_easy.txt "$SWFlocal"pack_A02.html"
+lightbot_iron_browser "maps_easy.txt "$SWFlocal"pack_A02.html"
+lightbot_iron_browser "maps_easy.txt "$SWFlocal"pack_A02.html"
+lightbot_iron_browser "maps_easy.txt "$SWFlocal"pack_A02.html"
 
 fi
 
@@ -701,22 +701,20 @@ if [ $WEEKNUMBER == $WEEKFINALNUM ] || [ "$WEEKNUMBER" == 'wk21-FebB' ]
 then
 echo "empty line"
 # APOKRIES 2020
-tuxmath &
-ironstartincognito ""$SWFlocal"pack_A02.html?norightclick\&probeserver "$SWFlocal"pack_A01.html?norightclick\&probeserver"
 fi
 
 adjustWeekFinalNum_for_week 8
 if [ $WEEKNUMBER == $WEEKFINALNUM ] || [ "$WEEKNUMBER" == 'wk22-FebC' ]  
 then
 echo "empty line"
-# APOKRIES 2021
+# APOKRIES 2020
 fi
 
 adjustWeekFinalNum_for_week 9
 if [ $WEEKNUMBER == $WEEKFINALNUM ] || [ "$WEEKNUMBER" == 'wk23-FebD' ]  
 then
 echo "empty line"
-# APOKRIES 2021
+# APOKRIES 2020
 fi
 
 ########### MARCH ###################
@@ -725,12 +723,12 @@ if [ $WEEKNUMBER == $WEEKFINALNUM ] || [ "$WEEKNUMBER" == 'wk24-MarA' ]
 then
 
 # (pack_code_rover.html : ΠΕΡΙΕΧΕΙ : Rover_nasa ,Tiny-explorers,tortuga.patatakia.tk,TurtlePond,pack) 
-ironstartincognito ""$SWFlocal"pack_code_rover.html?probeserver\&norightclick\&timer4  https://diversen.github.io/drum-machine-javascript/index.html"
-ironstartincognito ""$SWFlocal"pack_code_rover.html?probeserver\&norightclick\&timer4  https://diversen.github.io/drum-machine-javascript/index.html"
-ironstartincognito ""$SWFlocal"pack_code_rover.html?probeserver\&norightclick\&timer4  https://diversen.github.io/drum-machine-javascript/index.html"
-ironstartincognito ""$SWFlocal"pack_code_rover.html?probeserver\&norightclick\&timer4  https://diversen.github.io/drum-machine-javascript/index.html"
-ironstartincognito ""$SWFlocal"pack_code_rover.html?probeserver\&norightclick\&timer4"
-ironstartincognito ""$SWFlocal"pack_code_rover.html?probeserver\&norightclick\&timer4"
+ironstartincognito ""$SWFlocal"pack_code_rover.html?probeserver\&timer4  https://diversen.github.io/drum-machine-javascript/index.html"
+ironstartincognito ""$SWFlocal"pack_code_rover.html?probeserver\&timer4  https://diversen.github.io/drum-machine-javascript/index.html"
+ironstartincognito ""$SWFlocal"pack_code_rover.html?probeserver\&timer4  https://diversen.github.io/drum-machine-javascript/index.html"
+ironstartincognito ""$SWFlocal"pack_code_rover.html?probeserver\&timer4  https://diversen.github.io/drum-machine-javascript/index.html"
+ironstartincognito ""$SWFlocal"pack_code_rover.html?probeserver\&timer4"
+ironstartincognito ""$SWFlocal"pack_code_rover.html?probeserver\&timer4"
 
 fi
 
