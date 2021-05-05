@@ -1,6 +1,5 @@
 # Script 
 #changes 
-#v210201a - added /& norightclick to some options
 #v210111a - Replaced $1 with $@ to iron browser functions to fix different behaviour in iron32 & iron64 (untested)
 #v201030c - added norightclick to some & nocopy to rudolf xmas
 #v201012a - added 28oct jspaint(v01),tinymce word
@@ -882,16 +881,6 @@ fi
 adjustWeekFinalNum_for_week 22
 if [ $WEEKNUMBER == $WEEKFINALNUM ] || [ "$WEEKNUMBER" == 'wk36-MayE' ]  
 then
-#http://localhost/x-spreadsheet/tinyxls.html?file=lesson2b-bookstore&jsonxls=lesson2b-bookstore&showsubmit
-#ironstartincognito "http://192.168.1.200/tinymce_class/tinymce_submit.html?showsubmit\&file=lesson10 "$SWFlocal"pack_A03.html?probeserver\&norightclick"
-ironstartincognito "http://192.168.1.200/x-spreadsheet/tinyxls.html?file=lesson1-timetable\&jsonxls=lesson1-timetable\&showsubmit "$SWFlocal"pack_A03.html?probeserver\&norightclick"
-ironstartincognito "http://192.168.1.200/x-spreadsheet/tinyxls.html?file=lesson1-timetable\&jsonxls=lesson1-timetable\&showsubmit "$SWFlocal"pack_A03.html?probeserver\&norightclick"
-ironstartincognito "http://192.168.1.200/x-spreadsheet/tinyxls.html?file=lesson1-timetable\&jsonxls=lesson1-timetable\&showsubmit "$SWFlocal"pack_A03.html?probeserver\&norightclick"
-ironstartincognito "http://192.168.1.200/x-spreadsheet/tinyxls.html?file=lesson1-timetable\&jsonxls=lesson1-timetable\&showsubmit "$SWFlocal"pack_A03.html?probeserver\&norightclick"
-
-
-
-ironstartincognito "http://tinyxls.dimotika.tk/tinyxls.html?file=lesson1-timetable\&jsonxls=lesson1-timetable\&showsubmit "$SWFlocal"pack_A03.html?probeserver\&norightclick"
 
 
 fi
@@ -902,13 +891,6 @@ fi
 adjustWeekFinalNum_for_week 23
 if [ $WEEKNUMBER == $WEEKFINALNUM ] || [ "$WEEKNUMBER" == 'wk37-JuneA' ]  
 then
-ironstartincognito "http://192.168.1.200/tinymce_class/tinymce_submit.html?showsubmit\&file=lesson10 "$SWFlocal"pack_A03.html?probeserver\&norightclick"
-ironstartincognito "http://192.168.1.200/tinymce_class/tinymce_submit.html?showsubmit\&file=lesson10 "$SWFlocal"pack_A03.html?probeserver\&norightclick"
-ironstartincognito "http://192.168.1.200/tinymce_class/tinymce_submit.html?showsubmit\&file=lesson10 "$SWFlocal"pack_A03.html?probeserver\&norightclick"
-ironstartincognito "http://192.168.1.200/tinymce_class/tinymce_submit.html?showsubmit\&file=lesson10 "$SWFlocal"pack_A03.html?probeserver\&norightclick"
-ironstartincognito "http://192.168.1.200/tinymce_class/tinymce_submit.html?showsubmit\&file=lesson10 "$SWFlocal"pack_A03.html?probeserver\&norightclick"
-ironstartincognito "http://192.168.1.200/tinymce_class/tinymce_submit.html?showsubmit\&file=lesson10 "$SWFlocal"pack_A03.html?probeserver\&norightclick"
-
 
 
 echo "empty"

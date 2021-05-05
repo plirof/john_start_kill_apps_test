@@ -1,5 +1,6 @@
 # Script 
 #changes 
+#v210505  - 2021-2022 giortes Parameter set , added slimjet-puppy-home.sh / slimjetstartincognito()  {}
 #v210201a - added /& norightclick to some options
 #v210111a - Replaced $1 with $@ to iron browser functions to fix different behaviour in iron32 & iron64 (untested)
 #v201030c - added norightclick to some & nocopy to rudolf xmas
@@ -26,14 +27,18 @@ STARTWEEKCOUNT=0
 HALLOWEEN_ENGLISH_WEEK_01=43
 APOKRIES_PREWEEK_01=08
 APOKRIES_PREWEEK_02=09
-EASTER_PREWEEK_01=15
-EASTER_PREWEEK_02=16
+EASTER_PREWEEK_01=14
+EASTER_PREWEEK_02=15
 XMAS_PREWEEK_01=50
 XMAS_PREWEEK_02=51
 XMAS_AFTER_01=02
 RECYCLE_DAY=00
 INTERNET_SAFETY_01=00
 INTERNET_SAFETY_02=00
+
+MARCH25=12
+OCTOBER28=43
+
 
 #ironstart https://studio.code.org/s/course1
 #ironstart https://studio.code.org/s/course1/stage/4/puzzle/10
@@ -101,6 +106,19 @@ return 5
 ironchangesdat() {
 # eg  ironstart ""$SWFlocal"pack_A01.html "$LANDINGpage"15-ΤΕΤΑΡΤΗ-Β1--hour5.html "$SWFlocal"pack_A01.html"
 . iron_flash_puppy_pepper.sh "--incognito ""$@"
+return 5
+}
+
+
+slimjetstartincognito() {
+# eg  ironstart ""$SWFlocal"pack_A01.html "$LANDINGpage"15-ΤΕΤΑΡΤΗ-Β1--hour5.html "$SWFlocal"pack_A01.html"
+. slimjet-puppy-home.sh "--incognito ""$@"
+return 5
+}
+
+slimjetstart() {
+# eg  ironstart ""$SWFlocal"pack_A01.html "$LANDINGpage"15-ΤΕΤΑΡΤΗ-Β1--hour5.html "$SWFlocal"pack_A01.html"
+. slimjet-puppy-home.sh "$@"
 return 5
 }
 
@@ -756,6 +774,7 @@ adjustWeekFinalNum_for_week 12
 if [ $WEEKNUMBER == $WEEKFINALNUM ] || [ "$WEEKNUMBER" == 'wk26-MarC' ]  
 then
 
+#March25
 ironstartincognito "http://192.168.1.200/tinymce_class/tinymce.html?probeserver\&file=giorti25mart01" &
 #___ alt online ___ironstartincognito "https://plirof.github.io/tinymce_class/tinymce.html?probeserver\&file=giorti25mart01" &
 
@@ -893,7 +912,7 @@ ironstartincognito "http://192.168.1.200/x-spreadsheet/tinyxls.html?file=lesson1
 
 ironstartincognito "http://tinyxls.dimotika.tk/tinyxls.html?file=lesson1-timetable\&jsonxls=lesson1-timetable\&showsubmit "$SWFlocal"pack_A03.html?probeserver\&norightclick"
 
-
+#http://tinyxls.dimotika.tk/tinyxls.html?file=lesson1-timetable&jsonxls=lesson1-timetable&showsubmit
 fi
 
 
