@@ -183,7 +183,7 @@ chmod a+x /tmp/john_start_kill_apps.sh
 . /tmp/john_start_kill_apps.sh
 
 #try remote (to change files  stretchdog-debdive32/live/ )
-wget  -T 7 http://educ.swf.dimotiko.tk/4class_sfs/john_downloads_remote_15dimotiko.sh --directory-prefix=/tmp/
+wget  -T 7 http://swf-dim.matheme.win/4class_sfs/john_downloads_remote_15dimotiko.sh --directory-prefix=/tmp/
 chmod a+x /tmp/john_downloads_remote_15dimotiko.sh
 . /tmp/john_downloads_remote_15dimotiko.sh
 '

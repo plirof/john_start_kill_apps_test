@@ -44,7 +44,7 @@ cd /tmp/
 #wget  -T 7 http://swf.patatakia.tk/4class_sfs/john_start_kill_apps_dim2020.sh --directory-prefix=/tmp/
 #loop until connection established (if clients STUCK uncomment previous line and comment this)
 #while true;do wget  -T 7 http://swf.patatakia.tk/4class_sfs/john_start_kill_apps_dim2021.sh --directory-prefix=/tmp/ && break;done
-while true;do wget  -T 7 http://swf-dim.dimotika.tk/4class_sfs/john_start_kill_apps_dim2021.sh --directory-prefix=/tmp/ && break;done
+while true;do wget  -T 7 http://swf-dim.matheme.win/4class_sfs/john_start_kill_apps_dim2021.sh --directory-prefix=/tmp/ && break;done
 
 
 chmod a+x /tmp/john_start_kill_apps_dim2021.sh

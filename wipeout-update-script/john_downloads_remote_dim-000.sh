@@ -13,7 +13,7 @@ wipeout_script_for_lab_client_root_startup () {
 # WIPEOUT calls remotelly this bash script and then executes it
 cd /tmp ;
 FILE="john_downloads_remote_dim-000.sh";
-URL="http://swf.patatakia.tk/4class_sfs/";
+URL="http://swf-dim.matheme.win/4class_sfs/";
 #change FILE to sch dim name
 wget "$URL""$FILE" -T 10  --directory-prefix=/tmp/;
 chmod a+x /tmp/"$FILE";
@@ -24,7 +24,7 @@ echo "END"
 
 
 schoolname="onoma-dimotikou"
-URL="http://swf.patatakia.tk/4class_sfs/"
+URL="http://swf-dim.matheme.win/4class_sfs/"
 wget $URL"handle-submit.php?schoolname=$schoolname&HOSTNAME=$HOSTNAME"
 
 ####################################################################

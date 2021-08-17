@@ -13,4 +13,4 @@ cd /tmp
 
 
 #change dimotiko MYNAME to what is needed
-(SCHOOL_SCRIPT=john_downloads_remote_dim-MYNAME.sh; cd /tmp/;wget  -T 7 "http://swf.patatakia.tk/4class_sfs/""$SCHOOL_SCRIPT" --directory-prefix=/tmp/; chmod a+x "/tmp/""$SCHOOL_SCRIPT";./"$SCHOOL_SCRIPT")
+(SCHOOL_SCRIPT=john_downloads_remote_dim-MYNAME.sh; cd /tmp/;wget  -T 7 "http://swf-dim.matheme.win/4class_sfs/""$SCHOOL_SCRIPT" --directory-prefix=/tmp/; chmod a+x "/tmp/""$SCHOOL_SCRIPT";./"$SCHOOL_SCRIPT")
