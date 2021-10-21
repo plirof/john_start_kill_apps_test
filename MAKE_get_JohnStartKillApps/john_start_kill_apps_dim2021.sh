@@ -1,6 +1,9 @@
 # Script 
-#changes 
-#c211004 - added repeat command to all days
+#changes
+#v211021 - Adjusted weeks 42.43.44. Maze2 is interchanged with 28Oct-preWeek and Oct28+park1+halloweenDraw
+#v211017 - Moved olohmero BEFORE giortes
+#v211014 - amixer set Master mute 
+#v211004 - added repeat command to all days
 #v211003 - minor modifications , (tried started using ;!!;!!;!! (for repeating same command command)NOT working)
 #v210930a - added  --start-maximized
 #v210908c - funbrain.html now loads from root (swf/funbrain.html - NOT from /ab/funbrain.com/ 2.labrat CheatGR1 3.changed pack_param to typing_bricks__puzzle!!!.swf
@@ -31,7 +34,6 @@ STARTWEEKCOUNT=0
 #rm -rf /mnt/home/downloads_linux/.cache/iron_flash/
 
 # SPECIAL WEEKS (ADJUCT THESE TO CURRENT SCHOOL YEAR EG 2021-22) NOTE!!!! use double digit eg 05
-HALLOWEEN_ENGLISH_WEEK_01=43
 APOKRIES_PREWEEK_01=08
 APOKRIES_PREWEEK_02=09
 EASTER_PREWEEK_01=14
@@ -42,11 +44,16 @@ XMAS_AFTER_01=02
 RECYCLE_DAY=00
 INTERNET_SAFETY_01=00
 INTERNET_SAFETY_02=00
+# 28 October: weeks 42,43,44 are interchanged Park(with oct text) is on the week of the vacation, Maze2 +Oct28 is exhanged
 OCT28_PREWEEK=42
+OCTOBER28=$((OCT28_PREWEEK+1))
+HALLOWEEN_ENGLISH_WEEK_01=43
 
 MARCH25=12
-OCTOBER28=43
 
+
+#mute all Clients
+amixer set Master mute
 
 #ironstart https://studio.code.org/s/course1
 #ironstart https://studio.code.org/s/course1/stage/4/puzzle/10
@@ -91,7 +98,7 @@ return 5
 }
 
 load_extra_apps(){
-# used to activate events (eg pasxa, halloween, etc)	
+# used to activate events (eg pasxa, halloween, etc)    
 cd /tmp
 wget ""$SERVER"uploads/john_extra_apps.sh" --directory-prefix=/tmp/
 chmod a+x /tmp/john_extra_apps.sh
@@ -142,7 +149,7 @@ lightbot_iron_browser() {
 # eg  lightbot_iron_browser "maps_easy.txt "$SWFlocal"pack_A02.html"
 #. iron_flash_puppy_pepper_home.sh "--incognito http://192.168.1.200/gamesedu/lightbot_haan/index.php?map=""$1"
 . iron_flash_puppy_pepper_home.sh "--incognito http://192.168.1.200/gamesedu/lightbot_haan/index.html?map=""$1"" "
-return 5	
+return 5    
 }
 
 firefox10() {
@@ -173,19 +180,19 @@ cp -n /usr/bin/firefox24_default_home_prefs.js /mnt/home/downloads_linux/.data/$
 
 probe_the_server()
 {
-	#every 2 minutes gets the file /uploads/john_exec_cmd_on_client.sh and executes it
-	# you should call it with probe_the_server &  (to run in background) 
-	cd /tmp
-	while /bin/true; do
-		cd /tmp
-	    rm /tmp/john_exec_cmd_on_client.sh
-		wget ""$SWFlocal"john_exec_cmd_on_client.sh" --directory-prefix=/tmp/
-		chmod a+x /tmp/john_exec_cmd_on_client.sh
-		. /tmp/john_exec_cmd_on_client.sh
-	    #something_in_the_background
-	    sleep 2m # Waits 2 minutes.
-	done &
-	return 5
+    #every 2 minutes gets the file /uploads/john_exec_cmd_on_client.sh and executes it
+    # you should call it with probe_the_server &  (to run in background) 
+    cd /tmp
+    while /bin/true; do
+        cd /tmp
+        rm /tmp/john_exec_cmd_on_client.sh
+        wget ""$SWFlocal"john_exec_cmd_on_client.sh" --directory-prefix=/tmp/
+        chmod a+x /tmp/john_exec_cmd_on_client.sh
+        . /tmp/john_exec_cmd_on_client.sh
+        #something_in_the_background
+        sleep 2m # Waits 2 minutes.
+    done &
+    return 5
 }
 
 # 200916b - Check Olohmero (used to check if oloimero hour has started - Combine it with a DAYOFWEEK check)
@@ -253,73 +260,8 @@ leafpad "Week number: $WEEKNUMBER 2021-22" &
 ################# END OF TEST COMMANDS ##########
 
 
-##################  FULL WEEK EVENTS #################################
-# Προγραμματισμός εβδομάδων    date +%V    WEEKNUMBER=17 #TEST :
-# WEEKNUMBER=17 #TEST
 
-
-
-adjustWeekFinalNum_for_week $EASTER_PREWEEK_01
-if [ $WEEKNUMBER == $EASTER_PREWEEK_01 ] || [ "$WEEKNUMBER" == 'Easter pt A' ]
-then
-#--------------------- this is for Full week-all classes events 
-leafpad "WEEK easter ptA    activated --- Week number: $WEEKNUMBER" &
-ironstartincognito ""$SERVER"ramkid/KidsPedia/kids_ePedia32cd/Volume20/index_kd_vol.html "$SWFlocal"ramkid_giortes_pasxa_pt1.html"
-ironstartincognito ""$SERVER"ramkid/KidsPedia/kids_ePedia32cd/Volume20/index_kd_vol.html "$SWFlocal"ramkid_giortes_pasxa_pt1.html"
-ironstartincognito ""$SERVER"ramkid/KidsPedia/kids_ePedia32cd/Volume20/index_kd_vol.html "$SWFlocal"ramkid_giortes_pasxa_pt1.html"
-ironstartincognito ""$SERVER"ramkid/KidsPedia/kids_ePedia32cd/Volume20/index_kd_vol.html "$SWFlocal"ramkid_giortes_pasxa_pt1.html"
-ironstartincognito ""$SWFlocal"ramkidpedia_vol20_pasxa1.html "$SWFlocal"ramkid_giortes_pasxa_pt1.html"
-fi
-adjustWeekFinalNum_for_week $EASTER_PREWEEK_02
-if [ $WEEKNUMBER == $EASTER_PREWEEK_02 ] || [ "$WEEKNUMBER" == 'Easter pt B' ]
-then
-#--------------------- this is for Full week-all classes events 
-leafpad "WEEK easter ptB    activated --- Week number: $WEEKNUMBER" &
-ironstartincognito ""$SWFgiortes"index_easter.html?probeserver\&norightclick\&timer3 https://plirof.github.io/tinymce_class/tinymce.html?probeserver\&nocopy\&file=giorti_pasxa01"
-ironstartincognito ""$SWFgiortes"index_easter.html?probeserver\&norightclick\&timer3 https://plirof.github.io/tinymce_class/tinymce.html?probeserver\&nocopy\&file=giorti_pasxa01"
-ironstartincognito ""$SWFgiortes"index_easter.html?probeserver\&norightclick\&timer3 https://plirof.github.io/tinymce_class/tinymce.html?probeserver\&nocopy\&file=giorti_pasxa01"
-ironstartincognito ""$SWFgiortes"index_easter.html?probeserver\&norightclick\&timer3 https://plirof.github.io/tinymce_class/tinymce.html?probeserver\&nocopy\&file=giorti_pasxa01"
-ironstartincognito ""$SWFgiortes"index_easter.html?probeserver\&norightclick\&timer3 https://plirof.github.io/tinymce_class/tinymce.html?probeserver\&nocopy\&file=giorti_pasxa01"
-ironstartincognito ""$SWFgiortes"index_easter.html?probeserver\&norightclick\&timer3 https://plirof.github.io/tinymce_class/tinymce.html?probeserver\&nocopy\&file=giorti_pasxa01"
-
-
-fi
-
-adjustWeekFinalNum_for_week $RECYCLE_DAY
-if [ $WEEKNUMBER == $RECYCLE_DAY ] || [ "$WEEKNUMBER" == 'Recycle - Earth Days' ]
-then
-#--------------------- this is for Full week-all classes events 
-leafpad "WEEK Recycle Day    activated --- Week number: $WEEKNUMBER" &
-ironstartincognito ""$SWFlocal"pack_recycle.html?probeserver\&norightclick\&timer3 https://plirof.github.io/tinymce_class/tinymce.html?probeserver\&nocopy"
-ironstartincognito ""$SWFlocal"pack_recycle.html?probeserver\&norightclick\&timer3 https://plirof.github.io/tinymce_class/tinymce.html?probeserver\&nocopy"
-ironstartincognito ""$SWFlocal"pack_recycle.html?probeserver\&norightclick\&timer3 https://plirof.github.io/tinymce_class/tinymce.html?probeserver\&nocopy"
-ironstartincognito ""$SWFlocal"pack_recycle.html?probeserver\&norightclick\&timer3 https://plirof.github.io/tinymce_class/tinymce.html?probeserver\&nocopy"
-ironstartincognito ""$SWFlocal"pack_recycle.html?probeserver\&norightclick\&timer3 https://plirof.github.io/tinymce_class/tinymce.html?probeserver\&nocopy"
-ironstartincognito ""$SWFlocal"pack_recycle.html?probeserver\&norightclick\&timer3 https://plirof.github.io/tinymce_class/tinymce.html?probeserver\&nocopy"
-ironstartincognito ""$SWFlocal"pack_recycle.html?probeserver\&norightclick\&timer3 https://plirof.github.io/tinymce_class/tinymce.html?probeserver\&nocopy"
-
-fi  
-
-adjustWeekFinalNum_for_week $OCT28_PREWEEK
-if [ $WEEKNUMBER == $OCT28_PREWEEK ] || [ "$WEEKNUMBER" == '28 October pre week' ]
-then
-#--------------------- this is for Full week-all classes events 
-leafpad "WEEK 28 october pre week     activated --- Week number: $WEEKNUMBER" &
-# (+ 28october pre week   
-ironstartincognito ""$SWFlocal"pack_giortes28oct.html?probeserver\&norightclick http://192.168.1.200/tinymce_class/tinymce_submit.html?probeserver\&nocopy\&hidediv1\&file=giorti28oct01 "$SWFlocal"pack_paint1.html?timer3\&probeserver"
-ironstartincognito ""$SWFlocal"pack_giortes28oct.html?probeserver\&norightclick http://192.168.1.200/tinymce_class/tinymce_submit.html?probeserver\&nocopy\&hidediv1\&file=giorti28oct01 "$SWFlocal"pack_paint1.html?timer3\&probeserver"
-ironstartincognito ""$SWFlocal"pack_giortes28oct.html?probeserver\&norightclick http://192.168.1.200/tinymce_class/tinymce_submit.html?probeserver\&nocopy\&hidediv1\&file=giorti28oct01 "$SWFlocal"pack_paint1.html?timer3\&probeserver"
-ironstartincognito ""$SWFlocal"pack_giortes28oct.html?probeserver\&norightclick http://192.168.1.200/tinymce_class/tinymce_submit.html?probeserver\&nocopy\&hidediv1\&file=giorti28oct01 "$SWFlocal"pack_paint1.html?timer3\&probeserver"
-ironstartincognito ""$SWFlocal"pack_giortes28oct.html?probeserver\&norightclick http://192.168.1.200/tinymce_class/tinymce_submit.html?probeserver\&nocopy\&hidediv1\&file=giorti28oct01 "$SWFlocal"pack_paint1.html?timer3\&probeserver"
-
-
-fi
-
-
-################## END OF FULL WEEK EVENTS #################################
-
-
-
+############## OLOHMERO START #####################
 #--------------- SPECIAL EVENTS --------------------------
 #load_extra_apps
 
@@ -351,10 +293,6 @@ fi
 # ΤΡΙΤΗ'
 fi
 
-
-
-
-
 if [ $DAYOFWEEK == 'Τρίτη' ] || [ $DAYOFWEEK == 'Tuesday' ]
 then
 echo "Τρίτη OLOHMERO  A2 tmima"
@@ -375,18 +313,92 @@ fi
 fi
 
 
+
+
+
+##############OLOHMERO END################
+
+
+
+
+##################  FULL WEEK EVENTS #################################
+# Προγραμματισμός εβδομάδων    date +%V    WEEKNUMBER=17 #TEST :
+# WEEKNUMBER=17 #TEST
+
+
+
+adjustWeekFinalNum_for_week $EASTER_PREWEEK_01
+if [ $WEEKNUMBER == $EASTER_PREWEEK_01 ] || [ "$WEEKNUMBER" == 'Easter pt A' ]
+then
+#--------------------- this is for Full week-all classes events 
+leafpad "WEEK easter ptA    activated --- Week number: $WEEKNUMBER" &
+repeat 4 ironstartincognito ""$SERVER"ramkid/KidsPedia/kids_ePedia32cd/Volume20/index_kd_vol.html "$SWFlocal"ramkid_giortes_pasxa_pt1.html"
+#ironstartincognito ""$SERVER"ramkid/KidsPedia/kids_ePedia32cd/Volume20/index_kd_vol.html "$SWFlocal"ramkid_giortes_pasxa_pt1.html"
+ironstartincognito ""$SWFlocal"ramkidpedia_vol20_pasxa1.html "$SWFlocal"ramkid_giortes_pasxa_pt1.html"
+fi
+adjustWeekFinalNum_for_week $EASTER_PREWEEK_02
+if [ $WEEKNUMBER == $EASTER_PREWEEK_02 ] || [ "$WEEKNUMBER" == 'Easter pt B' ]
+then
+#--------------------- this is for Full week-all classes events 
+leafpad "WEEK easter ptB    activated --- Week number: $WEEKNUMBER" &
+#ironstartincognito ""$SWFgiortes"index_easter.html?probeserver\&norightclick\&timer3 https://plirof.github.io/tinymce_class/tinymce.html?probeserver\&nocopy\&file=giorti_pasxa01"
+repeat 6 ironstartincognito ""$SWFgiortes"index_easter.html?probeserver\&norightclick\&timer3 https://plirof.github.io/tinymce_class/tinymce.html?probeserver\&nocopy\&file=giorti_pasxa01"
+
+
+fi
+
+adjustWeekFinalNum_for_week $RECYCLE_DAY
+if [ $WEEKNUMBER == $RECYCLE_DAY ] || [ "$WEEKNUMBER" == 'Recycle - Earth Days' ]
+then
+#--------------------- this is for Full week-all classes events 
+leafpad "WEEK Recycle Day    activated --- Week number: $WEEKNUMBER" &
+repeat 7 ironstartincognito ""$SWFlocal"pack_recycle.html?probeserver\&norightclick\&timer3 https://plirof.github.io/tinymce_class/tinymce.html?probeserver\&nocopy"
+#ironstartincognito ""$SWFlocal"pack_recycle.html?probeserver\&norightclick\&timer3 https://plirof.github.io/tinymce_class/tinymce.html?probeserver\&nocopy"
+
+fi  
+
+adjustWeekFinalNum_for_week $OCT28_PREWEEK
+if [ $WEEKNUMBER == $OCT28_PREWEEK ] || [ "$WEEKNUMBER" == '28 October pre week' ]
+then
+# NOTE  : 28 oct pre-week is usually week 43 or 42 - we swap these weeks with maze part 2 we should put Park 1 in the cut down week after oct28
+
+#--------------------- this is for Full week-all classes events 
+leafpad "WEEK 28 october pre week     activated --- Week number: $WEEKNUMBER" &
+# (+ 28october pre week   
+repeat 5 ironstartincognito ""$SWFlocal"pack_giortes28oct.html?probeserver\&norightclick http://192.168.1.200/tinymce_class/tinymce_submit.html?probeserver\&nocopy\&hidediv1\&file=giorti28oct01 "$SWFlocal"pack_paint1.html?timer3\&probeserver"
+#ironstartincognito ""$SWFlocal"pack_giortes28oct.html?probeserver\&norightclick http://192.168.1.200/tinymce_class/tinymce_submit.html?probeserver\&nocopy\&hidediv1\&file=giorti28oct01 "$SWFlocal"pack_paint1.html?timer3\&probeserver"
+
+fi
+
+adjustWeekFinalNum_for_week $OCTOBER28
+if [ $WEEKNUMBER == $OCTOBER28 ] || [ "$WEEKNUMBER" == '28 October week(argia 26,28 + giortes) ' ]
+then
+# NOTE  : 28 oct pre-week is usually week 43 or 42 - we swap these weeks with maze part 2 we should put Park 1 in the cut down week after oct28
+
+#--------------------- this is for Full week-all classes events 
+leafpad "WEEK giorti 28 October week(argia 26,28 + giortes) activated --- Week number: $WEEKNUMBER" &
+# (+ 28october pre week   
+repeat 5 ironstartincognito ""$SWFlocal"pack_url_param.html?url1=fun/spongebob-parking_jon04noURLS_need760MBram_!!.swf\&url2=fun/puzzle_board/edsparkinggame.swf\&url3=type/typing_bricks\(puzzle\)!!!.swf\&url4=type/typing_alphattack2__bombDrop_NoNavUrl.swf\&url5=fun/puzzle_board/spark_chess_17521__allows_save_NoNavUrl.swf\&url6=park-1\&probeserver\&norightclick  http://192.168.1.200/tinymce_class/tinymce_submit.html?probeserver\&nocopy\&hidediv1\&file=giorti28oct01 "$SWFlocal"pack_giortes28oct.html?probeserver\&norightclick 28October-HalloweenDraw"
+#ironstartincognito ""$SWFlocal"pack_giortes28oct.html?probeserver\&norightclick http://192.168.1.200/tinymce_class/tinymce_submit.html?probeserver\&nocopy\&hidediv1\&file=giorti28oct01 "$SWFlocal"pack_paint1.html?timer3\&probeserver"
+
+fi
+
+
+
+
+################## END OF FULL WEEK EVENTS #################################
+
+
+
+
 #201902118-22  , 2020 updated
 #adjustWeekFinalNum_for_week 7
 if [ $WEEKNUMBER == $APOKRIES_PREWEEK_01 ] || [ "$WEEKNUMBER" == 'Halloween pt1' ]
 then
 #--------------------- this is for Full week-all classes events    
 leafpad "WEEK halloween ptA (ramkid_invitation_party , swf_ramkid_cds2k5/Ramkid_12feb_apokries , KidsPedia/kids_ePedia32cd/Volume13 )   activated --- Week number: $WEEKNUMBER" &
-ironstartincognito ""$SWFgiortes"other/ramkid_invitation_party/index.html "$SWFpath"ramkid_giortes_apokries_pt1.html http://192.168.1.200/tinymce_class/tinymce.html?probeserver\&nocopy\&file=giorti_apokries01"
-ironstartincognito ""$SWFgiortes"other/ramkid_invitation_party/index.html "$SWFpath"ramkid_giortes_apokries_pt1.html http://192.168.1.200/tinymce_class/tinymce.html?probeserver\&nocopy\&file=giorti_apokries01"
-ironstartincognito ""$SWFgiortes"other/ramkid_invitation_party/index.html "$SWFpath"ramkid_giortes_apokries_pt1.html http://192.168.1.200/tinymce_class/tinymce.html?probeserver\&nocopy\&file=giorti_apokries01"
-ironstartincognito ""$SWFgiortes"other/ramkid_invitation_party/index.html "$SWFpath"ramkid_giortes_apokries_pt1.html http://192.168.1.200/tinymce_class/tinymce.html?probeserver\&nocopy\&file=giorti_apokries01"
-ironstartincognito ""$SWFgiortes"other/ramkid_invitation_party/index.html "$SWFpath"ramkid_giortes_apokries_pt1.html http://192.168.1.200/tinymce_class/tinymce.html?probeserver\&nocopy\&file=giorti_apokries01"
-ironstartincognito ""$SWFgiortes"other/ramkid_invitation_party/index.html "$SWFpath"ramkid_giortes_apokries_pt1.html http://192.168.1.200/tinymce_class/tinymce.html?probeserver\&nocopy\&file=giorti_apokries01"
+#ironstartincognito ""$SWFgiortes"other/ramkid_invitation_party/index.html "$SWFpath"ramkid_giortes_apokries_pt1.html http://192.168.1.200/tinymce_class/tinymce.html?probeserver\&nocopy\&file=giorti_apokries01"
+repeat 6 ironstartincognito ""$SWFgiortes"other/ramkid_invitation_party/index.html "$SWFpath"ramkid_giortes_apokries_pt1.html http://192.168.1.200/tinymce_class/tinymce.html?probeserver\&nocopy\&file=giorti_apokries01"
 fi
 
 #200217 updated  (NoteSTARTWEEKCOUNT +08 NOT working error)
@@ -396,14 +408,10 @@ if  [ "$WEEKNUMBER" == APOKRIES_PREWEEK_02 ] ||  [ "$WEEKNUMBER" == '09' ]
 then
 #--------------------- this is for Full week-all classes events 
 leafpad "WEEK halloween ptB (for 2 weeks  games)   activated --- Week number: $WEEKNUMBER    20190225-08" &
-ironstartincognito "http://plirof.github.io/tinymce_class/tinymce.html?probeserver\&nocopy\&file=giorti_apokries01 "$SWFgiortes"index_halloween.html?probeserver\&norightclick\&timer3"
-ironstartincognito "http://plirof.github.io/tinymce_class/tinymce.html?probeserver\&nocopy\&file=giorti_apokries01 "$SWFgiortes"index_halloween.html?probeserver\&norightclick\&timer3"
-ironstartincognito "http://plirof.github.io/tinymce_class/tinymce.html?probeserver\&nocopy\&file=giorti_apokries01 "$SWFgiortes"index_halloween.html?probeserver\&norightclick\&timer3"
-ironstartincognito "http://plirof.github.io/tinymce_class/tinymce.html?probeserver\&nocopy\&file=giorti_apokries01 "$SWFgiortes"index_halloween.html?probeserver\&norightclick\&timer3"
-ironstartincognito "http://plirof.github.io/tinymce_class/tinymce.html?probeserver\&nocopy\&file=giorti_apokries01 "$SWFgiortes"index_halloween.html?probeserver\&norightclick\&timer3"
-ironstartincognito ""$SWFgiortes"index_halloween.html?timer3 http://plirof.github.io/tinymce_class/tinymce.html?probeserver\&nocopy\&file=giorti_apokries01"
-ironstartincognito ""$SWFgiortes"index_halloween.html http://plirof.github.io/tinymce_class/tinymce.html?probeserver\&nocopy\&file=giorti_apokries01\&hidediv1"
-ironstartincognito ""$SWFgiortes"index_halloween.html http://plirof.github.io/tinymce_class/tinymce.html?probeserver\&nocopy\&file=giorti_apokries01\&hidediv1"
+#ironstartincognito "http://plirof.github.io/tinymce_class/tinymce.html?probeserver\&nocopy\&file=giorti_apokries01 "$SWFgiortes"index_halloween.html?probeserver\&norightclick\&timer3"
+repeat 5 ironstartincognito "http://plirof.github.io/tinymce_class/tinymce.html?probeserver\&nocopy\&file=giorti_apokries01 "$SWFgiortes"index_halloween.html?probeserver\&norightclick\&timer3"
+#ironstartincognito ""$SWFgiortes"index_halloween.html?timer3 http://plirof.github.io/tinymce_class/tinymce.html?probeserver\&nocopy\&file=giorti_apokries01"
+repeat 4 ironstartincognito ""$SWFgiortes"index_halloween.html http://plirof.github.io/tinymce_class/tinymce.html?probeserver\&nocopy\&file=giorti_apokries01\&hidediv1"
 
 fi
 
@@ -413,7 +421,9 @@ fi
 adjustWeekFinalNum_for_week 38
 if [ $WEEKNUMBER == $WEEKFINALNUM ] || [ "$WEEKNUMBER" == '37' ] || [ "$WEEKNUMBER" == 'wk01-02-SepB-C' ]  
 then
-ironstartincognito "http://192.168.1.200/tinymce_class/tinymce_submit.html?showsubmit\&probeserver "$SWFlocal"pack_A03.html?probeserver\&norightclick 
+# ironstartincognito "http://192.168.1.200/tinymce_class/tinymce_submit.html?showsubmit\&probeserver "$SWFlocal"pack_A03.html?probeserver\&norightclick 
+#"$SWFlocal"funbrain.html?timer3  http://first_week_enter_ONOMATA_PC03_E2_Giorgos_giannis"
+repeat 5 ironstartincognito "http://192.168.1.200/tinymce_class/tinymce_submit.html?showsubmit\&probeserver "$SWFlocal"pack_A03.html?probeserver\&norightclick 
 "$SWFlocal"funbrain.html?timer3  http://first_week_enter_ONOMATA_PC03_E2_Giorgos_giannis"
 
 ironstartincognito "http://192.168.1.200/tinymce_class/tinymce_submit.html?showsubmit\&probeserver "$SWFlocal"pack_A03.html?probeserver\&norightclick 
@@ -522,6 +532,7 @@ fi
 adjustWeekFinalNum_for_week 42
 if [ $WEEKNUMBER == $WEEKFINALNUM ] || [ "$WEEKNUMBER" == 'wk06-OctC' ]  
 then
+# Week42 this is exchanged with the Oct28 Pre-Week (wweks 42,43,44 are overwritten from the 2 oct28 weeks -the remaining will be Maze2)
 repeat 5 ironstartincognito ""$SWFlocal"pack_url_param.html?url1=fun/maze/labrat__maze-kids_needFastPC_unencr2noAdsURL_cheat_GR01_!!.swf\&url2=fun/maze/minotaur_122_maze__unencr3_noAdsUrl_!.swf\&url3=fun/maze/Diego_Dinosaur_Rescue_maze_KIDS_simple_NotTImed_!!!.swf\&url4=ab/ladybugs_TRODLER_noADsURL@.swf\&url5=fun/physics/soccer-balls__physics__noADurl.swf\&url6=maze-2\&probeserver\&timer3"
 
 fi
@@ -530,9 +541,14 @@ adjustWeekFinalNum_for_week 43
 if [ $WEEKNUMBER == $WEEKFINALNUM ] || [ "$WEEKNUMBER" == 'wk07-OctD' ]  
 then
 
+# Week42 this is exchanged with the Oct28 Pre-Week (wweks 42,43,44 are overwritten from the 2 oct28 weeks -the remaining will be Maze2)
+repeat 5 ironstartincognito ""$SWFlocal"pack_url_param.html?url1=fun/maze/labrat__maze-kids_needFastPC_unencr2noAdsURL_cheat_GR01_!!.swf\&url2=fun/maze/minotaur_122_maze__unencr3_noAdsUrl_!.swf\&url3=fun/maze/Diego_Dinosaur_Rescue_maze_KIDS_simple_NotTImed_!!!.swf\&url4=ab/ladybugs_TRODLER_noADsURL@.swf\&url5=fun/physics/soccer-balls__physics__noADurl.swf\&url6=maze-2\&probeserver\&timer3"
+
+
 #28oct A-B draw jspaint , C-ST write word
 repeat 5 ironstartincognito ""$SWFlocal"pack_giortes28oct.html http://192.168.1.200/tinymce_class/tinymce.html?probeserver\&file=giorti28oct01 http://192.168.1.200/jspaint/index.html#load:http://192.168.1.200/jspaint/school/28oct-01.png"
 #ironstartincognito ""$SWFlocal"pack_giortes28oct.html http://192.168.1.200/tinymce_class/tinymce.html?probeserver\&file=giorti28oct01 http://192.168.1.200/jspaint/index.html#load:http://192.168.1.200/jspaint/school/28oct-01.png"
+
 
 
 
@@ -561,6 +577,11 @@ fi
 adjustWeekFinalNum_for_week 44
 if [ $WEEKNUMBER == $WEEKFINALNUM ] || [ "$WEEKNUMBER" == 'wk08-OctE-NovA' ]  
 then
+
+# Week42 this is exchanged with the Oct28 Pre-Week (wweks 42,43,44 are overwritten from the 2 oct28 weeks -the remaining will be Maze2)
+repeat 5 ironstartincognito ""$SWFlocal"pack_url_param.html?url1=fun/maze/labrat__maze-kids_needFastPC_unencr2noAdsURL_cheat_GR01_!!.swf\&url2=fun/maze/minotaur_122_maze__unencr3_noAdsUrl_!.swf\&url3=fun/maze/Diego_Dinosaur_Rescue_maze_KIDS_simple_NotTImed_!!!.swf\&url4=ab/ladybugs_TRODLER_noADsURL@.swf\&url5=fun/physics/soccer-balls__physics__noADurl.swf\&url6=maze-2\&probeserver\&timer3"
+
+
 #Halloween + 28october part B (συνήθως μισές τάξεις λόγω αργιών) 
 # HALLOWEEN 2019 (+ 28october part2) octomber 31   - DRAW SCARY STUFF# tuxpaint πινέλα  (ζωγραφίστε σπίτι + αμάξι ,πινέλα ,σφραγίδες) ,typing_bricks(puzzle)!!!.swf
 repeat 5 ironstartincognito ""$SWFlocal"pack_giortes28oct.html?probeserver\&norightclick http://192.168.1.200/tinymce_class/tinymce_submit.html?probeserver\&nocopy\&hidediv1\&file=giorti28oct01 "$SWFlocal"pack_paint1.html?timer3\&probeserver"
@@ -581,7 +602,7 @@ fi
 adjustWeekFinalNum_for_week 45
 if [ $WEEKNUMBER == $WEEKFINALNUM ] || [ "$WEEKNUMBER" == 'wk09-NovA2' ]  
 then
-# code.org :(1. Χαρούμενοι Χάρτες , 2. Κούνισέ το, Κούνισέ το , 3. Παζλ: Μάθε την μεταφορά και )	
+# code.org :(1. Χαρούμενοι Χάρτες , 2. Κούνισέ το, Κούνισέ το , 3. Παζλ: Μάθε την μεταφορά και )    
 repeat 5 ironstart "https://studio.code.org/s/course1/stage/3/puzzle/1 "$SWFlocal"pack_A01.html?norightclick\&probeserver "$SWFlocal"pack_paint1.html?timer3\&norightclick\&probeserver"
 
 
@@ -652,7 +673,7 @@ repeat 4 ironstartincognito "http://192.168.1.200/tinymce_class/tinymce_submit.h
 #ironstartincognito "http://192.168.1.200/tinymce_class/tinymce_submit.html?probeserver\&showsubmit\&nocopy\&file=xmas_rudolf"" "$SWFgiortes"index_xmas.html?probeserver\&norightclick\&timer3"
 
 
-#$OOOKIDS$OOOKIDSpathprefix"OFFICE_extra_files/xmas-rountolf-typing.doc" &	
+#$OOOKIDS$OOOKIDSpathprefix"OFFICE_extra_files/xmas-rountolf-typing.doc" &  
 #cd "/tmp/";wget --directory-prefix="/tmp/" -O "a" "http://192.168.1.200/askiseis_office/OFFICE_extra_files/xmas-rountolf-typing.doc"; ooo4kids1.3 -n /tmp/a &
 repeat 5 ironstartincognito ""$SWFgiortes"index_xmas.html?probeserver\&timer3"
 repeat 5 cd "/tmp/";wget --directory-prefix="/tmp/" -O "a" "http://192.168.1.200/askiseis_office/OFFICE_extra_files/xmas-rountolf-typing.doc"; ooo4kids1.3 -n /tmp/a
@@ -665,7 +686,7 @@ if [ $WEEKNUMBER == $WEEKFINALNUM ] || [ "$WEEKNUMBER" == 'wk15-DecC' ]
 then
 
 # giortes xmas Β : 2-3 μαθήματα (μετά τέλος ασκήσεων)
-#$OOOKIDS$OOOKIDSpathprefix"OFFICE_extra_files/xmas-rountolf-typing.doc" &		
+#$OOOKIDS$OOOKIDSpathprefix"OFFICE_extra_files/xmas-rountolf-typing.doc" &      
 #cd "/tmp/";wget --directory-prefix="/tmp/" -O "a" "http://192.168.1.200/askiseis_office/OFFICE_extra_files/xmas-rountolf-typing.doc"; ooo4kids1.3 -n /tmp/a
 
 repeat 6 ironstartincognito ""$SWFgiortes"index_xmas.html?probeserver\&norightclick\&timer2"
@@ -676,7 +697,7 @@ adjustWeekFinalNum_for_week 52
 if [ $WEEKNUMBER == $WEEKFINALNUM ] || [ "$WEEKNUMBER" == 'wk---DecD' ]  
 then
 
-	leafpad "CLOSED XMAS WEEK activated --- Week number: $WEEKNUMBER"
+    leafpad "CLOSED XMAS WEEK activated --- Week number: $WEEKNUMBER"
 
 fi
 
@@ -686,7 +707,7 @@ adjustWeekFinalNum_for_week 1
 if [ $WEEKNUMBER == $WEEKFINALNUM ] || [ "$WEEKNUMBER" == 'wk---NovA2' ]  
 then
 
-	leafpad "CLOSED XMAS WEEK activated --- Week number: $WEEKNUMBER"
+    leafpad "CLOSED XMAS WEEK activated --- Week number: $WEEKNUMBER"
 
 fi
 
@@ -886,7 +907,7 @@ fi
 adjustWeekFinalNum_for_week 19
 if [ $WEEKNUMBER == $WEEKFINALNUM ] || [ "$WEEKNUMBER" == 'wk33-MayB' ]  
 then
-#__(pack_code_lightbotswf EXEI: lightbotswf,turtlepond,tortuga.patatak,tiny-explor,packA03	
+#__(pack_code_lightbotswf EXEI: lightbotswf,turtlepond,tortuga.patatak,tiny-explor,packA03  
 repeat 5 ironstartincognito ""$SWFlocal"pack_code_lightbotswf.html?probeserver\&timer2"
 #ironstartincognito ""$SWFlocal"pack_code_lightbotswf.html?probeserver\&timer2"
 
@@ -899,14 +920,14 @@ then
 leafpad "WEEK TANK ,pixbot    activated --- Week number: $WEEKNUMBER" &
 repeat 5 ironstartincognito ""$GAMESEDU"Code-Commander-gr/index_dot_links.html "$GAMESEDU"blockly-games/el/index.html?lang=el http://pixbot.dimotika.tk "$SWFlocal"pack_A02.html?norightclick "
 #ironstartincognito ""$GAMESEDU"Code-Commander-gr/index_dot_links.html "$GAMESEDU"blockly-games/el/index.html?lang=el http://pixbot.dimotika.tk "$SWFlocal"pack_A02.html "
-#ironstartincognito ""$GAMESEDU"Code-Commander-gr/index_dot_links.html "$SWFlocal"pack_A02.html http://pixbot.dimotika.tk"	
+#ironstartincognito ""$GAMESEDU"Code-Commander-gr/index_dot_links.html "$SWFlocal"pack_A02.html http://pixbot.dimotika.tk"  
 
 fi
 
 adjustWeekFinalNum_for_week 21
 if [ $WEEKNUMBER == $WEEKFINALNUM ] || [ "$WEEKNUMBER" == 'wk35-MayD' ]  
 then
-# ******** TO DO add tinyxls lesson ***********	
+# ******** TO DO add tinyxls lesson *********** 
 ironstartincognito ""$SWFlocal"pack_A05.html?probeserver "$SWFlocal"pack_A02.html?probeserver" &
 #ironstartincognito ""$SWFlocal"pack_A05.html "$SWFlocal"pack_A02.html" &
 $OOOKIDS$OOOKIDSpathprefix"OFFICE_extra_files/excel_1.1_pinakas_mathitwn.xls"
