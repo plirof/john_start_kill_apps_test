@@ -1,5 +1,6 @@
 # Script 
 #changes
+#v211120 - weeks 45-48 november added another visible level to each week
 #v211113 - weeks 45-48 (november) added pack_codeorg1.html?showdiv1&showdiv2&showdiv3
 #v211102 - added  --start-maximized to normal iron
 #v211021 - Adjusted weeks 42.43.44. Maze2 is interchanged with 28Oct-preWeek and Oct28+park1+halloweenDraw
@@ -581,7 +582,7 @@ adjustWeekFinalNum_for_week 45
 if [ $WEEKNUMBER == $WEEKFINALNUM ] || [ "$WEEKNUMBER" == 'wk09-NovA2' ]  
 then
 # code.org :(1. Χαρούμενοι Χάρτες , 2. Κούνισέ το, Κούνισέ το , 3. Παζλ: Μάθε την μεταφορά και )	
-repeat 6  ironstart ""$SWFlocal"pack_codeorg1.html?showdiv1&showdiv2 https://studio.code.org/s/course1/stage/3/puzzle/1 "$SWFlocal"pack_A01.html?norightclick\&probeserver "$SWFlocal"pack_paint1.html?timer3\&norightclick\&probeserver"
+repeat 7  ironstart ""$SWFlocal"pack_codeorg1.html?showdiv1&showdiv2&showdiv3 https://---studio.code.org/s/course1/stage/3/puzzle/1 "$SWFlocal"pack_A01.html?norightclick\&probeserver "$SWFlocal"pack_paint1.html?timer3\&norightclick\&probeserver"
 
 
 repeat 6  ironstart "https://studio.code.org/s/course1/stage/3/puzzle/1 "$SWFlocal"pack_A01.html?norightclick\&probeserver"
@@ -596,7 +597,7 @@ then
 # gcompris 15 :mouse _ψαρια - keyboard ζαρι (τα κουμπιά τους φανηκαν δυσκολα)
 gcompris &
 # E-ST  4. Λαβύρινθος angry-birds: Ακολουθία
-repeat 6  ironstart ""$SWFlocal"pack_codeorg1.html?showdiv1&showdiv2&showdiv3 https://studio.code.org/s/course1/stage/4/puzzle/1 "$SWFlocal"pack_A01.html?probeserver\&norightclick"
+repeat 7  ironstart ""$SWFlocal"pack_codeorg1.html?showdiv1&showdiv2&showdiv3&showdiv4 https://---studio.code.org/s/course1/stage/4/puzzle/1 "$SWFlocal"pack_A01.html?probeserver\&norightclick"
 
 
 fi
@@ -607,7 +608,7 @@ then
 #A-B  pack_A06 spider , eat flies, tomato
 
 # E-ST   5. Λαβύρινθο angry-birds: εντοπισμός σφαλμ
-repeat 7 ironstart ""$SWFlocal"pack_codeorg1.html?showdiv1&showdiv2&showdiv3&showdiv4 https://studio.code.org/s/course1/stage/5/puzzle/1 "$SWFlocal"pack_A06.html?probeserver\&norightclick\&timer4"
+repeat 7 ironstart ""$SWFlocal"pack_codeorg1.html?showdiv1&showdiv2&showdiv3&showdiv4&showdiv5 https://---studio.code.org/s/course1/stage/5/puzzle/1 "$SWFlocal"pack_A06.html?probeserver\&norightclick\&timer4"
 #ironstart "https://studio.code.org/s/course1/stage/5/puzzle/1 "$SWFlocal"pack_A06.html?probeserver\&norightclick\&timer4"
 
 fi
@@ -618,7 +619,7 @@ then
 # A-B Σχηματισμός Λέξεων-> ζώα , δουλείες ,ρούχα)
 /opt/eduActiv8/eduActiv8 &
 # E-ST  (7. melisses)
-repeat 7 ironstart ""$SWFlocal"pack_codeorg1.html https://studio.code.org/s/course1/stage/7/puzzle/1 "$SWFlocal"pack_A03.html?probeserver\&norightclick"
+repeat 7 ironstart ""$SWFlocal"pack_codeorg1.html https://---studio.code.org/s/course1/stage/7/puzzle/1 "$SWFlocal"pack_A03.html?probeserver\&norightclick"
 #ironstart "https://studio.code.org/s/course1/stage/7/puzzle/1 "$SWFlocal"pack_A03.html?probeserver\&norightclick"
 
 fi
@@ -632,7 +633,7 @@ then
 # ???  giortes xmas Α !!!!! NA ΦΤΙΑΞΩ το ramkid_giortes_xmas_pt1.html
 
 #ironstartincognito "http://192.168.1.200/tinymce_class/tinymce_submit.html?probeserver\&showsubmit\&nocopy\&file=xmas_rudolf"" "$SWFlocal"ramkidpedia_vol04_xmas1.html "$SWFlocal"ramkid_giortes_xmas_pt1.html"
-repeat 6  ironstartincognito "http://192.168.1.200/tinymce_class/tinymce_submit.html?probeserver\&showsubmit\&nocopy\&file=xmas_rudolf"" "$SWFlocal"ramkidpedia_vol04_xmas1.html "$SWFlocal"ramkid_giortes_xmas_pt1.html"
+repeat 7 ironstartincognito "http://192.168.1.200/tinymce_class/tinymce_submit.html?probeserver\&showsubmit\&nocopy\&file=xmas_rudolf"" "$SWFlocal"ramkidpedia_vol04_xmas1.html "$SWFlocal"ramkid_giortes_xmas_pt1.html"
 
 #$OOOKIDS$OOOKIDSpathprefix"OFFICE_extra_files/xmas-rountolf-typing.doc" &
 cd "/tmp/";wget --directory-prefix="/tmp/" -O "a" "http://192.168.1.200/askiseis_office/OFFICE_extra_files/xmas-rountolf-typing.doc"; ooo4kids1.3 -n /tmp/a &
