@@ -1,6 +1,5 @@
 # Script 
 #changes
-#v211125 - eduactiv8 comments for Lesson1,2  , now run sudo -u puppy bash -c "/opt/eduActiv8/eduActiv8 &";
 #v211120 - weeks 45-48 november added another visible level to each week
 #v211113 - weeks 45-48 (november) added pack_codeorg1.html?showdiv1&showdiv2&showdiv3
 #v211102 - added  --start-maximized to normal iron
@@ -102,7 +101,7 @@ return 5
 }
 
 load_extra_apps(){
-# used to activate events (eg pasxa, halloween, etc)    
+# used to activate events (eg pasxa, halloween, etc)	
 cd /tmp
 wget ""$SERVER"uploads/john_extra_apps.sh" --directory-prefix=/tmp/
 chmod a+x /tmp/john_extra_apps.sh
@@ -154,7 +153,7 @@ lightbot_iron_browser() {
 # eg  lightbot_iron_browser "maps_easy.txt "$SWFlocal"pack_A02.html"
 #. iron_flash_puppy_pepper_home.sh "--incognito http://192.168.1.200/gamesedu/lightbot_haan/index.php?map=""$1"
 . iron_flash_puppy_pepper_home.sh "--incognito http://192.168.1.200/gamesedu/lightbot_haan/index.html?map=""$1"" "
-return 5    
+return 5	
 }
 
 firefox10() {
@@ -185,19 +184,19 @@ cp -n /usr/bin/firefox24_default_home_prefs.js /mnt/home/downloads_linux/.data/$
 
 probe_the_server()
 {
-    #every 2 minutes gets the file /uploads/john_exec_cmd_on_client.sh and executes it
-    # you should call it with probe_the_server &  (to run in background) 
-    cd /tmp
-    while /bin/true; do
-        cd /tmp
-        rm /tmp/john_exec_cmd_on_client.sh
-        wget ""$SWFlocal"john_exec_cmd_on_client.sh" --directory-prefix=/tmp/
-        chmod a+x /tmp/john_exec_cmd_on_client.sh
-        . /tmp/john_exec_cmd_on_client.sh
-        #something_in_the_background
-        sleep 2m # Waits 2 minutes.
-    done &
-    return 5
+	#every 2 minutes gets the file /uploads/john_exec_cmd_on_client.sh and executes it
+	# you should call it with probe_the_server &  (to run in background) 
+	cd /tmp
+	while /bin/true; do
+		cd /tmp
+	    rm /tmp/john_exec_cmd_on_client.sh
+		wget ""$SWFlocal"john_exec_cmd_on_client.sh" --directory-prefix=/tmp/
+		chmod a+x /tmp/john_exec_cmd_on_client.sh
+		. /tmp/john_exec_cmd_on_client.sh
+	    #something_in_the_background
+	    sleep 2m # Waits 2 minutes.
+	done &
+	return 5
 }
 
 # 200916b - Check Olohmero (used to check if oloimero hour has started - Combine it with a DAYOFWEEK check)
@@ -483,18 +482,16 @@ adjustWeekFinalNum_for_week 40
 if [ $WEEKNUMBER == $WEEKFINALNUM ] || [ "$WEEKNUMBER" == 'wk04--OCtA' ]  
 then
 
-# eduactiv8 Lesson1 : A-B Γλωσσικές Τέχνες->Ανακαλύψτε τα γραμματα
+# A-B Γλωσσικές Τέχνες->Ανακαλύψτε τα γραμματα
 #. /opt/eduActiv8/eduActiv8 &
-##/opt/eduActiv8/eduActiv8 &
-sudo -u puppy bash -c "/opt/eduActiv8/eduActiv8 &";
+/opt/eduActiv8/eduActiv8 &
 #ironstartincognito ""$SWFlocal"pack_type_ramkid_greek.html"
 repeat 6  ironstartincognito ""$SWFlocal"pack_url_param.html?url1=type/airtyper_1_noADsURL.swf\&url2=type/typing_adventure__indiana_jones_NoNavUrl.swf\&url3=type/typing_bricks__puzzle!!!.swf\&url4=type/typing_tidepool__sea_race_!!.swf\&url5=type/horse-racing-typing__rapidtyping.com_NoNavUrl.swf\&url6=typing-2\&probeserver\&timer3 "$SWFlocal"funbrain.html?norightclick";
 #ironstartincognito ""$SWFlocal"pack_type_ramkid_greek.html"
 #ironstartincognito ""$SWFlocal"pack_url_param.html?url1=type/airtyper_1_noADsURL.swf\&url2=type/typing_adventure__indiana_jones_NoNavUrl.swf\&url3=type/typing_bricks__puzzle!!!.swf\&url4=type/typing_tidepool__sea_race_!!.swf\&url5=type/horse-racing-typing__rapidtyping.com_NoNavUrl.swf\&url6=typing-2\&probeserver\&timer3"
 #ironstartincognito ""$SWFlocal"pack_type_ramkid_greek.html"
 #. /opt/eduActiv8/eduActiv8 &
-sudo -u puppy bash -c "/opt/eduActiv8/eduActiv8 &";
-#/opt/eduActiv8/eduActiv8
+/opt/eduActiv8/eduActiv8
 
 
 
@@ -584,7 +581,7 @@ fi
 adjustWeekFinalNum_for_week 45
 if [ $WEEKNUMBER == $WEEKFINALNUM ] || [ "$WEEKNUMBER" == 'wk09-NovA2' ]  
 then
-# code.org :(1. Χαρούμενοι Χάρτες , 2. Κούνισέ το, Κούνισέ το , 3. Παζλ: Μάθε την μεταφορά και )    
+# code.org :(1. Χαρούμενοι Χάρτες , 2. Κούνισέ το, Κούνισέ το , 3. Παζλ: Μάθε την μεταφορά και )	
 repeat 7  ironstart ""$SWFlocal"pack_codeorg1.html?showdiv1&showdiv2&showdiv3 https://---studio.code.org/s/course1/stage/3/puzzle/1 "$SWFlocal"pack_A01.html?norightclick\&probeserver "$SWFlocal"pack_paint1.html?timer3\&norightclick\&probeserver"
 
 
@@ -619,9 +616,8 @@ fi
 adjustWeekFinalNum_for_week 48
 if [ $WEEKNUMBER == $WEEKFINALNUM ] || [ "$WEEKNUMBER" == 'wk12-NovD' ]  
 then
-# eduactiv8 Lesson2 : A-B Σχηματισμός Λέξεων-> ζώα , δουλείες ,ρούχα)
-sudo -u puppy bash -c "/opt/eduActiv8/eduActiv8 &";
-##/opt/eduActiv8/eduActiv8 &
+# A-B Σχηματισμός Λέξεων-> ζώα , δουλείες ,ρούχα)
+/opt/eduActiv8/eduActiv8 &
 # E-ST  (7. melisses)
 repeat 7 ironstart ""$SWFlocal"pack_codeorg1.html https://---studio.code.org/s/course1/stage/7/puzzle/1 "$SWFlocal"pack_A03.html?probeserver\&norightclick"
 #ironstart "https://studio.code.org/s/course1/stage/7/puzzle/1 "$SWFlocal"pack_A03.html?probeserver\&norightclick"
@@ -656,7 +652,7 @@ repeat 4 ironstartincognito "http://192.168.1.200/tinymce_class/tinymce_submit.h
 #ironstartincognito "http://192.168.1.200/tinymce_class/tinymce_submit.html?probeserver\&showsubmit\&nocopy\&file=xmas_rudolf"" "$SWFgiortes"index_xmas.html?probeserver\&norightclick\&timer3"
 
 
-#$OOOKIDS$OOOKIDSpathprefix"OFFICE_extra_files/xmas-rountolf-typing.doc" &  
+#$OOOKIDS$OOOKIDSpathprefix"OFFICE_extra_files/xmas-rountolf-typing.doc" &	
 #cd "/tmp/";wget --directory-prefix="/tmp/" -O "a" "http://192.168.1.200/askiseis_office/OFFICE_extra_files/xmas-rountolf-typing.doc"; ooo4kids1.3 -n /tmp/a &
 repeat 6  ironstartincognito ""$SWFgiortes"index_xmas.html?probeserver\&timer3"
 repeat 6  cd "/tmp/";wget --directory-prefix="/tmp/" -O "a" "http://192.168.1.200/askiseis_office/OFFICE_extra_files/xmas-rountolf-typing.doc"; ooo4kids1.3 -n /tmp/a
@@ -669,7 +665,7 @@ if [ $WEEKNUMBER == $WEEKFINALNUM ] || [ "$WEEKNUMBER" == 'wk15-DecC' ]
 then
 
 # giortes xmas Β : 2-3 μαθήματα (μετά τέλος ασκήσεων)
-#$OOOKIDS$OOOKIDSpathprefix"OFFICE_extra_files/xmas-rountolf-typing.doc" &      
+#$OOOKIDS$OOOKIDSpathprefix"OFFICE_extra_files/xmas-rountolf-typing.doc" &		
 #cd "/tmp/";wget --directory-prefix="/tmp/" -O "a" "http://192.168.1.200/askiseis_office/OFFICE_extra_files/xmas-rountolf-typing.doc"; ooo4kids1.3 -n /tmp/a
 
 repeat 6 ironstartincognito ""$SWFgiortes"index_xmas.html?probeserver\&norightclick\&timer2"
@@ -680,7 +676,7 @@ adjustWeekFinalNum_for_week 52
 if [ $WEEKNUMBER == $WEEKFINALNUM ] || [ "$WEEKNUMBER" == 'wk---DecD' ]  
 then
 
-    leafpad "CLOSED XMAS WEEK activated --- Week number: $WEEKNUMBER"
+	leafpad "CLOSED XMAS WEEK activated --- Week number: $WEEKNUMBER"
 
 fi
 
@@ -690,7 +686,7 @@ adjustWeekFinalNum_for_week 1
 if [ $WEEKNUMBER == $WEEKFINALNUM ] || [ "$WEEKNUMBER" == 'wk---NovA2' ]  
 then
 
-    leafpad "CLOSED XMAS WEEK activated --- Week number: $WEEKNUMBER"
+	leafpad "CLOSED XMAS WEEK activated --- Week number: $WEEKNUMBER"
 
 fi
 
@@ -890,7 +886,7 @@ fi
 adjustWeekFinalNum_for_week 19
 if [ $WEEKNUMBER == $WEEKFINALNUM ] || [ "$WEEKNUMBER" == 'wk33-MayB' ]  
 then
-#__(pack_code_lightbotswf EXEI: lightbotswf,turtlepond,tortuga.patatak,tiny-explor,packA03  
+#__(pack_code_lightbotswf EXEI: lightbotswf,turtlepond,tortuga.patatak,tiny-explor,packA03	
 repeat 6  ironstartincognito ""$SWFlocal"pack_code_lightbotswf.html?probeserver\&timer2"
 #ironstartincognito ""$SWFlocal"pack_code_lightbotswf.html?probeserver\&timer2"
 
@@ -903,14 +899,14 @@ then
 leafpad "WEEK TANK ,pixbot    activated --- Week number: $WEEKNUMBER" &
 repeat 6  ironstartincognito ""$GAMESEDU"Code-Commander-gr/index_dot_links.html "$GAMESEDU"blockly-games/el/index.html?lang=el http://pixbot.dimotika.tk "$SWFlocal"pack_A02.html?norightclick "
 #ironstartincognito ""$GAMESEDU"Code-Commander-gr/index_dot_links.html "$GAMESEDU"blockly-games/el/index.html?lang=el http://pixbot.dimotika.tk "$SWFlocal"pack_A02.html "
-#ironstartincognito ""$GAMESEDU"Code-Commander-gr/index_dot_links.html "$SWFlocal"pack_A02.html http://pixbot.dimotika.tk"  
+#ironstartincognito ""$GAMESEDU"Code-Commander-gr/index_dot_links.html "$SWFlocal"pack_A02.html http://pixbot.dimotika.tk"	
 
 fi
 
 adjustWeekFinalNum_for_week 21
 if [ $WEEKNUMBER == $WEEKFINALNUM ] || [ "$WEEKNUMBER" == 'wk35-MayD' ]  
 then
-# ******** TO DO add tinyxls lesson *********** 
+# ******** TO DO add tinyxls lesson ***********	
 ironstartincognito ""$SWFlocal"pack_A05.html?probeserver "$SWFlocal"pack_A02.html?probeserver" &
 #ironstartincognito ""$SWFlocal"pack_A05.html "$SWFlocal"pack_A02.html" &
 $OOOKIDS$OOOKIDSpathprefix"OFFICE_extra_files/excel_1.1_pinakas_mathitwn.xls"
@@ -1077,7 +1073,6 @@ ironstartincognito ""$SWFlocal"pack_url_param.html?url1=graphics_/comic_design__
 #ironstart http://192.168.1.200/swf/fun/maze/mouse_maze_game_play_10_1_!!.swf "$LANDINGpage"15-ΤΡΙΤΗ-A--hour2.html http://tortuga.dimotiko.tk"
 #ironstart ""$SWFlocal"ab/coloring-inside-out__noADsURL.swf "$LANDINGpage"15-ΤΡΙΤΗ-A--hour2.html "$SWFlocal"ab/coloring_walking_frankie_coloring_page_noAdsUrl_!!.swf"
 #/opt/eduActiv8/eduActiv8
-#sudo -u puppy bash -c "/opt/eduActiv8/eduActiv8 &";
 #ironstartincognito ""$SWFlocal"pack_url_param.html?url1=graphics_/paint_artpad_y8_GREEK_noNavAdUrl.swf\&url2=graphics_/paint_lily_paint_magic_GOOD_PALLETE_NoNavAdUrl_!!.swf\&url3=graphics_/animate_draw_your_cartoon_character_GREEK1_noAdsUrl.swf\&url4=pack_A02.html\&url5=GFX1\&url6=sumopaint1025_GREEK_NoNavUrl1_v4b_progray.swf"
 ironstart ""$SWFlocal"pack_A04.html "$LANDINGpage"15-ΤΡΙΤΗ-A--hour2.html http://ts.sch.gr/repo/online-packages/dim-glossa-a-b/start.html "$SWFlocal"pack_A01.html"
 #ironstartincognito ""$SWFlocal"pack_url_param.html?url1=graphics_/comic_design__garfield_comic_creator_y8.swf\&url2=graphics_/animate_space__animation_studio_noAdUrl_!.swf\&url3=http://tortuga.dimotiko.tk\&url4=pack_A03.html\&url5=ΦΤΙΑΞΕ-KOMIK\&url6=sumopaint1025_GREEK_NoNavUrl1_v4b_progray.swf"

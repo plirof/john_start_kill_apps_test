@@ -1,5 +1,6 @@
 # Script 
 #changes
+#v211125 - eduactiv8 comments for Lesson1,2  , now run sudo -u puppy bash -c "/opt/eduActiv8/eduActiv8 &";
 #v211120 - weeks 45-48 november added another visible level to each week
 #v211113 - weeks 45-48 (november) added pack_codeorg1.html?showdiv1&showdiv2&showdiv3
 #v211102 - added  --start-maximized to normal iron
@@ -482,16 +483,18 @@ adjustWeekFinalNum_for_week 40
 if [ $WEEKNUMBER == $WEEKFINALNUM ] || [ "$WEEKNUMBER" == 'wk04--OCtA' ]  
 then
 
-# A-B Γλωσσικές Τέχνες->Ανακαλύψτε τα γραμματα
+# eduactiv8 Lesson1 : A-B Γλωσσικές Τέχνες->Ανακαλύψτε τα γραμματα
 #. /opt/eduActiv8/eduActiv8 &
-/opt/eduActiv8/eduActiv8 &
+##/opt/eduActiv8/eduActiv8 &
+sudo -u puppy bash -c "/opt/eduActiv8/eduActiv8 &";
 #ironstartincognito ""$SWFlocal"pack_type_ramkid_greek.html"
 repeat 6  ironstartincognito ""$SWFlocal"pack_url_param.html?url1=type/airtyper_1_noADsURL.swf\&url2=type/typing_adventure__indiana_jones_NoNavUrl.swf\&url3=type/typing_bricks__puzzle!!!.swf\&url4=type/typing_tidepool__sea_race_!!.swf\&url5=type/horse-racing-typing__rapidtyping.com_NoNavUrl.swf\&url6=typing-2\&probeserver\&timer3 "$SWFlocal"funbrain.html?norightclick";
 #ironstartincognito ""$SWFlocal"pack_type_ramkid_greek.html"
 #ironstartincognito ""$SWFlocal"pack_url_param.html?url1=type/airtyper_1_noADsURL.swf\&url2=type/typing_adventure__indiana_jones_NoNavUrl.swf\&url3=type/typing_bricks__puzzle!!!.swf\&url4=type/typing_tidepool__sea_race_!!.swf\&url5=type/horse-racing-typing__rapidtyping.com_NoNavUrl.swf\&url6=typing-2\&probeserver\&timer3"
 #ironstartincognito ""$SWFlocal"pack_type_ramkid_greek.html"
 #. /opt/eduActiv8/eduActiv8 &
-/opt/eduActiv8/eduActiv8
+sudo -u puppy bash -c "/opt/eduActiv8/eduActiv8 &";
+#/opt/eduActiv8/eduActiv8
 
 
 
@@ -616,8 +619,9 @@ fi
 adjustWeekFinalNum_for_week 48
 if [ $WEEKNUMBER == $WEEKFINALNUM ] || [ "$WEEKNUMBER" == 'wk12-NovD' ]  
 then
-# A-B Σχηματισμός Λέξεων-> ζώα , δουλείες ,ρούχα)
-/opt/eduActiv8/eduActiv8 &
+# eduactiv8 Lesson2 : A-B Σχηματισμός Λέξεων-> ζώα , δουλείες ,ρούχα)
+sudo -u puppy bash -c "/opt/eduActiv8/eduActiv8 &";
+##/opt/eduActiv8/eduActiv8 &
 # E-ST  (7. melisses)
 repeat 7 ironstart ""$SWFlocal"pack_codeorg1.html https://---studio.code.org/s/course1/stage/7/puzzle/1 "$SWFlocal"pack_A03.html?probeserver\&norightclick"
 #ironstart "https://studio.code.org/s/course1/stage/7/puzzle/1 "$SWFlocal"pack_A03.html?probeserver\&norightclick"
@@ -1073,6 +1077,7 @@ ironstartincognito ""$SWFlocal"pack_url_param.html?url1=graphics_/comic_design__
 #ironstart http://192.168.1.200/swf/fun/maze/mouse_maze_game_play_10_1_!!.swf "$LANDINGpage"15-ΤΡΙΤΗ-A--hour2.html http://tortuga.dimotiko.tk"
 #ironstart ""$SWFlocal"ab/coloring-inside-out__noADsURL.swf "$LANDINGpage"15-ΤΡΙΤΗ-A--hour2.html "$SWFlocal"ab/coloring_walking_frankie_coloring_page_noAdsUrl_!!.swf"
 #/opt/eduActiv8/eduActiv8
+#sudo -u puppy bash -c "/opt/eduActiv8/eduActiv8 &";
 #ironstartincognito ""$SWFlocal"pack_url_param.html?url1=graphics_/paint_artpad_y8_GREEK_noNavAdUrl.swf\&url2=graphics_/paint_lily_paint_magic_GOOD_PALLETE_NoNavAdUrl_!!.swf\&url3=graphics_/animate_draw_your_cartoon_character_GREEK1_noAdsUrl.swf\&url4=pack_A02.html\&url5=GFX1\&url6=sumopaint1025_GREEK_NoNavUrl1_v4b_progray.swf"
 ironstart ""$SWFlocal"pack_A04.html "$LANDINGpage"15-ΤΡΙΤΗ-A--hour2.html http://ts.sch.gr/repo/online-packages/dim-glossa-a-b/start.html "$SWFlocal"pack_A01.html"
 #ironstartincognito ""$SWFlocal"pack_url_param.html?url1=graphics_/comic_design__garfield_comic_creator_y8.swf\&url2=graphics_/animate_space__animation_studio_noAdUrl_!.swf\&url3=http://tortuga.dimotiko.tk\&url4=pack_A03.html\&url5=ΦΤΙΑΞΕ-KOMIK\&url6=sumopaint1025_GREEK_NoNavUrl1_v4b_progray.swf"
