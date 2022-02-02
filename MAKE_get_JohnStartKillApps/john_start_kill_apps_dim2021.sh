@@ -1,5 +1,6 @@
 # Script 
 #changes
+#v220112 - Added 32bit & 64bit specific extra code
 #v211125 - eduactiv8 comments for Lesson1,2  , now run sudo -u puppy bash -c "/opt/eduActiv8/eduActiv8 &";
 #v211120 - weeks 45-48 november added another visible level to each week
 #v211113 - weeks 45-48 (november) added pack_codeorg1.html?showdiv1&showdiv2&showdiv3
@@ -58,6 +59,32 @@ MARCH25=12
 
 #mute all Clients
 amixer set Master mute
+
+#fix for 32bit WINE
+
+
+#################### Execute stuff if 32bit or 64bit#####################################################
+MACHINE_TYPE=`uname -m`
+if [ ${MACHINE_TYPE} == 'x86_64' ]; then
+  # 64-bit stuff here
+leafpad "64bit"   &
+#mkdir -p /appimages; ln -s /mnt/home/downloads_linux/appimages /appimages/wine; #create /appimages if not exist and make link there
+WINE_APPIMAGE_PATH="/mnt/home/downloads_linux/appimages/"
+rm /appimages
+ln -s /mnt/home/downloads_linux/appimages/wine-staging-linux-x86-v5.11-PlayOnLinux-x86_64.AppImage
+ /usr/bin/wineserver;
+ ln -s /mnt/home/downloads_linux/appimages/wine-staging-linux-x86-v5.11-PlayOnLinux-x86_64.AppImage
+ /usr/bin/wine;
+ ln -s /mnt/home/downloads_linux/appimages/wine-staging-linux-x86-v5.11-PlayOnLinux-x86_64.AppImage
+ /usr/bin/wine32;
+ln -s /mnt/home/downloads_linux/appimages/ /appimages
+else
+  # 32-bit stuff here
+leafpad "32bit"   &
+ln -s /usr/bin/wineserver32 /usr/bin/wineserver
+fi
+####################END of Execute stuff if 32bit or 64bit#####################################################
+
 
 #ironstart https://studio.code.org/s/course1
 #ironstart https://studio.code.org/s/course1/stage/4/puzzle/10
@@ -153,7 +180,7 @@ lightbot_iron_browser() {
 # NOTE : ONLY foir custom MAPS. for normal just run : . iron_flash_puppy_pepper_home.sh "--incognito http://192.168.1.200/gamesedu/lightbot_haan/
 # eg  lightbot_iron_browser "maps_easy.txt "$SWFlocal"pack_A02.html"
 #. iron_flash_puppy_pepper_home.sh "--incognito http://192.168.1.200/gamesedu/lightbot_haan/index.php?map=""$1"
-. iron_flash_puppy_pepper_home.sh "--incognito http://192.168.1.200/gamesedu/lightbot_haan/index.html?map=""$1"" "
+. iron_flash_puppy_pepper_home.sh "--incognito http://192.168.1.200/gamesedu/lightbot_haan/index.html?map=""$@"" "
 return 5	
 }
 
@@ -652,7 +679,7 @@ if [ $WEEKNUMBER == $WEEKFINALNUM ] || [ "$WEEKNUMBER" == 'wk14-DecB' ]
 then
 
 # giortes xmas Β : 2-3 μαθήματα (μετά τέλος ασκήσεων)
-repeat 4 ironstartincognito "http://192.168.1.200/tinymce_class/tinymce_submit.html?probeserver\&showsubmit\&nocopy\&file=xmas_rudolf"" "$SWFgiortes"index_xmas.html?probeserver\&norightclick\&timer3"
+repeat 6 ironstartincognito "http://192.168.1.200/tinymce_class/tinymce_submit.html?probeserver\&showsubmit\&nocopy\&file=xmas_rudolf"" "$SWFgiortes"index_xmas.html?probeserver\&norightclick\&timer3"
 #ironstartincognito "http://192.168.1.200/tinymce_class/tinymce_submit.html?probeserver\&showsubmit\&nocopy\&file=xmas_rudolf"" "$SWFgiortes"index_xmas.html?probeserver\&norightclick\&timer3"
 
 
