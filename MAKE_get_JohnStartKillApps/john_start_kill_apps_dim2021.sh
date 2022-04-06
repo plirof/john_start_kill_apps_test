@@ -1,5 +1,6 @@
 # Script 
 #changes
+#v220406 - Minor updates
 #v220112 - Added 32bit & 64bit specific extra code
 #v211125 - eduactiv8 comments for Lesson1,2  , now run sudo -u puppy bash -c "/opt/eduActiv8/eduActiv8 &";
 #v211120 - weeks 45-48 november added another visible level to each week
@@ -180,7 +181,7 @@ lightbot_iron_browser() {
 # NOTE : ONLY foir custom MAPS. for normal just run : . iron_flash_puppy_pepper_home.sh "--incognito http://192.168.1.200/gamesedu/lightbot_haan/
 # eg  lightbot_iron_browser "maps_easy.txt "$SWFlocal"pack_A02.html"
 #. iron_flash_puppy_pepper_home.sh "--incognito http://192.168.1.200/gamesedu/lightbot_haan/index.php?map=""$1"
-. iron_flash_puppy_pepper_home.sh "--incognito http://192.168.1.200/gamesedu/lightbot_haan/index.html?map=""$@"" "
+. iron_flash_puppy_pepper_home.sh " --disable-gpu --start-maximized --incognito http://192.168.1.200/gamesedu/lightbot_haan/index.html?map=""$@"" "
 return 5	
 }
 
@@ -339,7 +340,7 @@ if [ $WEEKNUMBER == $EASTER_PREWEEK_01 ] || [ "$WEEKNUMBER" == 'Easter pt A' ]
 then
 #--------------------- this is for Full week-all classes events 
 leafpad "WEEK easter ptA    activated --- Week number: $WEEKNUMBER" &
-repeat 4 ironstartincognito ""$SERVER"ramkid/KidsPedia/kids_ePedia32cd/Volume20/index_kd_vol.html "$SWFlocal"ramkid_giortes_pasxa_pt1.html"
+repeat 6 ironstartincognito ""$SWFlocal"ramkid_giortes_pasxa_pt1.html "$SERVER"ramkid/KidsPedia/kids_ePedia32cd/Volume20/index_kd_vol.html"
 #ironstartincognito ""$SERVER"ramkid/KidsPedia/kids_ePedia32cd/Volume20/index_kd_vol.html "$SWFlocal"ramkid_giortes_pasxa_pt1.html"
 ironstartincognito ""$SWFlocal"ramkidpedia_vol20_pasxa1.html "$SWFlocal"ramkid_giortes_pasxa_pt1.html"
 fi
@@ -416,7 +417,7 @@ then
 #--------------------- this is for Full week-all classes events 
 leafpad "WEEK halloween ptB (for 2 weeks  games)   activated --- Week number: $WEEKNUMBER    20190225-08" &
 #ironstartincognito "http://plirof.github.io/tinymce_class/tinymce.html?probeserver\&nocopy\&file=giorti_apokries01 "$SWFgiortes"index_halloween.html?probeserver\&norightclick\&timer3"
-repeat 6  ironstartincognito "http://plirof.github.io/tinymce_class/tinymce.html?probeserver\&nocopy\&file=giorti_apokries01 "$SWFgiortes"index_halloween.html?probeserver\&norightclick\&timer3"
+repeat 6  ironstartincognito $SWFgiortes"index_halloween.html?probeserver\&norightclick\&timer3 ""http://plirof.github.io/tinymce_class/tinymce.html?probeserver\&nocopy\&file=giorti_apokries01 "
 #ironstartincognito ""$SWFgiortes"index_halloween.html?timer3 http://plirof.github.io/tinymce_class/tinymce.html?probeserver\&nocopy\&file=giorti_apokries01"
 repeat 4 ironstartincognito ""$SWFgiortes"index_halloween.html http://plirof.github.io/tinymce_class/tinymce.html?probeserver\&nocopy\&file=giorti_apokries01\&hidediv1"
 
@@ -839,12 +840,12 @@ if [ $WEEKNUMBER == $WEEKFINALNUM ] || [ "$WEEKNUMBER" == 'wk26-MarC' ]
 then
 
 #March25
-ironstartincognito "http://192.168.1.200/tinymce_class/tinymce.html?probeserver\&file=giorti25mart01" &
+#ironstartincognito "http://192.168.1.200/tinymce_class/tinymce.html?probeserver\&file=giorti25mart01" &
 #___ alt online ___ironstartincognito "https://plirof.github.io/tinymce_class/tinymce.html?probeserver\&file=giorti25mart01" &
 
 #--------------------- this is for Full week-all classes events 
 leafpad "WEEK 12,13 GFX1 ptA, PTB   activated --- Week number: $WEEKNUMBER" &
-repeat 6  ironstartincognito ""$SWFlocal"pack_gfx1.html?probeserver"
+repeat 6  ironstartincognito ""$SWFlocal"pack_gfx1.html?probeserver http://192.168.1.200/tinymce_class/tinymce.html?probeserver\&file=giorti25mart01 "
 #ironstartincognito ""$SWFlocal"pack_url_param.html?url1=graphics_/paint_artpad_y8_GREEK_noNavAdUrl.swf\&url2=graphics_/paint_lily_paint_magic_GOOD_PALLETE_NoNavAdUrl_!!.swf\&url3=graphics_/animate_draw_your_cartoon_character_GREEK1_noAdsUrl.swf\&url4=pack_A02.html\&url5=GFX1\&url6=sumopaint1025_GREEK_NoNavUrl1_v4b_progray.swf&probeserver"
 ironstartincognito ""$SWFlocal"pack_url_param.html?url1=graphics_/paint_artpad_y8_GREEK_noNavAdUrl.swf\&url2=graphics_/paint_lily_paint_magic_GOOD_PALLETE_NoNavAdUrl_!!.swf\&url3=graphics_/animate_draw_your_cartoon_character_GREEK1_noAdsUrl.swf\&url4=pack_A02.html\&url5=GFX1\&url6=sumopaint1025_GREEK_NoNavUrl1_v4b_progray.swf&probeserver"
 
