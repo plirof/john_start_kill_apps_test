@@ -1,5 +1,7 @@
 # Script 
 #changes
+#v220406 - Minor updates
+#v220112 - Added 32bit & 64bit specific extra code
 #v211125 - eduactiv8 comments for Lesson1,2  , now run sudo -u puppy bash -c "/opt/eduActiv8/eduActiv8 &";
 #v211120 - weeks 45-48 november added another visible level to each week
 #v211113 - weeks 45-48 (november) added pack_codeorg1.html?showdiv1&showdiv2&showdiv3
@@ -59,6 +61,32 @@ MARCH25=12
 #mute all Clients
 amixer set Master mute
 
+#fix for 32bit WINE
+
+
+#################### Execute stuff if 32bit or 64bit#####################################################
+MACHINE_TYPE=`uname -m`
+if [ ${MACHINE_TYPE} == 'x86_64' ]; then
+  # 64-bit stuff here
+leafpad "64bit"   &
+#mkdir -p /appimages; ln -s /mnt/home/downloads_linux/appimages /appimages/wine; #create /appimages if not exist and make link there
+WINE_APPIMAGE_PATH="/mnt/home/downloads_linux/appimages/"
+rm /appimages
+ln -s /mnt/home/downloads_linux/appimages/wine-staging-linux-x86-v5.11-PlayOnLinux-x86_64.AppImage
+ /usr/bin/wineserver;
+ ln -s /mnt/home/downloads_linux/appimages/wine-staging-linux-x86-v5.11-PlayOnLinux-x86_64.AppImage
+ /usr/bin/wine;
+ ln -s /mnt/home/downloads_linux/appimages/wine-staging-linux-x86-v5.11-PlayOnLinux-x86_64.AppImage
+ /usr/bin/wine32;
+ln -s /mnt/home/downloads_linux/appimages/ /appimages
+else
+  # 32-bit stuff here
+leafpad "32bit"   &
+ln -s /usr/bin/wineserver32 /usr/bin/wineserver
+fi
+####################END of Execute stuff if 32bit or 64bit#####################################################
+
+
 #ironstart https://studio.code.org/s/course1
 #ironstart https://studio.code.org/s/course1/stage/4/puzzle/10
 #ironstart https://studio.code.org/s/course1/stage/7/puzzle/10
@@ -102,7 +130,7 @@ return 5
 }
 
 load_extra_apps(){
-# used to activate events (eg pasxa, halloween, etc)    
+# used to activate events (eg pasxa, halloween, etc)	
 cd /tmp
 wget ""$SERVER"uploads/john_extra_apps.sh" --directory-prefix=/tmp/
 chmod a+x /tmp/john_extra_apps.sh
@@ -153,8 +181,8 @@ lightbot_iron_browser() {
 # NOTE : ONLY foir custom MAPS. for normal just run : . iron_flash_puppy_pepper_home.sh "--incognito http://192.168.1.200/gamesedu/lightbot_haan/
 # eg  lightbot_iron_browser "maps_easy.txt "$SWFlocal"pack_A02.html"
 #. iron_flash_puppy_pepper_home.sh "--incognito http://192.168.1.200/gamesedu/lightbot_haan/index.php?map=""$1"
-. iron_flash_puppy_pepper_home.sh "--incognito http://192.168.1.200/gamesedu/lightbot_haan/index.html?map=""$1"" "
-return 5    
+. iron_flash_puppy_pepper_home.sh " --disable-gpu --start-maximized --incognito http://192.168.1.200/gamesedu/lightbot_haan/index.html?map=""$@"" "
+return 5	
 }
 
 firefox10() {
@@ -185,19 +213,19 @@ cp -n /usr/bin/firefox24_default_home_prefs.js /mnt/home/downloads_linux/.data/$
 
 probe_the_server()
 {
-    #every 2 minutes gets the file /uploads/john_exec_cmd_on_client.sh and executes it
-    # you should call it with probe_the_server &  (to run in background) 
-    cd /tmp
-    while /bin/true; do
-        cd /tmp
-        rm /tmp/john_exec_cmd_on_client.sh
-        wget ""$SWFlocal"john_exec_cmd_on_client.sh" --directory-prefix=/tmp/
-        chmod a+x /tmp/john_exec_cmd_on_client.sh
-        . /tmp/john_exec_cmd_on_client.sh
-        #something_in_the_background
-        sleep 2m # Waits 2 minutes.
-    done &
-    return 5
+	#every 2 minutes gets the file /uploads/john_exec_cmd_on_client.sh and executes it
+	# you should call it with probe_the_server &  (to run in background) 
+	cd /tmp
+	while /bin/true; do
+		cd /tmp
+	    rm /tmp/john_exec_cmd_on_client.sh
+		wget ""$SWFlocal"john_exec_cmd_on_client.sh" --directory-prefix=/tmp/
+		chmod a+x /tmp/john_exec_cmd_on_client.sh
+		. /tmp/john_exec_cmd_on_client.sh
+	    #something_in_the_background
+	    sleep 2m # Waits 2 minutes.
+	done &
+	return 5
 }
 
 # 200916b - Check Olohmero (used to check if oloimero hour has started - Combine it with a DAYOFWEEK check)
@@ -312,7 +340,7 @@ if [ $WEEKNUMBER == $EASTER_PREWEEK_01 ] || [ "$WEEKNUMBER" == 'Easter pt A' ]
 then
 #--------------------- this is for Full week-all classes events 
 leafpad "WEEK easter ptA    activated --- Week number: $WEEKNUMBER" &
-repeat 4 ironstartincognito ""$SERVER"ramkid/KidsPedia/kids_ePedia32cd/Volume20/index_kd_vol.html "$SWFlocal"ramkid_giortes_pasxa_pt1.html"
+repeat 6 ironstartincognito ""$SWFlocal"ramkid_giortes_pasxa_pt1.html "$SERVER"ramkid/KidsPedia/kids_ePedia32cd/Volume20/index_kd_vol.html"
 #ironstartincognito ""$SERVER"ramkid/KidsPedia/kids_ePedia32cd/Volume20/index_kd_vol.html "$SWFlocal"ramkid_giortes_pasxa_pt1.html"
 ironstartincognito ""$SWFlocal"ramkidpedia_vol20_pasxa1.html "$SWFlocal"ramkid_giortes_pasxa_pt1.html"
 fi
@@ -389,7 +417,7 @@ then
 #--------------------- this is for Full week-all classes events 
 leafpad "WEEK halloween ptB (for 2 weeks  games)   activated --- Week number: $WEEKNUMBER    20190225-08" &
 #ironstartincognito "http://plirof.github.io/tinymce_class/tinymce.html?probeserver\&nocopy\&file=giorti_apokries01 "$SWFgiortes"index_halloween.html?probeserver\&norightclick\&timer3"
-repeat 6  ironstartincognito "http://plirof.github.io/tinymce_class/tinymce.html?probeserver\&nocopy\&file=giorti_apokries01 "$SWFgiortes"index_halloween.html?probeserver\&norightclick\&timer3"
+repeat 6  ironstartincognito $SWFgiortes"index_halloween.html?probeserver\&norightclick\&timer3 ""http://plirof.github.io/tinymce_class/tinymce.html?probeserver\&nocopy\&file=giorti_apokries01 "
 #ironstartincognito ""$SWFgiortes"index_halloween.html?timer3 http://plirof.github.io/tinymce_class/tinymce.html?probeserver\&nocopy\&file=giorti_apokries01"
 repeat 4 ironstartincognito ""$SWFgiortes"index_halloween.html http://plirof.github.io/tinymce_class/tinymce.html?probeserver\&nocopy\&file=giorti_apokries01\&hidediv1"
 
@@ -584,7 +612,7 @@ fi
 adjustWeekFinalNum_for_week 45
 if [ $WEEKNUMBER == $WEEKFINALNUM ] || [ "$WEEKNUMBER" == 'wk09-NovA2' ]  
 then
-# code.org :(1. Χαρούμενοι Χάρτες , 2. Κούνισέ το, Κούνισέ το , 3. Παζλ: Μάθε την μεταφορά και )    
+# code.org :(1. Χαρούμενοι Χάρτες , 2. Κούνισέ το, Κούνισέ το , 3. Παζλ: Μάθε την μεταφορά και )	
 repeat 7  ironstart ""$SWFlocal"pack_codeorg1.html?showdiv1&showdiv2&showdiv3 https://---studio.code.org/s/course1/stage/3/puzzle/1 "$SWFlocal"pack_A01.html?norightclick\&probeserver "$SWFlocal"pack_paint1.html?timer3\&norightclick\&probeserver"
 
 
@@ -652,11 +680,11 @@ if [ $WEEKNUMBER == $WEEKFINALNUM ] || [ "$WEEKNUMBER" == 'wk14-DecB' ]
 then
 
 # giortes xmas Β : 2-3 μαθήματα (μετά τέλος ασκήσεων)
-repeat 4 ironstartincognito "http://192.168.1.200/tinymce_class/tinymce_submit.html?probeserver\&showsubmit\&nocopy\&file=xmas_rudolf"" "$SWFgiortes"index_xmas.html?probeserver\&norightclick\&timer3"
+repeat 6 ironstartincognito "http://192.168.1.200/tinymce_class/tinymce_submit.html?probeserver\&showsubmit\&nocopy\&file=xmas_rudolf"" "$SWFgiortes"index_xmas.html?probeserver\&norightclick\&timer3"
 #ironstartincognito "http://192.168.1.200/tinymce_class/tinymce_submit.html?probeserver\&showsubmit\&nocopy\&file=xmas_rudolf"" "$SWFgiortes"index_xmas.html?probeserver\&norightclick\&timer3"
 
 
-#$OOOKIDS$OOOKIDSpathprefix"OFFICE_extra_files/xmas-rountolf-typing.doc" &  
+#$OOOKIDS$OOOKIDSpathprefix"OFFICE_extra_files/xmas-rountolf-typing.doc" &	
 #cd "/tmp/";wget --directory-prefix="/tmp/" -O "a" "http://192.168.1.200/askiseis_office/OFFICE_extra_files/xmas-rountolf-typing.doc"; ooo4kids1.3 -n /tmp/a &
 repeat 6  ironstartincognito ""$SWFgiortes"index_xmas.html?probeserver\&timer3"
 repeat 6  cd "/tmp/";wget --directory-prefix="/tmp/" -O "a" "http://192.168.1.200/askiseis_office/OFFICE_extra_files/xmas-rountolf-typing.doc"; ooo4kids1.3 -n /tmp/a
@@ -669,7 +697,7 @@ if [ $WEEKNUMBER == $WEEKFINALNUM ] || [ "$WEEKNUMBER" == 'wk15-DecC' ]
 then
 
 # giortes xmas Β : 2-3 μαθήματα (μετά τέλος ασκήσεων)
-#$OOOKIDS$OOOKIDSpathprefix"OFFICE_extra_files/xmas-rountolf-typing.doc" &      
+#$OOOKIDS$OOOKIDSpathprefix"OFFICE_extra_files/xmas-rountolf-typing.doc" &		
 #cd "/tmp/";wget --directory-prefix="/tmp/" -O "a" "http://192.168.1.200/askiseis_office/OFFICE_extra_files/xmas-rountolf-typing.doc"; ooo4kids1.3 -n /tmp/a
 
 repeat 6 ironstartincognito ""$SWFgiortes"index_xmas.html?probeserver\&norightclick\&timer2"
@@ -680,7 +708,7 @@ adjustWeekFinalNum_for_week 52
 if [ $WEEKNUMBER == $WEEKFINALNUM ] || [ "$WEEKNUMBER" == 'wk---DecD' ]  
 then
 
-    leafpad "CLOSED XMAS WEEK activated --- Week number: $WEEKNUMBER"
+	leafpad "CLOSED XMAS WEEK activated --- Week number: $WEEKNUMBER"
 
 fi
 
@@ -690,7 +718,7 @@ adjustWeekFinalNum_for_week 1
 if [ $WEEKNUMBER == $WEEKFINALNUM ] || [ "$WEEKNUMBER" == 'wk---NovA2' ]  
 then
 
-    leafpad "CLOSED XMAS WEEK activated --- Week number: $WEEKNUMBER"
+	leafpad "CLOSED XMAS WEEK activated --- Week number: $WEEKNUMBER"
 
 fi
 
@@ -812,12 +840,12 @@ if [ $WEEKNUMBER == $WEEKFINALNUM ] || [ "$WEEKNUMBER" == 'wk26-MarC' ]
 then
 
 #March25
-ironstartincognito "http://192.168.1.200/tinymce_class/tinymce.html?probeserver\&file=giorti25mart01" &
+#ironstartincognito "http://192.168.1.200/tinymce_class/tinymce.html?probeserver\&file=giorti25mart01" &
 #___ alt online ___ironstartincognito "https://plirof.github.io/tinymce_class/tinymce.html?probeserver\&file=giorti25mart01" &
 
 #--------------------- this is for Full week-all classes events 
 leafpad "WEEK 12,13 GFX1 ptA, PTB   activated --- Week number: $WEEKNUMBER" &
-repeat 6  ironstartincognito ""$SWFlocal"pack_gfx1.html?probeserver"
+repeat 6  ironstartincognito ""$SWFlocal"pack_gfx1.html?probeserver http://192.168.1.200/tinymce_class/tinymce.html?probeserver\&file=giorti25mart01 "
 #ironstartincognito ""$SWFlocal"pack_url_param.html?url1=graphics_/paint_artpad_y8_GREEK_noNavAdUrl.swf\&url2=graphics_/paint_lily_paint_magic_GOOD_PALLETE_NoNavAdUrl_!!.swf\&url3=graphics_/animate_draw_your_cartoon_character_GREEK1_noAdsUrl.swf\&url4=pack_A02.html\&url5=GFX1\&url6=sumopaint1025_GREEK_NoNavUrl1_v4b_progray.swf&probeserver"
 ironstartincognito ""$SWFlocal"pack_url_param.html?url1=graphics_/paint_artpad_y8_GREEK_noNavAdUrl.swf\&url2=graphics_/paint_lily_paint_magic_GOOD_PALLETE_NoNavAdUrl_!!.swf\&url3=graphics_/animate_draw_your_cartoon_character_GREEK1_noAdsUrl.swf\&url4=pack_A02.html\&url5=GFX1\&url6=sumopaint1025_GREEK_NoNavUrl1_v4b_progray.swf&probeserver"
 
@@ -890,7 +918,7 @@ fi
 adjustWeekFinalNum_for_week 19
 if [ $WEEKNUMBER == $WEEKFINALNUM ] || [ "$WEEKNUMBER" == 'wk33-MayB' ]  
 then
-#__(pack_code_lightbotswf EXEI: lightbotswf,turtlepond,tortuga.patatak,tiny-explor,packA03  
+#__(pack_code_lightbotswf EXEI: lightbotswf,turtlepond,tortuga.patatak,tiny-explor,packA03	
 repeat 6  ironstartincognito ""$SWFlocal"pack_code_lightbotswf.html?probeserver\&timer2"
 #ironstartincognito ""$SWFlocal"pack_code_lightbotswf.html?probeserver\&timer2"
 
@@ -903,14 +931,14 @@ then
 leafpad "WEEK TANK ,pixbot    activated --- Week number: $WEEKNUMBER" &
 repeat 6  ironstartincognito ""$GAMESEDU"Code-Commander-gr/index_dot_links.html "$GAMESEDU"blockly-games/el/index.html?lang=el http://pixbot.dimotika.tk "$SWFlocal"pack_A02.html?norightclick "
 #ironstartincognito ""$GAMESEDU"Code-Commander-gr/index_dot_links.html "$GAMESEDU"blockly-games/el/index.html?lang=el http://pixbot.dimotika.tk "$SWFlocal"pack_A02.html "
-#ironstartincognito ""$GAMESEDU"Code-Commander-gr/index_dot_links.html "$SWFlocal"pack_A02.html http://pixbot.dimotika.tk"  
+#ironstartincognito ""$GAMESEDU"Code-Commander-gr/index_dot_links.html "$SWFlocal"pack_A02.html http://pixbot.dimotika.tk"	
 
 fi
 
 adjustWeekFinalNum_for_week 21
 if [ $WEEKNUMBER == $WEEKFINALNUM ] || [ "$WEEKNUMBER" == 'wk35-MayD' ]  
 then
-# ******** TO DO add tinyxls lesson *********** 
+# ******** TO DO add tinyxls lesson ***********	
 ironstartincognito ""$SWFlocal"pack_A05.html?probeserver "$SWFlocal"pack_A02.html?probeserver" &
 #ironstartincognito ""$SWFlocal"pack_A05.html "$SWFlocal"pack_A02.html" &
 $OOOKIDS$OOOKIDSpathprefix"OFFICE_extra_files/excel_1.1_pinakas_mathitwn.xls"
