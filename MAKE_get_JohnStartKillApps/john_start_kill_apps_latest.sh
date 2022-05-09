@@ -1,5 +1,6 @@
 # Script 
 #changes
+#v220508 - Updated week 18 & 19 (after easter)
 #v220406 - Minor updates
 #v220112 - Added 32bit & 64bit specific extra code
 #v211125 - eduactiv8 comments for Lesson1,2  , now run sudo -u puppy bash -c "/opt/eduActiv8/eduActiv8 &";
@@ -912,16 +913,19 @@ adjustWeekFinalNum_for_week 18
 if [ $WEEKNUMBER == $WEEKFINALNUM ] || [ "$WEEKNUMBER" == 'wk32-AprE-MayA' ]  
 then
 echo "empty"
+leafpad "WEEK 18 GFX2 pt B (Aft-Easter  activated --- Week number: $WEEKNUMBER" &
 # EASTER 2020
+ironstartincognito ""$SWFlocal"pack_gfx2.html?probeserver "$SWFlocal"pack_A03.html?probeserver\&norightclick http://192.168.1.200/gamesedu/stick2animator/"
 fi
 
 adjustWeekFinalNum_for_week 19
 if [ $WEEKNUMBER == $WEEKFINALNUM ] || [ "$WEEKNUMBER" == 'wk33-MayB' ]  
 then
+leafpad "WEEK lightbot SWF, A-B:Funbrain,StickMan epanalipsi activated --- Week number: $WEEKNUMBER" &	
 #__(pack_code_lightbotswf EXEI: lightbotswf,turtlepond,tortuga.patatak,tiny-explor,packA03	
-repeat 6  ironstartincognito ""$SWFlocal"pack_code_lightbotswf.html?probeserver\&timer2"
+repeat 6  ironstartincognito ""$SWFlocal"pack_code_lightbotswf.html?probeserver\&timer2 "$SWFlocal"funbrain.html?probeserver http://192.168.1.200/gamesedu/stick2animator/"
 #ironstartincognito ""$SWFlocal"pack_code_lightbotswf.html?probeserver\&timer2"
-
+echo "empty"
 fi
 
 adjustWeekFinalNum_for_week 20
@@ -932,13 +936,16 @@ leafpad "WEEK TANK ,pixbot    activated --- Week number: $WEEKNUMBER" &
 repeat 6  ironstartincognito ""$GAMESEDU"Code-Commander-gr/index_dot_links.html "$GAMESEDU"blockly-games/el/index.html?lang=el http://pixbot.dimotika.tk "$SWFlocal"pack_A02.html?norightclick "
 #ironstartincognito ""$GAMESEDU"Code-Commander-gr/index_dot_links.html "$GAMESEDU"blockly-games/el/index.html?lang=el http://pixbot.dimotika.tk "$SWFlocal"pack_A02.html "
 #ironstartincognito ""$GAMESEDU"Code-Commander-gr/index_dot_links.html "$SWFlocal"pack_A02.html http://pixbot.dimotika.tk"	
-
+echo "empty"
 fi
 
 adjustWeekFinalNum_for_week 21
 if [ $WEEKNUMBER == $WEEKFINALNUM ] || [ "$WEEKNUMBER" == 'wk35-MayD' ]  
 then
 # ******** TO DO add tinyxls lesson ***********	
+leafpad "WEEK maybe XLS,BASIC    activated --- Week number: $WEEKNUMBER" &
+
+repeat 6 ironstartincognito ""$SWFlocal"pack_A05.html?probeserver "$SWFlocal"pack_A02.html?probeserver http://192.168.1.200/zx/zx_htm2tap/"
 ironstartincognito ""$SWFlocal"pack_A05.html?probeserver "$SWFlocal"pack_A02.html?probeserver" &
 #ironstartincognito ""$SWFlocal"pack_A05.html "$SWFlocal"pack_A02.html" &
 $OOOKIDS$OOOKIDSpathprefix"OFFICE_extra_files/excel_1.1_pinakas_mathitwn.xls"
@@ -949,7 +956,7 @@ $OOOKIDS$OOOKIDSpathprefix"OFFICE_extra_files/excel_1.1_pinakas_mathitwn.xls"
 ironstartincognito ""$SWFlocal"pack_A05.html "$SWFlocal"pack_A02.html" &
 $OOOKIDS$OOOKIDSpathprefix"OFFICE_extra_files/excel_1.1_pinakas_mathitwn.xls"
 
-
+echo "empty"
 fi
 
 adjustWeekFinalNum_for_week 22
@@ -963,7 +970,7 @@ repeat 6  ironstartincognito "http://192.168.1.200/x-spreadsheet/tinyxls.html?fi
 
 
 ironstartincognito "http://tinyxls.dimotika.tk/tinyxls.html?file=lesson1-timetable\&jsonxls=lesson1-timetable\&showsubmit "$SWFlocal"pack_A03.html?probeserver\&norightclick"
-
+echo "empty"
 #http://tinyxls.dimotika.tk/tinyxls.html?file=lesson1-timetable&jsonxls=lesson1-timetable&showsubmit
 fi
 
