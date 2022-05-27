@@ -25,6 +25,7 @@ echo "END"
 
 schoolname="onoma-dimotikou"
 URL="http://swf-dim.matheme.win/4class_sfs/"
+HOSTNAME="swf-dim.matheme.win"
 wget $URL"handle-submit.php?schoolname=$schoolname&HOSTNAME=$HOSTNAME"
 
 ####################################################################
