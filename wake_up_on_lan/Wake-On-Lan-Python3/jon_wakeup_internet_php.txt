@@ -1,0 +1,25 @@
+https://www.pcmag.com/how-to/turn-on-computer-from-across-the-house-with-wake-on-lan
+
+
+
+The general idea works like this: instead of sending the magic packet to your computer's internal IP address, you send it to your router's external IP address—the one shown on whatismyipaddress.com(Opens in a new window). You then use port forwarding on your router to forward the magic packet to the correct computer.
+
+
+
+Unfortunately, Wake-on-LAN wasn't really meant to be used this way, so there's no one easy way to get it working—it depends heavily on your network setup. However, if you can access your router's configuration page, there are a couple things you can try.
+
+Head to the port-forwarding section of your router—if you can't find it, portforward.com(Opens in a new window) can help—and forward the Wake-on-LAN port to your home network's broadcast address. The port is usually port 7 or 9, and the broadcast address is usually something like 192.168.1.255—basically, your router's IP address with ".255" as the final octet.
+
+That will broadcast the magic packet to the entire network, where it'll be accepted by the MAC address you've specified. Unfortunately, most routers disallow forwarding ports to the broadcast address, so there's a good chance this won't work, but it's worth a shot.
+
+If your router won't allow that, there are some workarounds. For example, you could try disabling JavaScript on the router configuration page so it allows you to enter the broadcast address in the port-forwarding box. You could also change your subnet mask to create a new broadcast address. Read a bit more about these workarounds on this page(Opens in a new window).
+
+
+If you have a router with more advanced configuration, like one running the DD-WRT firmware(Opens in a new window), you can use a combination of port forwarding and ARP tables to trick your router into forwarding the port to the broadcast address. This DD-WRT wiki(Opens in a new window) describes it in more detail.
+
+For example, I have a home server running Windows 10, and it's on 24/7. So when I'm away from home, I just use Chrome Remote Desktop(Opens in a new window) to remote into that always-on PC, use WakeMeOnLan to send a magic packet from that machine to my workstation, then remote into my workstation once it's awake. It's a bit roundabout, but it works.
+
+Best of all, you can use this workaround with whatever hardware you have already. Got an old laptop collecting dust? Stick it in the corner, set it to run with the lid closed and access it with your remote desktop program of choice.
+
+Got a NAS device running at all times, or even a Raspberry Pi? SSH into it and use the command line(Opens in a new window) to send that magic packet. As long as the magic packet itself comes from inside the network, Wake-on-LAN should work without too much stress.
+
