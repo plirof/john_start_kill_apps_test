@@ -1,5 +1,6 @@
 # Script that downloads latest lesson_ini scripts in /download_linux/uploads folder
 # Changes 
+# v230220 - swf.sxoleio.win
 # v200925 - while true;do wget  -T 7 http://aaa.com/aa.sh --directory-prefix=/tmp/ && break;done
 # 200908a - fixed typo - deleted stuff
 # 200903a - initial 2020-21 version
@@ -45,7 +46,8 @@ cd /tmp/
 #loop until connection established (if clients STUCK uncomment previous line and comment this)
 #while true;do wget  -T 7 http://swf.patatakia.tk/4class_sfs/john_start_kill_apps_dim2021.sh --directory-prefix=/tmp/ && break;done
 rm /tmp/john_start_kill_apps_dim2021.sh;
-while true;do wget  -T 7 http://swf-dim.matheme.win/4class_sfs/john_start_kill_apps_dim2021.sh --directory-prefix=/tmp/ && break;done
+#while true;do wget  -T 7 http://swf-dim.sxoleio.win/4class_sfs/john_start_kill_apps_dim2021.sh --directory-prefix=/tmp/ && break;done
+while true;do wget  -T 7 http://swf-dim.sxoleio.win/4class_sfs/john_start_kill_apps_dim2021.sh --directory-prefix=/tmp/ && break;done
 
 
 chmod a+x /tmp/john_start_kill_apps_dim2021.sh

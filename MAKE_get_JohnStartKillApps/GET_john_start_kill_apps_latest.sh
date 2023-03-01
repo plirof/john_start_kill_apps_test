@@ -1,5 +1,6 @@
 # Script that downloads latest lesson_ini scripts in /download_linux/uploads folder
 # Changes 
+# v230220 - swf.sxoleio.win
 # v200925 - while true;do wget  -T 7 http://aaa.com/aa.sh --directory-prefix=/tmp/ && break;done
 # 200908a - fixed typo - deleted stuff
 # 200903a - initial 2020-21 version
@@ -43,15 +44,16 @@ cd /tmp/
 
 #wget  -T 7 http://swf.patatakia.tk/4class_sfs/john_start_kill_apps_dim2020.sh --directory-prefix=/tmp/
 #loop until connection established (if clients STUCK uncomment previous line and comment this)
-#while true;do wget  -T 7 http://swf.patatakia.tk/4class_sfs/john_start_kill_apps_latest.sh --directory-prefix=/tmp/ && break;done
-rm /tmp/john_start_kill_apps_latest.sh;
-while true;do wget  -T 7 http://swf-dim.matheme.win/4class_sfs/john_start_kill_apps_latest.sh --directory-prefix=/tmp/ && break;done
+#while true;do wget  -T 7 http://swf.patatakia.tk/4class_sfs/john_start_kill_apps_dim_latest.sh --directory-prefix=/tmp/ && break;done
+rm /tmp/john_start_kill_apps_dim_latest.sh;
+#while true;do wget  -T 7 http://swf-dim.sxoleio.win/4class_sfs/john_start_kill_apps_dim_latest.sh --directory-prefix=/tmp/ && break;done
+while true;do wget  -T 7 http://swf-dim.sxoleio.win/4class_sfs/john_start_kill_apps_dim_latest.sh --directory-prefix=/tmp/ && break;done
 
 
-chmod a+x /tmp/john_start_kill_apps_latest.sh
+chmod a+x /tmp/john_start_kill_apps_dim_latest.sh
 
 # ToDo check if file has been downloaded BEFORE renaming local file
 cd /mnt/home/downloads_linux/uploads/
 file_rename_old "/mnt/home/downloads_linux/uploads/john_start_kill_apps.sh"
-cp -n /tmp/john_start_kill_apps_latest.sh /mnt/home/downloads_linux/uploads/john_start_kill_apps.sh
+cp -n /tmp/john_start_kill_apps_dim_latest.sh /mnt/home/downloads_linux/uploads/john_start_kill_apps.sh
 #. /tmp/john_downloads_remote_10dimotiko.sh 

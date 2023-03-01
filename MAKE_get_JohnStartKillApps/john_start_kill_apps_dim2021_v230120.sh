@@ -1,12 +1,5 @@
 # Script 
-#To Do:
-# - Add easter automatic week calculation
-#
-#
-
 #changes
-#v230220 - fixed googlehomestartincognito()
-#v230110 - Google Chrome now expires in 2099 : --simulate-outdated-no-au='4074664805000' 
 #v230122 - week 4 changed to pack_a01,pack_paint1 and zx_htm2tap 
 #v230110 - Changed some scripts to local instead of Github
 #v221127 - Added Google Chrome ,$IRON_OPTIONS/$FLASH_OPTIONS (not used at the moment - might not be needed)
@@ -47,27 +40,16 @@
 #v200210a apokries-pasxa -added tinymce (weeks01-09tempfix)
 #v200107 : temp hardcoded fix : first 9 weeks (o..9) have problem Cause of the starting 0  : 02==2  , 03==3
 
-calceasterweeknum() {
-#CALC__CURRENT EASTER WEEK NUMBER: 
-AAA=`date +%Y` ;
- BBB=`ncal -e $AAA` ;CCC=`date --date=$BBB +'%d/%m/%y' ` ;
-  echo "BBB=$BBB CCC=$CCC";date --date=$CCC +%V;
-  EASTER_WEEK_CALCULATED=`date --date=$CCC +%V`
-  echo "Current Easter week: $EASTER_WEEK_CALCULATED";
-return $EASTER_WEEK_CALCULATED
-}
-
 # this modifies the weekofyear (eg +1,-1)
 STARTWEEKCOUNT=0
 
 # *** NOTE : "$SERVER" for IRON BROWSER should be WITHOUT (s) 
 
 #Default Chrome Options
-CHROME_OPTIONS=" --no-default-browser-check --start-maximized --test-type "
-CHROME_ONLY_OPTIONS=" --simulate-outdated-no-au='4074664805000' " # NOT used yet
+CHROME_OPTIONS=" -no-default-browser-check --start-maximized --test-type "
 #Flash options (for IRON v61)
 FLASH_OPTIONS=" --ppapi-flash-path=/usr/share/iron_flash/extensions/libpepflashplayer.so --ppapi-flash-version=31.0.0.108 "
-IRON_OPTIONS= " --disable-gpu --disable-features=TranslateUI --disable-features=Translate --disable-translate ""$FLASH_OPTIONS"
+IRON_OPTIONS= " --disable-gpu ""$FLASH_OPTIONS"
 
 
 #CHROME_OPTIONS="-no-default-browser-check --disable-gpu --start-maximized --test-type --disable-features=InfiniteSessionRestore --disable-session-crashed-bubble --hide-crash-restore-bubble --hide-restore-last-session "
@@ -79,7 +61,7 @@ IRON_OPTIONS= " --disable-gpu --disable-features=TranslateUI --disable-features=
 #rm -rf /mnt/home/downloads_linux/.cache/iron_flash/
 
 # SPECIAL WEEKS (ADJUCT THESE TO CURRENT SCHOOL YEAR EG 2021-22) NOTE!!!! use double digit eg 05
-APOKRIES_PREWEEK_01=07
+APOKRIES_PREWEEK_01=08
 APOKRIES_PREWEEK_02=09
 EASTER_PREWEEK_01=14
 EASTER_PREWEEK_02=15
@@ -176,7 +158,7 @@ return 5
 }
 
 load_extra_apps(){
-# used to activate events (eg pasxa, halloween, etc)    
+# used to activate events (eg pasxa, halloween, etc)	
 cd /tmp
 wget ""$SERVER"uploads/john_extra_apps.sh" --directory-prefix=/tmp/
 chmod a+x /tmp/john_extra_apps.sh
@@ -217,25 +199,20 @@ return 5
 
 # GOOGLE CHROME latest ############################
 googlehomestartincognito() {
-# PROBLEM incognito does not work
 # eg  ironstart ""$SWFlocal"pack_A01.html "$LANDINGpage"15-ΤΕΤΑΡΤΗ-Β1--hour5.html "$SWFlocal"pack_A01.html"
-###. google-chrome-stable-puppy-home.sh --incognito --start-maximized --simulate-outdated-no-au='407466480500'"$CHROME_OPTIONS $CHROME_ONLY_OPTIONS" "$@"
-
-. google-chrome-stable-puppy-home.sh --incognito "$CHROME_OPTIONS $CHROME_ONLY_OPTIONS" "$@"
-###. google-chrome-stable-puppy-home.sh "$CHROME_OPTIONS $CHROME_ONLY_OPTIONS"" --incognito ""$@"
-#. google-chrome-stable-puppy-home.sh "$CHROME_OPTIONS $CHROME_ONLY_OPTIONS"" --incognito --start-maximized ""$@"
+. google-chrome-stable-puppy-home.sh "$CHROME_OPTIONS""--incognito  --start-maximized ""$@"
 return 5
 }
 
 googlehomestart() {
 # eg  ironstart ""$SWFlocal"pack_A01.html "$LANDINGpage"15-ΤΕΤΑΡΤΗ-Β1--hour5.html "$SWFlocal"pack_A01.html"
-. google-chrome-stable-puppy-home.sh "$CHROME_OPTIONS""  --start-maximized --simulate-outdated-no-au='4074664805000' ""$@"
+. google-chrome-stable-puppy-home.sh "$CHROME_OPTIONS""--start-maximized ""$@"
 return 5
 }
 
 googlechangesdat() {
 # eg  ironstart ""$SWFlocal"pack_A01.html "$LANDINGpage"15-ΤΕΤΑΡΤΗ-Β1--hour5.html "$SWFlocal"pack_A01.html"
-. google-chrome-stable-puppy.sh "$CHROME_OPTIONS"" --start-maximized --simulate-outdated-no-au='4074664805000' ""$@"
+. google-chrome-stable-puppy.sh "$CHROME_OPTIONS"" --incognito --start-maximized ""$@"
 return 5
 }
 
@@ -265,7 +242,7 @@ lightbot_iron_browser() {
 # eg  lightbot_iron_browser "maps_easy.txt "$SWFlocal"pack_A02.html"
 #. iron_flash_puppy_pepper_home.sh "--incognito "$SERVER"gamesedu/lightbot_haan/index.php?map=""$1"
 . iron_flash_puppy_pepper_home.sh "$CHROME_OPTIONS""$IRON_OPTIONS"" --disable-gpu --start-maximized --incognito "$SERVER"gamesedu/lightbot_haan/index.html?map=""$@"" "
-return 5    
+return 5	
 }
 
 firefox10() {
@@ -286,7 +263,7 @@ return 5
 }  
 
 palemoon() {
-    #palemoon doesn't work ....
+	#palemoon doesn't work ....
 pkill -f palemoon
 #pkill -f firefox24
 #. firefox24-puppy-home.sh "$1"
@@ -312,19 +289,19 @@ cp -n /usr/bin/firefox24_default_home_prefs.js /mnt/home/downloads_linux/.data/$
 
 probe_the_server()
 {
-    #every 2 minutes gets the file /uploads/john_exec_cmd_on_client.sh and executes it
-    # you should call it with probe_the_server &  (to run in background) 
-    cd /tmp
-    while /bin/true; do
-        cd /tmp
-        rm /tmp/john_exec_cmd_on_client.sh
-        wget ""$SWFlocal"john_exec_cmd_on_client.sh" --directory-prefix=/tmp/
-        chmod a+x /tmp/john_exec_cmd_on_client.sh
-        . /tmp/john_exec_cmd_on_client.sh
-        #something_in_the_background
-        sleep 2m # Waits 2 minutes.
-    done &
-    return 5
+	#every 2 minutes gets the file /uploads/john_exec_cmd_on_client.sh and executes it
+	# you should call it with probe_the_server &  (to run in background) 
+	cd /tmp
+	while /bin/true; do
+		cd /tmp
+	    rm /tmp/john_exec_cmd_on_client.sh
+		wget ""$SWFlocal"john_exec_cmd_on_client.sh" --directory-prefix=/tmp/
+		chmod a+x /tmp/john_exec_cmd_on_client.sh
+		. /tmp/john_exec_cmd_on_client.sh
+	    #something_in_the_background
+	    sleep 2m # Waits 2 minutes.
+	done &
+	return 5
 }
 
 # 200916b - Check Olohmero (used to check if oloimero hour has started - Combine it with a DAYOFWEEK check)
@@ -547,7 +524,7 @@ fi
 
 #200217 updated  (NoteSTARTWEEKCOUNT +08 NOT working error)
 #adjustWeekFinalNum_for_week 8
-if  [ "$WEEKNUMBER" == APOKRIES_PREWEEK_02 ] #||  [ "$WEEKNUMBER" == '09' ] 
+if  [ "$WEEKNUMBER" == APOKRIES_PREWEEK_02 ] ||  [ "$WEEKNUMBER" == '09' ] 
 #|| [ $WEEKNUMBER == "0"$WEEKFINALNUM adjustWeekFinalNum_for_week '08')) ] || [ $WEEKNUMBER == "0"$WEEKFINALNUM adjustWeekFinalNum_for_week '09')) ]
 then
 #--------------------- this is for Full week-all classes events 
@@ -748,7 +725,7 @@ fi
 adjustWeekFinalNum_for_week 45
 if [ $WEEKNUMBER == $WEEKFINALNUM ] || [ "$WEEKNUMBER" == 'wk09-NovA2' ]  
 then
-# code.org :(1. Χαρούμενοι Χάρτες , 2. Κούνισέ το, Κούνισέ το , 3. Παζλ: Μάθε την μεταφορά και )    
+# code.org :(1. Χαρούμενοι Χάρτες , 2. Κούνισέ το, Κούνισέ το , 3. Παζλ: Μάθε την μεταφορά και )	
 repeat 7  ironstart ""$SWFlocal"pack_codeorg1.html?showdiv1&showdiv2&showdiv3 https://---studio.code.org/s/course1/stage/3/puzzle/1 "$SWFlocal"pack_A01.html?norightclick\&probeserver "$SWFlocal"pack_paint1.html?timer3\&norightclick\&probeserver"
 
 
@@ -824,7 +801,7 @@ repeat 6 ironstartincognito ""$SERVER"tinymce_class/tinymce_submit.html?probeser
 #ironstartincognito ""$SERVER"tinymce_class/tinymce_submit.html?probeserver\&showsubmit\&nocopy\&file=xmas_rudolf"" "$SWFgiortes"index_xmas.html?probeserver\&norightclick\&timer3"
 
 
-#$OOOKIDS$OOOKIDSpathprefix"OFFICE_extra_files/xmas-rountolf-typing.doc" &  
+#$OOOKIDS$OOOKIDSpathprefix"OFFICE_extra_files/xmas-rountolf-typing.doc" &	
 #cd "/tmp/";wget --directory-prefix="/tmp/" -O "a" ""$SERVER"askiseis_office/OFFICE_extra_files/xmas-rountolf-typing.doc"; ooo4kids1.3 -n /tmp/a &
 repeat 6  ironstartincognito ""$SWFgiortes"index_xmas.html?probeserver\&timer3"
 repeat 6  cd "/tmp/";wget --directory-prefix="/tmp/" -O "a" ""$SERVER"askiseis_office/OFFICE_extra_files/xmas-rountolf-typing.doc"; ooo4kids1.3 -n /tmp/a
@@ -838,7 +815,7 @@ if [ $WEEKNUMBER == $WEEKFINALNUM ] || [ "$WEEKNUMBER" == 'wk15-DecC' ]
 then
 
 # giortes xmas Β : 2-3 μαθήματα (μετά τέλος ασκήσεων)
-#$OOOKIDS$OOOKIDSpathprefix"OFFICE_extra_files/xmas-rountolf-typing.doc" &      
+#$OOOKIDS$OOOKIDSpathprefix"OFFICE_extra_files/xmas-rountolf-typing.doc" &		
 #cd "/tmp/";wget --directory-prefix="/tmp/" -O "a" ""$SERVER"askiseis_office/OFFICE_extra_files/xmas-rountolf-typing.doc"; ooo4kids1.3 -n /tmp/a
 
 repeat 6 ironstartincognito ""$SWFgiortes"index_xmas.html?probeserver\&norightclick" ""$SWFgiortes"xmas_santatracker.html?probeserver\&norightclick"
@@ -849,7 +826,7 @@ adjustWeekFinalNum_for_week 52
 if [ $WEEKNUMBER == $WEEKFINALNUM ] || [ "$WEEKNUMBER" == 'wk---DecD' ]  
 then
 
-    leafpad "CLOSED XMAS WEEK activated --- Week number: $WEEKNUMBER"
+	leafpad "CLOSED XMAS WEEK activated --- Week number: $WEEKNUMBER"
 
 fi
 
@@ -859,7 +836,7 @@ adjustWeekFinalNum_for_week 1
 if [ $WEEKNUMBER == $WEEKFINALNUM ] || [ "$WEEKNUMBER" == 'wk---NovA2' ]  
 then
 
-    leafpad "CLOSED XMAS WEEK activated --- Week number: $WEEKNUMBER"
+	leafpad "CLOSED XMAS WEEK activated --- Week number: $WEEKNUMBER"
 
 fi
 
@@ -935,8 +912,8 @@ if [ $WEEKNUMBER == $WEEKFINALNUM ] || [ "$WEEKNUMBER" == 'wk21-FebB' ]
 then
 echo "empty line"
 # APOKRIES 2020
-#tuxmath &
-repeat 6 ironstartincognito ""$SWFlocal"pack_A02.html?norightclick\&probeserver "$SWFlocal"pack_A01.html?norightclick\&probeserver "$SWFlocal"pack_itch_gamedesign.html?probeserver"
+tuxmath &
+ironstartincognito ""$SWFlocal"pack_A02.html?norightclick\&probeserver "$SWFlocal"pack_A01.html?norightclick\&probeserver"
 fi
 
 adjustWeekFinalNum_for_week 8
@@ -949,16 +926,8 @@ fi
 adjustWeekFinalNum_for_week 9
 if [ $WEEKNUMBER == $WEEKFINALNUM ] || [ "$WEEKNUMBER" == 'wk23-FebD' ]  
 then
-# APOKRIES 2021
-
 echo "empty line"
-# open NEWER google chrome for Game_design programs
-#repeat 6 google-chrome-stable-puppy-home.sh  --incognito --simulate-outdated-no-au='407466480500' --start-maximized http://192.168.1.200/swf/pack_itch_gamedesign.html
-###repeat 6 google-chrome-stable-puppy-home.sh --incognito --start-maximized --simulate-outdated-no-au='407466480500' " "$SWFlocal"pack_itch_gamedesign.html?probeserver "
-#leafpad googlehomestartincognito" "$SWFlocal"pack_itch_gamedesign.html?probeserver " &
-#PROBLEM FUNCTION 
-repeat 6 googlehomestartincognito " "$SWFlocal"pack_itch_gamedesign.html?probeserver "
-
+# APOKRIES 2021
 fi
 
 ########### MARCH ###################
@@ -967,7 +936,7 @@ if [ $WEEKNUMBER == $WEEKFINALNUM ] || [ "$WEEKNUMBER" == 'wk24-MarA' ]
 then
 
 # (pack_code_rover.html : ΠΕΡΙΕΧΕΙ : Rover_nasa ,Tiny-explorers,tortuga.patatakia.tk,TurtlePond,pack) 
-repeat 6 ironstartincognito ""$SWFlocal"pack_code_rover.html?probeserver\&norightclick\&timer4  https://diversen.github.io/drum-machine-javascript/index.html"
+repeat 6  ironstartincognito ""$SWFlocal"pack_code_rover.html?probeserver\&norightclick\&timer4  https://diversen.github.io/drum-machine-javascript/index.html"
 #ironstartincognito ""$SWFlocal"pack_code_rover.html?probeserver\&norightclick\&timer4  https://diversen.github.io/drum-machine-javascript/index.html"
 
 fi
@@ -1064,14 +1033,14 @@ then
 echo "empty"
 leafpad "WEEK 18 GFX2 pt B (Aft-Easter  activated --- Week number: $WEEKNUMBER" &
 # EASTER 2020
-repeat 7 ironstartincognito ""$SWFlocal"pack_gfx2.html?probeserver "$SWFlocal"pack_A03.html?probeserver\&norightclick "$SERVER"gamesedu/stick2animator/"
+ironstartincognito ""$SWFlocal"pack_gfx2.html?probeserver "$SWFlocal"pack_A03.html?probeserver\&norightclick "$SERVER"gamesedu/stick2animator/"
 fi
 
 adjustWeekFinalNum_for_week 19
 if [ $WEEKNUMBER == $WEEKFINALNUM ] || [ "$WEEKNUMBER" == 'wk33-MayB' ]  
 then
-leafpad "WEEK lightbot SWF, A-B:Funbrain,StickMan epanalipsi activated --- Week number: $WEEKNUMBER" &  
-#__(pack_code_lightbotswf EXEI: lightbotswf,turtlepond,tortuga.patatak,tiny-explor,packA03  
+leafpad "WEEK lightbot SWF, A-B:Funbrain,StickMan epanalipsi activated --- Week number: $WEEKNUMBER" &	
+#__(pack_code_lightbotswf EXEI: lightbotswf,turtlepond,tortuga.patatak,tiny-explor,packA03	
 repeat 6  ironstartincognito ""$SWFlocal"pack_code_lightbotswf.html?probeserver\&timer2 "$SWFlocal"funbrain.html?probeserver "$SERVER"gamesedu/stick2animator/"
 #ironstartincognito ""$SWFlocal"pack_code_lightbotswf.html?probeserver\&timer2"
 echo "empty"
@@ -1084,14 +1053,14 @@ then
 leafpad "WEEK TANK ,pixbot    activated --- Week number: $WEEKNUMBER" &
 repeat 6  ironstartincognito ""$GAMESEDU"Code-Commander-gr/index_dot_links.html "$GAMESEDU"blockly-games/el/index.html?lang=el http://pixbot.dimotika.tk "$SWFlocal"pack_A02.html?norightclick "
 #ironstartincognito ""$GAMESEDU"Code-Commander-gr/index_dot_links.html "$GAMESEDU"blockly-games/el/index.html?lang=el http://pixbot.dimotika.tk "$SWFlocal"pack_A02.html "
-#ironstartincognito ""$GAMESEDU"Code-Commander-gr/index_dot_links.html "$SWFlocal"pack_A02.html http://pixbot.dimotika.tk"  
+#ironstartincognito ""$GAMESEDU"Code-Commander-gr/index_dot_links.html "$SWFlocal"pack_A02.html http://pixbot.dimotika.tk"	
 echo "empty"
 fi
 
 adjustWeekFinalNum_for_week 21
 if [ $WEEKNUMBER == $WEEKFINALNUM ] || [ "$WEEKNUMBER" == 'wk35-MayD' ]  
 then
-# ******** TO DO add tinyxls lesson *********** 
+# ******** TO DO add tinyxls lesson ***********	
 leafpad "WEEK maybe XLS,BASIC    activated --- Week number: $WEEKNUMBER" &
 
 repeat 6 ironstartincognito ""$SWFlocal"pack_A05.html?probeserver "$SWFlocal"pack_A02.html?probeserver "$SERVER"zx/zx_htm2tap/"

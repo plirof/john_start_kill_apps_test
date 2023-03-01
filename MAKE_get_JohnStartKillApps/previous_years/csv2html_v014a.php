@@ -1,5 +1,4 @@
 <?php
-//v014b - added remove_unwanted_lines() ,$ignore_bash_script_unwanted_lines=true
 //v014a - added <li> (maybe not usefull)
 //v013b get adjest week
 //v011 autolink !!
@@ -27,46 +26,13 @@ $delimiters = array('|_|'); // How each line is divided
 $count=0;
 
 
-$ignore_bash_script_unwanted_lines=true; // ignores lines starting with # (for .sh scripts)
+$ignore_bash_script_commented_lines=false; // ignores lines starting with # (for .sh scripts)
 $weekofyear = date("W");
 echo $weekofyear;
 $check_week=true; // show week of year only values
 
 
-function remove_unwanted_lines($str){
-    //Pass1: Remove lines starting with #
-    //pass2: Keep lines with adjust and http
-    // if ($ignore_bash_script_unwanted_liness) 
-    //if($data[$c][0]"#")echo "HELLO";//NOT WORKING
-    //$str=$data[$c]
-    //echo("<h3>$str</h3><hr size=10>");
 
-
-    if(strpos($str,"adjustWeekFinalNum")!==false){
-            //return "HELLO"    ;
-            return '<h3>'.$str.'</h3>';
-
-    } 
-    if(strpos($str,"#")===0 )return "IGNORED";
-
-        if(strpos($str,"http")!==false){
-            //return "HELLO"    ;
-            return $str;
-
-        }
-
-    if(strpos($str,"#")!=0 || strpos($str,"#")===false ){
-        if(strpos($str,"http")!==false){
-            //return "HELLO"    ;
-            return $str;
-
-        }
-           
-    }// END of if(strpos($str,"#")==0){
-    return "IGNORED";
-    return $str;       
-
-}
 
 
 function autolink($str, $attributes=array()) {
@@ -78,7 +44,6 @@ function autolink($str, $attributes=array()) {
     $str = ' ' . $str;
 
     $replacement_string='<li>'.'$1<a target=_blank href="$2"'.$attrs.'>$2</a></li>';
-    //$replacement_string=$replacement_string."\n";
 
  // ORIG ok working jon 210525
     $str = preg_replace(
@@ -88,7 +53,7 @@ function autolink($str, $attributes=array()) {
     );
 
 
-    $str=$str."\n";
+
     $str = substr($str, 1);
     
     return $str;
@@ -101,14 +66,11 @@ function autolink($str, $attributes=array()) {
 $string_of_file = file_get_contents($file_to_parse, true);
 
 
-$string_modified=replaceDelimiters($string_of_file); //replaces delimites and bash variables
+$string_modified=replaceDelimiters($string_of_file);
 //echo "$string_modified";
 //$string_modified=makeHref($string_modified); //problematic
 
-//if ($ignore_bash_script_unwanted_lines) $string_modified=remove_unwanted_lines($string_modified);
-
-//$string_modified=autolink($string_modified); //Seems to work !!!!!!!!
-
+$string_modified=autolink($string_modified); //Seems to work !!!!!!!!
 
 if ($check_week){
     $substring = "adjustWeekFinalNum_for_week";
@@ -116,8 +78,6 @@ if ($check_week){
     //echo "<h1> <hr>".$substring." ".($weekofyear-1)."<hr>".$substring." ".($weekofyear+2)."<hr>".$result."</h1>" ;
     $string_modified=$result;
 }
-
-
 
 //$string_modified=formatUrlsInText($string_modified); //Seems to work ok issues with some splitting
 
@@ -127,31 +87,15 @@ if ($check_week){
 //$string_modified=str_replace('[', '<BR>', $string_modified); echo("ZZZZZZZZZ".$string_modified); //DEBUG
 //echo "<hr size =100>";
 
-
-
-$AllData = str_getcsv($string_modified, "\n"); //parse the rows
-//print_r($AllData);
-
-
  echo '<ol type="1"> <table border="1"> ';
 
 //exit ();
 //=============== FORMAT to tables ===========================
 $row = 2;
-
-
-
-
-
+$AllData = str_getcsv($string_modified, "\n"); //parse the rows
 //foreach($AllData as &$Row) $Row = str_getcsv($Row, "[") {
 foreach($AllData as $data1) { 
         //echo "<h1>$data1</h1>";
-
-
-        if ($ignore_bash_script_unwanted_lines) $data1=remove_unwanted_lines($data1);
-
-        if($data1=="IGNORED") continue;
-        $data1=autolink($data1); //Seems to work !!!!!!!!
         $data = str_getcsv($data1, "[")   ;  
         
         //print_r($data);
@@ -168,9 +112,7 @@ foreach($AllData as $data1) {
         }
        
         for ($c=0; $c < $num; $c++) {
-           // if ($ignore_bash_script_unwanted_liness) if($data[$c][0]"#")echo "HELLO";//NOT WORKING
-            //if ($ignore_bash_script_unwanted_lines) $data[$c]=remove_unwanted_lines($data[$c]);
-            //if($data[$c]=="IGNORED") continue;
+           // if ($ignore_bash_script_commented_lines) if($data[$c][0]"#")echo "HELLO";//NOT WORKING
             //echo $data[$c] . "<br />\n";
             if(empty($data[$c])) {
                $value = "&nbsp;";
@@ -180,7 +122,7 @@ foreach($AllData as $data1) {
             if ($row == 1) {
                 echo '<th>'.$value.'</th>';
             }else{
-                echo '<td>'.$value.'</td>'."\n";
+                echo '<td>'.$value.'</td>';
             }
         }
        
@@ -201,8 +143,7 @@ foreach($AllData as $data1) {
 
 
 /**
- * Will replace a number of CSV delimiters to one specific character 
- * AND replaces bash variables
+ * Will replace a number of CSV delimiters to one specific character
  * @param $file     CSV file
  */
 function replaceDelimiters($str,$prefixserverurl='http://192.168.1.200/')
