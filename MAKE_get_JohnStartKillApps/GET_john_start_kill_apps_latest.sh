@@ -9,7 +9,7 @@
 # WILL NOT Stop the parent script from executing (so don't try pkill -chrome)
 # put this file in /opt/lampp/htdocs/swf
 
-
+LATESTURL='http://swf-dim.sxoleio.win/4class_sfs/john_start_kill_apps_dim_latest.sh'
 ####################functions#######################################
 file_fetch() {
 #echo Hello $1
@@ -47,7 +47,7 @@ cd /tmp/
 #while true;do wget  -T 7 http://swf.patatakia.tk/4class_sfs/john_start_kill_apps_dim_latest.sh --directory-prefix=/tmp/ && break;done
 rm /tmp/john_start_kill_apps_dim_latest.sh;
 #while true;do wget  -T 7 http://swf-dim.sxoleio.win/4class_sfs/john_start_kill_apps_dim_latest.sh --directory-prefix=/tmp/ && break;done
-while true;do wget  -T 7 http://swf-dim.sxoleio.win/4class_sfs/john_start_kill_apps_dim_latest.sh --directory-prefix=/tmp/ && break;done
+while true;do wget  -T 7 $LATESTURL --directory-prefix=/tmp/ && break;done
 
 
 chmod a+x /tmp/john_start_kill_apps_dim_latest.sh
