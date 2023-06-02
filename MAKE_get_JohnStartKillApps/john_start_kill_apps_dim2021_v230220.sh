@@ -5,9 +5,6 @@
 #
 
 #changes
-#v230515b - weeks 21,22 added/mod excel spreadsheet
-#v230401 - fix week 17
-#v230301 - fix v2 googlehomestartincognito()
 #v230220 - fixed googlehomestartincognito()
 #v230110 - Google Chrome now expires in 2099 : --simulate-outdated-no-au='4074664805000' 
 #v230122 - week 4 changed to pack_a01,pack_paint1 and zx_htm2tap 
@@ -67,7 +64,7 @@ STARTWEEKCOUNT=0
 
 #Default Chrome Options
 CHROME_OPTIONS=" --no-default-browser-check --start-maximized --test-type "
-CHROME_ONLY_OPTIONS=" --simulate-outdated-no-au=4074664805000 " # NOT used yet " --simulate-outdated-no-au='4074664805000' "
+CHROME_ONLY_OPTIONS=" --simulate-outdated-no-au='4074664805000' " # NOT used yet
 #Flash options (for IRON v61)
 FLASH_OPTIONS=" --ppapi-flash-path=/usr/share/iron_flash/extensions/libpepflashplayer.so --ppapi-flash-version=31.0.0.108 "
 IRON_OPTIONS= " --disable-gpu --disable-features=TranslateUI --disable-features=Translate --disable-translate ""$FLASH_OPTIONS"
@@ -179,7 +176,7 @@ return 5
 }
 
 load_extra_apps(){
-# used to activate events (eg pasxa, halloween, etc)	
+# used to activate events (eg pasxa, halloween, etc)    
 cd /tmp
 wget ""$SERVER"uploads/john_extra_apps.sh" --directory-prefix=/tmp/
 chmod a+x /tmp/john_extra_apps.sh
@@ -224,7 +221,7 @@ googlehomestartincognito() {
 # eg  ironstart ""$SWFlocal"pack_A01.html "$LANDINGpage"15-ΤΕΤΑΡΤΗ-Β1--hour5.html "$SWFlocal"pack_A01.html"
 ###. google-chrome-stable-puppy-home.sh --incognito --start-maximized --simulate-outdated-no-au='407466480500'"$CHROME_OPTIONS $CHROME_ONLY_OPTIONS" "$@"
 
-. google-chrome-stable-puppy-home.sh --incognito $CHROME_ONLY_OPTIONS "$CHROME_OPTIONS" "$@"
+. google-chrome-stable-puppy-home.sh --incognito "$CHROME_OPTIONS $CHROME_ONLY_OPTIONS" "$@"
 ###. google-chrome-stable-puppy-home.sh "$CHROME_OPTIONS $CHROME_ONLY_OPTIONS"" --incognito ""$@"
 #. google-chrome-stable-puppy-home.sh "$CHROME_OPTIONS $CHROME_ONLY_OPTIONS"" --incognito --start-maximized ""$@"
 return 5
@@ -268,7 +265,7 @@ lightbot_iron_browser() {
 # eg  lightbot_iron_browser "maps_easy.txt "$SWFlocal"pack_A02.html"
 #. iron_flash_puppy_pepper_home.sh "--incognito "$SERVER"gamesedu/lightbot_haan/index.php?map=""$1"
 . iron_flash_puppy_pepper_home.sh "$CHROME_OPTIONS""$IRON_OPTIONS"" --disable-gpu --start-maximized --incognito "$SERVER"gamesedu/lightbot_haan/index.html?map=""$@"" "
-return 5	
+return 5    
 }
 
 firefox10() {
@@ -289,7 +286,7 @@ return 5
 }  
 
 palemoon() {
-	#palemoon doesn't work ....
+    #palemoon doesn't work ....
 pkill -f palemoon
 #pkill -f firefox24
 #. firefox24-puppy-home.sh "$1"
@@ -315,19 +312,19 @@ cp -n /usr/bin/firefox24_default_home_prefs.js /mnt/home/downloads_linux/.data/$
 
 probe_the_server()
 {
-	#every 2 minutes gets the file /uploads/john_exec_cmd_on_client.sh and executes it
-	# you should call it with probe_the_server &  (to run in background) 
-	cd /tmp
-	while /bin/true; do
-		cd /tmp
-	    rm /tmp/john_exec_cmd_on_client.sh
-		wget ""$SWFlocal"john_exec_cmd_on_client.sh" --directory-prefix=/tmp/
-		chmod a+x /tmp/john_exec_cmd_on_client.sh
-		. /tmp/john_exec_cmd_on_client.sh
-	    #something_in_the_background
-	    sleep 2m # Waits 2 minutes.
-	done &
-	return 5
+    #every 2 minutes gets the file /uploads/john_exec_cmd_on_client.sh and executes it
+    # you should call it with probe_the_server &  (to run in background) 
+    cd /tmp
+    while /bin/true; do
+        cd /tmp
+        rm /tmp/john_exec_cmd_on_client.sh
+        wget ""$SWFlocal"john_exec_cmd_on_client.sh" --directory-prefix=/tmp/
+        chmod a+x /tmp/john_exec_cmd_on_client.sh
+        . /tmp/john_exec_cmd_on_client.sh
+        #something_in_the_background
+        sleep 2m # Waits 2 minutes.
+    done &
+    return 5
 }
 
 # 200916b - Check Olohmero (used to check if oloimero hour has started - Combine it with a DAYOFWEEK check)
@@ -751,7 +748,7 @@ fi
 adjustWeekFinalNum_for_week 45
 if [ $WEEKNUMBER == $WEEKFINALNUM ] || [ "$WEEKNUMBER" == 'wk09-NovA2' ]  
 then
-# code.org :(1. Χαρούμενοι Χάρτες , 2. Κούνισέ το, Κούνισέ το , 3. Παζλ: Μάθε την μεταφορά και )	
+# code.org :(1. Χαρούμενοι Χάρτες , 2. Κούνισέ το, Κούνισέ το , 3. Παζλ: Μάθε την μεταφορά και )    
 repeat 7  ironstart ""$SWFlocal"pack_codeorg1.html?showdiv1&showdiv2&showdiv3 https://---studio.code.org/s/course1/stage/3/puzzle/1 "$SWFlocal"pack_A01.html?norightclick\&probeserver "$SWFlocal"pack_paint1.html?timer3\&norightclick\&probeserver"
 
 
@@ -827,7 +824,7 @@ repeat 6 ironstartincognito ""$SERVER"tinymce_class/tinymce_submit.html?probeser
 #ironstartincognito ""$SERVER"tinymce_class/tinymce_submit.html?probeserver\&showsubmit\&nocopy\&file=xmas_rudolf"" "$SWFgiortes"index_xmas.html?probeserver\&norightclick\&timer3"
 
 
-#$OOOKIDS$OOOKIDSpathprefix"OFFICE_extra_files/xmas-rountolf-typing.doc" &	
+#$OOOKIDS$OOOKIDSpathprefix"OFFICE_extra_files/xmas-rountolf-typing.doc" &  
 #cd "/tmp/";wget --directory-prefix="/tmp/" -O "a" ""$SERVER"askiseis_office/OFFICE_extra_files/xmas-rountolf-typing.doc"; ooo4kids1.3 -n /tmp/a &
 repeat 6  ironstartincognito ""$SWFgiortes"index_xmas.html?probeserver\&timer3"
 repeat 6  cd "/tmp/";wget --directory-prefix="/tmp/" -O "a" ""$SERVER"askiseis_office/OFFICE_extra_files/xmas-rountolf-typing.doc"; ooo4kids1.3 -n /tmp/a
@@ -841,7 +838,7 @@ if [ $WEEKNUMBER == $WEEKFINALNUM ] || [ "$WEEKNUMBER" == 'wk15-DecC' ]
 then
 
 # giortes xmas Β : 2-3 μαθήματα (μετά τέλος ασκήσεων)
-#$OOOKIDS$OOOKIDSpathprefix"OFFICE_extra_files/xmas-rountolf-typing.doc" &		
+#$OOOKIDS$OOOKIDSpathprefix"OFFICE_extra_files/xmas-rountolf-typing.doc" &      
 #cd "/tmp/";wget --directory-prefix="/tmp/" -O "a" ""$SERVER"askiseis_office/OFFICE_extra_files/xmas-rountolf-typing.doc"; ooo4kids1.3 -n /tmp/a
 
 repeat 6 ironstartincognito ""$SWFgiortes"index_xmas.html?probeserver\&norightclick" ""$SWFgiortes"xmas_santatracker.html?probeserver\&norightclick"
@@ -852,7 +849,7 @@ adjustWeekFinalNum_for_week 52
 if [ $WEEKNUMBER == $WEEKFINALNUM ] || [ "$WEEKNUMBER" == 'wk---DecD' ]  
 then
 
-	leafpad "CLOSED XMAS WEEK activated --- Week number: $WEEKNUMBER"
+    leafpad "CLOSED XMAS WEEK activated --- Week number: $WEEKNUMBER"
 
 fi
 
@@ -862,7 +859,7 @@ adjustWeekFinalNum_for_week 1
 if [ $WEEKNUMBER == $WEEKFINALNUM ] || [ "$WEEKNUMBER" == 'wk---NovA2' ]  
 then
 
-	leafpad "CLOSED XMAS WEEK activated --- Week number: $WEEKNUMBER"
+    leafpad "CLOSED XMAS WEEK activated --- Week number: $WEEKNUMBER"
 
 fi
 
@@ -1057,17 +1054,6 @@ if [ $WEEKNUMBER == $WEEKFINALNUM ] || [ "$WEEKNUMBER" == 'wk31-AprD' ]
 then
 echo "empty"
 # EASTER 2020 KLEISTA
-
-#Να βάλω αυτο week 17
-repeat 7 ironstartincognito ""$SWFlocal"pack_codeorg_movies.html?probeserver "$SWFlocal"pack_A03.html?probeserver\&norightclick "$SERVER"gamesedu/tortuga-kids-logo-gr/"
-
-
-repeat 7 ironstartincognito ""$SWFlocal"pack_gamesedu.html?probeserver "$SWFlocal"pack_A06.html?probeserver\&norightclick"
-
-#repeat 7 ironstartincognito ""$SWFlocal"pack_url_param.html?url1=http://192.168.1.200/gamesedu/stick2animator/\&url2=http://192.168.1.200/gamesedu/tortuga-kids-logo-gr/\&url3=http://192.168.1.200/gamesedu/lightbot_haan/\&url4=http://192.168.1.200/gamesedu/blockly-games//&url5=http://192.168.1.200/swf/pack_codeorg_movies.html\&url6=http://192.168.1.200/oneye/"
-
-
-#repeat 7 ironstartincognito ""$SWFlocal"pack_url_param.html?url1=http://192.168.1.200/gamesedu/stick2animator/\&url2=http://192.168.1.200/gamesedu/tortuga-kids-logo-gr/\&url3=http://192.168.1.200/gamesedu/lightbot_haan/\&url4=http://192.168.1.200/gamesedu/blockly-games//&url5=http://192.168.1.200/gamesedu/faces-guess-who-gr/faces.html\&url6=http://192.168.1.200/oneye/"
 fi
 
 
@@ -1077,16 +1063,15 @@ if [ $WEEKNUMBER == $WEEKFINALNUM ] || [ "$WEEKNUMBER" == 'wk32-AprE-MayA' ]
 then
 echo "empty"
 leafpad "WEEK 18 GFX2 pt B (Aft-Easter  activated --- Week number: $WEEKNUMBER" &
-
 # EASTER 2020
-repeat 7 ironstartincognito ""$SWFlocal"pack_gfx2.html?probeserver "$SWFlocal"pack_A03.html?probeserver\&norightclick "$SERVER"gamesedu/stick2animator/ "$SERVER"zx/zx_htm2tap/" 
+repeat 7 ironstartincognito ""$SWFlocal"pack_gfx2.html?probeserver "$SWFlocal"pack_A03.html?probeserver\&norightclick "$SERVER"gamesedu/stick2animator/"
 fi
 
 adjustWeekFinalNum_for_week 19
 if [ $WEEKNUMBER == $WEEKFINALNUM ] || [ "$WEEKNUMBER" == 'wk33-MayB' ]  
 then
-leafpad "WEEK lightbot SWF, A-B:Funbrain,StickMan epanalipsi activated --- Week number: $WEEKNUMBER" &	
-#__(pack_code_lightbotswf EXEI: lightbotswf,turtlepond,tortuga.patatak,tiny-explor,packA03	
+leafpad "WEEK lightbot SWF, A-B:Funbrain,StickMan epanalipsi activated --- Week number: $WEEKNUMBER" &  
+#__(pack_code_lightbotswf EXEI: lightbotswf,turtlepond,tortuga.patatak,tiny-explor,packA03  
 repeat 6  ironstartincognito ""$SWFlocal"pack_code_lightbotswf.html?probeserver\&timer2 "$SWFlocal"funbrain.html?probeserver "$SERVER"gamesedu/stick2animator/"
 #ironstartincognito ""$SWFlocal"pack_code_lightbotswf.html?probeserver\&timer2"
 echo "empty"
@@ -1095,26 +1080,30 @@ fi
 adjustWeekFinalNum_for_week 20
 if [ $WEEKNUMBER == $WEEKFINALNUM ] || [ "$WEEKNUMBER" == 'wk34-MayC' ]  
 then
-#setxkbmap gr; # Change keyboard to greek
+
 leafpad "WEEK TANK ,pixbot    activated --- Week number: $WEEKNUMBER" &
-repeat 6  ironstartincognito ""$GAMESEDU"Code-Commander-gr/index_dot_links.html "$GAMESEDU"blockly-games/el/index.html?lang=el http://pixbot.dimotika.tk "$SWFlocal"pack_A02.html?probeserver\&norightclick "
+repeat 6  ironstartincognito ""$GAMESEDU"Code-Commander-gr/index_dot_links.html "$GAMESEDU"blockly-games/el/index.html?lang=el http://pixbot.dimotika.tk "$SWFlocal"pack_A02.html?norightclick "
 #ironstartincognito ""$GAMESEDU"Code-Commander-gr/index_dot_links.html "$GAMESEDU"blockly-games/el/index.html?lang=el http://pixbot.dimotika.tk "$SWFlocal"pack_A02.html "
-#ironstartincognito ""$GAMESEDU"Code-Commander-gr/index_dot_links.html "$SWFlocal"pack_A02.html http://pixbot.dimotika.tk"	
+#ironstartincognito ""$GAMESEDU"Code-Commander-gr/index_dot_links.html "$SWFlocal"pack_A02.html http://pixbot.dimotika.tk"  
 echo "empty"
 fi
 
 adjustWeekFinalNum_for_week 21
 if [ $WEEKNUMBER == $WEEKFINALNUM ] || [ "$WEEKNUMBER" == 'wk35-MayD' ]  
 then
-# ******** TO DO add tinyxls lesson ***********	
+# ******** TO DO add tinyxls lesson *********** 
 leafpad "WEEK maybe XLS,BASIC    activated --- Week number: $WEEKNUMBER" &
-repeat 6 ironstartincognito ""$SWFlocal"pack_A05.html?probeserver "$SERVER"x-spreadsheet/tinyxls.html?file=lesson1-timetable\&jsonxls=lesson1-timetable\&showsubmit "$SERVER"zx/zx_htm2tap/"
+
 repeat 6 ironstartincognito ""$SWFlocal"pack_A05.html?probeserver "$SWFlocal"pack_A02.html?probeserver "$SERVER"zx/zx_htm2tap/"
 ironstartincognito ""$SWFlocal"pack_A05.html?probeserver "$SWFlocal"pack_A02.html?probeserver" &
 #ironstartincognito ""$SWFlocal"pack_A05.html "$SWFlocal"pack_A02.html" &
 $OOOKIDS$OOOKIDSpathprefix"OFFICE_extra_files/excel_1.1_pinakas_mathitwn.xls"
 $OOOKIDS$OOOKIDSpathprefix"OFFICE_extra_files/excel_1.1_pinakas_mathitwn.xls"
 ironstartincognito ""$SWFlocal"pack_A05.html "$SWFlocal"pack_A02.html" &
+$OOOKIDS$OOOKIDSpathprefix"OFFICE_extra_files/excel_1.1_pinakas_mathitwn.xls"
+$OOOKIDS$OOOKIDSpathprefix"OFFICE_extra_files/excel_1.1_pinakas_mathitwn.xls"
+ironstartincognito ""$SWFlocal"pack_A05.html "$SWFlocal"pack_A02.html" &
+$OOOKIDS$OOOKIDSpathprefix"OFFICE_extra_files/excel_1.1_pinakas_mathitwn.xls"
 
 echo "empty"
 fi
@@ -1124,10 +1113,7 @@ if [ $WEEKNUMBER == $WEEKFINALNUM ] || [ "$WEEKNUMBER" == 'wk36-MayE' ]
 then
 #http://localhost/x-spreadsheet/tinyxls.html?file=lesson2b-bookstore&jsonxls=lesson2b-bookstore&showsubmit
 #ironstartincognito ""$SERVER"tinymce_class/tinymce_submit.html?showsubmit\&file=lesson10 "$SWFlocal"pack_A03.html?probeserver\&norightclick"
-#repeat 6  ironstartincognito ""$SERVER"x-spreadsheet/tinyxls.html?file=lesson1-timetable\&jsonxls=lesson1-timetable\&showsubmit "$SWFlocal"pack_A03.html?probeserver\&norightclick"
-repeat 6  ironstartincognito ""$SERVER"x-spreadsheet/tinyxls.html?file=lesson2a-bookstore\&jsonxls=lesson2a-bookstore\&showsubmit "$SWFlocal"pack_A03.html?probeserver\&norightclick"
-
-
+repeat 6  ironstartincognito ""$SERVER"x-spreadsheet/tinyxls.html?file=lesson1-timetable\&jsonxls=lesson1-timetable\&showsubmit "$SWFlocal"pack_A03.html?probeserver\&norightclick"
 #ironstartincognito ""$SERVER"x-spreadsheet/tinyxls.html?file=lesson1-timetable\&jsonxls=lesson1-timetable\&showsubmit "$SWFlocal"pack_A03.html?probeserver\&norightclick"
 
 
