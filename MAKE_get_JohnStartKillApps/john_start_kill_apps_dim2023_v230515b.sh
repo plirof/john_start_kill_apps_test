@@ -5,10 +5,6 @@
 #
 
 #changes
-#v231110 - week 47-48 added codeord_playlab
-#v231105c - Week44-47 switched to googlehomestartincognito and ruffle for code.org(iron can't open) ,also added tee no-default-browser-check
-#v231010c - minor fixes week39-44 , replaced pack_param with pack_typing,pack_maze1,2,pack_parking
-#v230920b - minor fixes week39 , week 38  pack_A07
 #v230515b - weeks 21,22 added/mod excel spreadsheet
 #v230401 - fix week 17
 #v230301 - fix v2 googlehomestartincognito()
@@ -70,7 +66,6 @@ STARTWEEKCOUNT=0
 # *** NOTE : "$SERVER" for IRON BROWSER should be WITHOUT (s) 
 
 #Default Chrome Options
-mkdir -p /etc/chromium.d ;tee /etc/chromium.d/disable-set-default-browser; #--no-default-browser-check
 CHROME_OPTIONS=" --no-default-browser-check --start-maximized --test-type "
 CHROME_ONLY_OPTIONS=" --simulate-outdated-no-au=4074664805000 " # NOT used yet " --simulate-outdated-no-au='4074664805000' "
 #Flash options (for IRON v61)
@@ -87,10 +82,10 @@ IRON_OPTIONS= " --disable-gpu --disable-features=TranslateUI --disable-features=
 #rm -rf /mnt/home/downloads_linux/.cache/iron_flash/
 
 # SPECIAL WEEKS (ADJUCT THESE TO CURRENT SCHOOL YEAR EG 2021-22) NOTE!!!! use double digit eg 05
-APOKRIES_PREWEEK_01=09
-APOKRIES_PREWEEK_02=10
-EASTER_PREWEEK_01=16
-EASTER_PREWEEK_02=17
+APOKRIES_PREWEEK_01=07
+APOKRIES_PREWEEK_02=09
+EASTER_PREWEEK_01=14
+EASTER_PREWEEK_02=15
 XMAS_PREWEEK_01=50
 XMAS_PREWEEK_02=51
 XMAS_AFTER_01=02
@@ -104,8 +99,6 @@ OCTOBER28=$((OCT28_PREWEEK+1))
 
 MARCH25=12
 
-# allow apps running without --no-sandbox  (https://www.reddit.com/r/debian/comments/hkyeft/unable_to_run_appimage_applications_without/?rdt=53846)
-# NOTE 2test might create issues when Epoptes Share screen ### sudo sysctl -w kernel.unprivileged_userns_clone=1 ;
 
 #mute all Clients
 amixer set Master mute
@@ -227,12 +220,11 @@ return 5
 
 # GOOGLE CHROME latest ############################
 googlehomestartincognito() {
-# PROBLEM incognito does not work (ok?)
+# PROBLEM incognito does not work
 # eg  ironstart ""$SWFlocal"pack_A01.html "$LANDINGpage"15-ΤΕΤΑΡΤΗ-Β1--hour5.html "$SWFlocal"pack_A01.html"
 ###. google-chrome-stable-puppy-home.sh --incognito --start-maximized --simulate-outdated-no-au='407466480500'"$CHROME_OPTIONS $CHROME_ONLY_OPTIONS" "$@"
-#tee /etc/chromium.d/disable-set-default-browser
 
-. google-chrome-stable-puppy-home.sh --incognito --start-maximized "$CHROME_ONLY_OPTIONS" "$CHROME_OPTIONS" "$@"
+. google-chrome-stable-puppy-home.sh --incognito $CHROME_ONLY_OPTIONS "$CHROME_OPTIONS" "$@"
 ###. google-chrome-stable-puppy-home.sh "$CHROME_OPTIONS $CHROME_ONLY_OPTIONS"" --incognito ""$@"
 #. google-chrome-stable-puppy-home.sh "$CHROME_OPTIONS $CHROME_ONLY_OPTIONS"" --incognito --start-maximized ""$@"
 return 5
@@ -240,7 +232,7 @@ return 5
 
 googlehomestart() {
 # eg  ironstart ""$SWFlocal"pack_A01.html "$LANDINGpage"15-ΤΕΤΑΡΤΗ-Β1--hour5.html "$SWFlocal"pack_A01.html"
-. google-chrome-stable-puppy-home.sh "$CHROME_OPTIONS"" --start-maximized --simulate-outdated-no-au='4074664805000' ""$@"
+. google-chrome-stable-puppy-home.sh "$CHROME_OPTIONS""  --start-maximized --simulate-outdated-no-au='4074664805000' ""$@"
 return 5
 }
 
@@ -384,20 +376,6 @@ leafpad "Week number: $WEEKNUMBER 2021-22" &
 ############## OLOHMERO START #####################
 #--------------- SPECIAL EVENTS --------------------------
 #load_extra_apps
-
-
-if [ "$(check_oloimero_time 1302)" == 'OKpassedCheck' ]
-then
-leafpad "run ΟΛΟΗΜΕΡΟ EVERYDAY 13:05" &
-
-#ironstartincognito.sh ""$SERVER"swf/ferryhalim.com.html?timer2\&probeserver http://OLOHMERO "$SERVER"swf/fun/treasure_of_cutlass_reef-__pirate-ship-battle__NoNavUrl!!!.swf"
-repeat 4 ironstartincognito ""$SERVER"swf/ferryhalim.com.html?timer2\&probeserver http://OLOHMERO "
-repeat 2 ironstartincognito ""$SERVER"swf/ferryhalim.com.html?timer2\&probeserver http://OLOHMERO "$SWFlocal"pack_url_param.html?url1=ab/coloring/coloring-inside-out__noADsURL.swf\&url2=http://weavesilk.com\&url3=graphics_/drip_paint_jacksonpollock_by_miltos_manetas.swf\&url4=ab/coloring/coloring_book_yippy_yahoo__3img_NoNav.swf\&url5=_____________________\&url6=Olohmero A-dimotikoy"
-#ironstartincognito ""$SERVER"swf/ferryhalim.com.html?timer2\&probeserver http://OLOHMERO "$SWFlocal"pack_url_param.html?url1=ab/coloring/coloring-inside-out__noADsURL.swf\&url2=http://weavesilk.com\&url3=graphics_/drip_paint_jacksonpollock_by_miltos_manetas.swf\&url4=ab/coloring/coloring_book_yippy_yahoo__3img_NoNav.swf\&url5=_____________________\&url6=Olohmero A-dimotikoy"
-
-fi
-
-
 
 # 200916b - Check Olohmero 
 if [ $DAYOFWEEK == 'Δευτέρα' ] || [ $DAYOFWEEK == 'Monday' ]
@@ -546,7 +524,6 @@ then
 #--------------------- this is for Full week-all classes events 
 leafpad "WEEK giorti 28 October week(argia 26,28 + giortes) activated --- Week number: $WEEKNUMBER" &
 # (+ 28october pre week   
-repeat 6  ironstartincognito ""$SWFlocal"pack_parking1.html?probeserver\&norightclick  "$SERVER"tinymce_class/tinymce_submit.html?probeserver\&nocopy\&hidediv1\&file=giorti28oct01 "$SWFlocal"pack_giortes28oct.html?probeserver\&norightclick 28October-HalloweenDraw"
 repeat 6  ironstartincognito ""$SWFlocal"pack_url_param.html?url1=fun/spongebob-parking_jon04noURLS_need760MBram_!!.swf\&url2=fun/puzzle_board/edsparkinggame.swf\&url3=type/typing_bricks\(puzzle\)!!!.swf\&url4=type/typing_alphattack2__bombDrop_NoNavUrl.swf\&url5=fun/puzzle_board/spark_chess_17521__allows_save_NoNavUrl.swf\&url6=park-1\&probeserver\&norightclick  "$SERVER"tinymce_class/tinymce_submit.html?probeserver\&nocopy\&hidediv1\&file=giorti28oct01 "$SWFlocal"pack_giortes28oct.html?probeserver\&norightclick 28October-HalloweenDraw"
 #ironstartincognito ""$SWFlocal"pack_giortes28oct.html?probeserver\&norightclick "$SERVER"tinymce_class/tinymce_submit.html?probeserver\&nocopy\&hidediv1\&file=giorti28oct01 "$SWFlocal"pack_paint1.html?timer3\&probeserver"
 
@@ -579,7 +556,7 @@ then
 #--------------------- this is for Full week-all classes events 
 leafpad "WEEK halloween ptB (for 2 weeks  games)   activated --- Week number: $WEEKNUMBER    20190225-08" &
 #ironstartincognito "http://plirof.github.io/tinymce_class/tinymce.html?probeserver\&nocopy\&file=giorti_apokries01 "$SWFgiortes"index_halloween.html?probeserver\&norightclick\&timer3"
-repeat 6 ironstartincognito $SWFgiortes"index_halloween.html?probeserver\&norightclick\&timer3 ""http://plirof.github.io/tinymce_class/tinymce.html?probeserver\&nocopy\&file=giorti_apokries01 "
+repeat 6  ironstartincognito $SWFgiortes"index_halloween.html?probeserver\&norightclick\&timer3 ""http://plirof.github.io/tinymce_class/tinymce.html?probeserver\&nocopy\&file=giorti_apokries01 "
 #ironstartincognito ""$SWFgiortes"index_halloween.html?timer3 http://plirof.github.io/tinymce_class/tinymce.html?probeserver\&nocopy\&file=giorti_apokries01"
 repeat 4 ironstartincognito ""$SWFgiortes"index_halloween.html http://plirof.github.io/tinymce_class/tinymce.html?probeserver\&nocopy\&file=giorti_apokries01\&hidediv1"
 
@@ -593,15 +570,15 @@ if [ $WEEKNUMBER == $WEEKFINALNUM ] || [ "$WEEKNUMBER" == '37' ] || [ "$WEEKNUMB
 then
 # ironstartincognito ""$SERVER"tinymce_class/tinymce_submit.html?showsubmit\&probeserver "$SWFlocal"pack_A03.html?probeserver\&norightclick 
 #"$SWFlocal"funbrain.html?timer3  http://first_week_enter_ONOMATA_PC03_E2_Giorgos_giannis"
-
-repeat 6 ironstartincognito ""$SERVER"tinymce_class/tinymce_submit.html?showsubmit\&probeserver "$SWFlocal"pack_A07.html?probeserver\&norightclick 
-"$SWFlocal"funbrain.html?timer3  http://first_week_enter_ONOMATA_PC03_E2_Giorgos_giannis"
-
-repeat 6 ironstartincognito ""$SERVER"tinymce_class/tinymce_submit.html?showsubmit\&probeserver "$SWFlocal"pack_A03.html?probeserver\&norightclick 
+repeat 6  ironstartincognito ""$SERVER"tinymce_class/tinymce_submit.html?showsubmit\&probeserver "$SWFlocal"pack_A03.html?probeserver\&norightclick 
 "$SWFlocal"funbrain.html?timer3  http://first_week_enter_ONOMATA_PC03_E2_Giorgos_giannis"
 
 ironstartincognito ""$SERVER"tinymce_class/tinymce_submit.html?showsubmit\&probeserver "$SWFlocal"pack_A03.html?probeserver\&norightclick 
 "$SWFlocal"funbrain.html?timer3  http://first_week"
+
+ironstartincognito ""$SERVER"tinymce_class/tinymce_submit.html?showsubmit\&probeserver "$SWFlocal"pack_A03.html?probeserver\&norightclick 
+"$SWFlocal"funbrain.html?timer3  http://first_week"
+
 
 
 $OOOKIDS$OOOKIDSpathprefix"OFFICE_extra_files/ALL_biografiko_mathiti.doc" &
@@ -634,12 +611,22 @@ if [ $WEEKNUMBER == $WEEKFINALNUM ] || [ "$WEEKNUMBER" == 'wk03-SepD' ]
 then
 
 
-repeat 7 ironstartincognito ""$SWFlocal"pack_typing1.html?probeserver&norightclick&timer3 """$SERVER"tinymce_class/tinymce_submit.html?showsubmit "$SWFlocal"funbrain.html?probeserver\&timer3  "
-#repeat 7 ironstartincognito ""$SWFlocal"pack_url_param.html?url1=type/typing_bricks__puzzle!!!.swf\&url2=type/assault-typing__shootemup__rapidtyping.com_NoAdUrl.swf\&url3=type/typing_adventure__indiana_jones_NoNavUrl.swf\&url4=type/typing_alphattack2__bombDrop_NoNavUrl.swf\&url5=type/airtyper_1_noADsURL.swf\&url6=typing-1\&timer3 """$SERVER"tinymce_class/tinymce_submit.html?showsubmit "$SWFlocal"funbrain.html?probeserver\&timer3  "
+ironstartincognito ""$SWFlocal"pack_url_param.html?url1=type/typing_bricks__puzzle!!!.swf\&url2=type/assault-typing__shootemup__rapidtyping.com_NoAdUrl.swf\&url3=type/typing_adventure__indiana_jones_NoNavUrl.swf\&url4=type/typing_alphattack2__bombDrop_NoNavUrl.swf\&url5=type/airtyper_1_noADsURL.swf\&url6=typing-1\&timer3 """$SERVER"tinymce_class/tinymce_submit.html?showsubmit "$SWFlocal"funbrain.html?probeserver\&timer3  "
+ironstartincognito ""$SWFlocal"pack_url_param.html?url1=type/typing_bricks__puzzle!!!.swf\&url2=type/assault-typing__shootemup__rapidtyping.com_NoAdUrl.swf\&url3=type/typing_adventure__indiana_jones_NoNavUrl.swf\&url4=type/typing_alphattack2__bombDrop_NoNavUrl.swf\&url5=type/airtyper_1_noADsURL.swf\&url6=typing-1\&timer3 """$SERVER"tinymce_class/tinymce_submit.html?showsubmit "$SWFlocal"funbrain.html?probeserver\&timer3  "
+ironstartincognito ""$SWFlocal"pack_url_param.html?url1=type/typing_bricks__puzzle!!!.swf\&url2=type/assault-typing__shootemup__rapidtyping.com_NoAdUrl.swf\&url3=type/typing_adventure__indiana_jones_NoNavUrl.swf\&url4=type/typing_alphattack2__bombDrop_NoNavUrl.swf\&url5=type/airtyper_1_noADsURL.swf\&url6=typing-1\&timer3 """$SERVER"tinymce_class/tinymce_submit.html?showsubmit "$SWFlocal"funbrain.html?probeserver\&timer3  "
+ironstartincognito ""$SWFlocal"pack_url_param.html?url1=type/typing_bricks__puzzle!!!.swf\&url2=type/assault-typing__shootemup__rapidtyping.com_NoAdUrl.swf\&url3=type/typing_adventure__indiana_jones_NoNavUrl.swf\&url4=type/typing_alphattack2__bombDrop_NoNavUrl.swf\&url5=type/airtyper_1_noADsURL.swf\&url6=typing-1\&timer3 """$SERVER"tinymce_class/tinymce_submit.html?showsubmit "$SWFlocal"funbrain.html?probeserver\&timer3  "
+ironstartincognito ""$SWFlocal"pack_url_param.html?url1=type/typing_bricks__puzzle!!!.swf\&url2=type/assault-typing__shootemup__rapidtyping.com_NoAdUrl.swf\&url3=type/typing_adventure__indiana_jones_NoNavUrl.swf\&url4=type/typing_alphattack2__bombDrop_NoNavUrl.swf\&url5=type/airtyper_1_noADsURL.swf\&url6=typing-1\&timer3 """$SERVER"tinymce_class/tinymce_submit.html?showsubmit "$SWFlocal"funbrain.html?probeserver\&timer3  "
 ironstartincognito ""$SWFlocal"pack_url_param.html?url1=type/typing_bricks__puzzle!!!.swf\&url2=type/assault-typing__shootemup__rapidtyping.com_NoAdUrl.swf\&url3=type/typing_adventure__indiana_jones_NoNavUrl.swf\&url4=type/typing_alphattack2__bombDrop_NoNavUrl.swf\&url5=type/airtyper_1_noADsURL.swf\&url6=typing-1\&timer3 """$SERVER"tinymce_class/tinymce_submit.html?showsubmit "$SWFlocal"funbrain.html?probeserver\&timer3  "
 
 
-repeat 6 ironstartincognito ""$SERVER"tinymce_class/tinymce_submit.html "$SWFlocal"funbrain.html?probeserver\&timer3  "$SWFlocal"pack_url_param.html?url1=type/typing_bricks__puzzle!!!.swf\&url2=type/assault-typing__shootemup__rapidtyping.com_NoAdUrl.swf\&url3=type/typing_adventure__indiana_jones_NoNavUrl.swf\&url4=type/typing_alphattack2__bombDrop_NoNavUrl.swf\&url5=type/airtyper_1_noADsURL.swf\&url6=typing-1\&timer3"
+ironstartincognito ""$SERVER"tinymce_class/tinymce_submit.html "$SWFlocal"funbrain.html?probeserver\&timer3  "$SWFlocal"pack_url_param.html?url1=type/typing_bricks__puzzle!!!.swf\&url2=type/assault-typing__shootemup__rapidtyping.com_NoAdUrl.swf\&url3=type/typing_adventure__indiana_jones_NoNavUrl.swf\&url4=type/typing_alphattack2__bombDrop_NoNavUrl.swf\&url5=type/airtyper_1_noADsURL.swf\&url6=typing-1\&timer3"
+ironstartincognito ""$SERVER"tinymce_class/tinymce_submit.html "$SWFlocal"funbrain.html?probeserver\&timer3  "$SWFlocal"pack_url_param.html?url1=type/typing_bricks__puzzle!!!.swf\&url2=type/assault-typing__shootemup__rapidtyping.com_NoAdUrl.swf\&url3=type/typing_adventure__indiana_jones_NoNavUrl.swf\&url4=type/typing_alphattack2__bombDrop_NoNavUrl.swf\&url5=type/airtyper_1_noADsURL.swf\&url6=typing-1\&timer3"
+ironstartincognito ""$SERVER"tinymce_class/tinymce_submit.html "$SWFlocal"funbrain.html?probeserver\&timer3  "$SWFlocal"pack_url_param.html?url1=type/typing_bricks__puzzle!!!.swf\&url2=type/assault-typing__shootemup__rapidtyping.com_NoAdUrl.swf\&url3=type/typing_adventure__indiana_jones_NoNavUrl.swf\&url4=type/typing_alphattack2__bombDrop_NoNavUrl.swf\&url5=type/airtyper_1_noADsURL.swf\&url6=typing-1\&timer3"
+ironstartincognito ""$SERVER"tinymce_class/tinymce_submit.html "$SWFlocal"funbrain.html?probeserver\&timer3  "$SWFlocal"pack_url_param.html?url1=type/typing_bricks__puzzle!!!.swf\&url2=type/assault-typing__shootemup__rapidtyping.com_NoAdUrl.swf\&url3=type/typing_adventure__indiana_jones_NoNavUrl.swf\&url4=type/typing_alphattack2__bombDrop_NoNavUrl.swf\&url5=type/airtyper_1_noADsURL.swf\&url6=typing-1\&timer3"
+ironstartincognito ""$SERVER"tinymce_class/tinymce_submit.html "$SWFlocal"funbrain.html?probeserver\&timer3  "$SWFlocal"pack_url_param.html?url1=type/typing_bricks__puzzle!!!.swf\&url2=type/assault-typing__shootemup__rapidtyping.com_NoAdUrl.swf\&url3=type/typing_adventure__indiana_jones_NoNavUrl.swf\&url4=type/typing_alphattack2__bombDrop_NoNavUrl.swf\&url5=type/airtyper_1_noADsURL.swf\&url6=typing-1\&timer3"
+
+
+
 
 
 #a-b
@@ -668,8 +655,8 @@ then
 ##/opt/eduActiv8/eduActiv8 &
 sudo -u puppy bash -c "/opt/eduActiv8/eduActiv8 &";
 #ironstartincognito ""$SWFlocal"pack_type_ramkid_greek.html"
-repeat 7 ironstartincognito ""$SWFlocal"pack_typing2.html?probeserver&norightclick&timer3 """$SWFlocal"funbrain.html?probeserver\&timer3  "
-repeat 6 ironstartincognito ""$SWFlocal"pack_url_param.html?url1=type/airtyper_1_noADsURL.swf\&url2=type/typing_adventure__indiana_jones_NoNavUrl.swf\&url3=type/typing_bricks__puzzle!!!.swf\&url4=type/typing_tidepool__sea_race_!!.swf\&url5=type/horse-racing-typing__rapidtyping.com_NoNavUrl.swf\&url6=typing-2\&probeserver\&timer3 "$SWFlocal"funbrain.html?norightclick";
+repeat 6  ironstartincognito ""$SWFlocal"pack_url_param.html?url1=type/airtyper_1_noADsURL.swf\&url2=type/typing_adventure__indiana_jones_NoNavUrl.swf\&url3=type/typing_bricks__puzzle!!!.swf\&url4=type/typing_tidepool__sea_race_!!.swf\&url5=type/horse-racing-typing__rapidtyping.com_NoNavUrl.swf\&url6=typing-2\&probeserver\&timer3 "$SWFlocal"funbrain.html?norightclick";
+#ironstartincognito ""$SWFlocal"pack_type_ramkid_greek.html"
 #ironstartincognito ""$SWFlocal"pack_url_param.html?url1=type/airtyper_1_noADsURL.swf\&url2=type/typing_adventure__indiana_jones_NoNavUrl.swf\&url3=type/typing_bricks__puzzle!!!.swf\&url4=type/typing_tidepool__sea_race_!!.swf\&url5=type/horse-racing-typing__rapidtyping.com_NoNavUrl.swf\&url6=typing-2\&probeserver\&timer3"
 #ironstartincognito ""$SWFlocal"pack_type_ramkid_greek.html"
 #. /opt/eduActiv8/eduActiv8 &
@@ -684,10 +671,9 @@ adjustWeekFinalNum_for_week 41
 if [ $WEEKNUMBER == $WEEKFINALNUM ] || [ "$WEEKNUMBER" == 'wk05-OctB' ]  
 then
 
-
-repeat 6 ironstartincognito ""$SWFlocal"pack_maze1.html?probeserver\&timer3"
-
-repeat 6 ironstartincognito ""$SWFlocal"pack_url_param.html?url1=fun/maze/Diego_Dinosaur_Rescue_maze_KIDS_simple_NotTImed_!!!.swf\&url2=fun/maze/the-maze-game\(robot\)__no_jp_utl.swf\&url3=ab/ladybugs_TRODLER_noADsURL@.swf\&url4=type/typing_adventure__indiana_jones_NoNavUrl.swf\&url5=fun/td/BloonsTowerDefense2_ok4slow_p4_NoNavUrl.swf\&url6=maze-1\&probeserver\&timer3"
+repeat 6  ironstartincognito ""$SWFlocal"pack_url_param.html?url1=fun/maze/Diego_Dinosaur_Rescue_maze_KIDS_simple_NotTImed_!!!.swf\&url2=fun/maze/the-maze-game\(robot\)__no_jp_utl.swf\&url3=ab/ladybugs_TRODLER_noADsURL@.swf\&url4=type/typing_adventure__indiana_jones_NoNavUrl.swf\&url5=fun/td/BloonsTowerDefense2_ok4slow_p4_NoNavUrl.swf\&url6=maze-1\&probeserver\&timer3"
+#ironstartincognito ""$SWFlocal"pack_url_param.html?url1=fun/maze/Diego_Dinosaur_Rescue_maze_KIDS_simple_NotTImed_!!!.swf\&url2=fun/maze/the-maze-game\(robot\)__no_jp_utl.swf\&url3=ab/ladybugs_TRODLER_noADsURL@.swf\&url4=type/typing_adventure__indiana_jones_NoNavUrl.swf\&url5=fun/td/BloonsTowerDefense2_ok4slow_p4_NoNavUrl.swf\&url6=maze-1\&probeserver\&timer3"
+#ironstartincognito ""$SWFlocal"pack_url_param.html?url1=fun/maze/Diego_Dinosaur_Rescue_maze_KIDS_simple_NotTImed_!!!.swf\&url2=fun/maze/the-maze-game\(robot\)__no_jp_utl.swf\&url3=ab/ladybugs_TRODLER_noADsURL@.swf\&url4=type/typing_adventure__indiana_jones_NoNavUrl.swf\&url5=fun/td/BloonsTowerDefense2_ok4slow_p4_NoNavUrl.swf\&url6=maze-1\&probeserver\&timer3"
 #ironstartincognito ""$SWFlocal"pack_url_param.html?url1=fun/maze/Diego_Dinosaur_Rescue_maze_KIDS_simple_NotTImed_!!!.swf\&url2=fun/maze/the-maze-game\(robot\)__no_jp_utl.swf\&url3=ab/ladybugs_TRODLER_noADsURL@.swf\&url4=type/typing_adventure__indiana_jones_NoNavUrl.swf\&url5=fun/td/BloonsTowerDefense2_ok4slow_p4_NoNavUrl.swf\&url6=maze-1\&probeserver\&timer3"
 
 fi
@@ -696,8 +682,6 @@ adjustWeekFinalNum_for_week 42
 if [ $WEEKNUMBER == $WEEKFINALNUM ] || [ "$WEEKNUMBER" == 'wk06-OctC' ]  
 then
 # Week42 this is exchanged with the Oct28 Pre-Week (wweks 42,43,44 are overwritten from the 2 oct28 weeks -the remaining will be Maze2)
-repeat 6 ironstartincognito ""$SWFlocal"pack_maze2.html?probeserver\&timer2"
-
 repeat 6  ironstartincognito ""$SWFlocal"pack_url_param.html?url1=fun/maze/labrat__maze-kids_needFastPC_unencr2noAdsURL_cheat_GR01_!!.swf\&url2=fun/maze/minotaur_122_maze__unencr3_noAdsUrl_!.swf\&url3=fun/maze/Diego_Dinosaur_Rescue_maze_KIDS_simple_NotTImed_!!!.swf\&url4=ab/ladybugs_TRODLER_noADsURL@.swf\&url5=fun/physics/soccer-balls__physics__noADurl.swf\&url6=maze-2\&probeserver\&timer3"
 
 fi
@@ -707,13 +691,15 @@ if [ $WEEKNUMBER == $WEEKFINALNUM ] || [ "$WEEKNUMBER" == 'wk07-OctD' ]
 then
 
 # Week42 this is exchanged with the Oct28 Pre-Week (wweks 42,43,44 are overwritten from the 2 oct28 weeks -the remaining will be Maze2)
-repeat 6 ironstartincognito ""$SWFlocal"pack_maze2.html?probeserver\&timer2"
 repeat 6  ironstartincognito ""$SWFlocal"pack_url_param.html?url1=fun/maze/labrat__maze-kids_needFastPC_unencr2noAdsURL_cheat_GR01_!!.swf\&url2=fun/maze/minotaur_122_maze__unencr3_noAdsUrl_!.swf\&url3=fun/maze/Diego_Dinosaur_Rescue_maze_KIDS_simple_NotTImed_!!!.swf\&url4=ab/ladybugs_TRODLER_noADsURL@.swf\&url5=fun/physics/soccer-balls__physics__noADurl.swf\&url6=maze-2\&probeserver\&timer3"
 
 
 #28oct A-B draw jspaint , C-ST write word
 repeat 6  ironstartincognito ""$SWFlocal"pack_giortes28oct.html "$SERVER"tinymce_class/tinymce.html?probeserver\&file=giorti28oct01 "$SERVER"jspaint/index.html#load:"$SERVER"jspaint/school/28oct-01.png"
 #ironstartincognito ""$SWFlocal"pack_giortes28oct.html "$SERVER"tinymce_class/tinymce.html?probeserver\&file=giorti28oct01 "$SERVER"jspaint/index.html#load:"$SERVER"jspaint/school/28oct-01.png"
+
+
+
 
 . /usr/local/bin/tuxpaint-with-conf.sh &
 
@@ -722,8 +708,10 @@ $OOOKIDS$OOOKIDSpathprefix"AskiseisWord/Για Πληκτρολόγηση.doc"
 ironstartincognito ""$SERVER"tinymce_class/tinymce.html?probeserver\&file=giorti28oct01" &
  #ironstartincognito "https://plirof.github.io/tinymce_class/tinymce.html?probeserver\&file=giorti28oct01" &
 $OOOKIDS$OOOKIDSpathprefix"AskiseisWord/Για Πληκτρολόγηση.doc"
+$OOOKIDS$OOOKIDSpathprefix"AskiseisWord/Για Πληκτρολόγηση.doc"
 ironstartincognito ""$SERVER"tinymce_class/tinymce.html?probeserver\&file=giorti28oct01" &
 #ironstartincognito "https://plirof.github.io/tinymce_class/tinymce.html?probeserver\&file=giorti28oct01" &
+$OOOKIDS$OOOKIDSpathprefix"AskiseisWord/Για Πληκτρολόγηση.doc"
 $OOOKIDS$OOOKIDSpathprefix"AskiseisWord/Για Πληκτρολόγηση.doc"
 ironstartincognito ""$SERVER"tinymce_class/tinymce.html?probeserver\&file=giorti28oct01" &
 $OOOKIDS$OOOKIDSpathprefix"AskiseisWord/Για Πληκτρολόγηση.doc"
@@ -740,8 +728,6 @@ if [ $WEEKNUMBER == $WEEKFINALNUM ] || [ "$WEEKNUMBER" == 'wk08-OctE-NovA' ]
 then
 
 # Week42 this is exchanged with the Oct28 Pre-Week (wweks 42,43,44 are overwritten from the 2 oct28 weeks -the remaining will be Maze2)
-repeat 6  ironstartincognito ""$SWFlocal"pack_maze2.html?probeserver\&timer3"
-
 repeat 6  ironstartincognito ""$SWFlocal"pack_url_param.html?url1=fun/maze/labrat__maze-kids_needFastPC_unencr2noAdsURL_cheat_GR01_!!.swf\&url2=fun/maze/minotaur_122_maze__unencr3_noAdsUrl_!.swf\&url3=fun/maze/Diego_Dinosaur_Rescue_maze_KIDS_simple_NotTImed_!!!.swf\&url4=ab/ladybugs_TRODLER_noADsURL@.swf\&url5=fun/physics/soccer-balls__physics__noADurl.swf\&url6=maze-2\&probeserver\&timer3"
 
 
@@ -755,6 +741,8 @@ repeat 6  ironstartincognito ""$SWFlocal"pack_giortes28oct.html?probeserver\&nor
 # tuxpaint πινέλα  (ζωγραφίστε σπίτι + αμάξι ,πινέλα ,σφραγίδες) ,typing_bricks(puzzle)!!!.swf
 . /usr/local/bin/tuxpaint-with-conf.sh &
 ironstartincognito ""$SWFlocal"pack_paint1.html?timer3\&probeserver"
+ironstartincognito ""$SWFlocal"pack_paint1.html?timer3\&probeserver"
+ironstartincognito ""$SWFlocal"pack_paint1.html?timer3\&probeserver"
 
 
 fi
@@ -764,9 +752,7 @@ adjustWeekFinalNum_for_week 45
 if [ $WEEKNUMBER == $WEEKFINALNUM ] || [ "$WEEKNUMBER" == 'wk09-NovA2' ]  
 then
 # code.org :(1. Χαρούμενοι Χάρτες , 2. Κούνισέ το, Κούνισέ το , 3. Παζλ: Μάθε την μεταφορά και )	
-repeat 7 googlehomestartincognito ""$SWFlocal"pack_codeorg1.html?showdiv1&showdiv2&showdiv3 https://---studio.code.org/s/course1/stage/3/puzzle/1 "$SWFlocal"pack_A01_ruffle.html?norightclick&probeserver "$SWFlocal"pack_paint1_ruffle.html?timer3&norightclick&probeserver"
-
-repeat 7 ironstart ""$SWFlocal"pack_codeorg1.html?showdiv1&showdiv2&showdiv3 https://---studio.code.org/s/course1/stage/3/puzzle/1 "$SWFlocal"pack_A01.html?norightclick\&probeserver "$SWFlocal"pack_paint1.html?timer3\&norightclick\&probeserver"
+repeat 7  ironstart ""$SWFlocal"pack_codeorg1.html?showdiv1&showdiv2&showdiv3 https://---studio.code.org/s/course1/stage/3/puzzle/1 "$SWFlocal"pack_A01.html?norightclick\&probeserver "$SWFlocal"pack_paint1.html?timer3\&norightclick\&probeserver"
 
 
 repeat 6  ironstart "https://studio.code.org/s/course1/stage/3/puzzle/1 "$SWFlocal"pack_A01.html?norightclick\&probeserver"
@@ -781,8 +767,6 @@ then
 # gcompris 15 :mouse _ψαρια - keyboard ζαρι (τα κουμπιά τους φανηκαν δυσκολα)
 gcompris &
 # E-ST  4. Λαβύρινθος angry-birds: Ακολουθία
-repeat 7  googlehomestartincognito ""$SWFlocal"pack_codeorg1.html "$SWFlocal"pack_codeorg2.html https://---studio.code.org/s/course1/stage/4/puzzle/1 "$SWFlocal"pack_A01_ruffle.html?probeserver&norightclick"
-
 repeat 7  ironstart ""$SWFlocal"pack_codeorg1.html?showdiv1&showdiv2&showdiv3&showdiv4 https://---studio.code.org/s/course1/stage/4/puzzle/1 "$SWFlocal"pack_A01.html?probeserver\&norightclick"
 
 
@@ -792,11 +776,8 @@ adjustWeekFinalNum_for_week 47
 if [ $WEEKNUMBER == $WEEKFINALNUM ] || [ "$WEEKNUMBER" == 'wk11-NovC' ]  
 then
 #A-B  pack_A06 spider , eat flies, tomato
-gcompris &
-# E-ST   13. Λαβύρινθο angry-birds: ΕΠΑΝΑΛΗΨΕΙΣ 
-repeat 7 googlehomestartincognito ""$SWFlocal"pack_codeorg1.html?probeserver "$SWFlocal"pack_codeorg_playlab.html "$SWFlocal"pack_codeorg2.html https://---studio.code.org/s/course1/stage/5/puzzle/1 "$SWFlocal"pack_A07_ruffle.html?probeserver&norightclick&timer3"
-#repeat 7 googlehomestartincognito ""$SWFlocal"pack_codeorg1.html?showdiv1&showdiv2&showdiv3&showdiv4&showdiv5 "$SWFlocal"pack_codeorg2.html https://---studio.code.org/s/course1/stage/5/puzzle/1 "$SWFlocal"pack_A07_ruffle.html?probeserver&norightclick&timer3"
 
+# E-ST   5. Λαβύρινθο angry-birds: εντοπισμός σφαλμ
 repeat 7 ironstart ""$SWFlocal"pack_codeorg1.html?showdiv1&showdiv2&showdiv3&showdiv4&showdiv5 https://---studio.code.org/s/course1/stage/5/puzzle/1 "$SWFlocal"pack_A06.html?probeserver\&norightclick\&timer4"
 #ironstart "https://studio.code.org/s/course1/stage/5/puzzle/1 "$SWFlocal"pack_A06.html?probeserver\&norightclick\&timer4"
 
@@ -811,8 +792,6 @@ sudo -u puppy bash -c "/opt/eduActiv8/eduActiv8 &";
 # E-ST  (7. melisses)
 #repeat 7 ironstart ""$SWFlocal"pack_codeorg1.html https://---studio.code.org/s/course1/stage/7/puzzle/1 "$SWFlocal"pack_A03.html?probeserver\&norightclick"
 # used new pack_code org (replaces href with button for greek)
-repeat 7 googlehomestartincognito ""$SWFlocal"pack_codeorg1.html "$SWFlocal"pack_codeorg_playlab.html  https://---studio.code.org/s/course1/stage/7/puzzle/1 "$SWFlocal"pack_A04_ruffle.html?probeserver&norightclick"
-
 repeat 7 ironstartincognito ""$SWFlocal"pack_codeorg1.html https://---studio.code.org/s/course1/stage/7/puzzle/1 "$SWFlocal"pack_A03.html?probeserver\&norightclick"
 
 #ironstart "https://studio.code.org/s/course1/stage/7/puzzle/1 "$SWFlocal"pack_A03.html?probeserver\&norightclick"
@@ -1196,11 +1175,6 @@ fi
 
 # ALWAYS SHOW
 leafpad "ALWAYS_SHOW_THIS " &
-
-#sakura &
-#xdotool type "cat /proc/cpuinfo"; xdotool key Return;
-#leafpad "/mnt/live/memory/images/changes-exit/upperdir/etc/hostname"
-
 ironstartincognito ""$SERVER"tinymce_class/tinymce_submit.html?showsubmit\&probeserver "$SWFlocal"pack_A03.html?probeserver\&norightclick 
 "$SWFlocal"funbrain.html?timer3  http://ALWAYS_SHOW_THIS"
 
@@ -1452,5 +1426,3 @@ fi
 #ironstartincognito ""$RAMKIDpathprefix"KidsPedia/kids_ePedia32cd/Volume13/index_kd_vol.html ΑΠΟΚΡΙΕΣ-ramkidpedia "$SWFlocal"pack_A02.html"
 #lightbot_iron_browser "maps_easy.txt "$SWFlocal"pack_A02.html"
 #ironstart ""$SWFlocal"pack_A01.html "$LANDINGpages"ΠΑΡΑΣΚΕΥΗ-A2--hour2__dim10.html "$SWFlocal"fun/finding-santa__christmas_find_noAdURL_!!.swf"
-
-# epoptes Scratch run command : "run-as-user /appimages/scratux-1.4.1.AppImage"
